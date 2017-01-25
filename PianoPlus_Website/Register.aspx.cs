@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
 using System.Net;
+using System.Web.Helpers;
 
 public partial class Register : System.Web.UI.Page
 {
