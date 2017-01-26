@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\InstructorController.cs" />
     <Compile Include="BLL\StudentController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
