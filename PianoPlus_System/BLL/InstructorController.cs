@@ -11,21 +11,21 @@ using System.ComponentModel;
 namespace PianoPlus_System.BLL
 {
     [DataObject]
-    public class StudentController
+    public class InstructorController
     {
-        public bool AddNewStudent(Student user)
+        public bool AddNewInstructor(Instructor user)
         {
             try
             {
                 using (var context = new PianoPlusContext())
                 {
-                    context.Students.Add(user);
+                    context.Instructors.Add(user);
                     context.SaveChanges();
 
                     return true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
@@ -38,7 +38,7 @@ namespace PianoPlus_System.BLL
             {
                 using (var context = new PianoPlusContext())
                 {
-                    var results = (from lookup in context.Students
+                    var results = (from lookup in context.Instructors
                                    where lookup.Email == email
                                    select new
                                    {
@@ -62,17 +62,17 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public Student GetStudentInfo(string email)
+        public Instructor GetInstructorInfo(string email)
         {
-            Student CurrentStudent = new Student();
+            Instructor CurrentStudent = new Instructor();
 
             try
             {
-                using(var context = new PianoPlusContext())
+                using (var context = new PianoPlusContext())
                 {
-                    var results = (from info in context.Students
+                    var results = (from info in context.Instructors
                                    where info.Email == email
-                                   select new Student
+                                   select new Instructor
                                    {
                                        FirstName = info.FirstName,
                                        LastName = info.LastName,
@@ -85,7 +85,8 @@ namespace PianoPlus_System.BLL
                                        Active = info.Active,
                                        PassHash = info.PassHash,
                                        PassSalt = info.PassSalt,
-                                       CreateDate = info.CreateDate
+                                       CreateDate = info.CreateDate,
+                                       RoleID = info.RoleID
                                    }).SingleOrDefault();
 
                     return results;

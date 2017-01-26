@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +17,7 @@
     <div class="text-center loginscreen animated fadeInDown">
 
         <h1 class="logo-name">PIANO+</h1>
-
+        <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     </div>
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -23,13 +26,13 @@
             <p>Login in.</p>
             <form class="m-t" role="form" action="Dashboard.aspx" runat="server">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Username" required="" />
+                    <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="User Email" TextMode="Email"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="" />
+                    <asp:TextBox runat="server" ID="txt_password" CssClass="form-control" placeholder ="Password" TextMode="Password" />
                 </div>
                 <%--<button type="submit" class="btn btn-primary block full-width m-b">Login</button>--%>
-                <asp:Button ID="btn_submit" runat="server" Text="Login" CssClass="btn btn-primary block full-width m-b" />
+                <asp:Button ID="btn_submit" runat="server" Text="Login" CssClass="btn btn-primary block full-width m-b" OnClick="btn_submit_Click" />
                 <a href="#"><small>Forgot password?</small></a>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" href="Register.aspx">Create an account</a>

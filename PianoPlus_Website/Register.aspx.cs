@@ -22,10 +22,12 @@ public partial class Register : System.Web.UI.Page
         string email = txt_email.Text;
         Student newStudent = null;
         StudentController userController = new StudentController();
+        InstructorController instructorController = new InstructorController();
 
-        bool exists = userController.CheckIfEmailIsAvailable(email);
+        bool StudentExists = userController.CheckIfEmailIsAvailable(email);
+        bool InstructorExists = instructorController.CheckIfEmailIsAvailable(email);
 
-        if(exists == true)
+        if(StudentExists == true && InstructorExists == true)
         {
             newStudent = new Student();
             newStudent.FirstName = txt_firstName.Text;
@@ -44,6 +46,29 @@ public partial class Register : System.Web.UI.Page
             newStudent.PassSalt = salt;
             newStudent.PassHash = hashed;
 
+            if(userController.AddNewStudent(newStudent) == true)
+            {
+                txt_address.Text = "";
+                txt_city.Text = "";
+                txt_email.Text = "";
+                txt_firstName.Text = "";
+                txt_lastName.Text = "";
+                txt_password.Text = "";
+                txt_phone.Text = "";
+                txt_postalCode.Text = "";
+                ddl_province.SelectedValue = "0";
+
+
+            }
+            else
+            {
+                MessageUserControl.ShowInfo("Cannot add new student, please try again.");
+            }
+
+        }
+        else
+        {
+            MessageUserControl.ShowInfo("This email is already exists, please try different email address.");
         }
     }
 }

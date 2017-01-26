@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +17,7 @@
     <div class="text-center loginscreen animated fadeInDown">
 
         <h1 class="logo-name">PIANO+</h1>
-
+        <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     </div>
     <div class="middle-box text-center loginscreen animated fadeInDown">
     <form id="form1" runat="server" class="m-t" role="form" action="login.aspx">
