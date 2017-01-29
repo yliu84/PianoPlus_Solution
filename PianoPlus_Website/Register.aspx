@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" UnobtrusiveValidationMode="None" %>
 
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
@@ -20,12 +20,11 @@
         <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
     </div>
     <div class="middle-box text-center loginscreen animated fadeInDown">
-    <form id="form1" runat="server" class="m-t" role="form" action="login.aspx">
+    <form id="form1" runat="server" class="m-t">
         <%--<asp:ValidationSummary ID="ValidationSummary1" 
                                runat="server"
                                DisplayMode="BulletList" />--%>
         <h3>Register to Piano Plus</h3>
-
         <div class="form-group">
             <asp:TextBox ID="txt_email" runat="server" type="email" CssClass="form-control" placeholder="Email"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldEmail" 

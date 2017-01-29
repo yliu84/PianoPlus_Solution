@@ -14,7 +14,10 @@ public partial class Register : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(!Page.IsPostBack)
+        {
 
+        }
     }
 
     protected void btn_submit_Click(object sender, EventArgs e)
@@ -38,6 +41,8 @@ public partial class Register : System.Web.UI.Page
             newStudent.City = txt_city.Text;
             newStudent.PostalCode = txt_postalCode.Text;
             newStudent.Phone = txt_phone.Text;
+            newStudent.Active = 'Y'.ToString();
+            newStudent.CreateDate = DateTime.Today;
 
             var salt = Crypto.GenerateSalt();
 
@@ -57,7 +62,7 @@ public partial class Register : System.Web.UI.Page
                 txt_phone.Text = "";
                 txt_postalCode.Text = "";
                 ddl_province.SelectedValue = "0";
-
+                MessageUserControl.ShowInfo("Student registed successful, please log in.");
 
             }
             else
