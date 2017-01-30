@@ -72,22 +72,7 @@ namespace PianoPlus_System.BLL
                 {
                     var results = (from info in context.Instructors
                                    where info.Email == email
-                                   select new Instructor
-                                   {
-                                       FirstName = info.FirstName,
-                                       LastName = info.LastName,
-                                       Email = info.Email,
-                                       Phone = info.Phone,
-                                       Address = info.Address,
-                                       Province = info.Province,
-                                       City = info.City,
-                                       PostalCode = info.PostalCode,
-                                       Active = info.Active,
-                                       PassHash = info.PassHash,
-                                       PassSalt = info.PassSalt,
-                                       CreateDate = info.CreateDate,
-                                       RoleID = info.RoleID
-                                   }).SingleOrDefault();
+                                   select info).SingleOrDefault();
 
                     return results;
 

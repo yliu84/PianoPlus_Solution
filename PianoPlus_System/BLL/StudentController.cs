@@ -72,21 +72,8 @@ namespace PianoPlus_System.BLL
                 {
                     var results = (from info in context.Students
                                    where info.Email == email
-                                   select new Student
-                                   {
-                                       FirstName = info.FirstName,
-                                       LastName = info.LastName,
-                                       Email = info.Email,
-                                       Phone = info.Phone,
-                                       Address = info.Address,
-                                       Province = info.Province,
-                                       City = info.City,
-                                       PostalCode = info.PostalCode,
-                                       Active = info.Active,
-                                       PassHash = info.PassHash,
-                                       PassSalt = info.PassSalt,
-                                       CreateDate = info.CreateDate
-                                   }).SingleOrDefault();
+                                   select info
+                                   ).SingleOrDefault();
 
                     return results;
 
@@ -95,6 +82,21 @@ namespace PianoPlus_System.BLL
             catch
             {
                 return CurrentStudent;
+            }
+        }
+
+        public List<Student> Student_List()
+        {
+            List<Student> studentList = new List<Student>();
+
+            using (var context = new PianoPlusContext())
+            {
+                var results = from students in context.Students
+                              select students;
+
+                return results.ToList();
+
+               
             }
         }
     }
