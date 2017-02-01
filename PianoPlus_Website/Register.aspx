@@ -144,6 +144,13 @@
                                         Display="Dynamic"
                                         ForeColor="Red"
                                         ControlToValidate="txt_postalCode"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="regexPostal" 
+                                            runat="server" 
+                                            ValidationExpression="^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$" 
+                                            ControlToValidate="txt_postalCode" 
+                                            ErrorMessage="Postal code was not in the correct format. eg T2X 1V4 or T2X1V4" 
+                                            Display="Dynamic"
+                                            ForeColor="Red"></asp:RegularExpressionValidator>
         </div>
         
         <div class="form-group">

@@ -14,7 +14,10 @@ public partial class StudentManager : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(!Page.IsPostBack)
+        {
+            StudentGridView.DataBind();
+        }
     }
     protected void btn_select_Click(object sender, EventArgs e)
     {
@@ -44,29 +47,40 @@ public partial class StudentManager : System.Web.UI.Page
         Student currentStudent = null;
 
         string email = txt_email.Text;
+        string id = txt_studentID.Text;
 
-        StudentController studentController = new StudentController();
-
-        MessageUserControl.TryRun(() =>
+        if(string.IsNullOrEmpty(id))
         {
+            MessageUserControl.ShowInfo("Please select a student before click Update Button");
+        }
+        else
+        {
+            StudentController studentController = new StudentController();
 
-            currentStudent = new Student();
-            currentStudent.StudentID = int.Parse(txt_studentID.Text);
-            currentStudent.FirstName = txt_firstName.Text;
-            currentStudent.LastName = txt_lastName.Text;
-            currentStudent.Phone = txt_phone.Text;
-            currentStudent.Email = email;
-            currentStudent.Address = txt_address.Text;
-            currentStudent.Province = ddl_province.SelectedValue;
-            currentStudent.City = txt_city.Text;
-            currentStudent.PostalCode = txt_postalCode.Text;
-            currentStudent.Active = ddl_active.SelectedValue;
+            MessageUserControl.TryRun(() =>
+            {
+
+                currentStudent = new Student();
+                currentStudent.StudentID = int.Parse(txt_studentID.Text);
+                currentStudent.FirstName = txt_firstName.Text;
+                currentStudent.LastName = txt_lastName.Text;
+                currentStudent.Phone = txt_phone.Text;
+                currentStudent.Email = email;
+                currentStudent.Address = txt_address.Text;
+                currentStudent.Province = ddl_province.SelectedValue;
+                currentStudent.City = txt_city.Text;
+                currentStudent.PostalCode = txt_postalCode.Text;
+                currentStudent.Active = ddl_active.SelectedValue;
 
 
-            studentController.UpdateStudent(currentStudent);
-        }, "Success", "Student Updated");
+                studentController.UpdateStudent(currentStudent);
 
+            }, "Success", "Student Updated");
 
+            StudentGridView.DataBind();
+        }
+
+        
 
     }
 }

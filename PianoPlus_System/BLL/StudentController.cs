@@ -38,42 +38,42 @@ namespace PianoPlus_System.BLL
             {
                 //Find the entity
                 Student currentStudent = context.Students.Find(user.StudentID);
-                
+
 
                 //Check if there is a change.
-                if(currentStudent.FirstName != user.FirstName)
+                if (currentStudent.FirstName != user.FirstName)
                 {
                     currentStudent.FirstName = user.FirstName;
                 }
-                if(currentStudent.LastName != user.LastName)
+                if (currentStudent.LastName != user.LastName)
                 {
                     currentStudent.LastName = user.LastName;
                 }
-                if(currentStudent.Phone != user.Phone)
+                if (currentStudent.Phone != user.Phone)
                 {
                     currentStudent.Phone = user.Phone;
                 }
-                if(currentStudent.Email != user.Email)
+                if (currentStudent.Email != user.Email)
                 {
                     currentStudent.Email = user.Email;
                 }
-                if(currentStudent.Address != user.Address)
+                if (currentStudent.Address != user.Address)
                 {
                     currentStudent.Address = user.Address;
                 }
-                if(currentStudent.Province != user.Province)
+                if (currentStudent.Province != user.Province)
                 {
                     currentStudent.Province = user.Province;
                 }
-                if(currentStudent.City != user.City)
+                if (currentStudent.City != user.City)
                 {
                     currentStudent.City = user.City;
                 }
-                if(currentStudent.PostalCode != user.PostalCode)
+                if (currentStudent.PostalCode != user.PostalCode)
                 {
                     currentStudent.PostalCode = user.PostalCode;
                 }
-                if(currentStudent.Active != user.Active)
+                if (currentStudent.Active != user.Active)
                 {
                     currentStudent.Active = user.Active;
                 }
