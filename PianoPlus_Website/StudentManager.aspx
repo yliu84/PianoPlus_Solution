@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeFile="StudentManager.aspx.cs" Inherits="StudentManager" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
@@ -75,7 +78,7 @@
                             </a>
                         </div>
                     </div>
-
+                    <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                     <div class="ibox-content">
                         <div class="form-horizontal">
                             <div class="col-lg-6">
@@ -172,7 +175,7 @@
 
                             <div class="col-lg-12">
                                 <div class="form-group pull-right">
-                                    <asp:LinkButton ID="btn_update" runat="server" CssClass="btn btn-success" Width="100px">Update</asp:LinkButton>
+                                    <asp:LinkButton ID="btn_update" runat="server" CssClass="btn btn-success" Width="100px" OnClick="btn_update_Click">Update</asp:LinkButton>
                                     <asp:LinkButton ID="btn_cancel" runat="server" CssClass="btn btn-default btn-warning" Width="100px">Cancel</asp:LinkButton>
                                 </div>
                             </div>

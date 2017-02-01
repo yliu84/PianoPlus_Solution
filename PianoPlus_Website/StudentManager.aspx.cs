@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using PianoPlus_Data;
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
+using PianoPlus.UI;
 
 public partial class StudentManager : System.Web.UI.Page
 {
@@ -36,5 +37,36 @@ public partial class StudentManager : System.Web.UI.Page
             txt_postalCode.Text = currentStudent.PostalCode;
             ddl_active.SelectedValue = currentStudent.Active;
         }
+    }
+
+    protected void btn_update_Click(object sender, EventArgs e)
+    {
+        Student currentStudent = null;
+
+        string email = txt_email.Text;
+
+        StudentController studentController = new StudentController();
+
+        MessageUserControl.TryRun(() =>
+        {
+
+            currentStudent = new Student();
+            currentStudent.StudentID = int.Parse(txt_studentID.Text);
+            currentStudent.FirstName = txt_firstName.Text;
+            currentStudent.LastName = txt_lastName.Text;
+            currentStudent.Phone = txt_phone.Text;
+            currentStudent.Email = email;
+            currentStudent.Address = txt_address.Text;
+            currentStudent.Province = ddl_province.SelectedValue;
+            currentStudent.City = txt_city.Text;
+            currentStudent.PostalCode = txt_postalCode.Text;
+            currentStudent.Active = ddl_active.SelectedValue;
+
+
+            studentController.UpdateStudent(currentStudent);
+        }, "Success", "Student Updated");
+
+
+
     }
 }
