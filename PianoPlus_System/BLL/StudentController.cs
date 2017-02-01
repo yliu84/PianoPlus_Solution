@@ -85,6 +85,29 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public Student GetStudentInfoByStudentID(int studentID)
+        {
+            Student CurrentStudent = new Student();
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from info in context.Students
+                                   where info.StudentID == studentID
+                                   select info
+                                   ).SingleOrDefault();
+
+                    return results;
+
+                }
+            }
+            catch
+            {
+                return CurrentStudent;
+            }
+        }
+
         public List<Student> Student_List()
         {
             List<Student> studentList = new List<Student>();
