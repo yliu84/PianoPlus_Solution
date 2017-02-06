@@ -13,6 +13,76 @@ namespace PianoPlus_System.BLL
     [DataObject]
     public class InstructorController
     {
+        public List<Instructor> Instuctor_List()
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                var results = from instructors in context.Instructors
+                              select instructors;
+
+                return results.ToList();
+
+
+            }
+        }
+
+        public List<Role> Role_List()
+        {
+            using(var context = new PianoPlusContext())
+            {
+                var results = from roles in context.Roles
+                              select roles;
+
+                return results.ToList();
+            }
+        }
+
+        public Instructor GetInstructorInfoByID(int instructorID)
+        {
+            Instructor instructor = new Instructor();
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from info in context.Instructors
+                                   where info.InstructorID == instructorID
+                                   select info
+                                   ).SingleOrDefault();
+
+                    return results;
+
+                }
+            }
+            catch
+            {
+                return instructor;
+            }
+        }
+
+        public Instructor GetInstructorInfo(string email)
+        {
+            Instructor CurrentStudent = new Instructor();
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from info in context.Instructors
+                                   where info.Email == email
+                                   select info).SingleOrDefault();
+
+                    return results;
+
+                }
+            }
+            catch
+            {
+                return CurrentStudent;
+            }
+        }
+
         public bool AddNewInstructor(Instructor user)
         {
             try
@@ -62,26 +132,6 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public Instructor GetInstructorInfo(string email)
-        {
-            Instructor CurrentStudent = new Instructor();
-
-            try
-            {
-                using (var context = new PianoPlusContext())
-                {
-                    var results = (from info in context.Instructors
-                                   where info.Email == email
-                                   select info).SingleOrDefault();
-
-                    return results;
-
-                }
-            }
-            catch
-            {
-                return CurrentStudent;
-            }
-        }
+        
     }
 }

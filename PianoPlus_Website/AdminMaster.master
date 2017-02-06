@@ -45,14 +45,14 @@
                         <a href="StudentManager.aspx"><i class="fa fa-users"></i><span class="nav-label">Student</span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="StudentManager.aspx">Find Student</a></li>
-                            <li><a href="#">Add Student</a></li>
+                            <li><a href="AddStudent.aspx">Add Student</a></li>
                         </ul>
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-mortar-board"></i><span class="nav-label">Instructor</span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">Find Instructor</a></li>
+                            <li><a href="InstructorManager.aspx">Find Instructor</a></li>
                             <li><a href="#">Add Instructor</a></li>
                         </ul>
                     </li>
