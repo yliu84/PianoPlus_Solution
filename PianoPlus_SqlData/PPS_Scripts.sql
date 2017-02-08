@@ -237,13 +237,17 @@ CREATE TABLE StudentClassHistory
 	NOT NULL
 	CONSTRAINT FK_StudentClassHistory_StudentID REFERENCES Student(StudentID),
 
-	CourseCode
-	NVARCHAR(6)
-	NOT NULL
-	CONSTRAINT FK_StudentClassHistory_CourseCode REFERENCES Course(CourseCode),
+	CourseName
+	NVARCHAR(25)
+	NOT NULL,
 
 	StartTime
 	DATETIME
+	NOT NULL
+	CONSTRAINT PK_StudentClassHistory_StartTime PRIMARY KEY,
+
+	InstructorName
+	NVARCHAR(51)
 	NOT NULL,
 
 	EndTime
@@ -262,8 +266,6 @@ CREATE TABLE StudentClassHistory
 	Room
 	NVARCHAR(10)
 	NULL,
-
-	CONSTRAINT PK_StudentClassHistory_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime)
 )
 GO
 
@@ -274,10 +276,14 @@ CREATE TABLE InstructorClassHistory
 	NOT NULL
 	CONSTRAINT FK_InstructorClassHistory_InstructorID REFERENCES Instructor(InstructorID),
 
-	CourseCode
-	NVARCHAR(6)
+	StudentID
+	INT
 	NOT NULL
-	CONSTRAINT FK_InstructorClassHistory_CourseCode REFERENCES Course(CourseCode),
+	CONSTRAINT FK_InstructorClassHistory_StudentID REFERENCES Student(StudentID),
+
+	CourseName
+	NVARCHAR(25)
+	NOT NULL,
 
 	StartTime
 	DATETIME
@@ -299,11 +305,8 @@ CREATE TABLE InstructorClassHistory
 	Room
 	NVARCHAR(10)
 	NULL,
-
-	CONSTRAINT PK_InstructorClassHistory PRIMARY KEY (InstructorID,CourseCode,StartTime)
-
 	
-
+	CONSTRAINT PK_InstructorClassHistory_StudentID_StartTime PRIMARY KEY(StartTime,StudentID)
 )
 
 CREATE TABLE Blog
