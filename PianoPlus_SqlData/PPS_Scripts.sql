@@ -170,11 +170,11 @@ CREATE TABLE Course
 	NOT NULL
 	CONSTRAINT FK_Course_Instructor REFERENCES Instructor(InstructorID),
 
-	LessonType
+	CourseType
 	NVARCHAR(15)
 	NOT NULL,
 
-	LessonName
+	CourseName
 	NVARCHAR(25)
 	NOT NULL,
 
@@ -202,8 +202,8 @@ CREATE TABLE StudentClass
 	NOT NULL
 	CONSTRAINT FK_StudentClass_CourseCode REFERENCES Course(CourseCode),
 
-	StartDate
-	DATETIME
+	Date
+	DATE
 	NOT NULL,
 
 	StartTime
@@ -227,29 +227,20 @@ CREATE TABLE StudentClass
 	NVARCHAR(10)
 	NULL,
 
-	Complete
-	CHAR(1) DEFAULT 'N'
-	NOT NULL
-	CONSTRAINT CK_StudentClass_Complete CHECK(Complete = 'Y' OR Complete = 'N'),
-
-	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartDate)
+	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,Date)
 )
 
-CREATE TABLE ClassHistory
+CREATE TABLE StudentClassHistory
 (
 	StudentID
 	INT 
 	NOT NULL
-	CONSTRAINT FK_ClassHistory_StudentID REFERENCES Student(StudentID),
+	CONSTRAINT FK_StudentClassHistory_StudentID REFERENCES Student(StudentID),
 
 	CourseCode
 	NVARCHAR(6)
 	NOT NULL
-	CONSTRAINT FK_ClassHistory_CourseCode REFERENCES Course(CourseCode),
-
-	StartDate
-	DATETIME
-	NOT NULL,
+	CONSTRAINT FK_StudentClassHistory_CourseCode REFERENCES Course(CourseCode),
 
 	StartTime
 	DATETIME
@@ -266,15 +257,54 @@ CREATE TABLE ClassHistory
 	Hours
 	FLOAT
 	NOT NULL
-	CONSTRAINT CK_ClassHistory_Hours CHECK (Hours > 0),
+	CONSTRAINT CK_StudentClassHistory_Hours CHECK (Hours > 0),
 
 	Room
 	NVARCHAR(10)
 	NULL,
 
-	CONSTRAINT PK_ClassHistory_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartDate)
+	CONSTRAINT PK_StudentClassHistory_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime)
 )
 GO
+
+CREATE TABLE InstructorClassHistory
+(
+	InstructorID
+	INT
+	NOT NULL
+	CONSTRAINT FK_InstructorClassHistory_InstructorID REFERENCES Instructor(InstructorID),
+
+	CourseCode
+	NVARCHAR(6)
+	NOT NULL
+	CONSTRAINT FK_InstructorClassHistory_CourseCode REFERENCES Course(CourseCode),
+
+	StartTime
+	DATETIME
+	NOT NULL,
+
+	EndTime
+	DATETIME
+	NOT NULL,
+
+	DayOfWeek
+	NVARCHAR(15)
+	NOT NULL,
+
+	Hours
+	FLOAT
+	NOT NULL
+	CONSTRAINT CK_InstructorClassHistory_Hours CHECK (Hours > 0),
+
+	Room
+	NVARCHAR(10)
+	NULL,
+
+	CONSTRAINT PK_InstructorClassHistory PRIMARY KEY (InstructorID,CourseCode,StartTime)
+
+	
+
+)
 
 CREATE TABLE Blog
 (
@@ -353,29 +383,29 @@ CREATE TABLE Payment
 
 )
 
-CREATE TABLE StudentPayment
+CREATE TABLE CoursePayment
 (
 	PaymentID
 	INT
 	NOT NULL
-	CONSTRAINT FK_StudentPayment_PaymentID REFERENCES Payment(PaymentID),
+	CONSTRAINT FK_CoursePayment_PaymentID REFERENCES Payment(PaymentID),
 
 	CourseCode
 	NVARCHAR(6)
 	NOT NULL
-	CONSTRAINT FK_StudentPayment_CourseCode REFERENCES Course(CourseCode),
+	CONSTRAINT FK_CoursePayment_CourseCode REFERENCES Course(CourseCode),
 
 	Hours
 	FLOAT DEFAULT 0.0
 	NOT NULL
-	CONSTRAINT CK_StudentPayment_Hours CHECK (Hours >= 0),
+	CONSTRAINT CK_CoursePayment_Hours CHECK (Hours >= 0),
 
-	LessionFee
+	LessonFee
 	MONEY DEFAULT 0.00
 	NOT NULL
-	CONSTRAINT CK_StudentPayment_LessionFee CHECK (LessionFee >= 0.00),
+	CONSTRAINT CK_CoursePayment_LessonFee CHECK (LessonFee >= 0.00),
 
-	CONSTRAINT PK_StudentPayment_PaymentID_CourseCode PRIMARY KEY (PaymentID,CourseCode)
+	CONSTRAINT PK_CoursePayment_PaymentID_CourseCode PRIMARY KEY (PaymentID,CourseCode)
 
 )
 
