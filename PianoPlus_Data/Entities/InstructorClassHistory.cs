@@ -6,22 +6,24 @@ using System.Data.Entity.Spatial;
 
 namespace PianoPlus_Data.Entities
 {
-   
-    [Table("StudentClass")]
-    public partial class StudentClass
+    
+
+    [Table("InstructorClassHistory")]
+    public partial class InstructorClassHistory
     {
+        public int InstructorID { get; set; }
+
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(6)]
-        public string CourseCode { get; set; }
+        [Required]
+        [StringLength(25)]
+        public string CourseName { get; set; }
 
         [Key]
-        [Column(Order = 2)]
+        [Column(Order = 1)]
         public DateTime StartTime { get; set; }
 
         public DateTime EndTime { get; set; }
@@ -35,7 +37,7 @@ namespace PianoPlus_Data.Entities
         [StringLength(10)]
         public string Room { get; set; }
 
-        public virtual Course Course { get; set; }
+        public virtual Instructor Instructor { get; set; }
 
         public virtual Student Student { get; set; }
     }

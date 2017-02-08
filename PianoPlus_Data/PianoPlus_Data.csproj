@@ -52,15 +52,16 @@
   <ItemGroup>
     <Compile Include="Entities\Announcement.cs" />
     <Compile Include="Entities\Blog.cs" />
-    <Compile Include="Entities\ClassHistory.cs" />
     <Compile Include="Entities\Course.cs" />
+    <Compile Include="Entities\CoursePayment.cs" />
     <Compile Include="Entities\Instructor.cs" />
+    <Compile Include="Entities\InstructorClassHistory.cs" />
     <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Entities\StudentClassHistory.cs" />
     <Compile Include="PianoPlusContext.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentClass.cs" />
-    <Compile Include="Entities\StudentPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

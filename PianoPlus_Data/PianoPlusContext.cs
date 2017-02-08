@@ -16,14 +16,15 @@ namespace PianoPlus_Data
 
         public virtual DbSet<Announcement> Announcements { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
-        public virtual DbSet<ClassHistory> ClassHistories { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<CoursePayment> CoursePayments { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
+        public virtual DbSet<InstructorClassHistory> InstructorClassHistories { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentClass> StudentClasses { get; set; }
-        public virtual DbSet<StudentPayment> StudentPayments { get; set; }
+        public virtual DbSet<StudentClassHistory> StudentClassHistories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,7 +34,7 @@ namespace PianoPlus_Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<Course>()
-                .HasMany(e => e.ClassHistories)
+                .HasMany(e => e.CoursePayments)
                 .WithRequired(e => e.Course)
                 .WillCascadeOnDelete(false);
 
@@ -42,10 +43,9 @@ namespace PianoPlus_Data
                 .WithRequired(e => e.Course)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Course>()
-                .HasMany(e => e.StudentPayments)
-                .WithRequired(e => e.Course)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CoursePayment>()
+                .Property(e => e.LessonFee)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Instructor>()
                 .Property(e => e.Active)
@@ -68,6 +68,11 @@ namespace PianoPlus_Data
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Instructor>()
+                .HasMany(e => e.InstructorClassHistories)
+                .WithRequired(e => e.Instructor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Instructor>()
                 .HasMany(e => e.Payments)
                 .WithRequired(e => e.Instructor)
                 .WillCascadeOnDelete(false);
@@ -77,7 +82,7 @@ namespace PianoPlus_Data
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Payment>()
-                .HasMany(e => e.StudentPayments)
+                .HasMany(e => e.CoursePayments)
                 .WithRequired(e => e.Payment)
                 .WillCascadeOnDelete(false);
 
@@ -92,7 +97,7 @@ namespace PianoPlus_Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<Student>()
-                .HasMany(e => e.ClassHistories)
+                .HasMany(e => e.InstructorClassHistories)
                 .WithRequired(e => e.Student)
                 .WillCascadeOnDelete(false);
 
@@ -106,14 +111,10 @@ namespace PianoPlus_Data
                 .WithRequired(e => e.Student)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<StudentClass>()
-                .Property(e => e.Complete)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<StudentPayment>()
-                .Property(e => e.LessionFee)
-                .HasPrecision(19, 4);
+            modelBuilder.Entity<Student>()
+                .HasMany(e => e.StudentClassHistories)
+                .WithRequired(e => e.Student)
+                .WillCascadeOnDelete(false);
         }
     }
 }

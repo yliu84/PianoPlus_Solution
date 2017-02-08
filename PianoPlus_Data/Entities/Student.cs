@@ -12,9 +12,10 @@ namespace PianoPlus_Data.Entities
     {
         public Student()
         {
-            ClassHistories = new HashSet<ClassHistory>();
+            InstructorClassHistories = new HashSet<InstructorClassHistory>();
             Payments = new HashSet<Payment>();
             StudentClasses = new HashSet<StudentClass>();
+            StudentClassHistories = new HashSet<StudentClassHistory>();
         }
 
         public int StudentID { get; set; }
@@ -65,10 +66,12 @@ namespace PianoPlus_Data.Entities
 
         public DateTime CreateDate { get; set; }
 
-        public virtual ICollection<ClassHistory> ClassHistories { get; set; }
+        public virtual ICollection<InstructorClassHistory> InstructorClassHistories { get; set; }
 
         public virtual ICollection<Payment> Payments { get; set; }
 
         public virtual ICollection<StudentClass> StudentClasses { get; set; }
+
+        public virtual ICollection<StudentClassHistory> StudentClassHistories { get; set; }
     }
 }

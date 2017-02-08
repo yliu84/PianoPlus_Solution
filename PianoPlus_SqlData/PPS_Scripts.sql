@@ -202,10 +202,6 @@ CREATE TABLE StudentClass
 	NOT NULL
 	CONSTRAINT FK_StudentClass_CourseCode REFERENCES Course(CourseCode),
 
-	Date
-	DATE
-	NOT NULL,
-
 	StartTime
 	DATETIME
 	NOT NULL,
@@ -227,7 +223,7 @@ CREATE TABLE StudentClass
 	NVARCHAR(10)
 	NULL,
 
-	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,Date)
+	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime)
 )
 
 CREATE TABLE StudentClassHistory

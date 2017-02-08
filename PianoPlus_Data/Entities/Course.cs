@@ -12,9 +12,8 @@ namespace PianoPlus_Data.Entities
     {
         public Course()
         {
-            ClassHistories = new HashSet<ClassHistory>();
+            CoursePayments = new HashSet<CoursePayment>();
             StudentClasses = new HashSet<StudentClass>();
-            StudentPayments = new HashSet<StudentPayment>();
         }
 
         [Key]
@@ -25,11 +24,11 @@ namespace PianoPlus_Data.Entities
 
         [Required]
         [StringLength(15)]
-        public string LessonType { get; set; }
+        public string CourseType { get; set; }
 
         [Required]
         [StringLength(25)]
-        public string LessonName { get; set; }
+        public string CourseName { get; set; }
 
         [Required]
         [StringLength(1)]
@@ -37,12 +36,10 @@ namespace PianoPlus_Data.Entities
 
         public int TotalSeats { get; set; }
 
-        public virtual ICollection<ClassHistory> ClassHistories { get; set; }
-
         public virtual Instructor Instructor { get; set; }
 
         public virtual ICollection<StudentClass> StudentClasses { get; set; }
 
-        public virtual ICollection<StudentPayment> StudentPayments { get; set; }
+        public virtual ICollection<CoursePayment> CoursePayments { get; set; }
     }
 }

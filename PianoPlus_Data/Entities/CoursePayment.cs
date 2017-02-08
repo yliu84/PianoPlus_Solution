@@ -6,9 +6,9 @@ using System.Data.Entity.Spatial;
 
 namespace PianoPlus_Data.Entities
 {
-
-    [Table("StudentPayment")]
-    public partial class StudentPayment
+    
+    [Table("CoursePayment")]
+    public partial class CoursePayment
     {
         [Key]
         [Column(Order = 0)]
@@ -23,7 +23,7 @@ namespace PianoPlus_Data.Entities
         public double Hours { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal LessionFee { get; set; }
+        public decimal LessonFee { get; set; }
 
         public virtual Course Course { get; set; }
 
