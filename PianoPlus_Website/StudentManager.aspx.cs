@@ -29,6 +29,7 @@ public partial class StudentManager : System.Web.UI.Page
 
         if(currentStudent != null)
         {
+            StudentProfile.Visible = true;
             txt_studentID.Text = currentStudent.StudentID.ToString();
             txt_firstName.Text = currentStudent.FirstName;
             txt_lastName.Text = currentStudent.LastName;

@@ -132,6 +132,80 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public void UpdateInstructor(Instructor user)
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                //Find the entity
+                Instructor currentInstructor = context.Instructors.Find(user.InstructorID);
+
+
+                //Check if there is a change.
+                if (currentInstructor.FirstName != user.FirstName)
+                {
+                    currentInstructor.FirstName = user.FirstName;
+                }
+                if (currentInstructor.LastName != user.LastName)
+                {
+                    currentInstructor.LastName = user.LastName;
+                }
+                if(currentInstructor.RoleID != user.RoleID)
+                {
+                    currentInstructor.RoleID = user.RoleID;
+                }
+                if (currentInstructor.Phone != user.Phone)
+                {
+                    currentInstructor.Phone = user.Phone;
+                }
+                if (currentInstructor.Email != user.Email)
+                {
+                    currentInstructor.Email = user.Email;
+                }
+                if (currentInstructor.Address != user.Address)
+                {
+                    currentInstructor.Address = user.Address;
+                }
+                if (currentInstructor.Province != user.Province)
+                {
+                    currentInstructor.Province = user.Province;
+                }
+                if (currentInstructor.City != user.City)
+                {
+                    currentInstructor.City = user.City;
+                }
+                if (currentInstructor.PostalCode != user.PostalCode)
+                {
+                    currentInstructor.PostalCode = user.PostalCode;
+                }
+                if (currentInstructor.Active != user.Active)
+                {
+                    currentInstructor.Active = user.Active;
+                }
+
+                //DO the update
+                var update = context.Entry(context.Instructors.Attach(currentInstructor));
+                update.Property(x => x.FirstName).IsModified = true;
+                update.Property(x => x.LastName).IsModified = true;
+                update.Property(x => x.RoleID).IsModified = true;
+                update.Property(x => x.Phone).IsModified = true;
+                update.Property(x => x.Email).IsModified = true;
+                update.Property(x => x.Address).IsModified = true;
+                update.Property(x => x.Province).IsModified = true;
+                update.Property(x => x.City).IsModified = true;
+                update.Property(x => x.PostalCode).IsModified = true;
+                update.Property(x => x.Active).IsModified = true;
+
+
+                //context.Entry<Student>(context.Students.Attach(user)).State = System.Data.Entity.EntityState.Modified;
+
+                //Save the changes in DB
+                context.SaveChanges();
+
+            }
+
+        }
+
         
     }
 }

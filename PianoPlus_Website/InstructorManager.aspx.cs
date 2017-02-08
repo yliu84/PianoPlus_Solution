@@ -29,7 +29,8 @@ public partial class InstructorManager : System.Web.UI.Page
 
         if (currentInstructor != null)
         {
-            txt_studentID.Text = currentInstructor.InstructorID.ToString();
+            InstructorProfile.Visible = true;
+            txt_instructorID.Text = currentInstructor.InstructorID.ToString();
             txt_firstName.Text = currentInstructor.FirstName;
             txt_lastName.Text = currentInstructor.LastName;
             ddl_role.SelectedValue = currentInstructor.RoleID;
@@ -44,6 +45,40 @@ public partial class InstructorManager : System.Web.UI.Page
     }
     protected void btn_update_Click(object sender, EventArgs e)
     {
+        Instructor currentInstructor = null;
 
+        string email = txt_email.Text;
+        string id = txt_instructorID.Text;
+
+        if (string.IsNullOrEmpty(id))
+        {
+            MessageUserControl.ShowInfo("Please select a instructor before click Update Button");
+        }
+        else
+        {
+            InstructorController instructorController = new InstructorController();
+
+            MessageUserControl.TryRun(() =>
+            {
+
+                currentInstructor = new Instructor();
+                currentInstructor.InstructorID = int.Parse(txt_instructorID.Text);
+                currentInstructor.FirstName = txt_firstName.Text;
+                currentInstructor.LastName = txt_lastName.Text;
+                currentInstructor.RoleID = ddl_role.SelectedValue;
+                currentInstructor.Phone = txt_phone.Text;
+                currentInstructor.Email = email;
+                currentInstructor.Address = txt_address.Text;
+                currentInstructor.Province = ddl_province.SelectedValue;
+                currentInstructor.City = txt_city.Text;
+                currentInstructor.PostalCode = txt_postalCode.Text;
+                currentInstructor.Active = ddl_active.SelectedValue;
+
+                instructorController.UpdateInstructor(currentInstructor);
+
+            }, "Success", "Instructor Updated");
+
+            InstructorGridView.DataBind();
+        }
     }
 }

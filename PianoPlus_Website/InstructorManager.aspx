@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-lg-12">
-                <div class="ibox float-e-margins">
+                <div class="ibox float-e-margins" runat="server" id="InstructorProfile" visible="false">
                     <div class="ibox-title">
                         <h5>Instructor Profile</h5>
                         <div class="ibox-tools">
@@ -87,9 +87,9 @@
                         <div class="form-horizontal">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <asp:Label ID="Label1" runat="server" Text="Student ID" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Text="Instructor ID" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_studentID" runat="server" CssClass="form-control" placeholder="Instructor ID" Enabled="false"></asp:TextBox>
+                                        <asp:TextBox ID="txt_instructorID" runat="server" CssClass="form-control" placeholder="Instructor ID" Enabled="false"></asp:TextBox>
                                     </div>
                                 </div>
 

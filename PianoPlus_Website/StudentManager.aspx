@@ -59,6 +59,9 @@
                                     <asp:BoundField DataField="PassSalt" HeaderText="PassSalt" SortExpression="PassSalt" Visible="False" />
                                     <asp:BoundField DataField="CreateDate" HeaderText="Created Date" SortExpression="CreateDate" DataFormatString="{0:d}" />
                                 </Columns>
+                                <EmptyDataTemplate>
+                                    No data found
+                                </EmptyDataTemplate>
                             </asp:GridView>
                         </div>
                     </div>
@@ -66,7 +69,7 @@
             </div>
 
             <div class="col-lg-12">
-                <div class="ibox float-e-margins">
+                <div class="ibox float-e-margins" runat="server" visible="false" id="StudentProfile">
                     <div class="ibox-title">
                         <h5>Student Profile</h5>
                         <div class="ibox-tools">
