@@ -30,25 +30,24 @@ app.controller('myNgController', ['$scope', '$http', 'uiCalendarConfig', '$uibMo
     // will put this to a method 
     function populate() {
         clearCalendar();
+        
         $http.get('Dashboard.aspx/GetEvents', {
             cache: false,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            params: {},
-            data: {}
+            params: {}
         }).then(function (data) {
             $scope.events.slice(0, $scope.events.length);
             angular.forEach(data.data, function (value) {
-                console.log(value);
                 $scope.events.push({
-                    id : value.EventID,
+                    id: value.EventID,
                     title: value.Title,
                     description: value.Description,
                     start: new Date(parseInt(value.StartAt.substr(6))),
                     end: new Date(parseInt(value.EndAt.substr(6))),
                     allDay: value.IsFullDay,
                     stick: true
-                });              
+                });
             });
         });
     }

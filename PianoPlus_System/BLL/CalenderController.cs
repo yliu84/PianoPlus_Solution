@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
+using PianoPlus_Data.POCOS;
 using System.ComponentModel;
 
 namespace PianoPlus_System.BLL
@@ -13,12 +14,21 @@ namespace PianoPlus_System.BLL
     [DataObject]
     public class CalenderController
     {
-        public List<Events> GetEvents()
+        public List<CalendarEvents> GetEvents()
         {
             using(var context = new PianoPlusContext())
             {
-                var results = context.Events.OrderBy(a => a.StartAt).ToList();
-                return results;
+                var results = from x in context.Events
+                              select new CalendarEvents()
+                              {
+                                  EventID = x.EventID,
+                                  Title = x.Title,
+                                  Description = x.Description,
+                                  StartAt = x.StartAt,
+                                  EndAt = x.EndAt,
+                                  IsFullDay = x.IsFullDay
+                              };
+                return results.ToList();
             }
         }
         

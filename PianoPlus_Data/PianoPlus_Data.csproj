@@ -63,11 +63,10 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentClass.cs" />
+    <Compile Include="POCOS\CalendarEvents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="POCOS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

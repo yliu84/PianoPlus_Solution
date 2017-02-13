@@ -59,7 +59,7 @@
 
 <%-- JS --%>
     <script src="Scripts/Calendar/moment.js"></script>
-    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery-2.1.1.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="Scripts/Calendar/calendar.js"></script>
