@@ -18,6 +18,7 @@ namespace PianoPlus_Data
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CoursePayment> CoursePayments { get; set; }
+        public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<InstructorClassHistory> InstructorClassHistories { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }

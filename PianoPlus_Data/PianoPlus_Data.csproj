@@ -54,6 +54,7 @@
     <Compile Include="Entities\Blog.cs" />
     <Compile Include="Entities\Course.cs" />
     <Compile Include="Entities\CoursePayment.cs" />
+    <Compile Include="Entities\Events.cs" />
     <Compile Include="Entities\Instructor.cs" />
     <Compile Include="Entities\InstructorClassHistory.cs" />
     <Compile Include="Entities\Payment.cs" />

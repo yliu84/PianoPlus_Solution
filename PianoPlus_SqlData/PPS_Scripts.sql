@@ -404,7 +404,40 @@ CREATE TABLE CoursePayment
 	NOT NULL
 	CONSTRAINT CK_CoursePayment_LessonFee CHECK (LessonFee >= 0.00),
 
-	CONSTRAINT PK_CoursePayment_PaymentID_CourseCode PRIMARY KEY (PaymentID,CourseCode)
+	CONSTRAINT PK_CoursePayment_PaymentID_CourseCode PRIMARY KEY CLUSTERED (PaymentID,CourseCode)
 
 )
 
+CREATE TABLE Events
+(
+	EventID
+	INT IDENTITY(1,1)
+	NOT NULL
+	CONSTRAINT PK_Events_EventID PRIMARY KEY CLUSTERED,
+
+	InstructorID
+	INT
+	NOT NULL
+	CONSTRAINT FK_Events_InstructorID REFERENCES Instructor(InstructorID),
+
+	Title
+	NVARCHAR(25)
+	NOT NULL,
+
+	Description
+	NVARCHAR(200)
+	NULL,
+
+	StartAt
+	DATETIME
+	NOT NULL,
+
+	EndAt
+	DATETIME
+	NOT NULL,
+
+	IsFullDay
+	BIT
+	NOT NULL
+
+)
