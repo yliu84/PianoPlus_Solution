@@ -20,8 +20,6 @@ namespace PianoPlus_Data.Entities
         [StringLength(6)]
         public string CourseCode { get; set; }
 
-        public int InstructorID { get; set; }
-
         [Required]
         [StringLength(15)]
         public string CourseType { get; set; }
@@ -36,7 +34,6 @@ namespace PianoPlus_Data.Entities
 
         public int TotalSeats { get; set; }
 
-        public virtual Instructor Instructor { get; set; }
 
         public virtual ICollection<StudentClass> StudentClasses { get; set; }
 

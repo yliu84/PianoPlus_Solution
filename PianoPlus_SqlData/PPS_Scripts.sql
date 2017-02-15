@@ -165,11 +165,6 @@ CREATE TABLE Course
 	NOT NULL
 	CONSTRAINT PK_Course_CourseCode PRIMARY KEY CLUSTERED,
 
-	InstructorID
-	INT
-	NOT NULL
-	CONSTRAINT FK_Course_Instructor REFERENCES Instructor(InstructorID),
-
 	CourseType
 	NVARCHAR(15)
 	NOT NULL,
@@ -197,6 +192,11 @@ CREATE TABLE StudentClass
 	NOT NULL
 	CONSTRAINT FK_StudentClass_StudentID REFERENCES Student(StudentID),
 
+	InstructorID
+	INT
+	NOT NULL
+	CONSTRAINT FK_StudentClass_Instructor REFERENCES Instructor(InstructorID),
+
 	CourseCode
 	NVARCHAR(6)
 	NOT NULL
@@ -223,7 +223,7 @@ CREATE TABLE StudentClass
 	NVARCHAR(10)
 	NULL,
 
-	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime)
+	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime,InstructorID)
 )
 
 CREATE TABLE StudentClassHistory

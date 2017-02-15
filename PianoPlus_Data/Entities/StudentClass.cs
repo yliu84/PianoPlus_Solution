@@ -22,6 +22,10 @@ namespace PianoPlus_Data.Entities
 
         [Key]
         [Column(Order = 2)]
+        public int InstructorID { get; set; }
+
+        [Key]
+        [Column(Order = 3)]
         public DateTime StartTime { get; set; }
 
         public DateTime EndTime { get; set; }
@@ -36,6 +40,8 @@ namespace PianoPlus_Data.Entities
         public string Room { get; set; }
 
         public virtual Course Course { get; set; }
+
+        public virtual Instructor Instructor { get; set; }
 
         public virtual Student Student { get; set; }
     }
