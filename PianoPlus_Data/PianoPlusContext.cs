@@ -64,7 +64,7 @@ namespace PianoPlus_Data
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Instructor>()
-                .HasMany(e => e.Courses)
+                .HasMany(e => e.StudentClasses)
                 .WithRequired(e => e.Instructor)
                 .WillCascadeOnDelete(false);
 
