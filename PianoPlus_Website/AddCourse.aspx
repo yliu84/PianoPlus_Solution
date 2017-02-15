@@ -8,7 +8,7 @@
             <h2>Course</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a href="InstructorManager.aspx">All Instructors</a>
+                    <a href="#">All Courses</a>
                 </li>
                 <li>
                     <a href="#"><span class="text-navy">Add Course</span></a>
@@ -21,6 +21,7 @@
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
+                <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Add New Course</h5>
@@ -48,23 +49,24 @@
                                             ControlToValidate="txt_courseCode"></asp:RequiredFieldValidator>
                                     </div>
 
-
-
                                 </div>
 
                                 <div class="form-group">
 
-
-
                                     <asp:Label ID="CourseTypeLabel" runat="server" Text="Course Type" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_courseType" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="ddl_courseType" CssClass="form-control" runat="server">
+                                            <asp:ListItem Value="0">Select a Type</asp:ListItem>
+                                            <asp:ListItem Value="Individual">Individual</asp:ListItem>
+                                            <asp:ListItem Value="Group">Group</asp:ListItem>
+                                        </asp:DropDownList>
                                         <asp:RequiredFieldValidator ID="RequiredFieldCourseType"
+                                            InitialValue ="0"
                                             runat="server"
                                             ErrorMessage="Course type is required"
                                             Display="Dynamic"
                                             ForeColor="Red"
-                                            ControlToValidate="txt_courseType"></asp:RequiredFieldValidator>
+                                            ControlToValidate="ddl_courseType"></asp:RequiredFieldValidator>
                                     </div>
 
                                 </div>
@@ -84,7 +86,7 @@
                                 <div class="form-group">
                                     <asp:Label ID="Seatslabel" runat="server" Text="Total seats" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_totalSeats" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txt_totalSeats" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="TotalSeatsLabel"
                                             runat="server"
                                             ErrorMessage="Total seats is required"

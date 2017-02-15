@@ -22,17 +22,17 @@ public partial class AddCourse : System.Web.UI.Page
         CourseController courseController = new CourseController();
         newCourse = new Course();
         newCourse.CourseCode = txt_courseCode.Text;
-        newCourse.CourseType = txt_courseType.Text;
+        newCourse.CourseType = ddl_courseType.SelectedValue;
         newCourse.CourseName = txt_courseName.Text;
         newCourse.Active = "Y";
         newCourse.TotalSeats = int.Parse(txt_totalSeats.Text);
         if (courseController.AddNewCourse(newCourse) == true)
         {
-            Response.Write("Course added successfully");
+            MessageUserControl.ShowInfo("Course added successfully!");
         }
         else
         {
-            Response.Write("Can't add course");
+            MessageUserControl.ShowInfo("Cannot add new course, please try again!");
         }
     }
 }
