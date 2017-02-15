@@ -24,7 +24,6 @@ public partial class AddCourse : System.Web.UI.Page
         newCourse.CourseCode = txt_courseCode.Text;
         newCourse.CourseType = txt_courseType.Text;
         newCourse.CourseName = txt_courseName.Text;
-        newCourse.InstructorID = 2000;
         newCourse.Active = "Y";
         newCourse.TotalSeats = int.Parse(txt_totalSeats.Text);
         if (courseController.AddNewCourse(newCourse) == true)
