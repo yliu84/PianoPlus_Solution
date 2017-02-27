@@ -55,6 +55,11 @@
                         <li class="hvr-hang"><a class="page-scroll" href="#contact">CONTACT</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="blog-classic.html">BLOG</a></li>
                     </ul>
+
+                    <ul class="nav navbar-nav navbar-right nav-pills">
+                        <li class="hvr-hang"><a class="page-scroll" href="Login.aspx">Sign in</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="Register.aspx" style="color:mediumpurple">Sign Up</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
