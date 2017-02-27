@@ -26,17 +26,24 @@
     </div>
     <!-- Preloader-end -->
 
-    <form id="form1" runat="server">     
+    <form id="form1" runat="server">
+        <div class="clearfix">
+            <div class="container">
+                <div class="col-lg-12 text-center">
+                    <img alt="Brand" src="Images/logo.png" width="30%" />
+                </div>
+            </div>
+        </div>     
         <!-- Navbar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top" style="top:auto">
             <div class="container-fluid navig">
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                     </button>
-                    <a class="navbar-brand" style="padding-top:0" href="#">
+                    <%--<a class="navbar-brand" style="padding-top:0" href="Default.aspx">
                         <img alt="Brand" src="Images/logo3.png" />
-                    </a>
+                    </a>--%>
                     <p class="navbar-text" data-sr='wait 2s, then enter top and hustle 40px over 1.5s'></p>
                 </div>
 
@@ -52,6 +59,7 @@
             </div>
         </nav>
         <!--[navbar-end]-->
+        
 
     <div>
         <asp:ContentPlaceHolder id="MainContent" runat="server">
@@ -86,5 +94,28 @@
     <script src="Scripts/js/scrolling-nav.js"></script>
     <script src="Scripts/js/SSUhtml5Audio.js"></script>
     <script src="Scripts/js/javascript.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = "top {top: 0}";
+
+                if ($(window).scrollTop() >= 90) {
+                    $("nav").css("top","0");
+                }
+                else
+                {
+                    $("nav").css("top", "auto");
+                }
+
+            });
+
+        });
+
+            </script>
 </body>
 </html>
