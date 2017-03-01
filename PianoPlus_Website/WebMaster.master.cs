@@ -22,12 +22,13 @@ public partial class WebMaster : System.Web.UI.MasterPage
         }
 
     }
+
     protected void btn_logout_Click(object sender, EventArgs e)
     {
         Application.Lock();
-        ((List<string>)Application["Loggedin_Users"]).Remove(Session["email"].ToString());
+        ((List<string>)Application["Users"]).Remove(Session["Email"].ToString());
         Application.UnLock();
-        Session["email"] = null;
+        Session["Email"] = null;
         Response.Redirect("~/Default.aspx");
     }
 }

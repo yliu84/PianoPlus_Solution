@@ -14,6 +14,8 @@
                 CdnDebugPath = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js"
             });
 
+        Application["Users"] = new List<string>();
+
     }
     
     void Application_End(object sender, EventArgs e) 

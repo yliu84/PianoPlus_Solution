@@ -60,8 +60,8 @@
                     <li>
                         <a href="#"><i class="fa fa-book"></i><span class="nav-label">Course</span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">Find Course</a></li>
-                            <li><a href="#">Add Course</a></li>
+                            <li><a href="CourseManager.aspx">Find Course</a></li>
+                            <li><a href="AddCourse.aspx">Add Course</a></li>
                         </ul>
                     </li>
 

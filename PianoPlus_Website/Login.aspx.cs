@@ -37,7 +37,11 @@ public partial class Login : System.Web.UI.Page
                 Session["InstructorID"] = currentInstuctor.InstructorID;
                 Session["RoleID"] = currentInstuctor.RoleID;
 
-                Response.Redirect("~/Dashboard.aspx");
+                Application.Lock();
+                ((List<string>)Application["Users"]).Add(Session["Email"].ToString());
+                Application.UnLock();
+
+                Response.Redirect("~/Default.aspx");
             }
             else
             {
