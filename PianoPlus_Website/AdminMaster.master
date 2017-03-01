@@ -53,7 +53,7 @@
                         <a href="#"><i class="fa fa-mortar-board"></i><span class="nav-label">Instructor</span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="InstructorManager.aspx">Find Instructor</a></li>
-                            <li><a href="#">Add Instructor</a></li>
+                            <li><a href="AddInstructor.aspx">Add Instructor</a></li>
                         </ul>
                     </li>
 
