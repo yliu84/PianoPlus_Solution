@@ -28,7 +28,7 @@
 
     <form id="form1" runat="server">
         <div class="clearfix">
-            <div class="row" style="padding:3px;background-color:black; border-bottom:1px solid purple;box-shadow:rgba(153,0,255,0.4) 0px 0px 10px;margin-bottom:5px;">
+            <div class="row" style="padding:3px;background-color:black; border-bottom:1px solid purple;box-shadow:rgba(153,0,255,0.4) 0 0 10px;margin-bottom:5px;">
 
                 </div>
             <div class="container">
@@ -61,8 +61,18 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right nav-pills">
-                        <li class="hvr-hang"><a class="page-scroll" href="Login.aspx">Sign in</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="Register.aspx" style="color:mediumpurple">Sign Up</a></li>
+                        <li class="hvr-hang" id="li_signIn" runat="server"><a class="page-scroll" href="Login.aspx">Sign in</a></li>
+                        <li class="hvr-hang" id="li_signUp" runat="server"><a class="page-scroll" href="Register.aspx" style="color: blueviolet">Sign Up</a></li>
+                        <li runat="server" id="li_loggedin">
+                            <a runat="server" id="a_email" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">yangliu0127@gmail.com</a>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li><a href="/Account/Account_Home.aspx"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
+                                <li runat="server" id="li_admin"><a href="/Admin/Admin_Dashboard.aspx"><i class="fa fa-bar-chart" aria-hidden="true"></i>Admin</a></li>
+                                <li>
+                                    <asp:LinkButton runat="server" ID="btn_logout" OnClick="btn_logout_Click" ForeColor="Red"><i class="lnr lnr-exit"></i>Logout</asp:LinkButton>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
