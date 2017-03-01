@@ -28,7 +28,7 @@
 
     <form id="form1" runat="server">
         <div class="clearfix">
-            <div class="row" style="padding:5px;background-color:black; border-bottom:1px solid purple;box-shadow:rgba(153,0,255,0.4) 0px 0px 20px;margin-bottom:10px;">
+            <div class="row" style="padding:3px;background-color:black; border-bottom:1px solid purple;box-shadow:rgba(153,0,255,0.4) 0px 0px 10px;margin-bottom:5px;">
 
                 </div>
             <div class="container">
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left nav nav-pills">
+                    <ul class="nav navbar-nav navbar-left nav-pills">
                         <li class="active hvr-hang"><a class="page-scroll" href="#start">HOME</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="#about">ABOUT US</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="#albums">LESSONS</a></li>
