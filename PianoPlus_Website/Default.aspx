@@ -299,23 +299,23 @@
             <h2>Leave Us a Message</h2>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" required="required" />
+                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" />
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" required="required"  />
+                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" />
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message" required ="required"></textarea>
+                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message" ></textarea>
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
             </div>
             <div class="col-md-12 contact-send">
-                <button type="submit" name="submit" id="buttonContact" class="btn send hvr-shutter-out-vertical-contact-form">Send</button>
+                <asp:Button ID="buttonContact" runat="server" Text="Send" class="btn send hvr-shutter-out-vertical-contact-form" />
             </div>
         </div>
         <div class="col-md-4 lead" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
