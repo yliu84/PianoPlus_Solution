@@ -70,7 +70,7 @@
                                 <div class="form-group">
                                     <asp:Label ID="StartTimeLabel" runat="server" Text="Start Time" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_StartTime" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_StartTime" CssClass="form-control" runat="server" TextMode="Time"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldStartTime"
                                             runat="server"
                                             ErrorMessage="Start Time is required"
@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                     <asp:Label ID="EndTimeLabel" runat="server" Text="End Time" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_EndTime" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txt_EndTime" CssClass="form-control" runat="server" TextMode="Time"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldEndTime"
                                             runat="server"
                                             ErrorMessage="End Time is required"
@@ -107,7 +107,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group pull-right">
-                                        <asp:Button ID="btn_EnrollLesson" runat="server" CssClass="btn btn-success" Width="100px" Text="Enroll Lesson"></asp:Button>
+                                        <asp:Button ID="btn_EnrollLesson" runat="server" CssClass="btn btn-success" Width="150px" Text="Enroll Lesson" OnClick="btn_EnrollLesson_Click" ></asp:Button>
                                     </div>
                                 </div>
                             </div>
@@ -118,8 +118,36 @@
                                 <div class="form-group">
                                     <asp:TextBox ID="txt_CalenderDate" runat="server" Text="" Visible="false" />
                                     <asp:Calendar ID="calender_SelectDate" runat="server" OnSelectionChanged="calender_SelectDate_SelectionChanged"/>
+                                        <asp:RequiredFieldValidator ID="RequiredCalenderDate"
+                                            runat="server"
+                                            ErrorMessage="Must choose a date"
+                                            Display="Dynamic"
+                                            ForeColor="Red"
+                                            ControlToValidate="txt_CalenderDate"></asp:RequiredFieldValidator>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-horizontal">
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <asp:GridView ID="ScheduleGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID">
+                                <Columns>
+                                    <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
+                                    <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" visible="false"/>
+                                    <asp:BoundField DataField="CourseCode" HeaderText="Course Code" SortExpression="CourseCode" />
+                                    <asp:BoundField DataField="StartTime" HeaderText="Start Time" SortExpression="StartTime" />
+                                    <asp:BoundField DataField="EndTime" HeaderText="End Time" SortExpression="EndTime" />
+                                    <asp:BoundField DataField="DayOfWeek" HeaderText="Day Of Week" SortExpression="DayOfWeek" Visible="False"/>
+                                    <asp:BoundField DataField="Hours" HeaderText="Hours" SortExpression="Hours" Visible="False"/>
+                                    <asp:BoundField DataField="Room" HeaderText="Room" SortExpression="Room"/>
+                                </Columns>
+                                <EmptyDataTemplate>
+                                    No data found
+                                </EmptyDataTemplate>
+                            </asp:GridView>
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
@@ -205,7 +206,6 @@ namespace PianoPlus_System.BLL
             }
 
         }
-
         
     }
 }

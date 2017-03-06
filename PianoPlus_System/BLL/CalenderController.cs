@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
@@ -89,5 +90,36 @@ namespace PianoPlus_System.BLL
 
             return status;
         }
+        public List<StudentClass> GetInstructorScheduleForDay(int instructorID, DateTime day)
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                var results = (from lesson in context.StudentClasses
+                               where DbFunctions.TruncateTime(lesson.StartTime) == DbFunctions.TruncateTime(day)
+                               && lesson.InstructorID == instructorID
+                               select lesson
+                               ).ToList();
+                return results;
+
+            }
+        }
+        public bool AddStudentClass(StudentClass newLesson)
+        {
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    context.StudentClasses.Add(newLesson);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

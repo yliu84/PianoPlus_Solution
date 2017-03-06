@@ -46,3 +46,4 @@ namespace PianoPlus_Data.Entities
         public virtual Student Student { get; set; }
     }
 }
+

@@ -179,13 +179,13 @@ namespace PianoPlus_System.BLL
 
         public List<Student> Student_List()
         {
-            List<Student> studentList = new List<Student>();
+            List<Student> studentList = new List<Student>();            
 
             using (var context = new PianoPlusContext())
             {
                 var results = from students in context.Students
                               select students;
-
+                
 
 
                 return results.ToList();

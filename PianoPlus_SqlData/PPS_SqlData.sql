@@ -4,6 +4,9 @@ VALUES ('INS','Instructor')
 INSERT INTO Role (RoleID,Description)
 VALUES ('Adm','Administrator')
 
+INSERT INTO Course (CourseCode, CourseType, CourseName, Active, TotalSeats)
+VALUES ('TESTCO', 'testType', 'Test Course Name', 'y', 6)
+
 INSERT INTO Instructor (RoleID,FirstName,LastName,Email,Phone,Address,Province,City,PostalCode,Active,PassHash,PassSalt,CreateDate)
 VALUES ('Adm','Yang','Liu','admin@gmail.com','707080127','10047 108 St','AB','Edmonton','T5J 0B6','Y','1662743549E1C363A30E21FD624DBB8E','ZHpjNOJchhFUHgRuqDTTBA==','2017-01-29')
 
@@ -24,3 +27,6 @@ VALUES (2000,'Appointment','I have a appointment with Tom','2017/02/20 13:00:00'
 
 INSERT INTO Events (InstructorID, Title, Description, StartAt, EndAt, IsFullDay)
 VALUES (2000,'Birth Day','Today is my birth day','2017/02/22','2017/02/22', 1)
+
+INSERT INTO StudentClass (StudentID, InstructorID, CourseCode, StartTime, EndTime, DayOfWeek, Hours, Room)
+VALUES (2000, 2000, 'TESTCO', '2017/02/20 13:00:00', '2017/02/20 15:00:00', 'Monday', 2, '6B')
