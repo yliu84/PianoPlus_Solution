@@ -206,6 +206,55 @@ namespace PianoPlus_System.BLL
             }
 
         }
+
+        public List<StudentClass> GetInstructorScheduleForDay(int instructorID, DateTime day)
+        {
+            Instructor instructor = GetInstructorInfoByID(instructorID);
+            using (var context = new PianoPlusContext())
+            {
+                var results = (from lesson in context.StudentClasses
+                               where DbFunctions.TruncateTime(lesson.StartTime) == DbFunctions.TruncateTime(day)
+                               && lesson.InstructorID == instructorID
+                               select lesson
+                               ).ToList();
+                return results;
+
+            }
+        }
+        public bool AddStudentClass(StudentClass newLesson)
+        {
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    context.StudentClasses.Add(newLesson);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool IsConflictingTime(DateTime startTime, DateTime endTime)
+        {
+            bool conflict = false;
+            using (var context = new PianoPlusContext())
+            {
+                var resultCount = (from lesson in context.StudentClasses
+                                   where (lesson.StartTime > startTime && startTime > lesson.EndTime)
+                                   && (lesson.StartTime > endTime && endTime > lesson.EndTime)
+                                   select new
+                                   {
+                                       StudentClasses = lesson
+                                   }).Count();
+                if (resultCount > 0)
+                    conflict = true;
+            }
+            return conflict;
+        }
         
     }
 }

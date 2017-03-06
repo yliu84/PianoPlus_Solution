@@ -24,7 +24,7 @@
                 <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Add New Course</h5>
+                        <h5>Add New Lesson</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -135,7 +135,7 @@
                                 <Columns>
                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
                                     <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" visible="false"/>
-                                    <asp:BoundField DataField="CourseCode" HeaderText="Course Code" SortExpression="CourseCode" />
+                                    <asp:BoundField DataField="CourseCode" HeaderText="Activity / Course" SortExpression="CourseCode" />
                                     <asp:BoundField DataField="StartTime" HeaderText="Start Time" SortExpression="StartTime" />
                                     <asp:BoundField DataField="EndTime" HeaderText="End Time" SortExpression="EndTime" />
                                     <asp:BoundField DataField="DayOfWeek" HeaderText="Day Of Week" SortExpression="DayOfWeek" Visible="False"/>

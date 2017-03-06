@@ -23,7 +23,7 @@ public partial class ScheduleLesson : System.Web.UI.Page
     }
     private void PopulateDaySchedule(DateTime selectedDate)
     {
-        CalenderController instructorController = new CalenderController();
+        InstructorController instructorController = new InstructorController();
         ScheduleGridView.DataSource = instructorController.GetInstructorScheduleForDay(2000, selectedDate);
         ScheduleGridView.DataBind();        
     }
@@ -33,9 +33,50 @@ public partial class ScheduleLesson : System.Web.UI.Page
         string startTime = txt_StartTime.Text;
         string endTime = txt_EndTime.Text;
         string date = txt_CalenderDate.Text;
+        int studentID = Convert.ToInt32(txt_StudentID.Text);
+        int instructorID = 2000;
+        string courseCode= txt_CourseCode.Text;
         DateTime startDateTime = Convert.ToDateTime(date + " " + startTime);
         DateTime endDateTime = Convert.ToDateTime(date + " " + endTime);
         CalenderController calenderController = new CalenderController();
+
+        StudentClass lesson = new StudentClass();
+
+
+        StudentController studentController = new StudentController();
+        lesson.Student = studentController.GetStudentInfoByStudentID(studentID);
+        lesson.StudentID = studentID;
+
+        InstructorController instructorController = new InstructorController();
+        lesson.Instructor = instructorController.GetInstructorInfoByID(instructorID);
+        lesson.InstructorID = instructorID;
+
+        lesson.Room = room;
+        lesson.StartTime = startDateTime;
+        lesson.EndTime = endDateTime;
+
+        CourseController courseController = new CourseController();
+        lesson.Course = courseController.GetCourseInfoByCourseCode(courseCode);
+        lesson.CourseCode = courseCode;
+
+        lesson.DayOfWeek = startDateTime.DayOfWeek.ToString();
+        lesson.Hours = endDateTime.Hour - startDateTime.Hour;
+
+        if (instructorController.AddStudentClass(lesson))
+        {
+            MessageUserControl.ShowInfo("Lesson added");
+        }
+        else
+        {
+            MessageUserControl.ShowInfo("Lesson added failed");
+        }
+
+        //if (calenderController.IsConflictingTime(startDateTime, endDateTime))
+        //    MessageUserControl.ShowInfo("Timeslot conflicts with another appointment");
+        //else
+        //{
+        //    string studentID = txt_CalenderDate=
+        //}
 
         //PUT IN THE GODDAM CHECK HERE
     }
