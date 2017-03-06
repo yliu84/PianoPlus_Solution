@@ -66,6 +66,16 @@ namespace PianoPlus_Data.Entities
 
         public DateTime CreateDate { get; set; }
 
+        [NotMapped]
+        public string StudentName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+ 
+        }
+
         public virtual ICollection<InstructorClassHistory> InstructorClassHistories { get; set; }
 
         public virtual ICollection<Payment> Payments { get; set; }

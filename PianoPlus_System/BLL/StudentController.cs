@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
+using PianoPlus_Data.POCOS;
 using System.ComponentModel;
 
 namespace PianoPlus_System.BLL
@@ -177,21 +178,40 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public List<Student> Student_List()
-        {
-            List<Student> studentList = new List<Student>();            
+        public List<StudentInf> Student_List(string name)
+        {          
 
             using (var context = new PianoPlusContext())
             {
                 var results = from students in context.Students
-                              select students;
-                
+                              orderby students.LastName, students.FirstName
+                              select new StudentInf(){
+                                  FullName = students.FirstName + " " + students.LastName,
+                                  StudentID = students.StudentID,
+                                  Email = students.Email,
+                                  Phone =students.Phone,
+                                  Address = students.Address,
+                                  Province =students.Province,
+                                  City = students.City,
+                                  PostalCode =students.PostalCode,
+                                  Active =students.Active,
+                                  CreateDate = students.CreateDate
+
+                              };
+
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    results = results.Where(x => x.FullName.Contains(name));
+                }
 
 
                 return results.ToList();
 
                
             }
+
+            
         }
     }
 }
