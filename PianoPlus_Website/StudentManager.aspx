@@ -37,8 +37,15 @@
                     </div>
 
                     <div class="ibox-content">
+                        <div class="input-group col-lg-6">
+                            <asp:TextBox ID="txt_studentName" runat="server" CssClass="form-control" placeholder="Search student name"></asp:TextBox>
+                            <span class="input-group-btn">
+                                <asp:LinkButton ID="btn_search" runat="server" CssClass="btn btn-primary">Go!</asp:LinkButton>
+                            </span>
+                        </div>
+                       
                         <div class="table-responsive">
-                            <asp:GridView ID="StudentGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID" DataSourceID="ODSStudent">
+                            <asp:GridView ID="StudentGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID" DataSourceID="ODSStudent" AllowPaging="True">
                                 <Columns>
                                     <asp:TemplateField>
                                         <ItemTemplate>
@@ -46,8 +53,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
-                                    <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
-                                    <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
+                                    <asp:BoundField DataField="FullName" HeaderText="Student Name" SortExpression="FullName" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
                                     <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" Visible="False"/>
@@ -55,8 +61,6 @@
                                     <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" Visible="False"/>
                                     <asp:BoundField DataField="PostalCode" HeaderText="Postal Code" SortExpression="PostalCode" Visible="False"/>
                                     <asp:BoundField DataField="Active" HeaderText="Active" SortExpression="Active" />
-                                    <asp:BoundField DataField="PassHash" HeaderText="PassHash" SortExpression="PassHash" Visible="False" />
-                                    <asp:BoundField DataField="PassSalt" HeaderText="PassSalt" SortExpression="PassSalt" Visible="False" />
                                     <asp:BoundField DataField="CreateDate" HeaderText="Created Date" SortExpression="CreateDate" DataFormatString="{0:d}" />
                                 </Columns>
                                 <EmptyDataTemplate>
@@ -281,7 +285,11 @@
                 </div>
             </div>
         </div>
-        <asp:ObjectDataSource ID="ODSStudent" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Student_List" TypeName="PianoPlus_System.BLL.StudentController"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ODSStudent" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Student_List" TypeName="PianoPlus_System.BLL.StudentController">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txt_studentName" Name="name" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
     </div>
     
     <%--<script type="text/javascript">

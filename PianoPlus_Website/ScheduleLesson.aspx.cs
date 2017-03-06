@@ -80,4 +80,12 @@ public partial class ScheduleLesson : System.Web.UI.Page
 
         //PUT IN THE GODDAM CHECK HERE
     }
+    protected void btn_search_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void btn_select_Click(object sender, EventArgs e)
+    {
+
+    }
 }
