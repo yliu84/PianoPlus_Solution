@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CalenderController.cs" />
+    <Compile Include="BLL\ClassController.cs" />
     <Compile Include="BLL\CourseController.cs" />
     <Compile Include="BLL\InstructorController.cs" />
     <Compile Include="BLL\StudentController.cs" />

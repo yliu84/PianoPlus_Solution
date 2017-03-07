@@ -3,6 +3,9 @@
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+    <link href="Content/css/bootstrap-datepicker3.css" rel="stylesheet" />
+    <link href="Content/css/clockpicker.css" rel="stylesheet" />
+
 <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Class</h2>
@@ -17,7 +20,7 @@
         </div>
         <div class="col-lg-2"></div>
     </div>
-
+    <asp:ScriptManager runat="server" ID="ScriptManager" />
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">
@@ -78,6 +81,39 @@
                                                         </EmptyDataTemplate>
                                                     </asp:GridView>
                                                 </div>
+                                                <div class="col-lg-12">
+                                                    
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel2">
+                                                        <ContentTemplate>
+                                                            <div class="col-lg-6">
+                                                                <div class="form-group">
+                                                                    <asp:Label ID="Label5" runat="server" Text="Student ID" CssClass="col-lg-4 control-label"></asp:Label>
+                                                                    <div class="col-lg-8">
+                                                                        <asp:TextBox ID="txt_studentID" runat="server" CssClass="form-control" placeholder="Student ID" Enabled="false"></asp:TextBox>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <asp:Label ID="Label6" runat="server" Text="Student Name" CssClass="col-lg-4 control-label"></asp:Label>
+                                                                    <div class="col-lg-8">
+                                                                        <asp:TextBox ID="txt_name2" runat="server" CssClass="form-control" placeholder="Student Name" Enabled="false"></asp:TextBox>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ContentTemplate>
+                                                        <%--<Triggers>
+                                                            <asp:AsyncPostBackTrigger ControlID="btn_select" />
+                                                        </Triggers>--%>
+                                                    </asp:UpdatePanel>
+                                                    
+                                                    <div class="col-lg-6">
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 text-right">
+                                                    <asp:LinkButton ID="btn_next" runat="server" CssClass="btn btn-info" Width="150px">Select a Date</asp:LinkButton>
+                                                </div>
+                                                
                                             </div>
                                         </div>
 
@@ -85,7 +121,78 @@
                                             <div class="panel-body">
                                                 <h2>Select a date</h2>
 
+                                                <div class="col-lg-6">
+                                                    <div class="form-group" id="date1">
+                                                        <asp:Label CssClass="col-md-4 control-label" Text="Pick a Date" runat="server" />
+                                                        <div class="input-group date">
+                                                            <asp:TextBox ID="txt_date" runat="server" CssClass="form-control" OnTextChanged="txt_date_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                            <div class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-th"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="form-group">
+                                                        <asp:Label CssClass="col-md-4 control-label" Text="Start Time" runat="server" />
+                                                        <div class="input-group clockpicker" data-autoclose="true">
+                                                            
+                                                            <asp:TextBox ID="txt_startTime" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <span class="input-group-addon">
+                                                                <span class="fa fa-clock-o"></span>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <asp:Label CssClass="col-md-4 control-label" Text="End Time" runat="server" />
+                                                        <div class="input-group clockpicker" data-autoclose="true">
+                                                            
+                                                            <asp:TextBox ID="txt_endTime" runat="server" CssClass="form-control"></asp:TextBox>
+                                                            <span class="input-group-addon">
+                                                                <span class="fa fa-clock-o"></span>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel">
+                                                        <ContentTemplate>
+                                                            <div class="table-responsive">
+
+                                                                <asp:GridView ID="DailyClassGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StartTime">
+                                                                    <Columns>
+                                                                        <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
+                                                                        <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" Visible="false" />
+                                                                        <asp:BoundField DataField="CourseCode" HeaderText="Course Code" SortExpression="CourseCode" />
+                                                                        <asp:BoundField DataField="StartTime" HeaderText="Start Time" SortExpression="StartTime" DataFormatString="{0:T}" />
+                                                                        <asp:BoundField DataField="EndTime" HeaderText="End Time" SortExpression="EndTime" DataFormatString="{0:T}" />
+                                                                        <asp:BoundField DataField="DayOfWeek" HeaderText="Day Of Week" SortExpression="DayOfWeek" />
+                                                                        <asp:BoundField DataField="Hours" HeaderText="Hours" SortExpression="Hours" Visible="False" />
+
+                                                                    </Columns>
+                                                                    <EmptyDataTemplate>
+                                                                        No Class Found
+                                                                    </EmptyDataTemplate>
+                                                                </asp:GridView>
+
+                                                            </div>
+                                                        </ContentTemplate>
+                                                        <Triggers>
+                                                            <asp:AsyncPostBackTrigger ControlID="txt_date" />
+                                                        </Triggers>
+                                                    </asp:UpdatePanel>
+
+                                                </div>
+
+                                                <div class="col-lg-12 text-right">
+                                                    <asp:LinkButton ID="btn_back" runat="server" CssClass="btn btn-default" Width="150px">Back</asp:LinkButton>
+                                                    <asp:LinkButton ID="btn_save" runat="server" CssClass="btn btn-primary" Width="150px">Select Lesson</asp:LinkButton>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -93,9 +200,70 @@
                                             <div class="panel-body">
                                                 <h2>Enroll Class</h2>
 
-                                                <div class="form-group">
-                                                    <asp:Label ID="lbl_studentID" runat="server" Text="ID" CssClass="label-info col-lg-2"></asp:Label>
-                                                    <asp:Label ID="lbl_studentName" runat="server" Text="Name" CssClass="label-info col-lg-2"></asp:Label>
+                                                <div class="col-lg-6">
+                                                    
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label1" runat="server" Text="Class Date" CssClass="col-lg-3 control-label"></asp:Label>
+                                                        <div class="col-lg-9">
+                                                            <asp:TextBox ID="txt_selectedDate" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label2" runat="server" Text="Start Time" CssClass="col-lg-3 control-label"></asp:Label>
+                                                        <div class="col-lg-9">
+                                                            <asp:TextBox ID="txt_startT" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <asp:Label ID="RoomLabel" runat="server" Text="Room" CssClass="col-lg-3 control-label"></asp:Label>
+                                                        <div class="col-lg-9">
+                                                            <asp:TextBox ID="txt_Room" CssClass="form-control" runat="server"></asp:TextBox>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldRoom"
+                                                                runat="server"
+                                                                ErrorMessage="Roon is required"
+                                                                Display="Dynamic"
+                                                                ForeColor="Red"
+                                                                ControlToValidate="txt_Room"></asp:RequiredFieldValidator>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <asp:Label ID="lbl_studentName" runat="server" Text="Student Name" CssClass="col-lg-4 control-label" ></asp:Label>
+                                                        <div class="col-lg-8">
+                                                            <asp:TextBox ID="txt_name" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label3" runat="server" Text="End Time" CssClass="col-lg-4 control-label"></asp:Label>
+                                                        <div class="col-lg-8">
+                                                            <asp:TextBox ID="txt_endT" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <asp:Label ID="Label4" runat="server" Text="Course" CssClass="col-lg-4 control-label"></asp:Label>
+                                                        <div class="col-lg-8">
+                                                            <asp:DropDownList ID="ddl_course" runat="server" CssClass="form-control" AppendDataBoundItems="true">
+                                                                <asp:ListItem Value="0">Select a Course</asp:ListItem>
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-6"></div>
+                                                    <div class="col-lg-6 text-right">
+                                                        <asp:LinkButton ID="btn_back2" runat="server" CssClass="btn btn-default" Width="150px">Back</asp:LinkButton>
+                                                        <asp:LinkButton ID="btn_submit" runat="server" CssClass="btn btn-primary" Width="150px">Submit</asp:LinkButton>
+                                                    </div>
                                                 </div>
 
 
@@ -105,118 +273,7 @@
 
                                 </div>
 
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <asp:Label ID="StudentIDLabel" runat="server" Text="Student ID" CssClass="col-lg-3 control-label"></asp:Label>
-                                        <div class="col-lg-9">
-                                            <asp:TextBox ID="txt_StudentID" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldStudentID"
-                                                runat="server"
-                                                ErrorMessage="Student ID is required"
-                                                Display="Dynamic"
-                                                ForeColor="Red"
-                                                ControlToValidate="txt_StudentID"></asp:RequiredFieldValidator>
-                                        </div>
 
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <asp:Label ID="CourseCodeLabel" runat="server" Text="Course Code" CssClass="col-lg-3 control-label"></asp:Label>
-                                        <div class="col-lg-9">
-                                            <asp:TextBox ID="txt_CourseCode" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldCourseCode"
-                                                InitialValue="0"
-                                                runat="server"
-                                                ErrorMessage="Course code is required"
-                                                Display="Dynamic"
-                                                ForeColor="Red"
-                                                ControlToValidate="txt_CourseCode"></asp:RequiredFieldValidator>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        <asp:Label ID="StartTimeLabel" runat="server" Text="Start Time" CssClass="col-lg-3 control-label"></asp:Label>
-                                        <div class="col-lg-9">
-                                            <asp:TextBox ID="txt_StartTime" CssClass="form-control" runat="server" TextMode="Time"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldStartTime"
-                                                runat="server"
-                                                ErrorMessage="Start Time is required"
-                                                Display="Dynamic"
-                                                ForeColor="Red"
-                                                ControlToValidate="txt_StartTime"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:Label ID="EndTimeLabel" runat="server" Text="End Time" CssClass="col-lg-3 control-label"></asp:Label>
-                                        <div class="col-lg-9">
-                                            <asp:TextBox ID="txt_EndTime" CssClass="form-control" runat="server" TextMode="Time"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldEndTime"
-                                                runat="server"
-                                                ErrorMessage="End Time is required"
-                                                Display="Dynamic"
-                                                ForeColor="Red"
-                                                ControlToValidate="txt_EndTime"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <asp:Label ID="RoomLabel" runat="server" Text="Room" CssClass="col-lg-3 control-label"></asp:Label>
-                                        <div class="col-lg-9">
-                                            <asp:TextBox ID="txt_Room" CssClass="form-control" runat="server"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldRoom"
-                                                runat="server"
-                                                ErrorMessage="Roon is required"
-                                                Display="Dynamic"
-                                                ForeColor="Red"
-                                                ControlToValidate="txt_Room"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group pull-right">
-                                            <asp:Button ID="btn_EnrollLesson" runat="server" CssClass="btn btn-success" Width="150px" Text="Enroll Lesson" OnClick="btn_EnrollLesson_Click"></asp:Button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <asp:Label ID="SelectDateLabel" runat="server" Text="Select Date" CssClass="col-lg-3 control-label" />
-                                    </div>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="txt_CalenderDate" runat="server" Text="" Visible="false" />
-                                        <asp:Calendar ID="calender_SelectDate" runat="server" OnSelectionChanged="calender_SelectDate_SelectionChanged" />
-                                        <asp:RequiredFieldValidator ID="RequiredCalenderDate"
-                                            runat="server"
-                                            ErrorMessage="Must choose a date"
-                                            Display="Dynamic"
-                                            ForeColor="Red"
-                                            ControlToValidate="txt_CalenderDate"></asp:RequiredFieldValidator>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-horizontal">
-                                <div class="ibox-content">
-                                    <div class="table-responsive">
-                                        <asp:GridView ID="ScheduleGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID">
-                                            <Columns>
-                                                <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
-                                                <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" Visible="false" />
-                                                <asp:BoundField DataField="CourseCode" HeaderText="Course Code" SortExpression="CourseCode" />
-                                                <asp:BoundField DataField="StartTime" HeaderText="Start Time" SortExpression="StartTime" />
-                                                <asp:BoundField DataField="EndTime" HeaderText="End Time" SortExpression="EndTime" />
-                                                <asp:BoundField DataField="DayOfWeek" HeaderText="Day Of Week" SortExpression="DayOfWeek" Visible="False" />
-                                                <asp:BoundField DataField="Hours" HeaderText="Hours" SortExpression="Hours" Visible="False" />
-                                                <asp:BoundField DataField="Room" HeaderText="Room" SortExpression="Room" />
-                                            </Columns>
-                                            <EmptyDataTemplate>
-                                                No data found
-                                            </EmptyDataTemplate>
-                                        </asp:GridView>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -230,5 +287,22 @@
             <asp:ControlParameter ControlID="txt_studentName" Name="name" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    <script src="Scripts/js/jquery-1.11.2.min.js"></script>
+    <script src="Scripts/js/bootstrap-datepicker.js"></script>
+    <script src="Scripts/js/clockpicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+    $('.clockpicker').clockpicker();
+        })
+    </script>
+    
 </asp:Content>
 
