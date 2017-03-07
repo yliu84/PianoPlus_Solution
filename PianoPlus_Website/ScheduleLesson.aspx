@@ -27,7 +27,7 @@
                 <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Add New Course</h5>
+                        <h5>Add New Lesson</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -82,7 +82,7 @@
                                                     </asp:GridView>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    
+
                                                     <asp:UpdatePanel runat="server" ID="UpdatePanel2">
                                                         <ContentTemplate>
                                                             <div class="col-lg-6">
@@ -105,15 +105,14 @@
                                                             <asp:AsyncPostBackTrigger ControlID="btn_select" />
                                                         </Triggers>--%>
                                                     </asp:UpdatePanel>
-                                                    
-                                                    <div class="col-lg-6">
 
+                                                    <div class="col-lg-6">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 text-right">
                                                     <asp:LinkButton ID="btn_next" runat="server" CssClass="btn btn-info" Width="150px">Select a Date</asp:LinkButton>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
 
@@ -135,7 +134,7 @@
                                                     <div class="form-group">
                                                         <asp:Label CssClass="col-md-4 control-label" Text="Start Time" runat="server" />
                                                         <div class="input-group clockpicker" data-autoclose="true">
-                                                            
+
                                                             <asp:TextBox ID="txt_startTime" runat="server" CssClass="form-control"></asp:TextBox>
                                                             <span class="input-group-addon">
                                                                 <span class="fa fa-clock-o"></span>
@@ -147,7 +146,7 @@
                                                     <div class="form-group">
                                                         <asp:Label CssClass="col-md-4 control-label" Text="End Time" runat="server" />
                                                         <div class="input-group clockpicker" data-autoclose="true">
-                                                            
+
                                                             <asp:TextBox ID="txt_endTime" runat="server" CssClass="form-control"></asp:TextBox>
                                                             <span class="input-group-addon">
                                                                 <span class="fa fa-clock-o"></span>
@@ -159,7 +158,7 @@
                                                 </div>
 
                                                 <div class="col-lg-6">
-                                                    
+
                                                     <asp:UpdatePanel runat="server" ID="UpdatePanel">
                                                         <ContentTemplate>
                                                             <div class="table-responsive">
@@ -201,7 +200,7 @@
                                                 <h2>Enroll Class</h2>
 
                                                 <div class="col-lg-6">
-                                                    
+
                                                     <div class="form-group">
                                                         <asp:Label ID="Label1" runat="server" Text="Class Date" CssClass="col-lg-3 control-label"></asp:Label>
                                                         <div class="col-lg-9">
@@ -230,10 +229,11 @@
                                                     </div>
 
                                                 </div>
-                                                
+
+
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <asp:Label ID="lbl_studentName" runat="server" Text="Student Name" CssClass="col-lg-4 control-label" ></asp:Label>
+                                                        <asp:Label ID="lbl_studentName" runat="server" Text="Student Name" CssClass="col-lg-4 control-label"></asp:Label>
                                                         <div class="col-lg-8">
                                                             <asp:TextBox ID="txt_name" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
                                                         </div>
@@ -257,7 +257,7 @@
 
 
                                                 </div>
-                                                
+
                                                 <div class="col-lg-12">
                                                     <div class="col-lg-6"></div>
                                                     <div class="col-lg-6 text-right">
@@ -266,18 +266,16 @@
                                                     </div>
                                                 </div>
 
-
                                             </div>
                                         </div>
+
                                     </div>
-
                                 </div>
-
 
                             </div>
                         </div>
                     </div>
-                </div>
+        </div>
             </div>
         </div>
     </div>
@@ -304,5 +302,6 @@
         })
     </script>
     
+
 </asp:Content>
 

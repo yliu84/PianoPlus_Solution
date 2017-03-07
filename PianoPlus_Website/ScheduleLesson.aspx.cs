@@ -24,31 +24,9 @@ public partial class ScheduleLesson : System.Web.UI.Page
             ddl_course.DataBind();
         }
     }
-    //protected void calender_SelectDate_SelectionChanged(object sender, EventArgs e)
-    //{
-    //    txt_CalenderDate.Text = calender_SelectDate.SelectedDate.ToLongDateString();
-    //    PopulateDaySchedule(calender_SelectDate.SelectedDate);
-    //}
-    //private void PopulateDaySchedule(DateTime selectedDate)
-    //{
-    //    CalenderController instructorController = new CalenderController();
-    //    ScheduleGridView.DataSource = instructorController.GetInstructorScheduleForDay(2000, selectedDate);
-    //    ScheduleGridView.DataBind();        
-    //}
-    //protected void btn_EnrollLesson_Click(object sender, EventArgs e)
-    //{
-    //    string room = txt_Room.Text;
-    //    string startTime = txt_StartTime.Text;
-    //    string endTime = txt_EndTime.Text;
-    //    string date = txt_CalenderDate.Text;
-    //    DateTime startDateTime = Convert.ToDateTime(date + " " + startTime);
-    //    DateTime endDateTime = Convert.ToDateTime(date + " " + endTime);
-    //    CalenderController calenderController = new CalenderController();
 
-    //    //PUT IN THE GODDAM CHECK HERE
-    //}
+    protected void btn_search_Click(object sender, EventArgs e)
 
-    protected void btn_select_Click(object sender, EventArgs e)
     {
         int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
         int studentID = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
@@ -79,5 +57,9 @@ public partial class ScheduleLesson : System.Web.UI.Page
             DailyClassGridView.DataSource = classList;
             DailyClassGridView.DataBind();
         }
+    }
+    protected void btn_select_Click(object sender, EventArgs e)
+    {
+
     }
 }
