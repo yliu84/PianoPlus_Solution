@@ -25,7 +25,7 @@ public partial class ScheduleLesson : System.Web.UI.Page
         }
     }
 
-    protected void btn_search_Click(object sender, EventArgs e)
+    protected void btn_select_Click(object sender, EventArgs e)
 
     {
         int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
@@ -38,6 +38,7 @@ public partial class ScheduleLesson : System.Web.UI.Page
         {
             txt_studentID.Text = studentID.ToString();
             txt_name2.Text = currentStudent.FirstName + " " + currentStudent.LastName;
+            UpdatePanel2.Update();
         }
     }
     protected void txt_date_TextChanged(object sender, EventArgs e)
@@ -58,7 +59,62 @@ public partial class ScheduleLesson : System.Web.UI.Page
             DailyClassGridView.DataBind();
         }
     }
-    protected void btn_select_Click(object sender, EventArgs e)
+
+    protected void btn_next_Click(object sender, EventArgs e)
+    {
+        step1.Attributes["class"] = "disabled";
+        step2.Attributes["class"] = "active";
+        step3.Attributes["class"] = "disabled";
+
+        tabTwo.Attributes.Add("class", "active");
+        tabOne.Visible = false;
+        tabTwo.Visible = true;
+        tabThree.Visible = false;
+
+
+
+    }
+    protected void btn_back_Click(object sender, EventArgs e)
+    {
+        step1.Attributes["class"] = "active";
+        step2.Attributes["class"] = "disabled";
+        step3.Attributes["class"] = "disabled";
+
+        tabOne.Visible = true;
+        tabTwo.Visible = false;
+        tabThree.Visible = false;
+    }
+    protected void btn_save_Click(object sender, EventArgs e)
+    {
+        if(Page.IsValid)
+        {
+            step1.Attributes["class"] = "disabled";
+            step2.Attributes["class"] = "disabled";
+            step3.Attributes["class"] = "active";
+
+            tabThree.Attributes.Add("class", "active");
+            tabOne.Visible = false;
+            tabTwo.Visible = false;
+            tabThree.Visible = true;
+
+            txt_name.Text = txt_name2.Text;
+            txt_selectedDate.Text = txt_date.Text;
+            txt_startT.Text = txt_startTime.Text;
+            txt_endT.Text = txt_endTime.Text;
+        }
+        
+    }
+    protected void btn_back2_Click(object sender, EventArgs e)
+    {
+        step1.Attributes["class"] = "disabled";
+        step2.Attributes["class"] = "active";
+        step3.Attributes["class"] = "disabled";
+
+        tabOne.Visible = false;
+        tabTwo.Visible = true;
+        tabThree.Visible = false;
+    }
+    protected void btn_submit_Click(object sender, EventArgs e)
     {
 
     }

@@ -14,7 +14,7 @@
                     <a href="#">All Classes</a>
                 </li>
                 <li>
-                    <a href="#"><span class="text-navy">Schedule Class</span></a>
+                    <a href="#"><span class="text-navy">Add Class</span></a>
                 </li>
             </ol>
         </div>
@@ -27,7 +27,7 @@
                 <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Add New Lesson</h5>
+                        <h5>Add New Class</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -42,13 +42,13 @@
                             <div class="col-lg-12">
                                 <div class="tabs-container">
                                     <ul class="nav nav-tabs">
-                                        <li class="active"><a data-toggle="tab" href="#tab-1">Find Student</a></li>
-                                        <li class=""><a data-toggle="tab" href="#tab-2">Pick Time</a></li>
-                                        <li class=""><a data-toggle="tab" href="#tab-3">Schedule Class</a></li>
+                                        <li class="active" runat="server" id="step1"><a href="#tabOne">Find Student</a></li>
+                                        <li class="disabled" runat="server" id="step2"><a href="#tabTwo">Pick Time</a></li>
+                                        <li class="disabled" runat="server" id="step3"><a href="#tabThree">Schedule Class</a></li>
                                     </ul>
 
-                                    <div class="tab-content">
-                                        <div id="tab-1" class="tab-pane active">
+                                    <div class="tab-content" runat="server">
+                                        <div id="tabOne" class="tab-pane active" runat="server">
                                             <div class="panel-body">
                                                 <div class="input-group col-lg-6">
                                                     <asp:TextBox ID="txt_studentName" runat="server" CssClass="form-control" placeholder="Search student name"></asp:TextBox>
@@ -83,7 +83,7 @@
                                                 </div>
                                                 <div class="col-lg-12">
 
-                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel2">
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel2" UpdateMode="Conditional">
                                                         <ContentTemplate>
                                                             <div class="col-lg-6">
                                                                 <div class="form-group">
@@ -110,13 +110,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 text-right">
-                                                    <asp:LinkButton ID="btn_next" runat="server" CssClass="btn btn-info" Width="150px">Select a Date</asp:LinkButton>
+                                                    <asp:LinkButton ID="btn_next" runat="server" CssClass="btn btn-info" Width="150px" OnClick="btn_next_Click">Select a Date</asp:LinkButton>
                                                 </div>
 
                                             </div>
                                         </div>
 
-                                        <div id="tab-2" class="tab-pane">
+                                        <div id="tabTwo" class="tab-pane" runat="server">
                                             <div class="panel-body">
                                                 <h2>Select a date</h2>
 
@@ -128,19 +128,32 @@
                                                             <div class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-th"></span>
                                                             </div>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldDate"
+                                                                runat="server"
+                                                                ErrorMessage="Date is required"
+                                                                ValidationGroup ="time"
+                                                                Display="Dynamic"
+                                                                ForeColor="Red"
+                                                                ControlToValidate="txt_date"></asp:RequiredFieldValidator>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
                                                         <asp:Label CssClass="col-md-4 control-label" Text="Start Time" runat="server" />
                                                         <div class="input-group clockpicker" data-autoclose="true">
-
                                                             <asp:TextBox ID="txt_startTime" runat="server" CssClass="form-control"></asp:TextBox>
-                                                            <span class="input-group-addon">
+                                                            <div class="input-group-addon">
                                                                 <span class="fa fa-clock-o"></span>
-                                                            </span>
-
+                                                            </div>
+                                                                                                              
                                                         </div>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldStartTime"
+                                                                runat="server"
+                                                                ErrorMessage="Start time is required"
+                                                                ValidationGroup ="time"
+                                                                Display="Dynamic"
+                                                                ForeColor="Red"
+                                                                ControlToValidate="txt_startTime"></asp:RequiredFieldValidator> 
                                                     </div>
 
                                                     <div class="form-group">
@@ -148,11 +161,18 @@
                                                         <div class="input-group clockpicker" data-autoclose="true">
 
                                                             <asp:TextBox ID="txt_endTime" runat="server" CssClass="form-control"></asp:TextBox>
-                                                            <span class="input-group-addon">
+                                                            <div class="input-group-addon">
                                                                 <span class="fa fa-clock-o"></span>
-                                                            </span>
-
+                                                            </div>
+                                                                                                                 
                                                         </div>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldEndTime"
+                                                                runat="server"
+                                                                ErrorMessage="End time is required"
+                                                                ValidationGroup ="time"
+                                                                Display="Dynamic"
+                                                                ForeColor="Red"
+                                                                ControlToValidate="txt_endTime"></asp:RequiredFieldValidator>  
                                                     </div>
 
                                                 </div>
@@ -189,13 +209,13 @@
                                                 </div>
 
                                                 <div class="col-lg-12 text-right">
-                                                    <asp:LinkButton ID="btn_back" runat="server" CssClass="btn btn-default" Width="150px">Back</asp:LinkButton>
-                                                    <asp:LinkButton ID="btn_save" runat="server" CssClass="btn btn-primary" Width="150px">Select Lesson</asp:LinkButton>
+                                                    <asp:LinkButton ID="btn_back" runat="server" CssClass="btn btn-default" Width="150px" CausesValidation="false" OnClick="btn_back_Click">Back</asp:LinkButton>
+                                                    <asp:LinkButton ID="btn_save" runat="server" CssClass="btn btn-primary" Width="150px" ValidationGroup ="time" OnClick="btn_save_Click">Select Lesson</asp:LinkButton>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div id="tab-3" class="tab-pane">
+                                        <div id="tabThree" class="tab-pane" runat="server">
                                             <div class="panel-body">
                                                 <h2>Enroll Class</h2>
 
@@ -221,7 +241,8 @@
                                                             <asp:TextBox ID="txt_Room" CssClass="form-control" runat="server"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="RequiredFieldRoom"
                                                                 runat="server"
-                                                                ErrorMessage="Roon is required"
+                                                                ErrorMessage="Room is required"
+                                                                ValidationGroup ="schedule"
                                                                 Display="Dynamic"
                                                                 ForeColor="Red"
                                                                 ControlToValidate="txt_Room"></asp:RequiredFieldValidator>
@@ -252,6 +273,14 @@
                                                             <asp:DropDownList ID="ddl_course" runat="server" CssClass="form-control" AppendDataBoundItems="true">
                                                                 <asp:ListItem Value="0">Select a Course</asp:ListItem>
                                                             </asp:DropDownList>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldCourse"
+                                                                runat="server"
+                                                                ErrorMessage="Course is required"
+                                                                InitialValue ="0"
+                                                                ValidationGroup ="schedule"
+                                                                Display="Dynamic"
+                                                                ForeColor="Red"
+                                                                ControlToValidate="ddl_course"></asp:RequiredFieldValidator>
                                                         </div>
                                                     </div>
 
@@ -261,8 +290,8 @@
                                                 <div class="col-lg-12">
                                                     <div class="col-lg-6"></div>
                                                     <div class="col-lg-6 text-right">
-                                                        <asp:LinkButton ID="btn_back2" runat="server" CssClass="btn btn-default" Width="150px">Back</asp:LinkButton>
-                                                        <asp:LinkButton ID="btn_submit" runat="server" CssClass="btn btn-primary" Width="150px">Submit</asp:LinkButton>
+                                                        <asp:LinkButton ID="btn_back2" runat="server" CssClass="btn btn-default" Width="150px" CausesValidation="false" OnClick="btn_back2_Click">Back</asp:LinkButton>
+                                                        <asp:LinkButton ID="btn_submit" runat="server" CssClass="btn btn-primary" Width="150px" ValidationGroup ="schedule" OnClick="btn_submit_Click">Submit</asp:LinkButton>
                                                     </div>
                                                 </div>
 
