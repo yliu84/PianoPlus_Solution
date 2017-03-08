@@ -173,7 +173,18 @@
                                                                 ValidationGroup ="time"
                                                                 Display="Dynamic"
                                                                 ForeColor="Red"
-                                                                ControlToValidate="txt_endTime"></asp:RequiredFieldValidator>  
+                                                                ControlToValidate="txt_endTime"></asp:RequiredFieldValidator>
+                                                        <asp:CompareValidator ID="CompareTime" 
+                                                                runat="server" 
+                                                                ErrorMessage="The start time cannot be greater than end time"
+                                                                ControlToCompare="txt_startTime"
+                                                                ControlToValidate="txt_endTime"
+                                                                ForeColor="Red"
+                                                                Display="Dynamic"
+                                                                ValidationGroup ="time"
+                                                                Operator="GreaterThan">
+
+                                                        </asp:CompareValidator>  
                                                     </div>
 
                                                 </div>

@@ -91,7 +91,7 @@ namespace PianoPlus_System.BLL
 
                 var resultOne = oldClass.Where(x => x.StudentID == newClass.StudentID && x.StartTime == newClass.StartTime && newClass.EndTime == x.EndTime && x.CourseCode == newClass.CourseCode);
 
-                var resultTwo = oldClass.Where(x => x.StartTime > newClass.StartTime && newClass.EndTime > x.StartTime && newClass.EndTime < x.EndTime);
+                var resultTwo = oldClass.Where(x => x.StartTime > newClass.StartTime && newClass.EndTime > x.StartTime);
 
                 var resutThree = oldClass.Where(x => newClass.StartTime > x.StartTime && newClass.StartTime < x.EndTime);
 
