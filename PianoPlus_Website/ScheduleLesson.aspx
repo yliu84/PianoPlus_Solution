@@ -21,6 +21,7 @@
         <div class="col-lg-2"></div>
     </div>
     <asp:ScriptManager runat="server" ID="ScriptManager" />
+    <uc1:MessageUserControl runat="server" ID="MessageUserControl1" />
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-12">

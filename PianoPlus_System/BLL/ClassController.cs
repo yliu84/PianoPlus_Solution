@@ -28,5 +28,24 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public bool AddClass(StudentClass newClass)
+        {
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    context.StudentClasses.Add(newClass);
+
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+
     }
 }

@@ -116,6 +116,61 @@ public partial class ScheduleLesson : System.Web.UI.Page
     }
     protected void btn_submit_Click(object sender, EventArgs e)
     {
+        StudentClass newClass = null;
+        ClassController classController = new ClassController();
 
+        if(Page.IsValid)
+        {
+            int studentID = int.Parse(txt_studentID.Text);
+            int instructorID = 2000;
+            string courseCode = ddl_course.SelectedValue;
+            DateTime date = DateTime.Parse(txt_date.Text);
+            DateTime startTime = DateTime.Parse(txt_date.Text + " " + txt_startTime.Text);
+            DateTime endTime = DateTime.Parse(txt_date.Text + " " + txt_endTime.Text);
+            string dayOfWeek = (date.DayOfWeek).ToString();
+            double hours = endTime.Subtract(startTime).TotalHours;
+            string room = txt_Room.Text;
+
+            newClass = new StudentClass();
+            newClass.StudentID = studentID;
+            newClass.InstructorID = instructorID;
+            newClass.CourseCode = courseCode;
+            newClass.StartTime = startTime;
+            newClass.EndTime = endTime;
+            newClass.DayOfWeek = dayOfWeek;
+            newClass.Hours = hours;
+            newClass.Room = room;
+
+            MessageUserControl.TryRun(() =>
+            {
+                classController.AddClass(newClass);
+
+                step1.Attributes["class"] = "active";
+                step2.Attributes["class"] = "disabled";
+                step3.Attributes["class"] = "disabled";
+
+                tabOne.Visible = true;
+                tabTwo.Visible = false;
+                tabThree.Visible = false;
+                reset();
+
+            }, "Success", "New class added");
+        }
+    }
+
+    protected void reset()
+    {
+        txt_name.Text = "";
+        txt_name2.Text = "";
+        txt_studentID.Text = "";
+        txt_startTime.Text = "";
+        txt_startT.Text = "";
+        txt_endTime.Text = "";
+        txt_endT.Text = "";
+        txt_date.Text = "";
+        txt_selectedDate.Text = "";
+        txt_Room.Text = "";
+        ddl_course.SelectedValue = "0";
+        txt_studentName.Text = "";
     }
 }
