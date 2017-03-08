@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
+using PianoPlus_Data.POCOS;
 using System.ComponentModel;
 using System.Data.Entity;
+
 
 namespace PianoPlus_System.BLL
 {
@@ -25,6 +27,33 @@ namespace PianoPlus_System.BLL
                 return resutls.ToList();
                               
 
+            }
+        }
+
+        public List<ClassInfo> Class_List(DateTime? startDay, DateTime? endDay, int? instructorID)
+        {
+            using (var context = new PianoPlusContext())
+            {
+                var results = from i in context.StudentClasses
+                              select new ClassInfo()
+                              {                                
+                                  StudentName = i.Student.FirstName + " " + i.Student.LastName,
+                                  InstructorName = i.Instructor.FirstName + " " + i.Instructor.LastName,
+                                  Course = i.Course.CourseName,
+                                  StartTime = i.StartTime,
+                                  EndTime = i.EndTime,
+                                  DayOfWeek = i.DayOfWeek,
+                                  Hours = i.Hours,
+                                  Room = i.Room
+
+                              };
+
+                if (startDay != null && endDay != null)
+                {
+                    results = results.Where(x => x.StartTime >= startDay && x.EndTime <= endDay);
+                }
+
+                return results.ToList();
             }
         }
 

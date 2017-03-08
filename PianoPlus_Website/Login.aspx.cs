@@ -36,6 +36,7 @@ public partial class Login : System.Web.UI.Page
                 Session["Email"] = currentInstuctor.Email;
                 Session["InstructorID"] = currentInstuctor.InstructorID;
                 Session["RoleID"] = currentInstuctor.RoleID;
+                Session["Name"] = currentInstuctor.FirstName + " " + currentInstuctor.LastName;
 
                 Application.Lock();
                 ((List<string>)Application["Users"]).Add(Session["Email"].ToString());

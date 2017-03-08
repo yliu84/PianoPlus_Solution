@@ -64,6 +64,7 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentClass.cs" />
     <Compile Include="POCOS\CalendarEvents.cs" />
+    <Compile Include="POCOS\ClassInfo.cs" />
     <Compile Include="POCOS\StudentInf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

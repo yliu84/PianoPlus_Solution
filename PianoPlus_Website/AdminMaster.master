@@ -21,8 +21,11 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">FirstName</strong>
-                                </span> <span class="text-muted text-xs block">Instructor <b class="caret"></b></span> </span>
+                                <span class="clear">
+                                    <asp:Label ID="lbl_name" runat="server" CssClass="block m-t-xs"> 
+                                        <strong class="font-bold">FirstName</strong>
+                                    </asp:Label>
+                                    <span class="text-muted text-xs block">Instructor <b class="caret"></b></span></span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="#">Profile</a></li>
@@ -43,30 +46,30 @@
 
                     <li>
                         <a href="StudentManager.aspx"><i class="fa fa-users"></i><span class="nav-label">Student</span></a>
-                        <ul class="nav nav-second-level">
+                        <%--<ul class="nav nav-second-level">
                             <li><a href="StudentManager.aspx">Find Student</a></li>
                             <li><a href="AddStudent.aspx">Add Student</a></li>
-                        </ul>
+                        </ul>--%>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-mortar-board"></i><span class="nav-label">Instructor</span></a>
-                        <ul class="nav nav-second-level">
+                        <a href="InstructorManager.aspx"><i class="fa fa-mortar-board"></i><span class="nav-label">Instructor</span></a>
+                        <%--<ul class="nav nav-second-level">
                             <li><a href="InstructorManager.aspx">Find Instructor</a></li>
                             <li><a href="AddInstructor.aspx">Add Instructor</a></li>
-                        </ul>
+                        </ul>--%>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-book"></i><span class="nav-label">Course</span></a>
-                        <ul class="nav nav-second-level">
+                        <a href="CourseManager.aspx"><i class="fa fa-book"></i><span class="nav-label">Course</span></a>
+                        <%--<ul class="nav nav-second-level">
                             <li><a href="CourseManager.aspx">Find Course</a></li>
                             <li><a href="AddCourse.aspx">Add Course</a></li>
-                        </ul>
+                        </ul>--%>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-music"></i><span class="nav-label">Class</span></a>
+                        <a href="ClassManager.aspx"><i class="fa fa-music"></i><span class="nav-label">Class</span></a>
                     </li>
 
                     <li>
@@ -93,9 +96,9 @@
                         </li>
 
                         <li>
-                            <a href="login.html">
+                            <asp:LinkButton ID="btn_logOut" runat="server" OnClick="btn_logOut_Click">
                                 <i class="fa fa-sign-out"></i>Log out
-                            </a>
+                            </asp:LinkButton>
                         </li>
                     </ul>
                 </nav>

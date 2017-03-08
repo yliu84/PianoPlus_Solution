@@ -11,10 +11,10 @@
             <h2>Class</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a href="#">All Classes</a>
+                    <a href="ClassManager.aspx">All Classes</a>
                 </li>
                 <li>
-                    <a href="#"><span class="text-navy">Add Class</span></a>
+                    <a href="ScheduleLesson.aspx"><span class="text-navy">Add Class</span></a>
                 </li>
             </ol>
         </div>
@@ -51,7 +51,7 @@
                                     <div class="tab-content" runat="server">
                                         <div id="tabOne" class="tab-pane active" runat="server">
                                             <div class="panel-body">
-                                                <div class="input-group col-lg-6">
+                                                <div class="input-group col-lg-6" style="margin-bottom:10px">
                                                     <asp:TextBox ID="txt_studentName" runat="server" CssClass="form-control" placeholder="Search student name"></asp:TextBox>
                                                     <span class="input-group-btn">
                                                         <asp:LinkButton ID="btn_search" runat="server" CssClass="btn btn-primary">Go!</asp:LinkButton>

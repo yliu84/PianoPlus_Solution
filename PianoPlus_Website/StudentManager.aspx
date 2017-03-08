@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="ibox-content">
-                        <div class="input-group col-lg-6">
+                        <div class="input-group col-lg-6 float-e-margins">
                             <asp:TextBox ID="txt_studentName" runat="server" CssClass="form-control" placeholder="Search student name"></asp:TextBox>
                             <span class="input-group-btn">
                                 <asp:LinkButton ID="btn_search" runat="server" CssClass="btn btn-primary">Go!</asp:LinkButton>

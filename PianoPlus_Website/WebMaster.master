@@ -64,12 +64,12 @@
                         <li class="hvr-hang" id="li_signIn" runat="server"><a class="page-scroll" href="Login.aspx">Sign in</a></li>
                         <li class="hvr-hang" id="li_signUp" runat="server"><a class="page-scroll" href="Register.aspx" style="color: blueviolet">Sign Up</a></li>
                         <li runat="server" id="li_loggedin" class="dropdown">
-                            <a runat="server" id="a_email" data-toggle="dropdown">admin@gmail.com</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/Account/Account_Home.aspx"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
-                                <li runat="server" id="li_admin"><a href="Dashboard.aspx"><i class="fa fa-bar-chart" aria-hidden="true"></i>Admin</a></li>
-                                <li runat="server">
-                                    <asp:LinkButton ID="btn_logout" runat="server" CausesValidation="false" OnClick="btn_logout_Click" ForeColor="Red">Sign Out</asp:LinkButton>
+                            <a runat="server" id="a_email" data-toggle="dropdown" style="cursor:pointer">admin@gmail.com</a>
+                            <ul class="dropdown-menu small">
+                                <li><a href="/Account/Account_Home.aspx" class="small">- Account</a></li>
+                                <li runat="server" id="li_admin"><a href="Dashboard.aspx" class="small">- Admin</a></li>
+                                <li runat="server" class="small">
+                                    <asp:LinkButton ID="btn_logout" runat="server" CausesValidation="false" OnClick="btn_logout_Click" ForeColor="Red">- Sign Out</asp:LinkButton>
                                 </li>
                             </ul>
                         </li>

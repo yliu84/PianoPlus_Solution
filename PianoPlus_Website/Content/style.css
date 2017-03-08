@@ -619,7 +619,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn {
   border-radius: 3px;
 }
-.float-e-margins .btn {
+.float-e-margins{
   margin-bottom: 5px;
 }
 .btn-w-m {
