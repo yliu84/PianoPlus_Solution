@@ -12,7 +12,7 @@
                     <a href="StudentManager.aspx">All Students</a>
                 </li>
                 <li>
-                    <a href="#"><span class="text-navy">Add Student</span></a>
+                    <a href="AddStudent.aspx"><span class="text-navy">Add Student</span></a>
                 </li>
             </ol>
         </div>

@@ -141,20 +141,35 @@ public partial class ScheduleLesson : System.Web.UI.Page
             newClass.Hours = hours;
             newClass.Room = room;
 
-            MessageUserControl.TryRun(() =>
+            int result = classController.ClassStudentCheck(newClass);
+
+            if(result == 1)
             {
-                classController.AddClass(newClass);
+                MessageUserControl.ShowInfo("The student exist in the class");
+            }
+            else if(result == 2)
+            {
+                MessageUserControl.ShowInfo("The class time is conflict with another class, plase select a new time");
+            }
+            else
+            {
+                MessageUserControl.TryRun(() =>
+                {
+                    classController.AddClass(newClass);
 
-                step1.Attributes["class"] = "active";
-                step2.Attributes["class"] = "disabled";
-                step3.Attributes["class"] = "disabled";
+                    step1.Attributes["class"] = "active";
+                    step2.Attributes["class"] = "disabled";
+                    step3.Attributes["class"] = "disabled";
 
-                tabOne.Visible = true;
-                tabTwo.Visible = false;
-                tabThree.Visible = false;
-                reset();
+                    tabOne.Visible = true;
+                    tabTwo.Visible = false;
+                    tabThree.Visible = false;
+                    reset();
 
-            }, "Success", "New class added");
+                }, "Success", "New class added");
+            }
+
+           
         }
     }
 

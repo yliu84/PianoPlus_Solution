@@ -12,7 +12,7 @@
                     <a href="InstructorManager.aspx">All Instructors</a>
                 </li>
                 <li>
-                    <a href="#"><span class="text-navy">Add Instructor</span></a>
+                    <a href="AddInstructor.aspx"><span class="text-navy">Add Instructor</span></a>
                 </li>
             </ol>
         </div>

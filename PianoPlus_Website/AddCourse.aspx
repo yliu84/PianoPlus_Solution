@@ -8,10 +8,10 @@
             <h2>Course</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a href="#">All Courses</a>
+                    <a href="CourseManager.aspx">All Courses</a>
                 </li>
                 <li>
-                    <a href="#"><span class="text-navy">Add Course</span></a>
+                    <a href="AddCourse.aspx"><span class="text-navy">Add Course</span></a>
                 </li>
             </ol>
         </div>

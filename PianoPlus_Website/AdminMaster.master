@@ -54,18 +54,11 @@
 
                     <li>
                         <a href="InstructorManager.aspx"><i class="fa fa-mortar-board"></i><span class="nav-label">Instructor</span></a>
-                        <%--<ul class="nav nav-second-level">
-                            <li><a href="InstructorManager.aspx">Find Instructor</a></li>
-                            <li><a href="AddInstructor.aspx">Add Instructor</a></li>
-                        </ul>--%>
                     </li>
 
                     <li>
                         <a href="CourseManager.aspx"><i class="fa fa-book"></i><span class="nav-label">Course</span></a>
-                        <%--<ul class="nav nav-second-level">
-                            <li><a href="CourseManager.aspx">Find Course</a></li>
-                            <li><a href="AddCourse.aspx">Add Course</a></li>
-                        </ul>--%>
+
                     </li>
 
                     <li>

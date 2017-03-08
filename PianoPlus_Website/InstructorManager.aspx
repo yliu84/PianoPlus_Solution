@@ -9,7 +9,7 @@
             <h2>Instructor</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a><span class="text-navy">All Instructors</span></a>
+                    <a href="InstructorManager.aspx"><span class="text-navy">All Instructors</span></a>
                 </li>
                 <li>
                     <a href="AddInstructor.aspx">Add Instructor</a>

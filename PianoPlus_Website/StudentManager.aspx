@@ -9,7 +9,7 @@
             <h2>Student</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a><span class="text-navy">All Students</span></a>
+                    <a href="StudentManager.aspx"><span class="text-navy">All Students</span></a>
                 </li>
                 <li>
                     <a href="AddStudent.aspx">Add Student</a>

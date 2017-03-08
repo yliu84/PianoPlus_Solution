@@ -76,5 +76,46 @@ namespace PianoPlus_System.BLL
             
         }
 
+        public int ClassStudentCheck(StudentClass newClass)
+        {
+            int GoodCase = 0;
+            int StudentExists = 1;
+            int TimeConflict =2;
+            
+
+            using(var context = new PianoPlusContext())
+            {
+                var oldClass = (from i in context.StudentClasses
+                                where i.InstructorID == newClass.InstructorID
+                                select i).ToList();
+
+                var resultOne = oldClass.Where(x => x.StudentID == newClass.StudentID && x.StartTime == newClass.StartTime && newClass.EndTime == x.EndTime && x.CourseCode == newClass.CourseCode);
+
+                var resultTwo = oldClass.Where(x => x.StartTime > newClass.StartTime && newClass.EndTime > x.StartTime && newClass.EndTime < x.EndTime);
+
+                var resutThree = oldClass.Where(x => newClass.StartTime > x.StartTime && newClass.StartTime < x.EndTime);
+
+                if (resultOne.Count() > 0)
+                {
+                    return StudentExists;
+                }
+                else if (resultTwo.Count() > 0)
+                {
+                    return TimeConflict;
+                }
+                else if(resutThree.Count() > 0)
+                {
+                    return TimeConflict;
+                }
+                else
+                {
+                    return GoodCase;
+                }
+
+
+
+            }
+        }
+
     }
 }
