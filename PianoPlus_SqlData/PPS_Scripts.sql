@@ -181,9 +181,10 @@ CREATE TABLE Course
 	TotalSeats
 	INT DEFAULT 1
 	NOT NULL
-
+	CONSTRAINT CK_Course_TotalSeats CHECK(TotalSeats > 0)
 )
 GO
+
 
 CREATE TABLE StudentClass
 (
@@ -208,7 +209,8 @@ CREATE TABLE StudentClass
 
 	EndTime
 	DATETIME
-	NOT NULL,
+	NOT NULL
+	CONSTRAINT CK_StudentClass_EndTime CHECK(EndTime > StartTime),
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -217,17 +219,21 @@ CREATE TABLE StudentClass
 	Hours
 	FLOAT
 	NOT NULL
-	CONSTRAINT CK_StudentClass_Hours CHECK (Hours > 0),
+	CONSTRAINT CK_StudentClass_Hours CHECK (Hours > 0 and Hours <= 5),
 
 	Room
 	NVARCHAR(10)
-	NULL,
+	NOT NULL,
 
 	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime,InstructorID)
 )
 
 CREATE TABLE StudentClassHistory
 (
+	StartTime
+	DATETIME
+	NOT NULL,
+
 	StudentID
 	INT 
 	NOT NULL
@@ -237,18 +243,14 @@ CREATE TABLE StudentClassHistory
 	NVARCHAR(25)
 	NOT NULL,
 
-	StartTime
-	DATETIME
-	NOT NULL
-	CONSTRAINT PK_StudentClassHistory_StartTime PRIMARY KEY,
-
 	InstructorName
 	NVARCHAR(51)
 	NOT NULL,
 
 	EndTime
 	DATETIME
-	NOT NULL,
+	NOT NULL
+	CONSTRAINT CK_StudentClassHistory_EndTime CHECK(EndTime > StartTime),
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -257,11 +259,13 @@ CREATE TABLE StudentClassHistory
 	Hours
 	FLOAT
 	NOT NULL
-	CONSTRAINT CK_StudentClassHistory_Hours CHECK (Hours > 0),
+	CONSTRAINT CK_StudentClassHistory_Hours CHECK (Hours > 0 and Hours <= 5),
 
 	Room
 	NVARCHAR(10)
-	NULL,
+	NOT NULL
+
+	CONSTRAINT PK_StudentClassHistory_StartTime_StudentID PRIMARY KEY(StartTime, StudentID)
 )
 GO
 
@@ -287,7 +291,8 @@ CREATE TABLE InstructorClassHistory
 
 	EndTime
 	DATETIME
-	NOT NULL,
+	NOT NULL
+	CONSTRAINT CK_InstructorClassHistory_EndTime CHECK(EndTime > StartTime),
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -296,13 +301,13 @@ CREATE TABLE InstructorClassHistory
 	Hours
 	FLOAT
 	NOT NULL
-	CONSTRAINT CK_InstructorClassHistory_Hours CHECK (Hours > 0),
+	CONSTRAINT CK_InstructorClassHistory_Hours CHECK(Hours > 0 and Hours <= 5),
 
 	Room
 	NVARCHAR(10)
-	NULL,
+	NOT NULL,
 	
-	CONSTRAINT PK_InstructorClassHistory_StudentID_StartTime PRIMARY KEY(StartTime,StudentID)
+	CONSTRAINT PK_InstructorClassHistory_StudentID_StartTime PRIMARY KEY(StartTime,InstructorID, StudentID)
 )
 
 CREATE TABLE Blog
@@ -397,7 +402,7 @@ CREATE TABLE CoursePayment
 	Hours
 	FLOAT DEFAULT 0.0
 	NOT NULL
-	CONSTRAINT CK_CoursePayment_Hours CHECK (Hours >= 0),
+	CONSTRAINT CK_CoursePayment_Hours CHECK (Hours >= 0 and Hours <= 5),
 
 	LessonFee
 	MONEY DEFAULT 0.00
