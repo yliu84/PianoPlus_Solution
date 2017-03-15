@@ -209,8 +209,8 @@ CREATE TABLE StudentClass
 
 	EndTime
 	DATETIME
-	NOT NULL
-	CONSTRAINT CK_StudentClass_EndTime CHECK(EndTime > StartTime),
+	NOT NULL,
+	
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -225,6 +225,7 @@ CREATE TABLE StudentClass
 	NVARCHAR(10)
 	NOT NULL,
 
+	CONSTRAINT CK_StudentClass_EndTime CHECK(EndTime > StartTime),
 	CONSTRAINT PK_StudentClass_StudentID_CourseCode_StartDate PRIMARY KEY(StudentID,CourseCode,StartTime,InstructorID)
 )
 
@@ -249,8 +250,7 @@ CREATE TABLE StudentClassHistory
 
 	EndTime
 	DATETIME
-	NOT NULL
-	CONSTRAINT CK_StudentClassHistory_EndTime CHECK(EndTime > StartTime),
+	NOT NULL,
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -263,8 +263,9 @@ CREATE TABLE StudentClassHistory
 
 	Room
 	NVARCHAR(10)
-	NOT NULL
+	NOT NULL,
 
+	CONSTRAINT CK_StudentClassHistory_EndTime CHECK(EndTime > StartTime),
 	CONSTRAINT PK_StudentClassHistory_StartTime_StudentID PRIMARY KEY(StartTime, StudentID)
 )
 GO
@@ -291,8 +292,7 @@ CREATE TABLE InstructorClassHistory
 
 	EndTime
 	DATETIME
-	NOT NULL
-	CONSTRAINT CK_InstructorClassHistory_EndTime CHECK(EndTime > StartTime),
+	NOT NULL,
 
 	DayOfWeek
 	NVARCHAR(15)
@@ -307,6 +307,7 @@ CREATE TABLE InstructorClassHistory
 	NVARCHAR(10)
 	NOT NULL,
 	
+	CONSTRAINT CK_InstructorClassHistory_EndTime CHECK(EndTime > StartTime),
 	CONSTRAINT PK_InstructorClassHistory_StudentID_StartTime PRIMARY KEY(StartTime,InstructorID, StudentID)
 )
 
@@ -443,6 +444,8 @@ CREATE TABLE Events
 
 	IsFullDay
 	BIT
-	NOT NULL
+	NOT NULL,
+
+	CONSTRAINT CK_Events_EndTime CHECK(EndAt >= StartAt)
 
 )
