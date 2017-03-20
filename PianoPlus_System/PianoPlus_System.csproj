@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BlogController.cs" />
     <Compile Include="BLL\CalenderController.cs" />
     <Compile Include="BLL\ClassController.cs" />
     <Compile Include="BLL\CourseController.cs" />
