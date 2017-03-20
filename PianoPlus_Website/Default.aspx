@@ -330,5 +330,7 @@
     </section>
 </div>
 <!--[contact-end]-->
+
+    <script type="text/javascript" src="Scripts/js/jquery-1.11.2.min.js"></script>
 </asp:Content>
 
