@@ -39,13 +39,13 @@ namespace PianoPlus_System.BLL
                               {                                
                                   StudentName = i.Student.FirstName + " " + i.Student.LastName,
                                   InstructorName = i.Instructor.FirstName + " " + i.Instructor.LastName,
+                                  InstructorID = i.InstructorID,
                                   Course = i.Course.CourseName,
                                   StartTime = i.StartTime,
                                   EndTime = i.EndTime,
                                   DayOfWeek = i.DayOfWeek,
                                   Hours = i.Hours,
                                   Room = i.Room
-
                               };
 
                 if (startDay != null && endDay != null)
@@ -115,6 +115,32 @@ namespace PianoPlus_System.BLL
 
 
             }
+        }
+
+        public StudentClass GetClassInfoByStartEndDateAndInstructorID(DateTime startDay, DateTime endDay, int instructorID)
+        {
+            StudentClass currentClass = new StudentClass();
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from info in context.StudentClasses
+                                   where    info.StartTime == startDay
+                                   &&       info.EndTime == endDay
+                                   &&       info.InstructorID == instructorID
+                                   select info
+                                   ).SingleOrDefault();
+
+                    return results;
+
+                }
+            }
+            catch
+            {
+                return currentClass;
+            }
+
         }
 
     }
