@@ -57,7 +57,7 @@
                         <li class="hvr-hang"><a class="page-scroll" href="#about">ABOUT US</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="#albums">LESSONS</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="#contact">CONTACT</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="Blog.aspx">BLOG</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="BlogView.aspx">BLOG</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right nav-pills">

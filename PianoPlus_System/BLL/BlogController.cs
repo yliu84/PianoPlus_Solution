@@ -16,18 +16,43 @@ namespace PianoPlus_System.BLL
     {
         public bool AddPost(Blog newBlog)
         {
-            
-      
+            try
+            {
                 using (var context = new PianoPlusContext())
                 {
                     context.Blogs.Add(newBlog);
 
                     context.SaveChanges();
                     return true;
-                    
+
                 }
            
-            
+            }
+            catch
+            {
+                return false;
+            }
+                
+           
+        }
+
+        public List<BlogInfo> Post_List()
+        {
+            using (var context = new PianoPlusContext())
+            {
+                var results = from post in context.Blogs
+                              orderby post.PostDate
+                              select new BlogInfo()
+                              {
+                                  BlogID = post.BlogID,
+                                  InstructorName = post.Instructor.FirstName + " " + post.Instructor.LastName,
+                                  PostDate = post.PostDate,
+                                  Title = post.Title,
+                                  Content = post.Content
+                              };
+
+                return results.ToList();
+            }
         }
     }
 }

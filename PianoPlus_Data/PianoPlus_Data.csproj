@@ -63,6 +63,7 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentClass.cs" />
+    <Compile Include="POCOS\BlogInfo.cs" />
     <Compile Include="POCOS\CalendarEvents.cs" />
     <Compile Include="POCOS\ClassInfo.cs" />
     <Compile Include="POCOS\StudentInf.cs" />
