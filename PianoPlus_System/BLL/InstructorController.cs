@@ -80,6 +80,7 @@ namespace PianoPlus_System.BLL
             }
             catch
             {
+                
                 return CurrentStudent;
             }
         }
