@@ -70,6 +70,7 @@ namespace PianoPlus_Data.Entities
         [StringLength(128)]
         public string PassSalt { get; set; }
 
+        public byte ProfileImage { get; set; }
 
         public DateTime CreateDate { get; set; }
 
