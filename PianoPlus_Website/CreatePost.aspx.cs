@@ -28,31 +28,17 @@ public partial class CreatePost : System.Web.UI.Page
 
 
 
-            //    MessageUserControl.TryRun(() =>
-            //{
-            //    Blog newPost = new Blog();
-
-            //    newPost.Title = title;
-            //    newPost.InstructorID = int.Parse(instructorID);
-            //    newPost.Content = postText;
-            //    newPost.PostDate = DateTime.Now;
-
-            //    controller.AddPost(newPost);
-            //}, "Success", "New bolg post added.");
+                MessageUserControl.TryRun(() =>
+            {
                 Blog newPost = new Blog();
 
                 newPost.Title = title;
                 newPost.InstructorID = int.Parse(instructorID);
                 newPost.Content = postText;
                 newPost.PostDate = DateTime.Now;
-                if (controller.AddPost(newPost))
-                {
-                    MessageUserControl.ShowInfo("Add new blog post successful");
-                }
-                else
-                {
-                    MessageUserControl.ShowInfo("Cannot add new student, please try again.");
-                }
+
+                controller.AddPost(newPost);
+            }, "Success", "New bolg post added.");
 
 
             }

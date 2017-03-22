@@ -17,11 +17,9 @@ namespace PianoPlus_Data.Entities
         public DateTime PostDate { get; set; }
 
         [Required]
-        [StringLength(500)]
         public string Content { get; set; }
 
         [Required]
-        [StringLength(50)]
         public string Title { get; set; }
 
         public virtual Instructor Instructor { get; set; }

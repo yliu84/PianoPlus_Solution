@@ -74,6 +74,10 @@ CREATE TABLE Student
 	NVARCHAR(128)
 	NOT NULL,
 
+	ProfileImage
+	varbinary(MAX)
+	NULL,
+
 	CreateDate
 	DATETIME DEFAULT GetDate()
 	NOT NULL
@@ -151,6 +155,10 @@ CREATE TABLE Instructor
 	PassSalt
 	NVARCHAR(128)
 	NOT NULL,
+
+	ProfileImage
+	varbinary(MAX)
+	NULL,
 
 	CreateDate
 	DATETIME DEFAULT GetDate()
@@ -328,11 +336,11 @@ CREATE TABLE Blog
 	NOT NULL,
 
 	Content
-	NVARCHAR(500)
+	NVARCHAR(MAX)
 	NOT NULL,
 
 	Title
-	NVARCHAR(50)
+	NVARCHAR(200)
 	NOT NULL
 
 )

@@ -14,25 +14,17 @@ namespace PianoPlus_System.BLL
 {
     public class BlogController
     {
-        public bool AddPost(Blog newBlog)
+        public void AddPost(Blog newBlog)
         {
-            try
-            {
+           
                 using (var context = new PianoPlusContext())
                 {
                     context.Blogs.Add(newBlog);
 
                     context.SaveChanges();
-                    return true;
-
+                    
                 }
-           
-            }
-            catch
-            {
-                return false;
-            }
-                
+                   
            
         }
 

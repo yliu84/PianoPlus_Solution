@@ -51,7 +51,7 @@
     </div>
 
 
-    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/jquery-3.1.1.js"></script>
 <%--    <script src="Scripts/bootstrap.min.js"></script>--%>
     <script src="Scripts/summernote/summernote.min.js"></script>
 
