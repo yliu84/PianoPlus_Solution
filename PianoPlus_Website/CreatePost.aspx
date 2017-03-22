@@ -1,4 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMaster.master" AutoEventWireup="true" CodeFile="CreatePost.aspx.cs" Inherits="CreatePost" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMaster.master" AutoEventWireup="true" CodeFile="CreatePost.aspx.cs" ValidateRequest="false" Inherits="CreatePost" %>
+
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -6,6 +9,11 @@
     <link href="Content/summernote/summernote-bs3.css" rel="stylesheet" />
     <style type="text/css">
         p{
+            color:black;
+        }
+
+        ul{
+            padding-left:25px;
             color:black;
         }
     </style>
@@ -17,14 +25,15 @@
         </div>
     </section>
     <!--[header-background-end]-->
-
+    
     <div class="container" style="margin-top:20px">
+        <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
         <div class="row">
             <div class="col-lg-12">
                 <div class="form-group">
                     <%--<asp:Label Text="Title" runat="server" CssClass="control-label col-lg-2" />--%>
 
-                    <h4>Title</h4>
+                    <h4>Title:</h4>
                     <asp:TextBox ID="txt_title" runat="server" CssClass="form-control"></asp:TextBox>
 
                 </div>
@@ -35,7 +44,7 @@
 
 
                 <div class="col-md-12 contact-send contact">
-                    <asp:Button ID="btn_add" runat="server" Text="Submit" class="btn send" />
+                    <asp:Button ID="btn_add" runat="server" Text="Submit" OnClick="btn_add_Click" class="btn send" />
                 </div>
             </div>
         </div>
