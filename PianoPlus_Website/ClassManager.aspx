@@ -57,15 +57,17 @@
 
                         </div>
                         <div class="table-responsive">
-                            <asp:GridView ID="ClassGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ODSClasses" DataKeyNames="StartTime, EndTime, InstructorID">
+                            <asp:GridView ID="ClassGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AllowPaging="True" AutoGenerateColumns="False"
+                                DataSourceID="ODSClasses" DataKeyNames="StartTime, CourseCode, InstructorID">
                                 <Columns>
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:LinkButton Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info" OnClick="btn_select_Click"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="StudentName" HeaderText="Student Name" SortExpression="StudentName" />
+                                    <asp:BoundField DataField="StudentName" HeaderText="Student Name" SortExpression="StudentName" Visible="false"/>
                                     <asp:BoundField DataField="Course" HeaderText="Course" SortExpression="Course" />
+                                    <asp:BoundField DataField="CourseCode" HeaderText="CourseCode" SortExpression="CourseCode" Visible="false"/>
                                     <asp:BoundField DataField="InstructorName" HeaderText="InstructorName" SortExpression="InstructorName" Visible="false" />
                                     <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" Visible="false" />
                                     <asp:BoundField DataField="StartTime" HeaderText="Start Time" SortExpression="StartTime" />
@@ -78,7 +80,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <div class="ibox float-e-margins" runat="server" id="ClassInfo" visible="true">
+                        <div class="ibox float-e-margins" runat="server" id="ClassInfo">
                             <div class="ibox-title">
                                 <h5>Class Info</h5>
                                 <div class="ibox-tools">
@@ -91,7 +93,7 @@
                                 </div>
                             </div>
                            
-                    <div class="i-box-content">
+                    <div id="ClassInfoTab" class="i-box-content" >
                         <div class="form-horizontal">
                             <div class="col-lg-12">
                                 <div class="tabs-container">
@@ -121,19 +123,13 @@
                                             <asp:View runat="server" ID="StudentView" >
                                                 <div id="Div1" class="tab-pane active" runat="server">
                                                     <div class="panel-body">
-                                                        <div class="input-group col-lg-6" style="margin-bottom:10px">
-                                                            <asp:TextBox ID="txt_studentName" runat="server" CssClass="form-control" placeholder="Search student name"></asp:TextBox>
-                                                            <span class="input-group-btn">
-                                                                <asp:LinkButton ID="btn_searchStudent" runat="server" CssClass="btn btn-primary">Go!</asp:LinkButton>
-                                                            </span>
-                                                        </div>
 
                                                         <div class="table-responsive">
-                                                            <asp:GridView ID="StudentGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID" AllowPaging="True" DataSourceID="StudentODS">
+                                                            <asp:GridView ID="StudentGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" AutoGenerateColumns="False" DataKeyNames="StudentID" AllowPaging="True" >
                                                                 <Columns>
                                                                     <asp:TemplateField>
                                                                         <ItemTemplate>
-                                                                            <asp:Button Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info" OnClick="btn_select_Click" />
+                                                                            <asp:LinkButton Text="Remove" ID="btn_deleteStudentClass_Click" runat="server" CssClass="btn btn-sm btn-danger" OnClick="btn_deleteStudentClass_Click" />
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
                                                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
@@ -152,32 +148,6 @@
                                                                 </EmptyDataTemplate>
                                                             </asp:GridView>
                                                         </div>
-                                                        <div class="col-lg-12">
-
-                                                            <asp:UpdatePanel runat="server" ID="UpdatePanel1" UpdateMode="Conditional">
-                                                                <ContentTemplate>
-                                                                    <div class="col-lg-6">
-                                                                        <div class="form-group">
-                                                                            <asp:Label ID="Label7" runat="server" Text="Student ID" CssClass="col-lg-4 control-label"></asp:Label>
-                                                                            <div class="col-lg-8">
-                                                                                <asp:TextBox ID="txt_studentID" runat="server" CssClass="form-control" placeholder="Student ID" Enabled="false"></asp:TextBox>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="form-group">
-                                                                            <asp:Label ID="Label8" runat="server" Text="Student Name" CssClass="col-lg-4 control-label"></asp:Label>
-                                                                            <div class="col-lg-8">
-                                                                                <asp:TextBox ID="txt_name2" runat="server" CssClass="form-control" placeholder="Student Name" Enabled="false"></asp:TextBox>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </ContentTemplate>
-                                                            </asp:UpdatePanel>
-
-                                                            <div class="col-lg-6">
-                                                            </div>
-                                                        </div>
-
                                                     </div>
                                                 </div>
 
@@ -338,7 +308,7 @@
                                         </asp:MultiView>
                                         <div class="col-lg-12 text-right">                                            
                                             <asp:LinkButton ID="btn_submit" runat="server" CssClass="btn btn-primary" Width="150px" ValidationGroup ="schedule" OnClick="btn_submit_Click" Enabled="false" Visible="false">Save Changes</asp:LinkButton>
-                                            <asp:LinkButton ID="btn_delete" runat="server" CssClass="btn btn-danger" Width="150px" CausesValidation="false" OnClick="btn_delete_Click" Enabled="false" Visible="false">Delete</asp:LinkButton>
+                                            <asp:LinkButton ID="btn_cancel" runat="server" CssClass="btn btn-danger" Width="150px" CausesValidation="false" OnClick="btn_cancel_Click" Enabled="false" Visible="false">Cancel</asp:LinkButton>
                                         </div>
                                         <asp:Label runat="server" ID="label_oldStartTime" Visible="false" />
                                         <asp:Label runat="server" ID="label_oldStudentID" Visible="false" />
@@ -364,11 +334,12 @@
         </SelectParameters>
     </asp:ObjectDataSource>
 
-    <asp:ObjectDataSource ID="StudentODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Student_List" TypeName="PianoPlus_System.BLL.StudentController">
+    <%--<asp:ObjectDataSource ID="StudentODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="StudentInClass" TypeName="PianoPlus_System.BLL.StudentController">
         <SelectParameters>
-            <asp:ControlParameter ControlID="txt_studentName" Name="name" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="label_oldCourseCode" Name="oldCourseCode" PropertyName="Text" Type="String" />
+            <asp:ControlParameter ControlID="ClassGridView" Name="startTime" PropertyName="studentID" Type="DateTime" />
         </SelectParameters>
-    </asp:ObjectDataSource>
+    </asp:ObjectDataSource>--%>
     <script src="Scripts/js/jquery-1.11.2.min.js"></script>
     <script src="Scripts/js/bootstrap-datepicker.js"></script>
     <script src="Scripts/js/clockpicker.js"></script>

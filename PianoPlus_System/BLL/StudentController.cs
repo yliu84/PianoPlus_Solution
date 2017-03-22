@@ -155,7 +155,7 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public Student GetStudentInfoByStudentID(int studentID)
+        public Student GetStudentByStudentID(int studentID)
         {
             Student CurrentStudent = new Student();
 
@@ -167,6 +167,40 @@ namespace PianoPlus_System.BLL
                                    where info.StudentID == studentID
                                    select info
                                    ).SingleOrDefault();
+
+                    return results;
+
+                }
+            }
+            catch
+            {
+                return CurrentStudent;
+            }
+        }
+
+        public StudentInf GetStudentInfoByStudentID(int studentID)
+        {
+            StudentInf CurrentStudent = new StudentInf();
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from info in context.Students
+                                   where info.StudentID == studentID
+                                   select new StudentInf(){
+                                       FullName = info.FirstName + " " + info.LastName,
+                                       StudentID = info.StudentID,
+                                       Email = info.Email,
+                                       Phone = info.Phone,
+                                       Address = info.Address,
+                                       Province = info.Province,
+                                       City = info.City,
+                                       PostalCode = info.PostalCode,
+                                       Active = info.Active,
+                                       CreateDate = info.CreateDate
+
+                                   }).SingleOrDefault();
 
                     return results;
 
@@ -209,9 +243,41 @@ namespace PianoPlus_System.BLL
                 return results.ToList();
 
                
+            }            
+        }
+        public List<StudentInf> StudentInClass(DateTime startTime, string courseCode, int instructorID)
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                var results = from students in context.Students
+                              join studentClasses in context.StudentClasses on  students.StudentID equals studentClasses.StudentID
+                              where studentClasses.StartTime == startTime
+                              && studentClasses.CourseCode == courseCode
+                              && studentClasses.InstructorID == instructorID
+                              orderby students.LastName, students.FirstName
+                              select new StudentInf()
+                              {
+                                  FullName = students.FirstName + " " + students.LastName,
+                                  StudentID = students.StudentID,
+                                  Email = students.Email,
+                                  Phone = students.Phone,
+                                  Address = students.Address,
+                                  Province = students.Province,
+                                  City = students.City,
+                                  PostalCode = students.PostalCode,
+                                  Active = students.Active,
+                                  CreateDate = students.CreateDate
+
+                              };
+
+                
+                return results.ToList();
+
+
             }
 
-            
+
         }
     }
 }

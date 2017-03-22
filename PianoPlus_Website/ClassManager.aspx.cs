@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
+using PianoPlus_Data.POCOS;
 using System.Net;
 using System.Web.Helpers;
 public partial class ClassManager : System.Web.UI.Page
@@ -15,14 +16,19 @@ public partial class ClassManager : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            CourseController controller = new CourseController();
-
-            ddl_course.DataSource = controller.Course_List();
-            ddl_course.DataTextField = "CourseName";
-            ddl_course.DataValueField = "CourseCode";
-            ddl_course.DataBind();
+            RebindClasses();
         }
 
+    }
+
+    private void RebindClasses()
+    {
+        CourseController controller = new CourseController();
+
+        ddl_course.DataSource = controller.Course_List();
+        ddl_course.DataTextField = "CourseName";
+        ddl_course.DataValueField = "CourseCode";
+        ddl_course.DataBind();
     }
     protected void TabsMenu_MenuItemClick(object sender, MenuEventArgs e)
     {
@@ -47,32 +53,42 @@ public partial class ClassManager : System.Web.UI.Page
     {
 
         int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
+        GridViewRow gridRow = ClassGridView.Rows[rowIndex];
 
+        //Get keys
         DateTime startDate = (DateTime)ClassGridView.DataKeys[rowIndex].Values[0];
-        DateTime endDate = (DateTime)ClassGridView.DataKeys[rowIndex].Values[1];
+        string courseCode = ClassGridView.DataKeys[rowIndex].Values[1].ToString();
         int instructorID = Convert.ToInt32(ClassGridView.DataKeys[rowIndex].Values[2]);
-
-        GridViewRow selectedRow = ClassGridView.Rows[rowIndex];
-
+        
         ClassController classController = new ClassController();
-        StudentClass currentClass = classController.GetClassInfoByStartEndDateAndInstructorID(startDate, endDate, instructorID);
 
-        txt_studentID.Text = currentClass.StudentID + "";
+        //Get Classes
+        List<StudentClass> currentClasses = classController.GetClassesInfoByStartEndDateAndInstructorID(startDate, courseCode, instructorID);
 
-        txt_date.Text = currentClass.StartTime.Date.ToString();
-        txt_startTime.Text = currentClass.StartTime.TimeOfDay.ToString();
-        txt_endTime.Text = currentClass.EndTime.TimeOfDay.ToString();
+        txt_date.Text = currentClasses[0].StartTime.Date.ToString("d");
+        txt_startTime.Text = currentClasses[0].StartTime.TimeOfDay.ToString();
+        txt_endTime.Text = currentClasses[0].EndTime.TimeOfDay.ToString();
 
-        txt_Room.Text = currentClass.Room;
-        ddl_course.SelectedValue = currentClass.CourseCode; 
-        txt_studentName.Text = currentClass.Student.FirstName + " " + currentClass.Student.LastName;
+        txt_Room.Text = currentClasses[0].Room;
+        ddl_course.SelectedValue = currentClasses[0].CourseCode; 
+        //txt_studentName.Text = currentClass.Student.FirstName + " " + currentClass.Student.LastName;
 
-        label_oldStudentID.Text = currentClass.StudentID.ToString();
-        label_oldStartTime.Text = currentClass.StartTime.ToString();
-        label_oldCourseCode.Text = currentClass.CourseCode;
+        label_oldStartTime.Text = startDate.ToString();
+        label_oldCourseCode.Text = currentClasses[0].CourseCode;
 
-        btn_delete.Enabled = true;
-        btn_delete.Visible = true;
+        //Fill Students Grid
+        List<StudentInf> studentList = new List<StudentInf>();
+        StudentController studentController = new StudentController();
+        foreach (StudentClass clas in currentClasses)
+        {
+            StudentInf enrolledStudent = studentController.GetStudentInfoByStudentID(clas.StudentID);
+            studentList.Add(enrolledStudent);
+        }
+        StudentGridView.DataSource = studentList;
+        StudentGridView.DataBind();
+
+        btn_cancel.Enabled = true;
+        btn_cancel.Visible = true;
         btn_submit.Enabled = true;
         btn_submit.Visible = true;
         ClassMultiView.Visible = true;
@@ -103,7 +119,6 @@ public partial class ClassManager : System.Web.UI.Page
 
         if (Page.IsValid)
         {
-            int studentID = int.Parse(txt_studentID.Text);
             int instructorID = 2000;
             string courseCode = ddl_course.SelectedValue;
             DateTime date = DateTime.Parse(txt_date.Text);
@@ -112,22 +127,25 @@ public partial class ClassManager : System.Web.UI.Page
             string dayOfWeek = (date.DayOfWeek).ToString();
             double hours = endTime.Subtract(startTime).TotalHours;
             string room = txt_Room.Text;
+            List<StudentClass> updatedClasses = new List<StudentClass>();
 
-            updatedClass = new StudentClass();
-            updatedClass.StudentID = studentID;
-            updatedClass.InstructorID = instructorID;
-            updatedClass.CourseCode = courseCode;
-            updatedClass.StartTime = startTime;
-            updatedClass.EndTime = endTime;
-            updatedClass.DayOfWeek = dayOfWeek;
-            updatedClass.Hours = hours;
-            updatedClass.Room = room;
+            for (int i = 0; i < StudentGridView.Rows.Count; i++)
+            {
+                updatedClass = new StudentClass();
+                updatedClass.InstructorID = instructorID;
+                updatedClass.CourseCode = courseCode;
+                updatedClass.StartTime = startTime;
+                updatedClass.EndTime = endTime;
+                updatedClass.DayOfWeek = dayOfWeek;
+                updatedClass.Hours = hours;
+                updatedClass.Room = room;
+                updatedClasses.Add(updatedClass);
+            }
 
             DateTime oldStartTime = Convert.ToDateTime(label_oldStartTime.Text);
             string oldCourseCode = label_oldCourseCode.Text;
-            int oldStudentID = Convert.ToInt32(label_oldStudentID.Text);
 
-            int result = classController.ClassStudentCheck(updatedClass);
+            int result = classController.UpdatedClassStudentCheck(updatedClass);
 
             if (result == 1)
             {
@@ -141,7 +159,7 @@ public partial class ClassManager : System.Web.UI.Page
             {
                 MessageUserControl.TryRun(() =>
                 {
-                    classController.UpdateClass(updatedClass, oldStudentID, oldCourseCode, oldStartTime);
+                    classController.UpdateClass(updatedClasses, oldCourseCode, oldStartTime, instructorID);
                     Reset();
 
                 }, "Success", "Class has been updated.");
@@ -150,45 +168,51 @@ public partial class ClassManager : System.Web.UI.Page
 
         }
     }
-    protected void btn_delete_Click(object sender, EventArgs e)
+    protected void btn_deleteStudentClass_Click(object sender, EventArgs e)
     {
         StudentClass currentClass = null;
 
         int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
+        int studentID = Convert.ToInt32(StudentGridView.DataKeys[0].Value);
+        int instructorID = 2000;
 
-        DateTime startDate = (DateTime)ClassGridView.DataKeys[rowIndex].Values[0];
-        DateTime endDate = (DateTime)ClassGridView.DataKeys[rowIndex].Values[1];
-        int instructorID = Convert.ToInt32(ClassGridView.DataKeys[rowIndex].Values[2]);
+        DateTime oldStartTime = Convert.ToDateTime(label_oldStartTime.Text);
+        string oldCourseCode = label_oldCourseCode.Text;
 
-        GridViewRow selectedRow = ClassGridView.Rows[rowIndex];
+
 
         ClassController classController = new ClassController();
-        currentClass = classController.GetClassInfoByStartEndDateAndInstructorID(startDate, endDate, instructorID);
+        currentClass = classController.GetClassByStartDateStudentIDCourseCodeAndInstructorID(oldStartTime, oldCourseCode, studentID, instructorID);
 
         MessageUserControl.TryRun(() =>
         {
-            classController.RemoveClass(currentClass.StartTime, currentClass.InstructorID, currentClass.StudentID, currentClass.CourseCode);
+            classController.RemoveStudentClass(currentClass.StartTime, currentClass.InstructorID, currentClass.StudentID, currentClass.CourseCode);
             Reset();
+            RebindClasses();
 
-        }, "Success", "Class has been deleted.");
+        }, "Success", "Student has been removed from the class.");
+
+    }
+    protected void btn_cancel_Click(object sender, EventArgs e)
+    {
+        Reset();
     }
     protected void Reset()
     {
-        txt_studentName.Text = "";
-        txt_name2.Text = "";
-        txt_studentID.Text = "";
+        ClassMultiView.Visible = false;
         txt_startTime.Text = "";
         txt_endTime.Text = "";
         txt_date.Text = "";
         txt_Room.Text = "";
         ddl_course.SelectedValue = "0";
-        txt_studentName.Text = "";
-        btn_delete.Enabled = false;
-        btn_delete.Visible = false;
+        btn_cancel.Enabled = false;
+        btn_cancel.Visible = false;
         btn_submit.Enabled = false;
         btn_submit.Visible = false;
         label_oldStudentID.Text = "";
         label_oldStartTime.Text = "";
         label_oldCourseCode.Text = "";
+        StudentGridView.DataSource = null;
+        StudentGridView.DataBind();
     }
 }

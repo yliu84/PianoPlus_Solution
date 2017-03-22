@@ -25,7 +25,7 @@ public partial class StudentManager : System.Web.UI.Page
         int studentID = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
 
         StudentController studentController = new StudentController();
-        Student currentStudent = studentController.GetStudentInfoByStudentID(studentID);
+        Student currentStudent = studentController.GetStudentByStudentID(studentID);
 
         if(currentStudent != null)
         {

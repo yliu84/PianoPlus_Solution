@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
+using PianoPlus_Data.POCOS;
 using System.Net;
 using System.Web.Helpers;
 
@@ -32,12 +33,12 @@ public partial class ScheduleLesson : System.Web.UI.Page
         int studentID = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
 
         StudentController studentController = new StudentController();
-        Student currentStudent = studentController.GetStudentInfoByStudentID(studentID);
+        StudentInf currentStudent = studentController.GetStudentInfoByStudentID(studentID);
 
         if (currentStudent != null)
         {
             txt_studentID.Text = studentID.ToString();
-            txt_name2.Text = currentStudent.FirstName + " " + currentStudent.LastName;
+            txt_name2.Text = currentStudent.FullName;
             UpdatePanel2.Update();
         }
     }

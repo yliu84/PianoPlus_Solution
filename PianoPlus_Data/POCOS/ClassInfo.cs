@@ -10,6 +10,7 @@ namespace PianoPlus_Data.POCOS
     {
         public string StudentName { get; set; }
         public string Course { get; set; }
+        public string CourseCode { get; set; }
         public string InstructorName { get; set; }
         public int InstructorID { get; set; }
         public DateTime StartTime { get; set; }
@@ -17,6 +18,7 @@ namespace PianoPlus_Data.POCOS
         public string DayOfWeek { get; set; }
         public double Hours { get; set; }
         public string Room { get; set; }
+        public int SeatsLeft { get; set; }
 
     }
 }

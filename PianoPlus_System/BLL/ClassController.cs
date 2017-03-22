@@ -34,18 +34,20 @@ namespace PianoPlus_System.BLL
         {
             using (var context = new PianoPlusContext())
             {
-                var results = from i in context.StudentClasses
+                var results = from classes in context.StudentClasses
+                              join course in context.Courses on classes.CourseCode equals course.CourseCode
                               select new ClassInfo()
                               {                                
-                                  StudentName = i.Student.FirstName + " " + i.Student.LastName,
-                                  InstructorName = i.Instructor.FirstName + " " + i.Instructor.LastName,
-                                  InstructorID = i.InstructorID,
-                                  Course = i.Course.CourseName,
-                                  StartTime = i.StartTime,
-                                  EndTime = i.EndTime,
-                                  DayOfWeek = i.DayOfWeek,
-                                  Hours = i.Hours,
-                                  Room = i.Room
+                                  StudentName = classes.Student.FirstName + " " + classes.Student.LastName,
+                                  InstructorName = classes.Instructor.FirstName + " " + classes.Instructor.LastName,
+                                  InstructorID = classes.InstructorID,
+                                  Course = classes.Course.CourseName,
+                                  CourseCode = classes.CourseCode,
+                                  StartTime = classes.StartTime,
+                                  EndTime = classes.EndTime,
+                                  DayOfWeek = classes.DayOfWeek,
+                                  Hours = classes.Hours,
+                                  Room = classes.Room
                               };
 
                 if (startDay != null && endDay != null)
@@ -74,7 +76,7 @@ namespace PianoPlus_System.BLL
             }
             
         }
-        public bool RemoveClass(DateTime startDate, int instructorID, int studentID, string courseCode)
+        public bool RemoveStudentClass(DateTime startDate, int instructorID, int studentID, string courseCode)
         {
             try
             {
@@ -95,67 +97,85 @@ namespace PianoPlus_System.BLL
 
         }
 
-        public void UpdateClass(StudentClass updatedClass, int oldStudentID, string oldCourseCode, DateTime oldStartTime)
+        public void UpdateClass(List<StudentClass> updatedClasses, string oldCourseCode, DateTime oldStartTime, int instructorID)
         {
 
             using (var context = new PianoPlusContext())
             {
                 //Find the entity
-                StudentClass currentClass = context.StudentClasses.Find(oldStudentID, oldCourseCode, updatedClass.InstructorID, oldStartTime);
+                var allClasses = (from i in context.StudentClasses
+                                    where i.InstructorID == instructorID
+                                    &&      i.CourseCode == oldCourseCode
+                                    &&      i.StartTime == oldStartTime
+                                    select i).ToList();
 
 
                 //Check if there is a change.
-                if (currentClass.StudentID != updatedClass.StudentID)
+                foreach (StudentClass currentClass in allClasses)
                 {
-                    currentClass.StudentID = updatedClass.StudentID;
+                    context.StudentClasses.Remove(currentClass);
                 }
-                if (currentClass.InstructorID != updatedClass.InstructorID)
+                foreach (StudentClass clas in updatedClasses)
                 {
-                    currentClass.InstructorID = updatedClass.InstructorID;
-                }
-                if (currentClass.CourseCode != updatedClass.CourseCode)
-                {
-                    currentClass.CourseCode = updatedClass.CourseCode;
-                }
-                if (currentClass.StartTime != updatedClass.StartTime)
-                {
-                    currentClass.StartTime = updatedClass.StartTime;
-                }
-                if (currentClass.EndTime != updatedClass.EndTime)
-                {
-                    currentClass.EndTime = updatedClass.EndTime;
-                }
-                if (currentClass.DayOfWeek != updatedClass.DayOfWeek)
-                {
-                    currentClass.DayOfWeek = updatedClass.DayOfWeek;
-                }
-                if (currentClass.Hours != updatedClass.Hours)
-                {
-                    currentClass.Hours = updatedClass.Hours;
-                }
-                if (currentClass.Room != updatedClass.Room)
-                {
-                    currentClass.Room = updatedClass.Room;
+                    context.StudentClasses.Add(clas);
                 }
 
 
                 //DO the update
-                var update = context.Entry(context.StudentClasses.Attach(currentClass));
-                update.Property(x => x.StudentID).IsModified = true;
-                update.Property(x => x.InstructorID).IsModified = true;
-                update.Property(x => x.CourseCode).IsModified = true;
-                update.Property(x => x.StartTime).IsModified = true;
-                update.Property(x => x.EndTime).IsModified = true;
-                update.Property(x => x.DayOfWeek).IsModified = true;
-                update.Property(x => x.Hours).IsModified = true;
-                update.Property(x => x.Room).IsModified = true;
+                context.SaveChanges();
+                //var update = context.Entry(context.StudentClasses.Attach(currentClass));
+                //update.Property(x => x.StudentID).IsModified = true;
+                //update.Property(x => x.InstructorID).IsModified = true;
+                //update.Property(x => x.CourseCode).IsModified = true;
+                //update.Property(x => x.StartTime).IsModified = true;
+                //update.Property(x => x.EndTime).IsModified = true;
+                //update.Property(x => x.DayOfWeek).IsModified = true;
+                //update.Property(x => x.Hours).IsModified = true;
+                //update.Property(x => x.Room).IsModified = true;
 
 
                 //Save the changes in DB
-                context.SaveChanges();
 
             }
 
+        }
+        public int UpdatedClassStudentCheck(StudentClass newClass)
+        {
+            int GoodCase = 0;
+            int StudentExists = 1;
+            int TimeConflict = 2;
+
+
+            using (var context = new PianoPlusContext())
+            {
+                var oldClass = (from i in context.StudentClasses
+                                where i.InstructorID == newClass.InstructorID
+                                select i).ToList();
+
+                var resultOne = oldClass.Where(x => x.StudentID == newClass.StudentID && x.StartTime == newClass.StartTime && newClass.EndTime == x.EndTime && x.CourseCode == newClass.CourseCode);
+
+                var resultTwo = oldClass.Where(x => x.StartTime > newClass.StartTime && newClass.EndTime > x.StartTime);
+
+                var resutThree = oldClass.Where(x => newClass.StartTime > x.StartTime && newClass.StartTime < x.EndTime);
+
+                if (resultOne.Count() > 0)
+                {
+                    return StudentExists;
+                }
+                else if (resultTwo.Count() > 0)
+                {
+                    return TimeConflict;
+                }
+                else if (resutThree.Count() > 0)
+                {
+                    return TimeConflict;
+                }
+                else
+                {
+                    return GoodCase;
+                }
+
+            }
         }
 
         public int ClassStudentCheck(StudentClass newClass)
@@ -193,15 +213,33 @@ namespace PianoPlus_System.BLL
                 {
                     return GoodCase;
                 }
-
-
-
+                
             }
         }
-
-        public StudentClass GetClassInfoByStartEndDateAndInstructorID(DateTime startDay, DateTime endDay, int instructorID)
+        public StudentClass GetClassByStartDateStudentIDCourseCodeAndInstructorID(DateTime startDay, string courseCode, int studentID, int instructorID)
         {
-            StudentClass currentClass = new StudentClass();
+            StudentClass currentClass = new StudentClass();           
+
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var foundClass = context.StudentClasses.Find(studentID, courseCode, instructorID, startDay);
+
+
+                    return foundClass;
+
+                }
+            }
+            catch
+            {
+                return currentClass;
+            }
+
+        }
+        public List<StudentClass> GetClassesInfoByStartEndDateAndInstructorID(DateTime startDay, string courseCode, int instructorID)
+        {
+            List<StudentClass> currentClasses = new List<StudentClass>();
 
             try
             {
@@ -209,10 +247,10 @@ namespace PianoPlus_System.BLL
                 {
                     var results = (from studentClass in context.StudentClasses
                                    where    studentClass.StartTime == startDay
-                                   &&       studentClass.EndTime == endDay
+                                   &&       studentClass.CourseCode == courseCode
                                    &&       studentClass.InstructorID == instructorID
                                    select studentClass
-                                   ).SingleOrDefault();
+                                   ).ToList();
 
                     return results;
 
@@ -220,7 +258,7 @@ namespace PianoPlus_System.BLL
             }
             catch
             {
-                return currentClass;
+                return currentClasses;
             }
 
         }
