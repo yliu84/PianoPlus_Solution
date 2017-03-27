@@ -24,8 +24,6 @@ namespace PianoPlus_Data.Entities
         [Column(TypeName = "money")]
         public decimal Total { get; set; }
 
-        public DateTime PaidTime { get; set; }
-
         public virtual Instructor Instructor { get; set; }
 
         public virtual Student Student { get; set; }

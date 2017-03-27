@@ -30,3 +30,4 @@ VALUES (2000,'Birth Day','Today is my birth day','2017/02/22','2017/02/22', 1)
 
 INSERT INTO StudentClass (StudentID, InstructorID, CourseCode, StartTime, EndTime, DayOfWeek, Hours, Room)
 VALUES (2000, 2000, 'TESTCO', '2017/02/20 13:00:00', '2017/02/20 15:00:00', 'Monday', 2, '6B')
+

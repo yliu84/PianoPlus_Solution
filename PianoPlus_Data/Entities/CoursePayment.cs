@@ -25,6 +25,8 @@ namespace PianoPlus_Data.Entities
         [Column(TypeName = "money")]
         public decimal LessonFee { get; set; }
 
+        public DateTime PaidTime { get; set; }
+
         public virtual Course Course { get; set; }
 
         public virtual Payment Payment { get; set; }

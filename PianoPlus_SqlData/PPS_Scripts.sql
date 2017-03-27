@@ -388,13 +388,10 @@ CREATE TABLE Payment
 	Total
 	MONEY DEFAULT 0.00
 	NOT NULL
-	CONSTRAINT CK_Payment_Total CHECK(Total >= 0),
-
-	PaidTime
-	DATETIME
-	NOT NULL
-
+	CONSTRAINT CK_Payment_Total CHECK(Total >= 0)
+	
 )
+GO
 
 CREATE TABLE CoursePayment
 (
@@ -418,8 +415,13 @@ CREATE TABLE CoursePayment
 	NOT NULL
 	CONSTRAINT CK_CoursePayment_LessonFee CHECK (LessonFee >= 0.00),
 
+	PaidTime
+	DATETIME
+	NOT NULL,
+
 	CONSTRAINT PK_CoursePayment_PaymentID_CourseCode PRIMARY KEY CLUSTERED (PaymentID,CourseCode)
 
+	
 )
 
 CREATE TABLE Events

@@ -66,6 +66,7 @@
     <Compile Include="POCOS\BlogInfo.cs" />
     <Compile Include="POCOS\CalendarEvents.cs" />
     <Compile Include="POCOS\ClassInfo.cs" />
+    <Compile Include="POCOS\InvoiceInfo.cs" />
     <Compile Include="POCOS\StudentInf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
