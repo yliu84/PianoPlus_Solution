@@ -72,8 +72,6 @@ public partial class StudentManager : System.Web.UI.Page
                 currentStudent.City = txt_city.Text;
                 currentStudent.PostalCode = txt_postalCode.Text;
                 currentStudent.Active = ddl_active.SelectedValue;
-
-
                 studentController.UpdateStudent(currentStudent);
 
             }, "Success", "Student Updated");

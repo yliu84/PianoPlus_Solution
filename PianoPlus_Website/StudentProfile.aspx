@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StudentProfile.aspx.cs" Inherits="StudentProfile" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <!DOCTYPE html>
+
 
 <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
 <link href="Content/css/css-classic.css" rel="stylesheet" />
@@ -17,6 +21,7 @@
                 <div class="col-md-12">
                     <h1>Student Profile</h1>
                 </div>
+                <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                 <div class="col-md-12">
                     <div class="view">
                         <dl class="dl-horizontal">
@@ -33,9 +38,9 @@
                                 <asp:Label ID="AddressLabel" runat="server" Text="Test Address"></asp:Label>
                             </dd>
                             <dt>Province</dt>
-                            <dl>
+                            <dd>
                                 <asp:Label ID="ProvinceLabel" runat="server" Text="Test Province"></asp:Label>
-                            </dl>
+                            </dd>
                             <dt>City</dt>
                             <dd>
                                 <asp:Label ID="CityLabel" runat="server" Text="Test City"></asp:Label>
@@ -73,12 +78,15 @@
                                 <dd>
                                     <asp:TextBox ID="postalCodeValue" runat="server"></asp:TextBox>
                                 </dd>
+                                <dt>Upload a File</dt>
+                                <dd>
+                                    <asp:FileUpload ID="ProfileUpload" runat="server" /></dd>
                             </dl>
                             <asp:Button ID="btn_saveEdit" runat="server" Text="Save Edits" OnClick="btn_saveEdit_Click" />
                         </asp:Panel>
-                        <asp:Button ID="EditBtn" runat="server" Text="Edit Profile" OnClick="EditBtn_Click" />
-                        
                     </div>
+                    <asp:Image ID="ProfilePicture" ImageUrl ="~/DisplayImage.aspx?Email=test1@gmail.com" runat="server" />
+                    <asp:Button ID="EditBtn" runat="server" Text="Edit Profile" OnClick="EditBtn_Click" />
 
                 </div>
             </div>

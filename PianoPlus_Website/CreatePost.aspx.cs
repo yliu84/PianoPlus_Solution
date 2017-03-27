@@ -47,9 +47,6 @@ public partial class CreatePost : System.Web.UI.Page
                 Response.Redirect("~/Login.aspx");
             }
 
-        
-            
-
         }
     }
 }
