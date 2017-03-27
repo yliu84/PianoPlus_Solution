@@ -28,13 +28,19 @@ namespace PianoPlus_System.BLL
            
         }
 
-        public Blog Get_PostInfo(int blogid)
+        public BlogInfo Get_PostInfo(int blogid)
         {
             using (var context = new PianoPlusContext())
             {
                 var result = (from post in context.Blogs
                               where post.BlogID == blogid
-                              select post).FirstOrDefault();
+                              select new BlogInfo()
+                              {
+                                  BlogID = post.BlogID,
+                                  Title = post.Title,
+                                  InstructorName = post.Instructor.FirstName + " " + post.Instructor.LastName,
+                                  Content = post.Content
+                              }).FirstOrDefault();
 
                 return result;
             }

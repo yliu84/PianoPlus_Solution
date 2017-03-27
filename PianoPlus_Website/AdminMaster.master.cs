@@ -13,6 +13,10 @@ public partial class AdminMaster : System.Web.UI.MasterPage
         {
             lbl_name.Text = Session["Name"].ToString();
         }
+        else
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
     protected void btn_logOut_Click(object sender, EventArgs e)
     {
