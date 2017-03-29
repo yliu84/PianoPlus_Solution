@@ -291,7 +291,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
     </div>
-    
+    <script src="Scripts/jquery-2.1.1.js"></script>
     <%--<script type="text/javascript">
         $(document).ready(function () {
             $('.dataTables-example').DataTable({

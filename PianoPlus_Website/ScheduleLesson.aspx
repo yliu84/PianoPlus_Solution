@@ -326,7 +326,7 @@
             <asp:ControlParameter ControlID="txt_studentName" Name="name" PropertyName="Text" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
-    <script src="Scripts/js/jquery-1.11.2.min.js"></script>
+    <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="Scripts/js/bootstrap-datepicker.js"></script>
     <script src="Scripts/js/clockpicker.js"></script>
     <script type="text/javascript">

@@ -292,5 +292,6 @@
     </div>
     <asp:ObjectDataSource ID="ODSInstructor" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Instuctor_List" TypeName="PianoPlus_System.BLL.InstructorController"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ODSRole" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Role_List" TypeName="PianoPlus_System.BLL.InstructorController"></asp:ObjectDataSource>
+    <script src="Scripts/jquery-2.1.1.js"></script>
 </asp:Content>
 

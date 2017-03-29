@@ -157,5 +157,6 @@
         <div />
         <asp:ObjectDataSource ID="ODSCourses" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Course_List" TypeName="PianoPlus_System.BLL.CourseController"></asp:ObjectDataSource>
     </div>
+    <script src="Scripts/jquery-2.1.1.js"></script>
 </asp:Content>
 

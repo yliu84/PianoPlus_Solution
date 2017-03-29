@@ -7,8 +7,10 @@
     <title>Profile</title>
     <link href="Content/animate.css" rel="stylesheet" />
     <link href="Content/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="Content/cropper.min.css" rel="stylesheet" />
     <link href="Content/app_1.min.css" rel="stylesheet" />
     <link href="Content/app_2.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -29,10 +31,54 @@
                                 <img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" />
                             </a>
 
-                            <a href="#" class="pmop-edit">
+                            <button class="pmop-edit" type="button" data-toggle="modal" data-target="#myModal5">
                                 <i class="zmdi zmdi-camera"></i><span
                                     class="hidden-xs">Update Profile Picture</span>
-                            </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">Upload Profile Picture</h4>
+                                 
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="image-crop">
+                                                <img src="Images/test.jpg" />
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <h4>Preview image</h4>
+                                            <div class="img-preview img-preview-sm"></div>
+                                            <h4>Comon method</h4>
+                                            <p>
+                                                You can upload new image to crop container and easy download new cropped image.
+                                            </p>
+                                            <div class="btn-group">
+                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
+                                                    <input type="file" accept="Images/*" name="file" id="inputImage" class="hide" />
+                                                    Upload new image
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                    <asp:LinkButton CssClass="btn btn-primary" runat="server" ID="btn_savePhoto" Text="Save changes" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -134,8 +180,6 @@
                                                 <dt class="p-t-10">Birthday</dt>
                                                 <dd>
                                                     <div class="dtp-container dropdown fg-line">
-                                                        <%--               <input type='text' class="form-control date-picker"
-                                                data-toggle="dropdown" placeholder="Click here...">--%>
                                                         <asp:TextBox ID="txt_birthDay" TextMode="Date" runat="server" CssClass="form-control"></asp:TextBox>
                                                     </div>
                                                     <asp:RequiredFieldValidator runat="server" ValidationGroup="Basic" ControlToValidate="txt_birthDay" CssClass="text-danger"
@@ -314,6 +358,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="Scripts/waves.min.js"></script>
+    <script src="Scripts/cropper.min.js"></script>
     <script src="Scripts/app.min.js"></script>
     <script type="text/javascript">
         function notify(animIn, animOut, type, msg, title) {
@@ -378,6 +423,43 @@
             $('#<%=hidden_editmode.ClientID%>').val("0");
             __doPostBack('<%= up_basic.ClientID %>', '');
             __doPostBack('<%= up_contact.ClientID %>', '');
+        }
+
+
+        var $image = $(".image-crop > img")
+        $($image).cropper({
+            aspectRatio: 1.618,
+            preview: ".img-preview",
+            done: function (data) {
+                // Output the result data for cropping image.
+            }
+        });
+
+        var $inputImage = $("#inputImage");
+        if (window.FileReader) {
+            $inputImage.change(function () {
+                var fileReader = new FileReader(),
+                        files = this.files,
+                        file;
+
+                if (!files.length) {
+                    return;
+                }
+
+                file = files[0];
+
+                if (/^image\/\w+$/.test(file.type)) {
+                    fileReader.readAsDataURL(file);
+                    fileReader.onload = function () {
+                        $inputImage.val("");
+                        $image.cropper("reset", true).cropper("replace", this.result);
+                    };
+                } else {
+                    showMessage("Please choose an image file.");
+                }
+            });
+        } else {
+            $inputImage.addClass("hide");
         }
     </script>
 </body>
