@@ -263,5 +263,62 @@ namespace PianoPlus_System.BLL
 
         }
 
+        public List<ClassInfo> GetClassesByEndTimeAndStudentID(int studentID)
+        {
+            List<ClassInfo> currentClasses = new List<ClassInfo>();
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from studentClass in context.StudentClasses
+                                   where studentClass.EndTime >= System.DateTime.Now
+                                   && studentClass.StudentID == studentID
+                                   select new ClassInfo() { 
+                                   StudentName = studentClass.Student.FirstName + " " + studentClass.Student.LastName,
+                                   Course = studentClass.Course.CourseName,
+                                   InstructorName = studentClass.Instructor.FirstName + " " + studentClass.Instructor.LastName,
+                                   StartTime = studentClass.StartTime,
+                                   EndTime = studentClass.EndTime,
+                                   DayOfWeek = studentClass.DayOfWeek,
+                                   Hours = studentClass.Hours,
+                                   Room = studentClass.Room
+                                   }).ToList();
+                    return results;
+                }
+            }
+            catch
+            {
+                return currentClasses;
+            }
+        }
+
+        public List<ClassInfo> GetClassHistoryByStudentID(int studentID)
+        {
+            List<ClassInfo> pastClasses = new List<ClassInfo>();
+            try
+            {
+                using (var context = new PianoPlusContext())
+                {
+                    var results = (from studentClassHistory in context.StudentClasses
+                                   where studentClassHistory.StudentID == studentID && studentClassHistory.EndTime < System.DateTime.Now
+                                   select new ClassInfo(){
+                                       StudentName = studentClassHistory.Student.FirstName + " " + studentClassHistory.Student.LastName,
+                                       Course = studentClassHistory.Course.CourseName,
+                                       InstructorName = studentClassHistory.Instructor.FirstName + " " + studentClassHistory.Instructor.LastName,
+                                       StartTime = studentClassHistory.StartTime,
+                                       EndTime = studentClassHistory.EndTime,
+                                       DayOfWeek = studentClassHistory.DayOfWeek,
+                                       Hours = studentClassHistory.Hours,
+                                       Room = studentClassHistory.Room
+                                   }).ToList();
+                    return results;
+                }
+            }
+            catch
+            {
+                return pastClasses;
+            }
+        }
+
     }
 }
