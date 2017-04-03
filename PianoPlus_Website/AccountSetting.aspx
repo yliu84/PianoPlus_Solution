@@ -11,6 +11,7 @@
     <link href="Content/app_1.min.css" rel="stylesheet" />
     <link href="Content/app_2.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,35 +49,30 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="col-md-12">
+                                        
                                         <div class="col-md-6">
-                                            <div class="image-crop">
+                                            <%--<div class="image-crop">
                                                 <img src="Images/test.jpg" />
-                                            </div>
-
+                                            </div>--%>
+                                            <h4>Preview image</h4>
+                                            <img src="Images/test.jpg" id="img_preview" runat="server" class="col-md-12" />
                                         </div>
 
                                         <div class="col-md-6">
-                                            <h4>Preview image</h4>
-                                            <div class="img-preview img-preview-sm"></div>
-                                            <h4>Comon method</h4>
-                                            <p>
-                                                You can upload new image to crop container and easy download new cropped image.
-                                            </p>
+                                            
+                                            <%--<div class="img-preview img-preview-sm"></div>--%>
+
                                             <div class="btn-group">
-                                                <label title="Upload image file" for="inputImage" class="btn btn-primary">
-                                                    <input type="file" accept="Images/*" name="file" id="inputImage" class="hide" />
-                                                    Upload new image
-                                                </label>
-
+                                                <asp:FileUpload ID="FileUpload1" runat="server" />
                                             </div>
-
+                                            <asp:Label ID="lbl_message" runat="server" Text=""></asp:Label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                    <asp:LinkButton CssClass="btn btn-primary" runat="server" ID="btn_savePhoto" Text="Save changes" />
+                                    <asp:LinkButton CssClass="btn btn-primary" runat="server" ID="btn_savePhoto" OnClick="btn_savePhoto_Click" Text="Save changes" />
                                 </div>
                             </div>
                         </div>
@@ -426,41 +422,25 @@
         }
 
 
-        var $image = $(".image-crop > img")
-        $($image).cropper({
-            aspectRatio: 1.618,
-            preview: ".img-preview",
-            done: function (data) {
-                // Output the result data for cropping image.
+        $("#FileUpload1").change(function () {
+            $("#dvPreview").html("");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+            if (regex.test($(this).val().toLowerCase())) {
+                
+                    if (typeof (FileReader) != "undefined") {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $("#img_preview").attr("src", e.target.result);
+                        }
+                        reader.readAsDataURL($(this)[0].files[0]);
+                    } else {
+                        alert("This browser does not support FileReader.");
+                    }
+                
+            } else {
+                alert("Please upload a valid image file.");
             }
         });
-
-        var $inputImage = $("#inputImage");
-        if (window.FileReader) {
-            $inputImage.change(function () {
-                var fileReader = new FileReader(),
-                        files = this.files,
-                        file;
-
-                if (!files.length) {
-                    return;
-                }
-
-                file = files[0];
-
-                if (/^image\/\w+$/.test(file.type)) {
-                    fileReader.readAsDataURL(file);
-                    fileReader.onload = function () {
-                        $inputImage.val("");
-                        $image.cropper("reset", true).cropper("replace", this.result);
-                    };
-                } else {
-                    showMessage("Please choose an image file.");
-                }
-            });
-        } else {
-            $inputImage.addClass("hide");
-        }
     </script>
 </body>
 </html>
