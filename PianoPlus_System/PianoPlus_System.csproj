@@ -54,6 +54,7 @@
     <Compile Include="BLL\CourseController.cs" />
     <Compile Include="BLL\InstructorController.cs" />
     <Compile Include="BLL\InvoiceController.cs" />
+    <Compile Include="BLL\PasswordResetController.cs" />
     <Compile Include="BLL\StudentController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

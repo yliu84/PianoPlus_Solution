@@ -43,7 +43,7 @@
                         Display="Dynamic" />
                 </div>
                 <%--<button type="submit" class="btn btn-primary block full-width m-b">Login</button>--%>
-                <asp:Button ID="btn_submit" runat="server" Text="Login" CssClass="btn btn-primary block full-width m-b" OnClick="btn_submit_Click" />
+                <asp:Button ID="btn_submit" runat="server" Text="Submit" CssClass="btn btn-primary block full-width m-b" OnClick="btn_submit_Click" />
                 <a href="#"><small>Have an account??</small></a>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" href="Register.aspx">Create an account</a>
