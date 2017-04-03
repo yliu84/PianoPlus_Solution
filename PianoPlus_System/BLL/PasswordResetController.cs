@@ -13,34 +13,34 @@ namespace PianoPlus_System.BLL
 {
     class PasswordResetController
     {
-        public bool AddPassswordResetRequest(Student? student, Instructor? instructor)
+        public bool AddPassswordResetRequest(int? studentID, int? instructorID)
         {
-            using (var context = new PianoPlusContext())
-            {
-                PasswordRequest request = new PasswordRequest();
-                if (instructor != null)
-                {
-                    request.InstructorID = instructor.Value.InstructorID;
-                    request.Instructor = instructor.Value;
-                    request.Student = null;
-                    request.StudentID = null;
-                }
-                else if (student != null)
-                {
-                    request.StudentID = student.Value.StudentID;
-                    request.Student = student.Value;
-                    request.Instructor = null;
-                    request.InstructorID = null;
-                }
-                else
-                {
-                    return false;
-                }
-                context.PasswordRequests.Add(request);
+            //using (var context = new PianoPlusContext())
+            //{
+            //    PasswordRequest request = new PasswordRequest();
+            //    if (instructor != null)
+            //    {
+            //        request.InstructorID = instructor.Value.InstructorID;
+            //        request.Instructor = instructor.Value;
+            //        request.Student = null;
+            //        request.StudentID = null;
+            //    }
+            //    else if (student != null)
+            //    {
+            //        request.StudentID = student.Value.StudentID;
+            //        request.Student = student.Value;
+            //        request.Instructor = null;
+            //        request.InstructorID = null;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //    context.PasswordRequests.Add(request);
 
-                context.SaveChanges();
+            //    context.SaveChanges();
 
-            }
+            //}
             return false;
         }
     }
