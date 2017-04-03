@@ -24,7 +24,24 @@ public partial class Login : System.Web.UI.Page
 
         if (studentController.CheckIfEmailIsAvailable(email) == false) 
         {
-            
+            Student currentStudent = studentController.GetStudentInfo(email);
+            var password = Crypto.Hash((txt_password.Text + currentStudent.PassSalt), "MD5");
+            if (password == currentStudent.PassHash && currentStudent.Active == 'Y'.ToString())
+            {
+                Session["Email"] = currentStudent.Email;
+                Session["StudentID"] = currentStudent.StudentID;
+                Session["Name"] = currentStudent.FirstName + " " + currentStudent.LastName;
+
+                Application.Lock();
+                ((List<string>)Application["Users"]).Add(Session["Email"].ToString());
+                Application.UnLock();
+
+                Response.Redirect("~/Default.aspx");
+            }
+            else
+            {
+                MessageUserControl.ShowInfo("Incorrect user ID or password. Type the correct user ID and password, and try again.");
+            }
         }
         else if(instructorController.CheckIfEmailIsAvailable(email) == false)
         {

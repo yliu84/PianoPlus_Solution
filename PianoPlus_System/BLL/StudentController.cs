@@ -356,5 +356,29 @@ namespace PianoPlus_System.BLL
 
 
         }
+
+        public bool UpdateProfileImage(int studentId, byte[] picture)
+        {
+            bool updated = false;
+
+            using (var context = new PianoPlusContext())
+            {
+                Student find = context.Students.Find(studentId);
+
+                if (find.ProfileImage != picture)
+                {
+                    find.ProfileImage = picture;
+                }
+
+                var update = context.Entry(context.Students.Attach(find));
+                update.Property(x => x.ProfileImage).IsModified = true;
+
+                context.SaveChanges();
+
+                updated = true;
+
+                return updated;
+            }
+        }
     }
 }

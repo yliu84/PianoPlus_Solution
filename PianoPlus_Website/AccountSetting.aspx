@@ -29,7 +29,7 @@
                     <div class="pmo-pic">
                         <div class="p-relative">
                             <a href="#">
-                                <img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" />
+                                <img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" id="img_student" />
                             </a>
 
                             <button class="pmop-edit" type="button" data-toggle="modal" data-target="#myModal6">
@@ -80,19 +80,21 @@
 
                     <div class="pmo-block pmo-contact hidden-xs">
                         <h2><asp:Label ID="lbl_name" runat="server" Text="Malinda Hollaway"></asp:Label>
-                            <small>Student</small>
+                            <small> - Student</small>
                         </h2>
                         <h2>Contact</h2>
 
                         <ul>
-                            <li><i class="zmdi zmdi-phone"></i>(780)708-2011</li>
-                            <li><i class="zmdi zmdi-email"></i>test@gmail.com</li>
+                            <li><i class="zmdi zmdi-phone"></i>
+                                <asp:Label ID="lbl_studentPhone" runat="server" Text=""></asp:Label></li>
+                            <li><i class="zmdi zmdi-email"></i>
+                                <asp:Label ID="lbl_studentEmail" runat="server" Text="Label"></asp:Label></li>
                             <li>
                                 <i class="zmdi zmdi-pin"></i>
                                 <address class="m-b-0 ng-binding">
-                                    44-46 Morningside Road,<br />
-                                    Edinburgh,<br />
-                                    Scotland
+                                    <asp:Label ID="lbl_studentAddress" runat="server" Text="Label"></asp:Label><br />
+                                    <asp:Label ID="lbl_studentCity" runat="server" Text="Label"></asp:Label><br />
+                                    <asp:Label ID="lbl_studentProvince" runat="server" Text="Label"></asp:Label>                  
                                 </address>
                             </li>
                         </ul>
