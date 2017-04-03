@@ -26,10 +26,11 @@
             <div class="card" id="profile-main" style="margin-top:25px">
                 <div class="pm-overview c-overflow">
 
-                    <div class="pmo-pic">
+                    <div class="pmo-pic row">
                         <div class="p-relative">
                             <a href="#">
-                                <img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" id="img_student" />
+                                <asp:Image CssClass="img-responsive col-md-12" runat="server" ImageUrl="~/Images/profile.png" alt="profile picture" ID="img_student" />
+                                <%--<img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" id="img_student" />--%>
                             </a>
 
                             <button class="pmop-edit" type="button" data-toggle="modal" data-target="#myModal6">
@@ -99,6 +100,7 @@
                             </li>
                         </ul>
                     </div>
+               
                 </div>
 
                 <div class="pm-body clearfix">

@@ -159,25 +159,7 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public Student FindProfileImage(string email)
-        {
-            Student currentStudent = new Student();
-            try
-            {
-                using (var context = new PianoPlusContext())
-                {
-                    var results = (from info in context.Students
-                                   where info.Email == email
-                                   select info).SingleOrDefault();
-                    return results;
-
-                }
-            }
-            catch
-            {
-                return currentStudent;
-            }
-        }
+        
         // Checks to see if an email is used on another account
         public bool CheckIfEmailIsAvailable(string email)
         {

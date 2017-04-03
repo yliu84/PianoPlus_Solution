@@ -18,7 +18,7 @@ public partial class DisplayImage : System.Web.UI.Page
         {
             StudentController controller = new StudentController();
             Student student = new Student();
-            student = controller.FindProfileImage(Email);
+            student = controller.GetStudentInfo(Email);
             
 
             if (student.ProfileImage != null)

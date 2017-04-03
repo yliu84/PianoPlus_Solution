@@ -22,8 +22,10 @@ public partial class AccountSetting : System.Web.UI.Page
             if(!IsPostBack)
             {
                 lbl_message.Text = "";
-
                 RetrieveStudentProfile();
+                
+
+
             }
 
         }
@@ -76,6 +78,11 @@ public partial class AccountSetting : System.Web.UI.Page
                 lbl_studentAddress.Text = student.Address;
                 lbl_studentCity.Text = student.City;
                 lbl_studentProvince.Text = student.Province;
+                if (student.ProfileImage != null)
+                    img_student.ImageUrl = "~/DisplayImage.aspx?Email=" + Session["Email"].ToString(); 
+                
+
+
             }
         }
         
@@ -96,7 +103,8 @@ public partial class AccountSetting : System.Web.UI.Page
         StudentController studentManager = new StudentController();
 
         if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".bmp" ||
-            fileExtension.ToLower() == ".gif" || fileExtension.ToLower() == ".png")
+            fileExtension.ToLower() == ".gif" || fileExtension.ToLower() == ".png" ||
+            fileExtension.ToLower() == ".jpeg")
         {
             Stream stream = postedFile.InputStream;
             BinaryReader binaryReader = new BinaryReader(stream);
