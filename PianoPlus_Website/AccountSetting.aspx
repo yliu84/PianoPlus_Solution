@@ -32,15 +32,15 @@
                                 <img class="img-responsive" runat="server" src="~/Images/profile.png" alt="profile picture" />
                             </a>
 
-                            <button class="pmop-edit" type="button" data-toggle="modal" data-target="#myModal5">
+                            <button class="pmop-edit" type="button" data-toggle="modal" data-target="#myModal6">
                                 <i class="zmdi zmdi-camera"></i><span
                                     class="hidden-xs">Update Profile Picture</span>
                             </button>
                         </div>
                     </div>
 
-                    <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                    <div class="modal inmodal fade" id="myModal6" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -48,17 +48,17 @@
                                  
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-md-12">
-                                        
-                                        <div class="col-md-6">
+                                    
+                                        <div class="row">
+                                        <div class="col-md-12" style="padding-top:15px">
                                             <%--<div class="image-crop">
                                                 <img src="Images/test.jpg" />
                                             </div>--%>
-                                            <h4>Preview image</h4>
-                                            <img src="Images/test.jpg" id="img_preview" runat="server" class="col-md-12" />
+                                            
+                                            <img src="Images/profile.png" id="img_preview" runat="server" class="col-md-12" />
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12" style="padding-top:10px;padding-bottom:10px">
                                             
                                             <%--<div class="img-preview img-preview-sm"></div>--%>
 
@@ -71,15 +71,15 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                    <asp:LinkButton CssClass="btn btn-primary" runat="server" ID="btn_savePhoto" OnClick="btn_savePhoto_Click" Text="Save changes" />
+                                    <button type="button" class="btn btn-white btn-sm" data-dismiss="modal">Close</button>
+                                    <asp:LinkButton CssClass="btn btn-primary btn-sm" runat="server" ID="btn_savePhoto" OnClick="btn_savePhoto_Click" Text="Save changes" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="pmo-block pmo-contact hidden-xs">
-                        <h2>Malinda Hollaway
+                        <h2><asp:Label ID="lbl_name" runat="server" Text="Malinda Hollaway"></asp:Label>
                             <small>Student</small>
                         </h2>
                         <h2>Contact</h2>

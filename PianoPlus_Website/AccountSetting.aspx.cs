@@ -7,11 +7,28 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using PianoPlus_Data;
+using PianoPlus_Data.Entities;
+using PianoPlus_System.BLL;
+using PianoPlus.UI;
+
 public partial class AccountSetting : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["email"] != null && Session["Name"] != null)
+        {
+            lbl_name.Text = Session["Name"].ToString();
+            if(!IsPostBack)
+            {
+                lbl_message.Text = "";
+            }
 
+        }
+        else
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 
     protected void btn_saveBasic_Click(object sender, EventArgs e)
@@ -22,14 +39,24 @@ public partial class AccountSetting : System.Web.UI.Page
     {
 
     }
-    protected void btn_browse_Click(object sender, EventArgs e)
+
+    public void RetrieveInstructorProfile()
+    {
+        InstructorController instructorManager = new InstructorController();
+    }
+
+    protected void btn_savePhoto_Click(object sender, EventArgs e)
     {
         HttpPostedFile postedFile = FileUpload1.PostedFile;
         string fileName = Path.GetFileName(postedFile.FileName);
         string fileExtension = Path.GetExtension(fileName);
         int fileSize = postedFile.ContentLength;
+        int id = int.Parse(Session["InstructorID"].ToString());
 
-        if(fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".bmp" ||
+        InstructorController instructorManager = new InstructorController();
+        StudentController studentManager = new StudentController();
+
+        if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".bmp" ||
             fileExtension.ToLower() == ".gif" || fileExtension.ToLower() == ".png")
         {
             Stream stream = postedFile.InputStream;
@@ -37,7 +64,21 @@ public partial class AccountSetting : System.Web.UI.Page
             byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
 
             lbl_message.Visible = true;
-            
+
+            if (bytes != null)
+            {
+                if(instructorManager.UpdateProfileImage(id,bytes) == true)
+                {
+                    lbl_message.Text = "Image upload successfully.";
+                    lbl_message.ForeColor = System.Drawing.Color.Green;
+                }
+            }
+            else
+            {
+                lbl_message.Text = "Please select a image before click upload button";
+                lbl_message.ForeColor = System.Drawing.Color.Red;
+            }
+
         }
         else
         {
@@ -46,10 +87,11 @@ public partial class AccountSetting : System.Web.UI.Page
             lbl_message.ForeColor = System.Drawing.Color.Red;
 
         }
-    }
 
-    protected void btn_savePhoto_Click(object sender, EventArgs e)
-    {
+        
+
+        
+
 
     }
 }
