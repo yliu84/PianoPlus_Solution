@@ -21,6 +21,7 @@ namespace PianoPlus_Data
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<InstructorClassHistory> InstructorClassHistories { get; set; }
+        public virtual DbSet<PasswordRequest> PasswordRequests { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Student> Students { get; set; }
@@ -77,6 +78,10 @@ namespace PianoPlus_Data
                 .HasMany(e => e.Payments)
                 .WithRequired(e => e.Instructor)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PasswordRequest>()
+                .Property(e => e.RequestToken)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Payment>()
                 .Property(e => e.Total)

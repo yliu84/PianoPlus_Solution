@@ -18,6 +18,7 @@ namespace PianoPlus_Data.Entities
             Events = new HashSet<Events>();
             InstructorClassHistories = new HashSet<InstructorClassHistory>();
             Payments = new HashSet<Payment>();
+            PasswordRequests = new HashSet<PasswordRequest>();
         }
 
         public int InstructorID { get; set; }
@@ -87,5 +88,6 @@ namespace PianoPlus_Data.Entities
         public virtual ICollection<Payment> Payments { get; set; }
 
         public virtual ICollection<InstructorClassHistory> InstructorClassHistories { get; set; }
+        public virtual ICollection<PasswordRequest> PasswordRequests { get; set; }
     }
 }

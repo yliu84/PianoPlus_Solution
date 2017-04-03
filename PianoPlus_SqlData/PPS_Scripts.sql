@@ -459,3 +459,29 @@ CREATE TABLE Events
 	CONSTRAINT CK_Events_EndTime CHECK(EndAt >= StartAt)
 
 )
+
+CREATE TABLE PasswordRequests
+(
+	RequestID
+	INT IDENTITY(1,1)
+	NOT NULL
+	CONSTRAINT PK_PasswordRequests_RequestID PRIMARY KEY CLUSTERED,
+
+	StudentID
+	INT
+	NULL
+	CONSTRAINT FK_PasswordRequests_StudentID REFERENCES Student(StudentID),
+
+	InstructorID
+	INT
+	NULL
+	CONSTRAINT FK_PasswordRequests_InstructorID REFERENCES Instructor(InstructorID),
+
+	RequestToken
+	VARCHAR(128)
+	NOT NULL,
+	
+	CreateDate
+	DATETIME DEFAULT GetDate()
+	NOT NULL
+)

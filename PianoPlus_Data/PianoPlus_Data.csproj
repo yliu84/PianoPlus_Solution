@@ -57,6 +57,7 @@
     <Compile Include="Entities\Events.cs" />
     <Compile Include="Entities\Instructor.cs" />
     <Compile Include="Entities\InstructorClassHistory.cs" />
+    <Compile Include="Entities\PasswordRequests.cs" />
     <Compile Include="Entities\Payment.cs" />
     <Compile Include="Entities\StudentClassHistory.cs" />
     <Compile Include="PianoPlusContext.cs" />
