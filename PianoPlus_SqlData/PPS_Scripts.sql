@@ -45,10 +45,6 @@ CREATE TABLE Student
 	NVARCHAR(14)
 	NOT NULL,
 
-	BirthDay
-	DATE
-	NOT NULL,
-
 	Address
 	NVARCHAR(100)
 	NOT NULL,
@@ -129,10 +125,6 @@ CREATE TABLE Instructor
 
 	Phone
 	NVARCHAR(14)
-	NOT NULL,
-
-	BirthDay
-	DATE
 	NOT NULL,
 
 	Address
@@ -492,7 +484,7 @@ CREATE TABLE PasswordRequests
 	DATETIME DEFAULT GetDate()
 	NOT NULL,
 
-	TokenSalt
-	NVARCHAR(128)
+	Active
+	CHAR(1) DEFAULT 'Y'
 	NOT NULL
 )
