@@ -47,7 +47,6 @@ public partial class Login : System.Web.UI.Page
         {
             Instructor currentInstuctor = instructorController.GetInstructorInfo(email);
             var password = Crypto.Hash((txt_password.Text + currentInstuctor.PassSalt), "MD5");
-
             if(password == currentInstuctor.PassHash && currentInstuctor.Active == 'Y'.ToString())
             {
                 Session["Email"] = currentInstuctor.Email;

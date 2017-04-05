@@ -184,6 +184,10 @@ namespace PianoPlus_System.BLL
                 {
                     currentInstructor.PostalCode = user.PostalCode;
                 }
+                if (currentInstructor.PassHash != user.PassHash)
+                {
+                    currentInstructor.PassHash = user.PassHash;
+                }
                 if (currentInstructor.Active != user.Active)
                 {
                     currentInstructor.Active = user.Active;
@@ -200,6 +204,7 @@ namespace PianoPlus_System.BLL
                 update.Property(x => x.Address).IsModified = true;
                 update.Property(x => x.Province).IsModified = true;
                 update.Property(x => x.City).IsModified = true;
+                update.Property(x => x.PassHash).IsModified = true;
                 update.Property(x => x.PostalCode).IsModified = true;
                 update.Property(x => x.Active).IsModified = true;
 

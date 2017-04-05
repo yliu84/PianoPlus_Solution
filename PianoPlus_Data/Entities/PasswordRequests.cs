@@ -9,18 +9,24 @@ namespace PianoPlus_Data.Entities
     [Table("PasswordRequests")]
     public partial class PasswordRequest
     {
-        [Key]
-        public int RequestID { get; set; }
 
+        [Key]
+        [Required]
+        [StringLength(128)]
+        public string RequestToken { get; set; }
         public int? StudentID { get; set; }
 
         public int? InstructorID { get; set; }
 
         [Required]
-        [StringLength(128)]
-        public string RequestToken { get; set; }
+        [StringLength(60)]
+        public string Email { get; set; }
 
         public DateTime CreateDate { get; set; }
+
+        [StringLength(1)]
+        public string Active { get; set; }
+        
 
         public virtual Instructor Instructor { get; set; }
 

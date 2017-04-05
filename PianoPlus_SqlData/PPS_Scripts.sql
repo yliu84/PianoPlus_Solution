@@ -350,7 +350,6 @@ CREATE TABLE Blog
 	Title
 	NVARCHAR(200)
 	NOT NULL
-
 )
 
 CREATE Table Announcement
@@ -470,8 +469,8 @@ CREATE TABLE Events
 
 CREATE TABLE PasswordRequests
 (
-	RequestID
-	INT IDENTITY(1,1)
+	RequestToken
+	VARCHAR(128)
 	NOT NULL
 	CONSTRAINT PK_PasswordRequests_RequestID PRIMARY KEY CLUSTERED,
 
@@ -485,11 +484,15 @@ CREATE TABLE PasswordRequests
 	NULL
 	CONSTRAINT FK_PasswordRequests_InstructorID REFERENCES Instructor(InstructorID),
 
-	RequestToken
-	VARCHAR(128)
+	Email
+	VARCHAR(60)
 	NOT NULL,
-	
+		
 	CreateDate
 	DATETIME DEFAULT GetDate()
+	NOT NULL,
+
+	TokenSalt
+	NVARCHAR(128)
 	NOT NULL
 )
