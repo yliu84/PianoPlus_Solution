@@ -4,6 +4,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+    <link href="Content/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Student</h2>
@@ -179,6 +181,25 @@
                                             Display="Dynamic" />
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <asp:Label ID="Label11" runat="server" Text="Birth Day" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group date" data-autoclose="true">
+                                            <asp:TextBox ID="txt_birth" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-clock-o"></span>
+                                            </div>
+                                        </div>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                                                runat="server"
+                                                ErrorMessage="Birth day is Required"
+                                                Display="Dynamic"
+                                                ForeColor="Red"
+                                                ValidationGroup="student"
+                                                ControlToValidate="txt_birth"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-lg-6">
@@ -272,6 +293,8 @@
                                         </asp:DropDownList>
                                     </div>
                                 </div>
+
+                                
                             </div>
 
                             <div class="col-lg-12">
@@ -292,34 +315,18 @@
         </asp:ObjectDataSource>
     </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
-    <%--<script type="text/javascript">
+    <script src="Scripts/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
         $(document).ready(function () {
-            $('.dataTables-example').DataTable({
-                pageLength: 25,
-                responsive: true,
-                dom: '<"html5buttons"B>lTfgitp',
-                buttons: [
-                    {extend: 'copy' },
-                    {extend: 'csv' },
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
-
-                    {
-                        extend: 'print',
-                        customize: function (win) {
-                            $(win.document.body).addClass('white-bg');
-                            $(win.document.body).css('font-size', '10px');
-
-                            $(win.document.body).find('table')
-                                    .addClass('compact')
-                                    .css('font-size', 'inherit');
-                        }
-                    }
-                ]
-
+            $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
             });
 
-        });
-    </script>--%>
+        })
+    </script>
 </asp:Content>
 

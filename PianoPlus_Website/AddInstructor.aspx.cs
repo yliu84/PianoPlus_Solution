@@ -38,6 +38,7 @@ public partial class AddInstructor : System.Web.UI.Page
             newInstructor.City = txt_city.Text;
             newInstructor.PostalCode = txt_postalCode.Text;
             newInstructor.Phone = txt_phone.Text;
+            newInstructor.BirthDay = DateTime.Parse(txt_birth.Text).Date;
             newInstructor.Active = 'Y'.ToString();
             newInstructor.CreateDate = DateTime.Today;
 

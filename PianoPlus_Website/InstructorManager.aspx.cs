@@ -40,6 +40,7 @@ public partial class InstructorManager : System.Web.UI.Page
             ddl_province.SelectedValue = currentInstructor.Province;
             txt_city.Text = currentInstructor.City;
             txt_postalCode.Text = currentInstructor.PostalCode;
+            txt_birth.Text = currentInstructor.BirthDay.ToString("MM/dd/yyyy");
             ddl_active.SelectedValue = currentInstructor.Active;
         }
     }
@@ -73,6 +74,7 @@ public partial class InstructorManager : System.Web.UI.Page
                 currentInstructor.City = txt_city.Text;
                 currentInstructor.PostalCode = txt_postalCode.Text;
                 currentInstructor.Active = ddl_active.SelectedValue;
+                currentInstructor.BirthDay = DateTime.Parse(txt_birth.Text).Date;
 
                 instructorController.UpdateInstructor(currentInstructor);
 

@@ -164,6 +164,10 @@ namespace PianoPlus_System.BLL
                 {
                     currentInstructor.Email = user.Email;
                 }
+                if(currentInstructor.BirthDay != user.BirthDay)
+                {
+                    currentInstructor.BirthDay = user.BirthDay;
+                }
                 if (currentInstructor.Address != user.Address)
                 {
                     currentInstructor.Address = user.Address;
@@ -192,6 +196,7 @@ namespace PianoPlus_System.BLL
                 update.Property(x => x.RoleID).IsModified = true;
                 update.Property(x => x.Phone).IsModified = true;
                 update.Property(x => x.Email).IsModified = true;
+                update.Property(x => x.BirthDay).IsModified = true;
                 update.Property(x => x.Address).IsModified = true;
                 update.Property(x => x.Province).IsModified = true;
                 update.Property(x => x.City).IsModified = true;

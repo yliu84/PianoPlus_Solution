@@ -4,6 +4,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+    <link href="Content/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Instructor</h2>
@@ -268,6 +269,25 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <asp:Label ID="Label12" runat="server" Text="Birth Day" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <div class="col-lg-9">
+                                        <div class="input-group date" data-autoclose="true">
+                                            <asp:TextBox ID="txt_birth" runat="server" CssClass="form-control" placeholder="mm/dd/yyyy"></asp:TextBox>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-clock-o"></span>
+                                            </div>
+                                        </div>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                                                runat="server"
+                                                ErrorMessage="Birth day is Required"
+                                                Display="Dynamic"
+                                                ForeColor="Red"
+                                                ValidationGroup="instructor"
+                                                ControlToValidate="txt_birth"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <asp:Label ID="Label10" runat="server" Text="Active" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
                                         <asp:DropDownList ID="ddl_active" runat="server" Height="30px" CssClass="form-control">
@@ -293,5 +313,18 @@
     <asp:ObjectDataSource ID="ODSInstructor" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Instuctor_List" TypeName="PianoPlus_System.BLL.InstructorController"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="ODSRole" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Role_List" TypeName="PianoPlus_System.BLL.InstructorController"></asp:ObjectDataSource>
     <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+        })
+    </script>
 </asp:Content>
 

@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AccountSetting.aspx.cs" Inherits="AccountSetting" UnobtrusiveValidationMode="None" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,14 +19,28 @@
 <body>
     <form id="form1" runat="server">
         <section id="content">
-            <%--<div class="container">
+            <div class="clearfix">
+                <div class="col-lg-12">
+                    <nav class="ha-menu" style="">
+                        <ul>
+                            <li><a href="/default.aspx">Home</a></li>
 
-                <div class="block-header" style="margin-top:20px">
-                    
+                            <li class="dropdown pull-right">
+                                <a href="#" runat="server" id="a_email" data-toggle="dropdown" class="f-14"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AccountSetting.aspx">Account</a></li>
+                                    <li><a href="PasswordReset.aspx">Password Reset</a></li>
+                                    <li runat="server" id="li_rightddl_logout">
+                                        <asp:LinkButton Text="Logout" ID="btn_right_logout" CausesValidation="false" CssClass="c-red" runat="server" OnClick="btn_right_logout_Click" /></li>
+                                </ul>
+                            </li>
+                            <li runat="server" id="li_rightddl_login" class="pull-right"><a href="/Login.aspx" class="c-amber" style="text-transform: none">Login</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>--%>
+            </div>
 
-            <div class="card" id="profile-main" style="margin-top:25px">
+            <div class="card" id="profile-main" style="margin-top:15px">
                 <div class="pm-overview c-overflow">
 
                     <div class="pmo-pic row">
@@ -108,7 +125,7 @@
                         <li class="active"><a href="profile-about.html">About</a></li>
                         <li><a href="profile-timeline.html">Schedule</a></li>
                     </ul>
-
+                    <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                     <!-- Basic Information -->
                     <div class="pmb-block">
                         <asp:UpdatePanel runat="server" ID="up_basic" ChildrenAsTriggers="true">

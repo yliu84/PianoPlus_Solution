@@ -38,6 +38,9 @@ namespace PianoPlus_Data.Entities
         public string Phone { get; set; }
 
         [Required]
+        public DateTime BirthDay { get; set; }
+
+        [Required]
         [StringLength(100)]
         public string Address { get; set; }
 

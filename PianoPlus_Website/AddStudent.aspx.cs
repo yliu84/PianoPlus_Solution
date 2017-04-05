@@ -38,6 +38,7 @@ public partial class AddStudent : System.Web.UI.Page
             newStudent.PostalCode = txt_postalCode.Text;
             newStudent.Phone = txt_phone.Text;
             newStudent.Active = 'Y'.ToString();
+            newStudent.BirthDay = DateTime.Parse(txt_birth.Text).Date;
             newStudent.CreateDate = DateTime.Today;
 
             var salt = Crypto.GenerateSalt();
@@ -57,6 +58,7 @@ public partial class AddStudent : System.Web.UI.Page
                 txt_password.Text = "";
                 txt_phone.Text = "";
                 txt_postalCode.Text = "";
+                txt_birth.Text = "";
                 ddl_province.SelectedValue = "0";
                 MessageUserControl.ShowInfo("Student registed successful, please log in.");
 

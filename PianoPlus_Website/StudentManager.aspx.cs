@@ -40,6 +40,7 @@ public partial class StudentManager : System.Web.UI.Page
             txt_city.Text = currentStudent.City;
             txt_postalCode.Text = currentStudent.PostalCode;
             ddl_active.SelectedValue = currentStudent.Active;
+            txt_birth.Text = currentStudent.BirthDay.ToString("MM/dd/yyyy");
         }
     }
 
@@ -72,6 +73,7 @@ public partial class StudentManager : System.Web.UI.Page
                 currentStudent.City = txt_city.Text;
                 currentStudent.PostalCode = txt_postalCode.Text;
                 currentStudent.Active = ddl_active.SelectedValue;
+                currentStudent.BirthDay = DateTime.Parse(txt_birth.Text);
                 studentController.UpdateStudent(currentStudent);
 
             }, "Success", "Student Updated");

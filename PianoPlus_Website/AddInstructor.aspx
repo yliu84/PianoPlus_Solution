@@ -4,6 +4,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+    <link href="Content/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Instructor</h2>
@@ -128,6 +130,27 @@
                                             ControlToValidate="txt_password"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <asp:Label ID="Label10" runat="server" Text="Confirm Password" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <div class="col-lg-9">
+                                        <asp:TextBox ID="txt_confirmPass" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldConfirmPassword"
+                                            runat="server"
+                                            ErrorMessage="Confirm password is Required"
+                                            Display="Dynamic"
+                                            ForeColor="Red"
+                                            ControlToValidate="txt_confirmPass"></asp:RequiredFieldValidator>
+                                        <asp:CompareValidator ID="ComparePassword"
+                                            runat="server"
+                                            ErrorMessage="The password and confirmation password do not match."
+                                            ControlToValidate="txt_confirmPass"
+                                            ControlToCompare="txt_password"
+                                            Type="String"
+                                            Display="Dynamic"
+                                            ForeColor="Red"></asp:CompareValidator>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-lg-6">
@@ -207,23 +230,20 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Label ID="Label10" runat="server" Text="Confirm Password" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <asp:Label ID="Label11" runat="server" Text="Birth Day" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="col-lg-9">
-                                        <asp:TextBox ID="txt_confirmPass" runat="server" CssClass="form-control" TextMode="Password" placeholder="Confirm Password"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldConfirmPassword"
-                                            runat="server"
-                                            ErrorMessage="Confirm password is Required"
-                                            Display="Dynamic"
-                                            ForeColor="Red"
-                                            ControlToValidate="txt_confirmPass"></asp:RequiredFieldValidator>
-                                        <asp:CompareValidator ID="ComparePassword"
-                                            runat="server"
-                                            ErrorMessage="The password and confirmation password do not match."
-                                            ControlToValidate="txt_confirmPass"
-                                            ControlToCompare="txt_password"
-                                            Type="String"
-                                            Display="Dynamic"
-                                            ForeColor="Red"></asp:CompareValidator>
+                                        <div class="input-group date" data-autoclose="true">
+                                            <asp:TextBox ID="txt_birth" runat="server" CssClass="form-control" placeholder="mm/dd/yyyy"></asp:TextBox>
+                                            <div class="input-group-addon">
+                                                <span class="fa fa-clock-o"></span>
+                                            </div>
+                                        </div>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldBirth"
+                                                runat="server"
+                                                ErrorMessage="Birth day is Required"
+                                                Display="Dynamic"
+                                                ForeColor="Red"
+                                                ControlToValidate="txt_birth"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                             </div>
@@ -241,5 +261,18 @@
         </div>
     </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+        })
+    </script>
 </asp:Content>
 
