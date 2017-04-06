@@ -45,6 +45,10 @@ CREATE TABLE Student
 	NVARCHAR(14)
 	NOT NULL,
 
+	BirthDay
+	DATE
+	NOT NULL,
+
 	Address
 	NVARCHAR(100)
 	NOT NULL,
@@ -125,6 +129,10 @@ CREATE TABLE Instructor
 
 	Phone
 	NVARCHAR(14)
+	NOT NULL,
+
+	BirthDay
+	DATE
 	NOT NULL,
 
 	Address
