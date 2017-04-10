@@ -407,7 +407,7 @@ CREATE TABLE Transactions
 	AccountID
 	INT
 	NOT NULL
-	CONSTRAINT FK_Transactions_PaymentID REFERENCES Payment(PaymentID),
+	CONSTRAINT FK_Transactions_PaymentID REFERENCES Account(AccountID),
 
 	CourseCode
 	NVARCHAR(6)
