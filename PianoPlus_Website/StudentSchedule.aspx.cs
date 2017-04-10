@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using PianoPlus_Data;
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
+using PianoPlus_Data.POCOS;
 using PianoPlus.UI;
 
 public partial class StudentSchedule : System.Web.UI.Page
@@ -23,38 +24,46 @@ public partial class StudentSchedule : System.Web.UI.Page
             li_rightddl_login.Visible = false;
             li_rightddl_logout.Visible = true;
             a_email.InnerHtml = Session["email"].ToString();
-
+            int id = int.Parse(Session["StudentID"].ToString());
+            ClassController classController = new ClassController();
+            List<ClassInfo> classes = new List<ClassInfo>();
 
             lbl_message.Text = "";
             RetrieveStudentProfile();
 
             if(!this.IsPostBack)
             {
+                if (classController.GetClassesByEndTimeAndStudentID(id).Count() > 0)
+                {
+                    //Attribute to show the Plus Minus Button.
+                    ClassSchedule.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
 
-                //Attribute to show the Plus Minus Button.
-                ClassSchedule.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
+                    //Attribute to hide column in Phone.
+                    ClassSchedule.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
+                    ClassSchedule.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
+                    ClassSchedule.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+                    ClassSchedule.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
+                    ClassSchedule.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
 
-                //Attribute to hide column in Phone.
-                ClassSchedule.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
-                ClassSchedule.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-                ClassSchedule.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
-                ClassSchedule.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
-                ClassSchedule.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
+                    //Adds THEAD and TBODY to GridView.
+                    ClassSchedule.HeaderRow.TableSection = TableRowSection.TableHeader;
+                }
 
-                //Adds THEAD and TBODY to GridView.
-                ClassSchedule.HeaderRow.TableSection = TableRowSection.TableHeader;
+                if (classController.GetClassHistoryByStudentID(id).Count() > 0)
+                {
+                    ClassHistory.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
 
-                ClassHistory.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
+                    //Attribute to hide column in Phone.
+                    ClassHistory.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
+                    ClassHistory.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
+                    ClassHistory.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+                    ClassHistory.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
+                    ClassHistory.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
 
-                //Attribute to hide column in Phone.
-                ClassHistory.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
-                ClassHistory.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-                ClassHistory.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
-                ClassHistory.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
-                ClassHistory.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
-
-                //Adds THEAD and TBODY to GridView.
-                ClassHistory.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    //Adds THEAD and TBODY to GridView.
+                    ClassHistory.HeaderRow.TableSection = TableRowSection.TableHeader;
+                }
+                
             }
            
             

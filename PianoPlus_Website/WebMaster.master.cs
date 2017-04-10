@@ -5,16 +5,31 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using PianoPlus_Data.Entities;
+using PianoPlus_System.BLL;
+using PianoPlus_Data.POCOS;
+
 public partial class WebMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["email"] != null)
         {
+            InstructorController instructorController = new InstructorController();
             a_email.InnerText = Session["email"].ToString();
             li_loggedin.Visible = true;
             li_signUp.Visible = false;
             li_signIn.Visible = false;
+
+            if (instructorController.GetInstructorInfo(Session["email"].ToString()) != null)
+            {
+                li_admin.Visible = true;
+            }
+            else
+            {
+                li_admin.Visible = false;
+            }
+
         }
         else
         {

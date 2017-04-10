@@ -68,6 +68,7 @@
                             <ul class="dropdown-menu small">
                                 <li><a href="AccountSetting.aspx" class="small" runat="server" id="account">- Account</a></li>
                                 <li runat="server" id="li_admin"><a href="Dashboard.aspx" class="small">- Admin</a></li>
+                                <li runat="server" id="li1"><a href="ChangePassword.aspx" class="small">- Change Password</a></li>
                                 <li runat="server" class="small">
                                     <asp:LinkButton ID="btn_logout" runat="server" CausesValidation="false" OnClick="btn_logout_Click" ForeColor="Red">- Sign Out</asp:LinkButton>
                                 </li>

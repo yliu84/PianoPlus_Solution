@@ -29,7 +29,7 @@
                                 <a href="#" runat="server" id="a_email" data-toggle="dropdown" class="f-14"></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="AccountSetting.aspx">Account</a></li>
-                                    <li><a href="ResetPassword.aspx">Password Reset</a></li>
+                                    <li><a href="ChangePassword.aspx">Change Password</a></li>
                                     <li runat="server" id="li_rightddl_logout">
                                         <asp:LinkButton Text="Logout" ID="btn_right_logout" CausesValidation="false" CssClass="c-red" runat="server" OnClick="btn_right_logout_Click" /></li>
                                 </ul>
