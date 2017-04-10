@@ -29,7 +29,9 @@
                     Display="Dynamic"
                     ForeColor="Red"
                     ControlToValidate="txt_currentPassword"></asp:RequiredFieldValidator>
+                </div>
 
+            <div class="form-group">
                 <asp:TextBox ID="txt_newPassword" runat="server" CssClass="form-control" placeholder="New Password" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredNewPassword"
                     runat="server"
@@ -37,7 +39,8 @@
                     Display="Dynamic"
                     ForeColor="Red"
                     ControlToValidate="txt_newPassword"></asp:RequiredFieldValidator>
-
+                </div>
+            <div class="form-group">
                 <asp:TextBox ID="txt_confirmPassword" runat="server" CssClass="form-control" placeholder="Confirm New Password" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredConfirmPassword"
                     runat="server"

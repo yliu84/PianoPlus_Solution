@@ -2921,7 +2921,7 @@ ul {
 /*---------------------------------------------------------------*/
 
 .post-background-concerts {
-    background-image:  url('../images/works/01.jpg');
+    background-image:  url('../../Images/works/01.jpg');
     width: 100%;
     height: 500px;
     background-position: top;
