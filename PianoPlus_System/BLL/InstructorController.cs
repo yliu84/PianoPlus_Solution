@@ -64,25 +64,20 @@ namespace PianoPlus_System.BLL
 
         public Instructor GetInstructorInfo(string email)
         {
-            Instructor CurrentStudent = new Instructor();
 
-            try
+
+
+            using (var context = new PianoPlusContext())
             {
-                using (var context = new PianoPlusContext())
-                {
-                    var results = (from info in context.Instructors
-                                   where info.Email == email
-                                   select info).SingleOrDefault();
+                var results = (from info in context.Instructors
+                               where info.Email == email
+                               select info).SingleOrDefault();
 
-                    return results;
+                return results;
 
-                }
             }
-            catch
-            {
-                
-                return CurrentStudent;
-            }
+
+
         }
 
         public bool AddNewInstructor(Instructor user)

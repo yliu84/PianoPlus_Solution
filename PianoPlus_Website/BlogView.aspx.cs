@@ -18,6 +18,7 @@ public partial class BlogView : System.Web.UI.Page
     {
         BlogController controller = new BlogController();
         List<BlogInfo> blogInfo = null;
+        InstructorController instructorController = new InstructorController();
 
         if(controller.Post_List().Count() != 0)
         {
@@ -32,7 +33,15 @@ public partial class BlogView : System.Web.UI.Page
 
         if (Session["email"] != null && Session["Name"] != null)
         {
-            btn_addNewPost.Visible = true;
+            if (instructorController.GetInstructorInfo(Session["email"].ToString()) != null)
+            {
+                btn_addNewPost.Visible = true;
+            }
+            else
+            {
+                btn_addNewPost.Visible = false;
+            }
+            
         }
         else
         {

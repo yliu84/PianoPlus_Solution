@@ -29,7 +29,7 @@
                                 <a href="#" runat="server" id="a_email" data-toggle="dropdown" class="f-14"></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="AccountSetting.aspx">Account</a></li>
-                                    <li><a href="PasswordReset.aspx">Password Reset</a></li>
+                                    <li><a href="ResetPassword.aspx">Password Reset</a></li>
                                     <li runat="server" id="li_rightddl_logout">
                                         <asp:LinkButton Text="Logout" ID="btn_right_logout" CausesValidation="false" CssClass="c-red" runat="server" OnClick="btn_right_logout_Click" /></li>
                                 </ul>
@@ -122,8 +122,8 @@
 
                 <div class="pm-body clearfix">
                     <ul class="tab-nav tn-justified">
-                        <li class="active"><a href="profile-about.html">About</a></li>
-                        <li><a href="profile-timeline.html">Schedule</a></li>
+                        <li class="active"><a href="AccountSetting.aspx">About</a></li>
+                        <li><a href="StudentSchedule.aspx">Schedule</a></li>
                     </ul>
                     <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
                     <!-- Basic Information -->
