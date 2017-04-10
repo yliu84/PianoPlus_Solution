@@ -98,7 +98,7 @@
                                                     <div class="form-group" id="date1">
                                                         <asp:Label CssClass="col-md-4 control-label" Text="Pick a Date" runat="server" />
                                                         <div class="input-group date">
-                                                            <asp:TextBox ID="txt_date" runat="server" CssClass="form-control" OnTextChanged="txt_date_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                            <asp:TextBox ID="txt_date" runat="server" CssClass="form-control" AutoPostBack="true"></asp:TextBox>
                                                             <div class="input-group-addon">
                                                                 <span class="glyphicon glyphicon-th"></span>
                                                             </div>

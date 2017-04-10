@@ -29,6 +29,20 @@ public partial class ChangePassword : System.Web.UI.Page
         if (studentController.CheckIfEmailIsAvailable(currentEmail) == false)
         {
 
+            Student currentStudent = studentController.GetStudentInfo(currentEmail);
+            string currentPassword = Crypto.Hash((txt_currentPassword.Text + currentStudent.PassSalt), "MD5");
+            if (currentPassword == currentStudent.PassHash)
+            {
+                var newPassword = Crypto.Hash((txt_newPassword.Text + currentStudent.PassSalt), "MD5");
+                currentStudent.PassHash = newPassword;
+                studentController.UpdateStudent(currentStudent);
+                MessageUserControl.ShowInfo("Password successfully changed.");
+            }
+            else
+            {
+                MessageUserControl.ShowInfo("Current password is not correct. Type the correct password, and try again.");
+            }
+
         }
         else if (instructorController.CheckIfEmailIsAvailable(currentEmail) == false)
         {

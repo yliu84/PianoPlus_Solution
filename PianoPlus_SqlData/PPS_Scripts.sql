@@ -39,6 +39,7 @@ CREATE TABLE Student
 
 	Email
 	NVARCHAR(60)
+	UNIQUE
 	NOT NULL,
 
 	Phone
@@ -125,6 +126,7 @@ CREATE TABLE Instructor
 
 	Email
 	NVARCHAR(60)
+	UNIQUE
 	NOT NULL,
 
 	Phone
@@ -375,58 +377,61 @@ CREATE Table Announcement
 )
 GO
 
-CREATE TABLE Payment
+CREATE TABLE Account
 (
-	PaymentID
+	AccountID
 	INT IDENTITY(1,1)
 	NOT NULL
-	CONSTRAINT PK_Payment_PaymentID PRIMARY KEY CLUSTERED,
-
-	InstructorID
-	INT
-	NOT NULl
-	CONSTRAINT FK_Payment_InstructorID REFERENCES Instructor(InstructorID),
-
+	CONSTRAINT PK_Account_AccountID PRIMARY KEY CLUSTERED,
+	
 	StudentID
 	INT 
 	NOT NULL
-	CONSTRAINT FK_Payment_StudentID REFERENCES Student(StudentID),
+	CONSTRAINT FK_Account_StudentID REFERENCES Student(StudentID),
 
 	Total
 	MONEY DEFAULT 0.00
 	NOT NULL
-	CONSTRAINT CK_Payment_Total CHECK(Total >= 0)
+	CONSTRAINT CK_Account_Total CHECK(Total >= 0)
 	
 )
 GO
 
-CREATE TABLE CoursePayment
+CREATE TABLE Transactions
 (
-	PaymentID
+	TransactionID
+	INT IDENTITY(1, 1)
+	NOT NULL
+	CONSTRAINT PK_Transaction_TransactionID PRIMARY KEY CLUSTERED,
+
+	AccountID
 	INT
 	NOT NULL
-	CONSTRAINT FK_CoursePayment_PaymentID REFERENCES Payment(PaymentID),
+	CONSTRAINT FK_Transactions_PaymentID REFERENCES Payment(PaymentID),
 
 	CourseCode
 	NVARCHAR(6)
 	NOT NULL
-	CONSTRAINT FK_CoursePayment_CourseCode REFERENCES Course(CourseCode),
+	CONSTRAINT FK_Transactions_CourseCode REFERENCES Course(CourseCode),
+
+	InstructorID
+	INT
+	NOT NULL
+	CONSTRAINT FK_Transactions_InstructorID REFERENCES Instructor(InstructorID),
 
 	Hours
 	FLOAT DEFAULT 0.0
 	NOT NULL
-	CONSTRAINT CK_CoursePayment_Hours CHECK (Hours >= 0 and Hours <= 5),
+	CONSTRAINT CK_Transactions_Hours CHECK (Hours >= 0 and Hours <= 5),
 
-	LessonFee
+	LessonAmount
 	MONEY DEFAULT 0.00
 	NOT NULL
-	CONSTRAINT CK_CoursePayment_LessonFee CHECK (LessonFee >= 0.00),
+	CONSTRAINT CK_Transactions_LessonAmount CHECK (LessonAmount >= 0.00),
 
-	PaidTime
+	TransactionDate
 	DATETIME
-	NOT NULL,
-
-	CONSTRAINT PK_CoursePayment_PaymentID_CourseCode PRIMARY KEY CLUSTERED (PaymentID,CourseCode)
+	NOT NULL
 
 	
 )
