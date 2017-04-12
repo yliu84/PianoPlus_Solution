@@ -20,9 +20,11 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <span>
-                                <asp:Image ID="img_profile" runat="server" CssClass="img-circle" ImageUrl="~/Images/profile.png" />
-                            </span>
+                            <div class="row">
+                            <div class="profile-image">
+                                <asp:Image ID="img_profile" runat="server" CssClass="img-circle" ImageUrl="~/Images/profile.png"  Width="80px" Height="80px" />
+                            </div>
+                                </div>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                     <asp:Label ID="lbl_name" runat="server" CssClass="block m-t-xs"> 

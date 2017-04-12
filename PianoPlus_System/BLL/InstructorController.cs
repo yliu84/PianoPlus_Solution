@@ -136,7 +136,7 @@ namespace PianoPlus_System.BLL
             {
                 //Find the entity
                 Instructor currentInstructor = context.Instructors.Find(user.InstructorID);
-
+                user.PassHash = currentInstructor.PassHash;
 
                 //Check if there is a change.
                 if (currentInstructor.FirstName != user.FirstName)
