@@ -11,11 +11,21 @@ using PianoPlus_Data;
 using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
 
-public partial class InstrucotorProfile : System.Web.UI.Page
+public partial class InstructorProfile : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["email"] != null && Session["InstructorID"] != null)
+        {
+            if (!IsPostBack)
+            {
+                RetrieveInstructorProfile();
+            }
+        }
+        else
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
     protected void btn_savePhoto_Click(object sender, EventArgs e)
     {
@@ -61,5 +71,40 @@ public partial class InstrucotorProfile : System.Web.UI.Page
             lbl_message.ForeColor = System.Drawing.Color.Red;
 
         }
+    }
+    protected void btn_update_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    public void RetrieveInstructorProfile()
+    {
+        Instructor instructor = new Instructor();
+        InstructorController instructorController = new InstructorController();
+
+        int instructorId = int.Parse(Session["InstructorID"].ToString());
+
+        instructor = instructorController.GetInstructorInfoByID(instructorId);
+
+        txt_instructorID.Text = instructor.InstructorID.ToString();
+        txt_firstName.Text = instructor.FirstName;
+        txt_lastName.Text = instructor.LastName;
+        txt_email.Text = instructor.Email;
+        txt_phone.Text = instructor.Phone;
+        txt_address.Text = instructor.Address;
+        ddl_province.SelectedValue = instructor.Province;
+        txt_city.Text = instructor.City;
+        txt_postalCode.Text = instructor.PostalCode;
+        txt_birth.Text = instructor.BirthDay.ToString("MM/dd/yyyy");
+
+        lbl_name.Text = instructor.FirstName + " " + instructor.LastName;
+        lbl_Phone.Text = instructor.Phone;
+        lbl_Email.Text = instructor.Email;
+
+        if (instructor.ProfileImage != null)
+        {
+            img_instructor.ImageUrl = "~/DisplayImage.aspx?instructorId=" + Session["InstructorID"].ToString();
+        }
+
     }
 }

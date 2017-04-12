@@ -20,18 +20,23 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
+                            <span>
+                                <asp:Image ID="img_profile" runat="server" CssClass="img-circle" ImageUrl="~/Images/profile.png" />
+                            </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                     <asp:Label ID="lbl_name" runat="server" CssClass="block m-t-xs"> 
-                                        <strong class="font-bold">FirstName</strong>
+                                        <strong class="font-bold">Name</strong>
                                     </asp:Label>
                                     <span class="text-muted text-xs block">Instructor <b class="caret"></b></span></span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Change Password</a></li>
+                                <li><a href="InstructorProfile.aspx">Profile</a></li>
+                                <li><a href="ChangePassword.aspx">Change Password</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li>
+                                    <asp:LinkButton ID="btn_logout2" runat="server" CausesValidation="false" OnClick="btn_logOut_Click">Log Out</asp:LinkButton>
+                                </li>
                             </ul>
 
                         </div>
