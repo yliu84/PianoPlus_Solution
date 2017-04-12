@@ -123,7 +123,7 @@ public partial class InstructorProfile : System.Web.UI.Page
         ddl_province.SelectedValue = instructor.Province;
         txt_city.Text = instructor.City;
         txt_postalCode.Text = instructor.PostalCode;
-        txt_birth.Text = instructor.BirthDay.ToString("MM/dd/yyyy");
+        txt_birth.Text = instructor.BirthDay.ToString("yyyy-MM-dd");
 
         lbl_id.Text = instructor.InstructorID.ToString();
         lbl_firstName.Text = instructor.FirstName;

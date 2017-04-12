@@ -372,8 +372,8 @@
                                         <div class="form-group">
                                             <asp:Label ID="Label12" runat="server" Text="Birth Day" CssClass="col-lg-3 control-label"></asp:Label>
                                             <div class="col-lg-9">
-                                                <div class="input-group date" data-autoclose="true">
-                                                    <asp:TextBox ID="txt_birth" runat="server" CssClass="form-control" placeholder="mm/dd/yyyy"></asp:TextBox>
+                                                <div class="input-group" data-autoclose="true">
+                                                    <asp:TextBox ID="txt_birth" runat="server" TextMode="Date" CssClass="form-control" placeholder="mm/dd/yyyy"></asp:TextBox>
                                                     <div class="input-group-addon">
                                                         <span class="fa fa-clock-o"></span>
                                                     </div>
@@ -386,6 +386,7 @@
                                                     ValidationGroup="instructor"
                                                     ControlToValidate="txt_birth"></asp:RequiredFieldValidator>
                                             </div>
+                                         
                                         </div>
 
                                     </div>
@@ -397,6 +398,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                    
                                 </asp:Panel>
                             </ContentTemplate>
                             <Triggers>
@@ -410,37 +413,30 @@
     </div>
     
     <script src="Scripts/jquery.min.js"></script>
-     <script src="Scripts/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
+        $(document).ready(function () {
+            $("#FileUpload1").change(function () {
 
-        $("#FileUpload1").change(function () {
+                var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
 
-            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                if (regex.test($(this).val().toLowerCase())) {
 
-            if (regex.test($(this).val().toLowerCase())) {
-
-                if (typeof (FileReader) != "undefined") {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $("#img_preview").attr("src", e.target.result);
+                    if (typeof (FileReader) != "undefined") {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $("#img_preview").attr("src", e.target.result);
+                        }
+                        reader.readAsDataURL($(this)[0].files[0]);
+                    } else {
+                        alert("This browser does not support FileReader.");
                     }
-                    reader.readAsDataURL($(this)[0].files[0]);
+
                 } else {
-                    alert("This browser does not support FileReader.");
+                    alert("Please upload a valid image file.");
                 }
+            })
 
-            } else {
-                alert("Please upload a valid image file.");
-            }
-        });
-
-        $('.input-group.date').datepicker({
-            todayBtn: "linked",
-            keyboardNavigation: false,
-            forceParse: false,
-            calendarWeeks: true,
-            autoclose: true
-        });
+        })
     </script>
 </asp:Content>
 
