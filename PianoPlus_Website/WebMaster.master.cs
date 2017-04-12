@@ -24,10 +24,12 @@ public partial class WebMaster : System.Web.UI.MasterPage
             if (instructorController.GetInstructorInfo(Session["email"].ToString()) != null)
             {
                 li_admin.Visible = true;
+                li_account.Visible = false;
             }
             else
             {
                 li_admin.Visible = false;
+                li_account.Visible = true;
             }
 
         }

@@ -98,6 +98,7 @@ public partial class InstructorProfile : System.Web.UI.Page
                 currentInstructor.BirthDay = DateTime.Parse(txt_birth.Text).Date;
 
                 instructorController.UpdateInstructor(currentInstructor);
+                RetrieveInstructorProfile();
                 edit_panel.Visible = false;
                 display_panel.Visible = true;
 

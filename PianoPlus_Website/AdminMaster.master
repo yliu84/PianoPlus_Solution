@@ -79,6 +79,10 @@
                     <li>
                         <a href="#"><i class="fa fa-dollar"></i><span class="nav-label">Invoice</span></a>
                     </li>
+
+                    <li>
+                        <a href="ChatRoom.aspx"><i class="fa fa-apple"></i><span class="nav-label">Chat Room</span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
