@@ -82,7 +82,7 @@
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins" runat="server" id="ClassInfo">
                             <div class="ibox-title">
-                                <h5>Class Info</h5>
+                                <asp:Label runat="server" ID="lbl_ClassInfo" CssClass="h5" Text="Class Info"/>
                                 <div class="ibox-tools">
                                     <a class="collapse-link">
                                         <i class="fa fa-chevron-up"></i>
@@ -129,7 +129,7 @@
                                                                 <Columns>
                                                                     <asp:TemplateField>
                                                                         <ItemTemplate>
-                                                                            <asp:LinkButton Text="Remove" ID="btn_deleteStudentClass_Click" runat="server" CssClass="btn btn-sm btn-danger" OnClick="btn_deleteStudentClass_Click" />
+                                                                            <asp:LinkButton Text="Remove" ID="btn_deleteStudentClass" runat="server" CssClass="btn btn-sm btn-danger" OnClick="btn_deleteStudentClass_Click" />
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
                                                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />

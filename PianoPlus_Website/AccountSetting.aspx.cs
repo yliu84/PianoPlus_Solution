@@ -147,12 +147,13 @@ public partial class AccountSetting : System.Web.UI.Page
 
                 if (student.ProfileImage != null)
                 {
-                    img_student.ImageUrl = "~/DisplayImage.aspx?Email=" + Session["Email"].ToString(); 
+                    img_student.ImageUrl = "~/DisplayImage.aspx?studentId=" + Session["StudentID"].ToString(); 
                 }
                     
-                
-
-
+            }
+            else
+            {
+                MessageUserControl.ShowInfo("Can not found student information.");
             }
         }
         

@@ -33,9 +33,9 @@ public partial class ChangePassword : System.Web.UI.Page
             string currentPassword = Crypto.Hash((txt_currentPassword.Text + currentStudent.PassSalt), "MD5");
             if (currentPassword == currentStudent.PassHash)
             {
-                var newPassword = Crypto.Hash((txt_newPassword.Text + currentStudent.PassSalt), "MD5");
-                currentStudent.PassHash = newPassword;
-                studentController.UpdateStudent(currentStudent);
+                var newPassHash = Crypto.Hash((txt_newPassword.Text + currentStudent.PassSalt), "MD5");
+                currentStudent.PassHash = newPassHash;
+                studentController.ChangePassword(currentStudent.StudentID, newPassHash);
                 MessageUserControl.ShowInfo("Password successfully changed.");
             }
             else
@@ -51,9 +51,8 @@ public partial class ChangePassword : System.Web.UI.Page
             string currentPassword = Crypto.Hash((txt_currentPassword.Text + currentInstructor.PassSalt), "MD5");
             if (currentPassword == currentInstructor.PassHash)
             {
-                var newPassword = Crypto.Hash((txt_newPassword.Text + currentInstructor.PassSalt), "MD5");
-                currentInstructor.PassHash = newPassword;
-                instructorController.UpdateInstructor(currentInstructor);
+                var newPassHash = Crypto.Hash((txt_newPassword.Text + currentInstructor.PassSalt), "MD5");
+                instructorController.ChangePassword(currentInstructor.InstructorID, newPassHash);
                 MessageUserControl.ShowInfo("Password successfully changed.");
             }
             else

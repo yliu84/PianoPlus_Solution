@@ -13,13 +13,13 @@ public partial class DisplayImage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string Email = Request.QueryString["Email"];
-        if (!string.IsNullOrEmpty(Email))
+        
+        if (Request.QueryString["studentId"] != null)
         {
+            int studentId = int.Parse(Request.QueryString["studentId"]);
             StudentController controller = new StudentController();
             Student student = new Student();
-            student = controller.GetStudentInfo(Email);
-            
+            student = controller.GetStudentByStudentID(studentId);           
 
             if (student.ProfileImage != null)
             {
@@ -33,6 +33,22 @@ public partial class DisplayImage : System.Web.UI.Page
                 Response.Flush();
                 Response.End();
 
+            }
+        }
+
+        if (Request.QueryString["instructorId"] != null)
+        {
+            int instructorId = int.Parse(Request.QueryString["instructorId"]);
+            InstructorController instructorController = new InstructorController();
+            Instructor instructor = new Instructor();
+            instructor = instructorController.GetInstructorInfoByID(instructorId);
+
+            if(instructor.ProfileImage != null)
+            {
+                Response.Buffer = true;
+                Response.BinaryWrite(instructor.ProfileImage);
+                Response.Flush();
+                Response.End();
             }
         }
     }

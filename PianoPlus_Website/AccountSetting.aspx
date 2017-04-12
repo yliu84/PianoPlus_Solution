@@ -69,9 +69,6 @@
                                     
                                         <div class="row">
                                         <div class="col-md-12" style="padding-top:15px">
-                                            <%--<div class="image-crop">
-                                                <img src="Images/test.jpg" />
-                                            </div>--%>
                                             
                                             <img src="Images/profile.png" id="img_preview" runat="server" class="col-md-12" />
                                         </div>

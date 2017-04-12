@@ -113,17 +113,15 @@ namespace PianoPlus_System.BLL
                 if (instructorInfo != null)
                 {
                     string newPassHash = Crypto.Hash(newPassword + instructorInfo.PassSalt, "MD5");
-                    instructorInfo.PassHash = newPassHash;
                     InstructorController instructorController = new InstructorController();
-                    instructorController.UpdateInstructor(instructorInfo);
+                    instructorController.ChangePassword(instructorInfo.InstructorID, newPassHash);
                 }
                 else
                 {
                     studentInfo = context.Students.Where(studmail => studmail.Email == tokenInformation.Email).SingleOrDefault();
                     string newPassHash = Crypto.Hash(newPassword + instructorInfo.PassSalt, "MD5");
-                    studentInfo.PassHash = newPassHash;
                     StudentController studentController = new StudentController();
-                    studentController.UpdateStudent(studentInfo);
+                    studentController.ChangePassword(studentInfo.StudentID, newPassHash);
                 }
                 
                 tokenInformation.Active = "N";
@@ -154,7 +152,7 @@ namespace PianoPlus_System.BLL
             // any address where the email will be sending
             //Password of your gmail address
             const string fromPassword = "sourgrapes";
-            // Passing the values and make a email formate to display
+            // Passing the values and make a email format to display
             string subject = "Forgot Account Password";
             string body = "Hi" + "\n\n\n";
             body += "This email has been sent in response to your request for a new password. " + "\n\n";
