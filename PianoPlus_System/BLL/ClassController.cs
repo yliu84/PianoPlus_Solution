@@ -58,7 +58,12 @@ namespace PianoPlus_System.BLL
                 return results.ToList();
             }
         }
-
+        public bool IsHistorical(StudentClass studentClass)
+        {
+            if (studentClass.StartTime > DateTime.Now)
+                return false;
+            return true;
+        }
         public bool AddClass(StudentClass newClass)
         {
             try

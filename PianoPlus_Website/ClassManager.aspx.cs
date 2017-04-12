@@ -89,8 +89,52 @@ public partial class ClassManager : System.Web.UI.Page
 
         btn_cancel.Enabled = true;
         btn_cancel.Visible = true;
-        btn_submit.Enabled = true;
-        btn_submit.Visible = true;
+
+        if (classController.IsHistorical(currentClasses[0]))
+        {
+            txt_date.Enabled = false;
+            txt_startTime.Enabled = false;
+            txt_endTime.Enabled = false;
+
+            txt_Room.Enabled = false;
+            ddl_course.Enabled = false;
+
+            label_oldStartTime.Enabled = false;
+            label_oldCourseCode.Enabled = false;
+
+            btn_submit.Enabled = false;
+            btn_submit.Visible = false;
+
+            lbl_ClassInfo.Text = "Class Info (Historical, cannot update values.)";
+            StudentGridView.HeaderRow.Cells[0].Visible = false;
+            foreach (GridViewRow row in StudentGridView.Rows)
+            {
+
+                row.Cells[0].Visible = false;
+            }
+
+        }
+        else
+        {
+            btn_submit.Enabled = true;
+            btn_submit.Visible = true;
+            txt_date.Enabled = true;
+            txt_startTime.Enabled = true;
+            txt_endTime.Enabled = true;
+
+            txt_Room.Enabled = true;
+            ddl_course.Enabled = true;
+
+            label_oldStartTime.Enabled = true;
+            label_oldCourseCode.Enabled = true;
+            lbl_ClassInfo.Text = "Class Info";
+            StudentGridView.HeaderRow.Cells[0].Visible = true;
+            foreach (GridViewRow row in StudentGridView.Rows)
+            {
+
+                row.Cells[0].Visible = true;
+            }
+        }
         ClassMultiView.Visible = true;
 
     }

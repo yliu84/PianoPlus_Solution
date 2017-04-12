@@ -152,7 +152,7 @@ namespace PianoPlus_System.BLL
             // any address where the email will be sending
             //Password of your gmail address
             const string fromPassword = "sourgrapes";
-            // Passing the values and make a email formate to display
+            // Passing the values and make a email format to display
             string subject = "Forgot Account Password";
             string body = "Hi" + "\n\n\n";
             body += "This email has been sent in response to your request for a new password. " + "\n\n";
