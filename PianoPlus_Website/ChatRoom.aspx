@@ -49,7 +49,7 @@
         <input id="hdUserName" type="hidden" />
     </div>
     </form>
-    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="/Scripts/ui/jquery.ui.core.js"></script>
     <script src="/Scripts/ui/jquery.ui.widget.js"></script>
     <script src="/Scripts/ui/jquery.ui.mouse.js"></script>
