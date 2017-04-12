@@ -83,6 +83,7 @@
             .chatRoom .content .chatWindow .message
             {
                 padding: 4px;
+                text-align:left;
             }
 
                 .chatRoom .content .chatWindow .message .userName
@@ -90,6 +91,11 @@
                     font-weight: bold;
                 }
 
+            .chatRoom .content .chatWindow .otherMessage
+            {
+                padding: 4px;
+                text-align:right;
+            }
         .chatRoom .content .users
         {
             float: right;

@@ -20,8 +20,8 @@
     <div id="divContainer">
         <div id="divLogin" class="login">
             <div>
-                Your Name:<br />
-            <input id="txtNickName" type="text" class="textBox" />
+                Your Name: 
+                <asp:TextBox ID="txtNickName" ReadOnly="true" runat="server"></asp:TextBox>
             </div>
             <div id="divButton">
                 <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />

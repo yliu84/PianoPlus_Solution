@@ -9,6 +9,17 @@ public partial class ChatRoom : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(Session["Name"] != null)
+        {
+            txtNickName.Text = Session["Name"].ToString();
+            if (Session["InstructorID"] != null)
+                txtNickName.Text += " (Instructor)";
+            if (Session["StudentID"] != null)
+                txtNickName.Text += " (Student)";
+        }
+        else
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }
