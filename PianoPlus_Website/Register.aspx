@@ -152,6 +152,24 @@
                                             Display="Dynamic"
                                             ForeColor="Red"></asp:RegularExpressionValidator>
         </div>
+
+        <div class="form-group">
+            <asp:TextBox ID="txt_birthDay" runat="server" CssClass="form-control" placeholder="mm/dd/yyyy" TextMode="Date"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                                        runat="server" 
+                                        ErrorMessage="Postal Code is Required"
+                                        Display="Dynamic"
+                                        ForeColor="Red"
+                                        ControlToValidate="txt_birthDay"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" 
+                                runat="server" 
+                                ErrorMessage="Birthdate cannot be greater than today's date"
+                                Type="Date"
+                                ControlToValidate="txt_birthDay"
+                                Display="Dynamic"
+                                ForeColor="Red"></asp:RangeValidator>
+           
+        </div>
         
         <div class="form-group">
             <asp:TextBox ID="txt_password" runat="server" type="password" class="form-control" placeholder="Password"></asp:TextBox>
