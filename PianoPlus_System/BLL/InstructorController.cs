@@ -128,7 +128,27 @@ namespace PianoPlus_System.BLL
                 return false;
             }
         }
+        public void ChangePassword(int instructorID, string newPass)
+        {            
+            using (var context = new PianoPlusContext())
+            {
+                //Find the entity
+                Instructor currentInstructor = context.Instructors.Find(instructorID);
 
+                //Check if there is a change.
+                if (currentInstructor.PassHash != newPass)
+                {
+                    currentInstructor.PassHash = newPass;
+                }
+                var update = context.Entry(context.Instructors.Attach(currentInstructor));
+                update.Property(x => x.PassHash).IsModified = true;
+                
+                //Save the changes in DB
+                context.SaveChanges();
+
+            }
+
+        }
         public void UpdateInstructor(Instructor user)
         {
 
@@ -136,7 +156,6 @@ namespace PianoPlus_System.BLL
             {
                 //Find the entity
                 Instructor currentInstructor = context.Instructors.Find(user.InstructorID);
-                user.PassHash = currentInstructor.PassHash;
 
                 //Check if there is a change.
                 if (currentInstructor.FirstName != user.FirstName)
@@ -179,10 +198,6 @@ namespace PianoPlus_System.BLL
                 {
                     currentInstructor.PostalCode = user.PostalCode;
                 }
-                if (currentInstructor.PassHash != user.PassHash)
-                {
-                    currentInstructor.PassHash = user.PassHash;
-                }
                 if (currentInstructor.Active != user.Active)
                 {
                     currentInstructor.Active = user.Active;
@@ -199,7 +214,6 @@ namespace PianoPlus_System.BLL
                 update.Property(x => x.Address).IsModified = true;
                 update.Property(x => x.Province).IsModified = true;
                 update.Property(x => x.City).IsModified = true;
-                update.Property(x => x.PassHash).IsModified = true;
                 update.Property(x => x.PostalCode).IsModified = true;
                 update.Property(x => x.Active).IsModified = true;
 

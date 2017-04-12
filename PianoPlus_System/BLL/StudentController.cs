@@ -32,6 +32,27 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public void ChangePassword(int studentID, string newPass)
+        {
+            using (var context = new PianoPlusContext())
+            {
+                //Find the entity
+                Student currentStudent = context.Students.Find(studentID);
+
+                //Check if there is a change.
+                if (currentStudent.PassHash != newPass)
+                {
+                    currentStudent.PassHash = newPass;
+                }
+                var update = context.Entry(context.Students.Attach(currentStudent));
+                update.Property(x => x.PassHash).IsModified = true;
+
+                //Save the changes in DB
+                context.SaveChanges();
+
+            }
+
+        }
         public void UpdateStudent(Student user)
         {
 
@@ -78,10 +99,6 @@ namespace PianoPlus_System.BLL
                 {
                     currentStudent.PostalCode = user.PostalCode;
                 }
-                if (currentStudent.PassHash != user.PassHash)
-                {
-                    currentStudent.PassHash = user.PassHash;
-                }
                 if (currentStudent.Active != user.Active)
                 {
                     currentStudent.Active = user.Active;
@@ -98,7 +115,6 @@ namespace PianoPlus_System.BLL
                 update.Property(x => x.Province).IsModified = true;
                 update.Property(x => x.City).IsModified = true;
                 update.Property(x => x.PostalCode).IsModified = true;
-                update.Property(x => x.PassHash).IsModified = true;
                 update.Property(x => x.Active).IsModified = true;
 
 

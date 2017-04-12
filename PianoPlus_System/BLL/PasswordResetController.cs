@@ -113,17 +113,15 @@ namespace PianoPlus_System.BLL
                 if (instructorInfo != null)
                 {
                     string newPassHash = Crypto.Hash(newPassword + instructorInfo.PassSalt, "MD5");
-                    instructorInfo.PassHash = newPassHash;
                     InstructorController instructorController = new InstructorController();
-                    instructorController.UpdateInstructor(instructorInfo);
+                    instructorController.ChangePassword(instructorInfo.InstructorID, newPassHash);
                 }
                 else
                 {
                     studentInfo = context.Students.Where(studmail => studmail.Email == tokenInformation.Email).SingleOrDefault();
                     string newPassHash = Crypto.Hash(newPassword + instructorInfo.PassSalt, "MD5");
-                    studentInfo.PassHash = newPassHash;
                     StudentController studentController = new StudentController();
-                    studentController.UpdateStudent(studentInfo);
+                    studentController.ChangePassword(studentInfo.StudentID, newPassHash);
                 }
                 
                 tokenInformation.Active = "N";
