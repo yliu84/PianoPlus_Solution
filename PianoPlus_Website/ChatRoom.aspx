@@ -5,13 +5,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
     <link href="Content/ChatStyle.css" rel="stylesheet" />
     <link href="Content/JQueryUI/themes/base/jquery.ui.all.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="header">
-        SignalR Chat Room
+
+        <span>Piano Plus Studio Chat Room</span>
+        <div class="navbar-right" style="float:right">
+            <ul>
+                <li runat="server" id="li_loggedin" class="dropdown">
+                    <a runat="server" id="a_email" href="javascript:void(0)" class="dropbtn">admin@gmail.com</a>
+                    <div class="dropdown-content">
+                        <a href="Default.aspx">Home</a>
+                        <a href="ChangePassword.aspx">Change Password</a>
+                        <a>
+                            <asp:LinkButton ID="btn_logout" runat="server" OnClick="btn_logout_Click">Log Out</asp:LinkButton>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
     </div>
     <br />
     <br />

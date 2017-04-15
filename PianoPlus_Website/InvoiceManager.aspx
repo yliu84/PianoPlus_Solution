@@ -50,7 +50,7 @@
                                 <Columns>
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:LinkButton Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info" OnClick="btn_select_Click" />
+                                            <asp:LinkButton Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
@@ -63,7 +63,7 @@
                                     <asp:BoundField DataField="PostalCode" HeaderText="Postal Code" SortExpression="PostalCode" Visible="False"/>
                                     <asp:BoundField DataField="Active" HeaderText="Active" SortExpression="Active" />
                                     <asp:BoundField DataField="CreateDate" HeaderText="Created Date" SortExpression="CreateDate" DataFormatString="{0:d}" />
-                                    <asp:ButtonField runat="server" ID="PopupButton" OnClientClick="window.open('Invoice.aspx')" Text="Printable Form" />
+                                    <%--<asp:ButtonField runat="server" ID="PopupButton" OnClientClick="window.open('Invoice.aspx')" Text="Printable Form" />--%>
                                 </Columns>
                                 <EmptyDataTemplate>
                                     No data found
