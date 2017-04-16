@@ -19,20 +19,13 @@
                 <li runat="server" id="li_loggedin" class="dropdown">
                     <a runat="server" id="a_email" href="javascript:void(0)" class="dropbtn">admin@gmail.com</a>
                     <div class="dropdown-content">
-                        <a href="Default.aspx">Home</a>
-                        <a href="ChangePassword.aspx">Change Password</a>
-                        <a>
-                            <asp:LinkButton ID="btn_logout" runat="server" OnClick="btn_logout_Click">Log Out</asp:LinkButton>
-                        </a>
+                        <a href="Default.aspx">Exit</a>
                     </div>
                 </li>
             </ul>
         </div>
         
     </div>
-    <br />
-    <br />
-    <br />
 
     <div id="divContainer">
         <div id="divLogin" class="login">
@@ -47,17 +40,24 @@
 
         <div id="divChat" class="chatRoom">
             <div class="title">
-                Welcome to Chat Room [<span id='spanUser'></span>]
+                Welcome [<span id='spanUser'></span>]
 
             </div>
             <div class="content">
-                <div id="divChatWindow" class="chatWindow">
+                <div id="divChatWindow">
+                    <%--<div class="chatWindow" ng-repeat="message in messages">
+                        <div class="chatbox__messages__user-message">
+                            <div class="chatbox__messages__user-message--ind-message">
+                            </div>
+                        </div>
+                    </div>--%>
                 </div>
                 <div id="divusers" class="users">
+                    <h1>User list</h1>
                 </div>
             </div>
             <div class="messageBar">
-                <input class="textbox" type="text" id="txtMessage" />
+                <input class="textbox" type="text" id="txtMessage" placeholder="Enter your message"  />
                 <input id="btnSendMsg" type="button" value="Send" class="submitButton" />
             </div>
         </div>
@@ -66,6 +66,7 @@
         <input id="hdUserName" type="hidden" />
     </div>
     </form>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js'></script>
     <script src="Scripts/jquery-2.1.1.js"></script>
     <script src="/Scripts/ui/jquery.ui.core.js"></script>
     <script src="/Scripts/ui/jquery.ui.widget.js"></script>
@@ -261,7 +262,7 @@
         }
 
         function AddMessage(userName, message) {
-            $('#divChatWindow').append('<div class="message"><span class="userName">' + userName + '</span>: ' + message + '</div>');
+            $('#divChatWindow').append('<div class="chatWindow" ng-repeat="message in messages">' + '<div class="chatbox__messages__user-message">' + '<div class="chatbox__messages__user-message--ind-message">' + '<p class="name">' + userName + '</p>' + '<br />' + '<p class="message">' + message + '</p>' + '</div>' + '</div>'+'</div>');
 
             var height = $('#divChatWindow')[0].scrollHeight;
             $('#divChatWindow').scrollTop(height);

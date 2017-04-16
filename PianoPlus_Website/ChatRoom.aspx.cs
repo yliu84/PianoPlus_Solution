@@ -14,8 +14,6 @@ public partial class ChatRoom : System.Web.UI.Page
             txtNickName.Text = Session["Name"].ToString();
             if (Session["InstructorID"] != null)
                 txtNickName.Text += " (Instructor)";
-            if (Session["StudentID"] != null)
-                txtNickName.Text += " (Student)";
 
             a_email.InnerText = Session["email"].ToString();
         }

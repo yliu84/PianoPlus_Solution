@@ -1,4 +1,39 @@
-﻿body
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+#divContainer{
+    display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          height: 100vh;
+  width: 100vw;
+}
+
+html, body {
+  background: -webkit-linear-gradient(330deg, #17bebb, #f0a6ca);
+  background: linear-gradient(120deg, #17bebb, #f0a6ca);
+  overflow: hidden;
+}
+
+body
 {
     padding: 0px;
     margin: 0px;
@@ -8,9 +43,9 @@
 #header
 {
     padding: 20px;
-    background-color: #d7e5e4;
-    border-bottom: #5f9482 solid 2px;
-    color: #1e4638;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid white;
+    color: white;
     
 }
 
@@ -34,15 +69,14 @@
 .login
 {
     width: 300px;
-    height:50px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
-    border: solid 2px #5f9482;
+    padding: 15px;
+   
     color: #1e4638;
     clear:both;
     text-align:center;
-
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
     
 }
 
@@ -54,44 +88,106 @@
 
     .login #divButton
     {
-        padding: 5px;
+        padding: 10px;
         text-align:center;
-        float:left;
     }
 
 .chatRoom
 {
-    width: 850px;
+    background: rgba(255, 255, 255, 0.05);
+    width: 650px;
     margin-left: auto;
     margin-right: auto;
-    border: solid 1px gray;
+    border-radius: 0.2em;
+  position: relative;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+  height:72%;
 }
 
     .chatRoom .title
     {
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 14px;
         padding: 8px;
-        background-color: #d7e5e4;
-        border-bottom: solid 1px #5f9482;
+        color:white;
+        background-color: rgba(255, 255, 255, 0.1);
+        
     }
 
     .chatRoom .content
     {
-        height: 300px;
         clear: both;
+        height:600px;
     }
 
+
+    #divChatWindow{
+        
+        height: 600px;
+        overflow-y: scroll;
+        width:75%;
+        float:left;
+    }
         .chatRoom .content .chatWindow
         {
             float: left;
-            width: 609px;
-            height: 300px;
+            
+            /*height: 600px;
             border-right: solid 1px #5f9482;
-            overflow-y: scroll;
+            overflow-y: scroll;*/
         }
 
-            .chatRoom .content .chatWindow .message
+        .chatRoom .content .chatWindow:nth-of-type(odd) .chatbox__messages__user-message--ind-message {
+  float: right;
+}
+        /*.chatRoom .content .chatWindow:nth-of-type(odd) .chatbox__messages__user-message--ind-message:after{
+            content: '';
+  position: absolute;
+  margin: -1.5em -0.6em;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgba(255, 255, 255, 0.2);
+        }*/
+
+        .chatRoom .content .chatWindow:nth-of-type(even) .chatbox__messages__user-message--ind-message {
+  float: left;
+}
+        /*.chatRoom .content .chatWindow:nth-of-type(even) .chatbox__messages__user-message--ind-message:after{
+            content: '';
+  position: absolute;
+  margin: -1.5em 18.30em;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgba(255, 255, 255, 0.2);
+        }*/
+
+        .chatbox__messages__user-message {
+  width: 450px;
+}
+.chatbox__messages__user-message--ind-message {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1em 1em;
+  height: auto;
+  border-radius: 5px;
+  margin: 2em 1em;
+  overflow: auto;
+}
+
+.chatbox__messages__user-message--ind-message > p.name {
+  color: #FFF;
+  font-size: 0.9em;
+}
+.chatbox__messages__user-message--ind-message > p.message {
+  color: #FFF;
+  font-size: 0.8em;
+  margin: 0 2.8em;
+}
+
+
+            /*.chatRoom .content .chatWindow .message
             {
                 padding: 4px;
                 text-align:left;
@@ -106,45 +202,80 @@
             {
                 padding: 4px;
                 text-align:right;
-            }
+            }*/
         .chatRoom .content .users
         {
-            float: right;
-            width: 240px;
-            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+  width: 25%;
+  height: 100%;
+  float: right;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
         }
 
             .chatRoom .content .users .user
             {
                 display: block;
                 cursor: pointer;
-                padding: 4px;
-                background-color: #f9f9f9;
-                border-bottom: solid 1px #5f9482;
+                float: left;
+                text-align: left;
+                
+                font-size: 0.7em;
+                font-weight: 300;
+                color: #FFF;
+                    margin: 1em 0.7em;
+               
+
             }
 
             .chatRoom .content .users .loginUser
             {
-                display: block;
-                padding: 4px;
+                display: block;              
                 color: gray;
-                border-bottom: solid 1px #5f9482;
+                float: left;
+                text-align: left;
+                margin: 1em 0.7em;
+                font-size: 0.7em;
+                font-weight: 300;
+               
             }
 
             .chatRoom .content .users .user:hover
             {
-                background-color: #e1e1e1;
+                color: #e1e1e1;
+                background-color:rgba(255, 255, 255, 0.08);
             }
+
+.users h1 {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9em;
+    padding: 1em;
+    margin: 0;
+    font-weight: 300;
+    text-align: center;
+}
 
     .chatRoom .messageBar
     {
         border-top: solid 1px gray;
-        padding: 4px;
     }
 
-        .chatRoom .messageBar .textbox
+        .chatRoom .messageBar .textbox {
+            background: rgba(255, 255, 255, 0.03);
+            border: none;
+            width: 75%;
+            padding: 1.2em;
+            outline: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .submitButton
         {
-            width: 550px;
+            width:100px;
+            background: rgba(255, 255, 255, 0.03);
+            color:white;
         }
 
 .disconnect
@@ -162,14 +293,17 @@
     position: absolute;
     border: #5f9482 solid 1px !important;
     width: 250px;
+    left:10px;
+    z-index:99;
 }
 
     .draggable .header
     {
         cursor: move;
-        background-color: #d7e5e4;
+        background-color: rgba(255, 255, 255, 0.1);
         border-bottom: #5f9482 solid 1px;
         color: #1e4638;
+        padding:4px;
     }
 
     .draggable .selText
@@ -228,7 +362,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color:rgba(255,255,255,0.2);
 }
 
 li.dropdown {
@@ -252,7 +386,7 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #d7e5e4}
 
 .dropdown:hover .dropdown-content {
     display: block;
