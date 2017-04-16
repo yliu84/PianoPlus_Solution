@@ -127,10 +127,10 @@
                     <div class="divider-line" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'></div>
                     <h2 data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>About Us</h2>
                     <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                        Piano Plus Studio offers piano lessons in Vancouver with our team of certified teachers. They are
+                        all unique and offer varied and accomplished piano teaching backgrounds. Piano lessons from our teachers take place either 
+                        as an in-home lesson (your home) or in our studio. Our studio offers 30 minute, 45 minute and 60 minute Piano Lessons to anyone ages 5 and older. 
+                        Each Piano Lesson is customized by a Certified Resonate Instructor to be personally suited to each individual student’s skill level and goals.
                     </p>
                 </div>
             </div>
