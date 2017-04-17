@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
     <div ng-app="myApp" ng-controller="myNgController" runat="server">
 
-        <script type="text/ng-template" id="modalContent.html">
+        <%--<script type="text/ng-template" id="modalContent.html">
         <div class="modal-header">
             <h3 class="modal-title">Events</h3>
         </div>
@@ -28,10 +28,10 @@
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button> 
 
         </div>
-        </script>
+        </script>--%>
 
         <div class="wrapper wrapper-content">
-            <div class="row animated fadeInDown">
+           <%-- <div class="row animated fadeInDown">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
@@ -48,6 +48,99 @@
 
                         <div class="ibox-content">
                             <div id="calendar" runat="server" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>--%>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">Total</span>
+                            <h5>Students</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">
+                                <asp:Label ID="lbl_studentCounter" runat="server" Text="0"></asp:Label>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">Total</span>
+                            <h5>Instructors</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">
+                                <asp:Label ID="lbl_instructorCounter" runat="server" Text="0"></asp:Label>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">Total</span>
+                            <h5>Courses</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">
+                                <asp:Label ID="lbl_courseCounter" runat="server" Text="0"></asp:Label>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-primary pull-right">Total</span>
+                            <h5>Events</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">
+                                <asp:Label ID="lbl_eventCounter" runat="server" Text="0"></asp:Label>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row animated fadeInRight">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Events TimeLine</h5>
+                        </div>
+                        <div class="ibox-content" id="ibox-content">
+
+                            <div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
+                                <asp:Repeater ID="EventRepeater" runat="server">
+                                    <ItemTemplate>
+                                        <div class="vertical-timeline-block">
+                                            <div class="vertical-timeline-icon navy-bg">
+                                                <i class="fa fa-file-text"></i>
+                                            </div>
+
+                                            <div class="vertical-timeline-content">
+                                                <h2><%# Eval("Title") %></h2>
+                                                <p>
+                                                    <%# Eval("Description") %>
+                                                </p>
+                                                <span class="vertical-date"><%# Eval("StartAt", "{0:MM/dd/yyyy}") %>
+                                            <br />
+                                                    <small><%# Eval("StartAt", "{0:hh:mm tt}") %> - <%# Eval("EndAt", "{0:hh:mm tt}") %></small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
                 </div>

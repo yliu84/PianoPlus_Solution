@@ -19,7 +19,7 @@
                 <li runat="server" id="li_loggedin" class="dropdown">
                     <a runat="server" id="a_email" href="javascript:void(0)" class="dropbtn">admin@gmail.com</a>
                     <div class="dropdown-content">
-                        <a href="Default.aspx">Exit</a>
+                        <a href="Default.aspx" style="color:purple">Exit</a>
                     </div>
                 </li>
             </ul>

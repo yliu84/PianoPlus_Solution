@@ -28,6 +28,17 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public int InstructorCounter()
+        {
+            using(var context = new PianoPlusContext())
+            {
+                var results = from instructors in context.Instructors
+                              select instructors;
+
+                return results.Count();
+            }
+        }
+
         public List<Role> Role_List()
         {
             using(var context = new PianoPlusContext())

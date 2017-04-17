@@ -31,7 +31,6 @@ namespace PianoPlus_System.BLL
 
         public List<Course> Course_List()
         {
-            List<Course> courseList = new List<Course>();
 
             using (var context = new PianoPlusContext())
             {
@@ -41,6 +40,22 @@ namespace PianoPlus_System.BLL
 
 
                 return results.ToList();
+
+
+            }
+        }
+
+        public int CourseCounter()
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                var results = from courses in context.Courses
+                              select courses;
+
+
+
+                return results.ToList().Count();
 
 
             }

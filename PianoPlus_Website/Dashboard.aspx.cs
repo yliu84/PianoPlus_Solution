@@ -18,6 +18,35 @@ public partial class Dashboard : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["email"] != null && Session["InstructorID"] != null)
+        {
+            EventController eventController = new EventController();
+            InstructorController instructorController = new InstructorController();
+            StudentController studentController = new StudentController();
+            CourseController courseController = new CourseController();
+
+            List<Events> events = new List<Events>();
+            int instructorId = int.Parse(Session["InstructorID"].ToString());
+
+            events = eventController.Event_list(instructorId);
+
+            if (events.Count() != 0)
+            {
+                EventRepeater.DataSource = events;
+                EventRepeater.DataBind();
+            }
+
+            lbl_studentCounter.Text = studentController.StudentCounter().ToString();
+            lbl_instructorCounter.Text = instructorController.InstructorCounter().ToString();
+            lbl_courseCounter.Text = courseController.CourseCounter().ToString();
+            lbl_eventCounter.Text = eventController.EventCounter(instructorId).ToString();
+
+
+        }
+        else
+        {
+            Response.Redirect("~/Login.aspx");
+        }
        
     }
 

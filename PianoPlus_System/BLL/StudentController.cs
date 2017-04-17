@@ -32,6 +32,18 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public int StudentCounter()
+        {
+            using (var context = new PianoPlusContext())
+            {
+                var result = (from student in context.Students
+                              select student).ToList();
+
+                return result.Count();
+
+            }
+        }
+
         public void ChangePassword(int studentID, string newPass)
         {
             using (var context = new PianoPlusContext())
