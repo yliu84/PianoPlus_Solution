@@ -163,7 +163,7 @@ public partial class ClassManager : System.Web.UI.Page
 
         if (Page.IsValid)
         {
-            int instructorID = 2000;
+            int instructorID = (int)Session["InstructorID"];
             string courseCode = ddl_course.SelectedValue;
             DateTime date = DateTime.Parse(txt_date.Text);
             DateTime startTime = DateTime.Parse(txt_date.Text + " " + txt_startTime.Text);
@@ -173,9 +173,11 @@ public partial class ClassManager : System.Web.UI.Page
             string room = txt_Room.Text;
             List<StudentClass> updatedClasses = new List<StudentClass>();
 
+           
             for (int i = 0; i < StudentGridView.Rows.Count; i++)
             {
                 updatedClass = new StudentClass();
+
                 updatedClass.InstructorID = instructorID;
                 updatedClass.CourseCode = courseCode;
                 updatedClass.StartTime = startTime;
@@ -203,10 +205,12 @@ public partial class ClassManager : System.Web.UI.Page
             {
                 MessageUserControl.TryRun(() =>
                 {
-                    classController.UpdateClass(updatedClasses, oldCourseCode, oldStartTime, instructorID);
+                    //classController.UpdateClass(updatedClasses, oldCourseCode, oldStartTime, instructorID);
+                    classController.UpdateClass(oldCourseCode, oldStartTime, instructorID, startTime, endTime, room, hours, dayOfWeek, courseCode);
                     Reset();
 
                 }, "Success", "Class has been updated.");
+                ClassGridView.DataBind();
             }
 
 

@@ -102,7 +102,7 @@ namespace PianoPlus_System.BLL
 
         }
 
-        public void UpdateClass(List<StudentClass> updatedClasses, string oldCourseCode, DateTime oldStartTime, int instructorID)
+        public void UpdateClass(string oldCourseCode, DateTime oldStartTime, int instructorID, DateTime startTime, DateTime endTime, string room, double hours, string dayOfWeek, string courseCode)
         {
 
             using (var context = new PianoPlusContext())
@@ -112,6 +112,7 @@ namespace PianoPlus_System.BLL
                                     where i.InstructorID == instructorID
                                     &&      i.CourseCode == oldCourseCode
                                     &&      i.StartTime == oldStartTime
+                                    &&      i.Room == room
                                     select i).ToList();
 
 
@@ -119,15 +120,49 @@ namespace PianoPlus_System.BLL
                 foreach (StudentClass currentClass in allClasses)
                 {
                     context.StudentClasses.Remove(currentClass);
-                }
-                foreach (StudentClass clas in updatedClasses)
-                {
-                    context.StudentClasses.Add(clas);
-                }
+                    context.SaveChanges();
 
+                    currentClass.StartTime = startTime;
+                    currentClass.EndTime = endTime;
+                    currentClass.DayOfWeek = dayOfWeek;
+                    currentClass.CourseCode = courseCode;
+                    currentClass.Hours = hours;
+                    currentClass.Room = room;
+
+                    context.StudentClasses.Add(currentClass);
+                    context.SaveChanges();
+
+
+                }
+                //foreach (StudentClass clas in updatedClasses)
+                //{
+                //    context.StudentClasses.Add(clas);
+                //}
+                
+
+                //foreach(StudentClass updatedClass in allClasses)
+                //{
+                //    Make changes
+                //    updatedClass.CourseCode = courseCode;
+                //    updatedClass.DayOfWeek = dayOfWeek;
+                //    updatedClass.StartTime = startTime;
+                //    updatedClass.EndTime = endTime;
+                //    updatedClass.Hours = hours;
+                //    updatedClass.Room = room;
+                //    var update = context.Entry(context.StudentClasses.Attach(updatedClass));
+
+                //    Add Changes
+                //    update.Property(x => x.CourseCode).IsModified = true;
+                //    update.Property(x => x.StartTime).IsModified = true;
+                //    update.Property(x => x.EndTime).IsModified = true;
+                //    update.Property(x => x.DayOfWeek).IsModified = true;
+                //    update.Property(x => x.Hours).IsModified = true;
+                //    update.Property(x => x.Room).IsModified = true;
+
+                //}
 
                 //DO the update
-                context.SaveChanges();
+                
                 //var update = context.Entry(context.StudentClasses.Attach(currentClass));
                 //update.Property(x => x.StudentID).IsModified = true;
                 //update.Property(x => x.InstructorID).IsModified = true;
