@@ -50,7 +50,9 @@
                     <li class="active">
                         <a href="Dashboard.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboard</span></a>
                     </li>
-
+                    <li>
+                        <a href="EventsManager.aspx"><i class="fa fa-area-chart"></i><span class="nav-label">Events</span></a>
+                    </li>
                     <li>
                         <a href="StudentManager.aspx"><i class="fa fa-users"></i><span class="nav-label">Student</span></a>
                         <%--<ul class="nav nav-second-level">
@@ -70,11 +72,7 @@
 
                     <li>
                         <a href="ClassManager.aspx"><i class="fa fa-music"></i><span class="nav-label">Class</span></a>
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa-area-chart"></i><span class="nav-label">Classes History</span></a>
-                    </li>
+                    </li>                 
 
                     <li>
                         <a href="#"><i class="fa fa-dollar"></i><span class="nav-label">Invoice</span></a>
