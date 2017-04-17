@@ -122,7 +122,7 @@ public partial class Invoice : System.Web.UI.Page
                 //StringReader sr = new StringReader(sb.ToString());
                 using (StringReader sr = new StringReader(sb.ToString()))
                 {
-                    ArrayList parsedList = HTMLWorker.ParseToList(sr, null);
+                    List<IElement> parsedList = HTMLWorker.ParseToList(sr, null);
                     doc.Open();
                     foreach (object item in parsedList)
                     {
