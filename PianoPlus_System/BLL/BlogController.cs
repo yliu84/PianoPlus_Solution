@@ -12,6 +12,7 @@ using System.Data.Entity;
 
 namespace PianoPlus_System.BLL
 {
+    [DataObject]
     public class BlogController
     {
         public void AddPost(Blog newBlog)
@@ -62,6 +63,30 @@ namespace PianoPlus_System.BLL
                               };
 
                 return results.ToList();
+            }
+        }
+
+        public List<Blog> GetPostsByInstructorID(int instructorID)
+        {
+            using(var context = new PianoPlusContext())
+            {
+                var result = from x in context.Blogs
+                             where x.InstructorID == instructorID
+                             orderby x.PostDate descending
+                             select x;
+
+                return result.ToList();
+            }
+        }
+
+        public void Delete_Post(Blog blog)
+        {
+            using(var context = new PianoPlusContext())
+            {
+                Blog deleted = context.Blogs.Find(blog.BlogID);
+
+                context.Blogs.Remove(deleted);
+                context.SaveChanges();
             }
         }
     }

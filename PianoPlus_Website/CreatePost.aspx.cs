@@ -38,7 +38,7 @@ public partial class CreatePost : System.Web.UI.Page
                 newPost.PostDate = DateTime.Now;
 
                 controller.AddPost(newPost);
-            }, "Success", "New bolg post added.");
+            }, "Success", "New blog post added.");
 
 
             }

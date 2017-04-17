@@ -10,6 +10,7 @@ using System.ComponentModel;
 
 namespace PianoPlus_System.BLL
 {
+    [DataObject]
     public class CourseController
     {
         public bool AddNewCourse(Course lesson)
