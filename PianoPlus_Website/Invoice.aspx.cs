@@ -44,7 +44,6 @@ public partial class Invoice : System.Web.UI.Page
         }
 
         //step 5: Close document
-        document.Close();
 
         //step 6: Write pdf bytes to outputstream
         Response.OutputStream.Write(m.GetBuffer(), 0, m.GetBuffer().Length);
@@ -76,19 +75,35 @@ public partial class Invoice : System.Web.UI.Page
                 StringBuilder sb = new StringBuilder();
 
                 //Generate Invoice (Bill) Header.
-                sb.Append("<table width='100%' cellspacing='0' cellpadding='2'>");
-                sb.Append("<tr><td align='center' style='background-color: #18B5F0' colspan = '2'><b>Order Sheet</b></td></tr>");
-                sb.Append("<tr><td colspan = '2'></td></tr>");
-                sb.Append("</td><td align = 'right'><b>Date: </b>");
-                sb.Append(DateTime.Now);
-                sb.Append(" </td></tr>");
-                sb.Append("<tr><td colspan = '2'><b>Company Name: </b>");
-                sb.Append(companyName);
-                sb.Append("</td></tr>");
-                sb.Append("</table>");
-                sb.Append("<br />");
-
+                sb.Append("<div align='center' style='background-color: #18B5F0'><b> Order Sheet</b></div>");
+                sb.Append("<div style=' font-size:10px; float:right;'>");
+                sb.Append("<span style='text-align:left; '>");                    
+                        sb.Append("<b>Company Name:</b> ");
+                        sb.Append(companyName);
+                        sb.Append("<br />");
+                        sb.Append("<b>Date: </b>");
+                        sb.Append(DateTime.Now);
+                        sb.Append("<br />");
+                        sb.Append("<b>Phone:</b> ");
+                        sb.Append("insert phone number here");
+                        sb.Append("<br />");
+                        sb.Append("<b>Address:</b> ");
+                        sb.Append("insert Address here");
+                        sb.Append("<br />");
+                        sb.Append("<b>Postal Code:</b> ");
+                        sb.Append("insert Postal here");
+                        sb.Append("<br />");
+                    sb.Append("</span>");
+                sb.Append("</div>");
                 //Generate Invoice Items Grid.
+
+                sb.Append("<div style='text-align:center;'> ");
+
+                sb.Append("______________________________________________________________________________");
+                sb.Append("<br />");
+                sb.Append("<br />");
+                sb.Append("</div>");
+                sb.Append("<div>");
                 sb.Append("<table border = '1'>");
                 sb.Append("<tr>");
                 foreach (DataColumn column in dt.Columns)
@@ -117,6 +132,7 @@ public partial class Invoice : System.Web.UI.Page
                 sb.Append("</td>");
                 sb.Append("</tr></table>");
 
+                sb.Append("</div>");
                 //Export HTML String as PDF.
 
                 //StringReader sr = new StringReader(sb.ToString());

@@ -13,13 +13,13 @@ namespace PianoPlus_System.BLL
     [DataObject]
     class InvoiceController
     {
-        public bool AddNewInvoice(CoursePayment coursepayment)
+        public bool AddNewTransaction(Transaction transaction)
         {
             try
             {
                 using (var context = new PianoPlusContext())
                 {
-                    context.CoursePayments.Add(coursepayment);
+                    context.Transactions.Add(transaction);
                     context.SaveChanges();
 
                     return true;
@@ -31,38 +31,38 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public CoursePayment GetCoursePaymentInfo(int paymentid)
+        //public Transaction GetTransactionInfoByID(int paymentid)
+        //{
+        //    Transaction CurrentTransactionPayment = new Transaction();
+
+        //    try
+        //    {
+        //        using (var context = new PianoPlusContext())
+        //        {
+        //            var results = (from info in context.Transactions
+        //                           where info.PaymentID == paymentid
+        //                           select info
+        //                           ).SingleOrDefault();
+
+        //            return results;
+
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return CurrentTransactionPayment;
+        //    }
+        //}
+
+        public Account GetPaymentByStudentID(int studentID)
         {
-            CoursePayment CurrentCoursePayment = new CoursePayment();
+            Account StudentAccount = new Account();
 
             try
             {
                 using (var context = new PianoPlusContext())
                 {
-                    var results = (from info in context.CoursePayments
-                                   where info.PaymentID == paymentid
-                                   select info
-                                   ).SingleOrDefault();
-
-                    return results;
-
-                }
-            }
-            catch
-            {
-                return CurrentCoursePayment;
-            }
-        }
-
-        public Payment GetPaymentByStudentID(int studentID)
-        {
-            Payment CurrentPayment = new Payment();
-
-            try
-            {
-                using (var context = new PianoPlusContext())
-                {
-                    var results = (from info in context.Payments
+                    var results = (from info in context.Accounts
                                    where info.StudentID == studentID
                                    select info
                                    ).SingleOrDefault();
@@ -73,7 +73,7 @@ namespace PianoPlus_System.BLL
             }
             catch
             {
-                return CurrentPayment;
+                return StudentAccount;
             }
         }
 
@@ -81,18 +81,22 @@ namespace PianoPlus_System.BLL
         {
             InvoiceInfo CurrentInvoice = new InvoiceInfo();
 
+
             try
             {
                 using (var context = new PianoPlusContext())
                 {
-                    var results = (from info in context.Payments
-                                   where info.StudentID == studentid
+                    var results = (from account in context.Accounts
+                                   join tran in context.Transactions on account.AccountID equals tran.AccountID
+                                   join instr in context.Instructors on tran.InstructorID equals instr.InstructorID
+                                   join stud in context.Students on account.StudentID equals stud.StudentID
+                                   where account.StudentID == studentid
                                    select new InvoiceInfo()
                                    {
-                                       PaymentID = info.PaymentID,
-                                       InstructorName = info.Instructor.FirstName + " " + info.Instructor.LastName,
-                                       StudentName = info.Student.FirstName + " " + info.Student.LastName,
-                                       Total = info.Total
+                                       PaymentID = account.AccountID,
+                                       InstructorName = tran.Instructor.FirstName + " " + tran.Instructor.LastName,
+                                       StudentName = account.Student.FirstName + " " + account.Student.LastName,
+                                       Total = account.Total
                                    }).SingleOrDefault();
 
                     return results;
@@ -105,34 +109,33 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        public List<InvoiceInfo> Invoice_List(string name)
-        {
+        //public List<InvoiceInfo> InvoiceListByStudentID(int studentID)
+        //{
 
-            using (var context = new PianoPlusContext())
-            {
-                var results = from invoices in context.Payments
-                              orderby invoices.Student.LastName, invoices.Student.FirstName
-                              select new InvoiceInfo()
-                              {
-                                  PaymentID = invoices.PaymentID,
-                                  InstructorName = invoices.Instructor.FirstName + " " + invoices.Instructor.LastName,
-                                  StudentName = invoices.Student.FirstName + " " + invoices.Student.LastName,
-                                  Total = invoices.Total
-
-                              };
-
-
-                if (!string.IsNullOrEmpty(name))
-                {
-                    results = results.Where(x => x.StudentName.Contains(name));
-                }
+        //    using (var context = new PianoPlusContext())
+        //    {
+        //        var results = (from account in context.Accounts
+        //                       join tran in context.Transactions on account.AccountID equals tran.AccountID
+        //                       //join instr in context.Instructors on tran.InstructorID equals instr.InstructorID
+        //                       //join stud in context.Students on account.StudentID equals stud.StudentID
+        //                       where account.StudentID == studentID
+        //                       select new List<InvoiceInfo>()
+        //                       {
+        //                           account.Transactions
+        //                       }).SingleOrDefault();
 
 
-                return results.ToList();
+        //        //if (!string.IsNullOrEmpty(name))
+        //        //{
+        //        //    results = results.Where(x => x.StudentName.Contains(name));
+        //        //}
 
 
-            }
-        }
+        //        return results.ToList();
+
+
+        //    }
+        //}
         public List<InvoiceInfo> InvoiceInClass(DateTime startTime, string courseCode, int instructorID)
         {
 

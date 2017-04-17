@@ -13,7 +13,7 @@ namespace PianoPlus_Data
             : base("name=PianoPlusDB")
         {
         }
-
+        public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Announcement> Announcements { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
@@ -27,9 +27,19 @@ namespace PianoPlus_Data
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentClass> StudentClasses { get; set; }
         public virtual DbSet<StudentClassHistory> StudentClassHistories { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Account>()
+                .Property(e => e.Total)
+                .HasPrecision(19, 4);
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Transactions)
+                .WithRequired(e => e.Account)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Course>()
                 .Property(e => e.Active)
                 .IsFixedLength()
@@ -113,6 +123,11 @@ namespace PianoPlus_Data
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Student>()
+                .HasMany(e => e.Accounts)
+                .WithRequired(e => e.Student)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Student>()
                 .HasMany(e => e.StudentClasses)
                 .WithRequired(e => e.Student)
                 .WillCascadeOnDelete(false);
@@ -121,6 +136,10 @@ namespace PianoPlus_Data
                 .HasMany(e => e.StudentClassHistories)
                 .WithRequired(e => e.Student)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Transaction>()
+                .Property(e => e.LessonAmount)
+                .HasPrecision(19, 4);
         }
     }
 }

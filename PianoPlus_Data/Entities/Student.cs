@@ -12,6 +12,7 @@ namespace PianoPlus_Data.Entities
     {
         public Student()
         {
+            Accounts = new HashSet<Account>();
             InstructorClassHistories = new HashSet<InstructorClassHistory>();
             Payments = new HashSet<Payment>();
             StudentClasses = new HashSet<StudentClass>();
@@ -82,6 +83,7 @@ namespace PianoPlus_Data.Entities
  
         }
 
+        public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<InstructorClassHistory> InstructorClassHistories { get; set; }
 
         public virtual ICollection<Payment> Payments { get; set; }
