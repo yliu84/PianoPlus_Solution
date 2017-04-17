@@ -33,9 +33,9 @@ public partial class Invoice : System.Web.UI.Page
             PdfWriter writer = PdfWriter.GetInstance(document, m);
             writer.CloseStream = false;
             //step 3
-            document.Open();
+
             //step 4
-            CreateAndSavePDF(document);
+            document = CreateAndSavePDF(document);
         }
         catch (Exception ex)
         {
@@ -53,7 +53,7 @@ public partial class Invoice : System.Web.UI.Page
         m.Close();
     }
 
-    protected void CreateAndSavePDF(Document doc)
+    protected Document CreateAndSavePDF(Document doc)
     {
         //Dummy data for Invoice.
         string companyName = "Piano+";
@@ -93,7 +93,7 @@ public partial class Invoice : System.Web.UI.Page
                 sb.Append("<tr>");
                 foreach (DataColumn column in dt.Columns)
                 {
-                    sb.Append("<th style = 'background-color: #D20B0C;color:#ffffff'>");
+                    sb.Append("<th style = 'background-color: #D20B0C;color:#000000'>");
                     sb.Append(column.ColumnName);
                     sb.Append("</th>");
                 }
@@ -118,15 +118,53 @@ public partial class Invoice : System.Web.UI.Page
                 sb.Append("</tr></table>");
 
                 //Export HTML String as PDF.
-                StringReader sr = new StringReader(sb.ToString());
-                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-                PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
-                Response.ContentType = "application/pdf";
-                //Response.AddHeader("content-disposition", "attachment;filename=Invoice.pdf"); --> change to include payment id in filename
-                Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                Response.Write(pdfDoc);
-                Response.End();
+
+                //StringReader sr = new StringReader(sb.ToString());
+                using (StringReader sr = new StringReader(sb.ToString()))
+                {
+                    ArrayList parsedList = HTMLWorker.ParseToList(sr, null);
+                    doc.Open();
+                    foreach (object item in parsedList)
+                    {
+                        doc.Add((IElement)item);
+                    }
+                    doc.Close();
+                }
+
             }
+            return doc;
         }
     }
 }
+
+
+    //using (FileStream fs = new FileStream("TestOutput.pdf", FileMode.Create)) {
+    //    PdfWriter.GetInstance(document, fs);
+    //    using (StringReader stringReader = new StringReader(download)) {
+    //        ArrayList parsedList = HTMLWorker.ParseToList(stringReader, null);
+    //        document.Open();
+    //        foreach (object item in parsedList) {
+    //            document.Add((IElement)item);
+    //        }
+    //        document.Close();
+    //    }
+    //}
+
+
+
+                //StringReader sr = new StringReader(sb.ToString());
+
+                //ArrayList parsedList = HTMLWorker.ParseToList(sr, null);
+                //foreach (object item in parsedList)
+                //{
+                //    doc.Add((IElement)item);
+                //}
+
+
+                ////Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                //PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
+                //Response.ContentType = "application/pdf";
+                ////Response.AddHeader("content-disposition", "attachment;filename=Invoice.pdf"); --> change to include payment id in filename
+                //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                //Response.Write(doc);
+                //HttpContext.Current.ApplicationInstance.CompleteRequest();

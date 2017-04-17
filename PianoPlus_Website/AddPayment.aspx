@@ -9,7 +9,7 @@
             <h2>Payment</h2>
             <ol class="breadcrumb">
                 <li class="active">
-                    <a href="PaymentManager.aspx">All Payments</a>
+                    <a href="InvoiceManager.aspx">All Payments</a>
                 </li>
                 <li>
                     <a href="AddPayment.aspx"><span class="text-navy">Add Payment</span></a>
