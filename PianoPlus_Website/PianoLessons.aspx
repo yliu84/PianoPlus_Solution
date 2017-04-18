@@ -181,7 +181,7 @@
                 </div>
                 <div class="row" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
                 <div class="col-md-6 place">
-                    <p>Intermedia Group Lessons</p>
+                    <p>Intermediate Group Lessons</p>
                 </div>
                 <div class="col-md-6 place">
                     <p>$25 / 45 min</p>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="row" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
                     <div class="col-md-6 place">
-                        <p>Intermedia Group Lessons</p>
+                        <p>Intermediate Group Lessons</p>
                     </div>
                     <div class="col-md-6 place">
                         <p>$190 / month</p>
