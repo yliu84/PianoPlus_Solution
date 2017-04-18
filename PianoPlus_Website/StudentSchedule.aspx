@@ -130,7 +130,7 @@
                     <div class="pmb-block">
                         <h2>Class Schedule</h2>
                         <hr />
-                        <asp:GridView ID="ClassSchedule" runat="server" AllowPaging="True" CssClass="footable" AutoGenerateColumns="False" DataSourceID="ODSStudentSchedule" ShowHeader="true">
+                        <asp:GridView ID="ClassSchedule" runat="server" AllowPaging="True" CssClass="footable" AutoGenerateColumns="False" DataSourceID="ODSStudentSchedule">
                             <Columns>
                                 <asp:BoundField DataField="Course" HeaderText="Course" SortExpression="Course" />
                                 <asp:BoundField DataField="InstructorName" HeaderText="InstructorName" SortExpression="InstructorName" />
@@ -168,12 +168,12 @@
         </section>
         <asp:ObjectDataSource ID="ODSStudentSchedule" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetClassesByEndTimeAndStudentID" TypeName="PianoPlus_System.BLL.ClassController">
             <SelectParameters>
-                <asp:Parameter DefaultValue="2000" Name="studentID" Type="Int32" />
+                <asp:SessionParameter DefaultValue="" Name="studentID" SessionField="StudentID" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
         <asp:ObjectDataSource ID="ODSStudentHistory" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetClassHistoryByStudentID" TypeName="PianoPlus_System.BLL.ClassController">
             <SelectParameters>
-                <asp:Parameter DefaultValue="2000" Name="studentID" Type="Int32" />
+                <asp:SessionParameter DefaultValue="" Name="studentID" SessionField="StudentID" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
     </form>

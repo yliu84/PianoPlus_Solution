@@ -57,25 +57,27 @@ public partial class Register : System.Web.UI.Page
             newStudent.PassSalt = salt;
             newStudent.PassHash = hashed;
 
-            if(userController.AddNewStudent(newStudent) == true)
-            {
-                txt_address.Text = "";
-                txt_city.Text = "";
-                txt_email.Text = "";
-                txt_firstName.Text = "";
-                txt_lastName.Text = "";
-                txt_password.Text = "";
-                txt_phone.Text = "";
-                txt_postalCode.Text = "";
-                ddl_province.SelectedValue = "0";
-                txt_birthDay.Text = "";
-                MessageUserControl.ShowInfo("Student registed successful, please log in.");
+             MessageUserControl.TryRun(() =>
+             {
+                 if (userController.AddNewStudent(newStudent) == true)
+                 {
+                     txt_address.Text = "";
+                     txt_city.Text = "";
+                     txt_email.Text = "";
+                     txt_firstName.Text = "";
+                     txt_lastName.Text = "";
+                     txt_password.Text = "";
+                     txt_phone.Text = "";
+                     txt_postalCode.Text = "";
+                     ddl_province.SelectedValue = "0";
+                     txt_birthDay.Text = "";                   
+                 }
+                 else
+                 {
+                     MessageUserControl.ShowInfo("Cannot add new student, please try again.");
+                 }
 
-            }
-            else
-            {
-                MessageUserControl.ShowInfo("Cannot add new student, please try again.");
-            }
+             }, "Success", "Student registed successful, please log in.");
 
         }
         else
