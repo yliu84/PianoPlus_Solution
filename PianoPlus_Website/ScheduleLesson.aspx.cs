@@ -46,7 +46,7 @@ public partial class ScheduleLesson : System.Web.UI.Page
     {
         ClassController controller = new ClassController();
         List<StudentClass> classList= null;
-        int instructorID = 2000;
+        int instructorID = int.Parse(Session["InstructorID"].ToString());
 
         if(!string.IsNullOrEmpty(txt_date.Text))
         {
@@ -123,7 +123,7 @@ public partial class ScheduleLesson : System.Web.UI.Page
         if(Page.IsValid)
         {
             int studentID = int.Parse(txt_studentID.Text);
-            int instructorID = 2000;
+            int instructorID = int.Parse(Session["InstructorID"].ToString());
             string courseCode = ddl_course.SelectedValue;
             DateTime date = DateTime.Parse(txt_date.Text);
             DateTime startTime = DateTime.Parse(txt_date.Text + " " + txt_startTime.Text);

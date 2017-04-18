@@ -188,7 +188,7 @@ CREATE TABLE Course
 	NOT NULL,
 
 	CourseName
-	NVARCHAR(25)
+	NVARCHAR(50)
 	NOT NULL,
 
 	Active
@@ -400,7 +400,7 @@ GO
 CREATE TABLE Transactions
 (
 	TransactionID
-	INT IDENTITY(1, 1)
+	INT IDENTITY(500000, 1)
 	NOT NULL
 	CONSTRAINT PK_Transaction_TransactionID PRIMARY KEY CLUSTERED,
 
@@ -420,9 +420,9 @@ CREATE TABLE Transactions
 	CONSTRAINT FK_Transactions_InstructorID REFERENCES Instructor(InstructorID),
 
 	Hours
-	DECIMAL DEFAULT 0.0
+	FLOAT DEFAULT 0.0
 	NOT NULL
-	CONSTRAINT CK_Transactions_Hours CHECK (Hours >= 0 and Hours <= 5),
+	CONSTRAINT CK_Transactions_Hours CHECK (Hours >= 0),
 
 	LessonAmount
 	MONEY DEFAULT 0.00

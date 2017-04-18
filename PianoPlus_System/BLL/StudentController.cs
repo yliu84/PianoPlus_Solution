@@ -20,9 +20,15 @@ namespace PianoPlus_System.BLL
             {
                 using (var context = new PianoPlusContext())
                 {
-                    context.Students.Add(user);
+                    Student newStudent = context.Students.Add(user);
                     context.SaveChanges();
 
+                    Account newAcount = new Account();
+                    newAcount.StudentID = newStudent.StudentID;
+                    newAcount.Total = 0;
+
+                    context.Accounts.Add(newAcount);
+                    context.SaveChanges();
                     return true;
                 }
             }

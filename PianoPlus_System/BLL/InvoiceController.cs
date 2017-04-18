@@ -8,7 +8,6 @@ using PianoPlus_Data.Entities;
 using PianoPlus_Data;
 using PianoPlus_Data.POCOS;
 using System.ComponentModel;
-using System.ComponentModel;
 
 namespace PianoPlus_System.BLL
 {
@@ -124,5 +123,48 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public List<TransactionInfo> Transaction_List(int accountId)
+        {
+            using(var context = new PianoPlusContext())
+            {
+                var result = from t in context.Transactions
+                             where t.AccountID == accountId
+                             select new TransactionInfo()
+                             {
+                                 TransactionID = t.TransactionID,
+                                 CourseDescription = t.Course.CourseName,
+                                 InstructFullName = t.Instructor.FirstName + " " + t.Instructor.LastName,
+                                 Hours = t.Hours,
+                                 LessonTotal = t.LessonAmount,
+                                 TransactionDate = t.TransactionDate,
+                             };
+
+                return result.ToList();
+            }
+        }
+
+
+        public List<AccountInfo> Account_List(string name)
+        {
+            using(var context = new PianoPlusContext())
+            {
+                var results = from a in context.Accounts
+                             orderby a.StudentID
+                             select new AccountInfo()
+                             {
+                                 AccountID = a.AccountID,
+                                 StudentID = a.StudentID,
+                                 StudentFullName = a.Student.FirstName + a.Student.LastName,
+                                 AccountTotal = a.Total
+                             };
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    results = results.Where(x => x.StudentFullName.Contains(name));
+                }
+
+                return results.ToList();
+            }
+        }
     }
 }

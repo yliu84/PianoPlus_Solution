@@ -33,7 +33,7 @@ public partial class AddPayment : System.Web.UI.Page
         Transaction transaction = new Transaction();
         transaction.InstructorID = Convert.ToInt32(Session["InstructorID"]);
         transaction.CourseCode = ddl_course.SelectedValue;
-        transaction.Hours = Convert.ToInt32(txt_Hours.Text);
+        transaction.Hours = Convert.ToDouble(txt_Hours.Text);
         transaction.LessonAmount = Convert.ToDecimal(txt_Fee.Text);
 
         transaction.AccountID = invoiceController.GetAccountIDByStudentID(Convert.ToInt32(txt_studentID.Text));
@@ -45,7 +45,7 @@ public partial class AddPayment : System.Web.UI.Page
         }
         else
         {
-            MessageUserControl.ShowInfo("Transaction unsuccessfully added.");
+            MessageUserControl.ShowInfo("Transaction Failed.");
         }
     }
 

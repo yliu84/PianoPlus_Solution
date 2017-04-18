@@ -29,7 +29,7 @@ public partial class Register : System.Web.UI.Page
         Student newStudent = null;
         StudentController userController = new StudentController();
         InstructorController instructorController = new InstructorController();
-
+        InvoiceController invoiceController = new InvoiceController();
         bool StudentExists = userController.CheckIfEmailIsAvailable(email);
         bool InstructorExists = instructorController.CheckIfEmailIsAvailable(email);
 

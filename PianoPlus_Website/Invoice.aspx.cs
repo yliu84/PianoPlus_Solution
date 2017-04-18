@@ -68,7 +68,7 @@ public partial class Invoice : System.Web.UI.Page
         AccountInfo studentAccounteInfo = invoiceController.GetAccountInfoByStudentID(studIDNumber);
         StudentInf studentInfo = studentController.GetStudentInfoByStudentID(studentAccounteInfo.StudentID);
         //Dummy data for Invoice.
-        string companyName = "Piano+";
+        string companyName = "Piano Plus Studio";
         List<TransactionInfo> transactionList = studentAccounteInfo.TransactionList;
         List<string> transactionHeaders = new List<string>();
         //transactionHeaders.Add("PaymentID");
@@ -105,13 +105,12 @@ public partial class Invoice : System.Web.UI.Page
                                         sb.Append(DateTime.Now);
                                         sb.Append("<br />");
                                         sb.Append("<b>Phone:</b> ");
-                                        sb.Append("insert phone number here");
+                                        sb.Append("(778) 896 - 9098");
                                         sb.Append("<br />");
                                         sb.Append("<b>Address:</b> ");
-                                        sb.Append("insert Address here");
-                                        sb.Append("<br />");
-                                        sb.Append("<b>Postal Code:</b> ");
-                                        sb.Append("insert Postal here");
+                                        sb.Append("8888 Odlin Crescent #3165");
+                                        sb.Append("<br />");                                      
+                                        sb.Append("Richmond, BC V6X 3Z8");
                                         sb.Append("<br />");
                                         sb.Append("<b>GST #:</b> ");
                                         sb.Append("insert GST number here");
@@ -129,7 +128,7 @@ public partial class Invoice : System.Web.UI.Page
                     sb.Append("</div>");
 
                     sb.Append("<div style=' font-size:10px; float:right;'>");
-                    sb.Append("<span style='text-align:left; '>");                    
+                    sb.Append("<span style='text-align:left'>");                    
                             sb.Append("<b>StudentID :</b> ");
                             sb.Append(studentAccounteInfo.StudentID);
                             sb.Append("<br />");

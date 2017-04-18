@@ -15,7 +15,7 @@ namespace PianoPlus_Data.POCOS
         public int InstructorID { get; set; }
         public string InstructFullName { get; set; }
 
-        public decimal Hours { get; set; }
+        public double Hours { get; set; }
 
         public decimal LessonTotal { get; set; }
         public DateTime TransactionDate { get; set; }

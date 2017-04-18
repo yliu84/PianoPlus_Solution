@@ -20,7 +20,7 @@ namespace PianoPlus_Data.Entities
 
         public int InstructorID { get; set; }
 
-        public decimal Hours { get; set; }
+        public double Hours { get; set; }
 
         [Column(TypeName = "money")]
         public decimal LessonAmount { get; set; }
