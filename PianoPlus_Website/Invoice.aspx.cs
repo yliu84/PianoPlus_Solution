@@ -73,6 +73,7 @@ public partial class Invoice : System.Web.UI.Page
         List<string> transactionHeaders = new List<string>();
         //transactionHeaders.Add("PaymentID");
         transactionHeaders.Add("Course");
+        transactionHeaders.Add("Transaction Date");
         transactionHeaders.Add("Hours");
         transactionHeaders.Add("Lesson Total");
 
@@ -174,6 +175,10 @@ public partial class Invoice : System.Web.UI.Page
                         sb.Append("<tr>");
                             sb.Append("<td>");
                                 sb.Append(transaction.CourseDescription);
+                            sb.Append("</td>");
+                        
+                            sb.Append("<td>");
+                                sb.Append(transaction.TransactionDate);
                             sb.Append("</td>");
 
                             sb.Append("<td>");
