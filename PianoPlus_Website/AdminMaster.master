@@ -79,6 +79,10 @@
                     </li>
 
                     <li>
+                        <a href="BlogManager.aspx"><i class="fa fa-university"></i><span class="nav-label">Blog</span></a>
+                    </li>
+
+                    <li>
                         <a href="ChatRoom.aspx"><i class="fa fa-apple"></i><span class="nav-label">Chat Room</span></a>
                     </li>
                 </ul>
