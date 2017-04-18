@@ -18,7 +18,7 @@
                         <h2 data-sr='wait 1.5s, then enter left and hustle 100px over 2s'>Music </h2>
                         <h2 data-sr='wait 2.6s, then enter top and hustle 100px over 2s'>We love </h2>
                         <div>
-                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#albums" role="button" data-sr='wait 3.2s, then enter bottom and hustle 100px over 2s'>Our Lessons</a>
+                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="PianoLessons.aspx" role="button" data-sr='wait 3.2s, then enter bottom and hustle 100px over 2s'>Our Lessons</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                         <h2>Let the  </h2>
                         <h2>Music Speak!  </h2>
                         <div>
-                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="concerts-classic.html" role="button">Concerts</a>
+                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#" role="button">Concerts</a>
                         </div>
                     </div>
                 </div>
