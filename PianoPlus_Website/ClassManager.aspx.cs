@@ -237,6 +237,7 @@ public partial class ClassManager : System.Web.UI.Page
             classController.RemoveStudentClass(currentClass.StartTime, currentClass.InstructorID, currentClass.StudentID, currentClass.CourseCode);
             Reset();
             RebindClasses();
+            ClassGridView.DataBind();
 
         }, "Success", "Student has been removed from the class.");
 
