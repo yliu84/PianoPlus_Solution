@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="nav" class="nav navbar-nav navbar-left nav-pills">
                         <li class="active hvr-hang"><a class="page-scroll" href="Default.aspx">HOME</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="InstructorInfo.aspx">ABOUT US</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="InstructorsInfo.aspx">ABOUT US</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="PianoLessons.aspx">LESSONS</a></li>                      
                         <li class="hvr-hang"><a class="page-scroll" href="BlogView.aspx">BLOG</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="#contact">CONTACT</a></li>

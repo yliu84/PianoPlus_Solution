@@ -32,7 +32,7 @@
                         <h2>Let the  </h2>
                         <h2>Music Speak!  </h2>
                         <div>
-                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#" role="button">Concerts</a>
+                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#" role="button">Our Instructors</a>
                         </div>
                     </div>
                 </div>

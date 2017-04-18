@@ -75,7 +75,7 @@
                     </li>                 
 
                     <li>
-                        <a href="#"><i class="fa fa-dollar"></i><span class="nav-label">Invoice</span></a>
+                        <a href="InvoiceManager.aspx"><i class="fa fa-dollar"></i><span class="nav-label">Invoice</span></a>
                     </li>
 
                     <li>
