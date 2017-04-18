@@ -420,7 +420,7 @@ CREATE TABLE Transactions
 	CONSTRAINT FK_Transactions_InstructorID REFERENCES Instructor(InstructorID),
 
 	Hours
-	FLOAT DEFAULT 0.0
+	DECIMAL DEFAULT 0.0
 	NOT NULL
 	CONSTRAINT CK_Transactions_Hours CHECK (Hours >= 0 and Hours <= 5),
 

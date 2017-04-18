@@ -10,7 +10,7 @@ using PianoPlus_Data.Entities;
 using PianoPlus_System.BLL;
 using PianoPlus.UI;
 
-public partial class StudentManager : System.Web.UI.Page
+public partial class InvoiceManager : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,30 +19,22 @@ public partial class StudentManager : System.Web.UI.Page
             StudentGridView.DataBind();
         }
     }
-    //protected void btn_select_Click(object sender, EventArgs e)
-    //{
-    //    int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
-    //    int studentID = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
+    protected void btn_select_Click(object sender, EventArgs e)
+    {
+        int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
+        int studentID = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
 
-    //    StudentController studentController = new StudentController();
-    //    Student currentStudent = studentController.GetStudentByStudentID(studentID);
+        StudentController studentController = new StudentController();
+        Student currentStudent = studentController.GetStudentByStudentID(studentID);
 
-    //    if(currentStudent != null)
-    //    {
-    //        StudentProfile.Visible = true;
-    //        txt_studentID.Text = currentStudent.StudentID.ToString();
-    //        txt_firstName.Text = currentStudent.FirstName;
-    //        txt_lastName.Text = currentStudent.LastName;
-    //        txt_email.Text = currentStudent.Email;
-    //        txt_phone.Text = currentStudent.Phone;
-    //        txt_address.Text = currentStudent.Address;
-    //        ddl_province.SelectedValue = currentStudent.Province;
-    //        txt_city.Text = currentStudent.City;
-    //        txt_postalCode.Text = currentStudent.PostalCode;
-    //        ddl_active.SelectedValue = currentStudent.Active;
-    //        txt_birth.Text = currentStudent.BirthDay.ToString("MM/dd/yyyy");
-    //    }
-    //}
+        if (currentStudent != null)
+        {
+            HttpCookie studIDCookie = new HttpCookie("studID");
+            studIDCookie.Value = currentStudent.StudentID.ToString();
+            Response.Cookies.Add(studIDCookie);
+            Response.Write("<script>window.open('Invoice.aspx')</script>");
+        }
+    }
 
     //protected void btn_update_Click(object sender, EventArgs e)
     //{
@@ -84,4 +76,5 @@ public partial class StudentManager : System.Web.UI.Page
         
 
     //}
+
 }

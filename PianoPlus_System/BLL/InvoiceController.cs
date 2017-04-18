@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using PianoPlus_Data.Entities;
 using PianoPlus_Data;
 using PianoPlus_Data.POCOS;
+using System.ComponentModel;
 using System.ComponentModel;
 
 namespace PianoPlus_System.BLL
 {
     [DataObject]
-    class InvoiceController
+    public class InvoiceController
     {
         public bool AddNewTransaction(Transaction transaction)
         {
@@ -19,6 +21,13 @@ namespace PianoPlus_System.BLL
             {
                 using (var context = new PianoPlusContext())
                 {
+                    Account account = context.Accounts.Find(transaction.AccountID);
+
+                    account.Total += transaction.LessonAmount;
+
+                    var update = context.Entry(context.Accounts.Attach(account));
+                    update.Property(x => x.Total).IsModified = true;
+
                     context.Transactions.Add(transaction);
                     context.SaveChanges();
 
@@ -31,55 +40,55 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        //public Transaction GetTransactionInfoByID(int paymentid)
-        //{
-        //    Transaction CurrentTransactionPayment = new Transaction();
-
-        //    try
-        //    {
-        //        using (var context = new PianoPlusContext())
-        //        {
-        //            var results = (from info in context.Transactions
-        //                           where info.PaymentID == paymentid
-        //                           select info
-        //                           ).SingleOrDefault();
-
-        //            return results;
-
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        return CurrentTransactionPayment;
-        //    }
-        //}
-
-        public Account GetPaymentByStudentID(int studentID)
+        public int GetAccountIDByStudentID(int studentID)
         {
-            Account StudentAccount = new Account();
-
             try
             {
                 using (var context = new PianoPlusContext())
                 {
                     var results = (from info in context.Accounts
                                    where info.StudentID == studentID
-                                   select info
-                                   ).SingleOrDefault();
+                                   select new
+                                   {
+                                        AccountID = info.AccountID
+                                   }).SingleOrDefault();
 
-                    return results;
+                    return results.AccountID;
 
                 }
             }
             catch
             {
-                return StudentAccount;
+                return -1;
             }
+
+        }
+        public AccountInfo GetAccountInfoByStudentID(int studentID)
+        {
+            AccountInfo studentAccount = null;
+            using (var context = new PianoPlusContext())
+            {
+                var results = (from info in context.Accounts
+                                where info.StudentID == studentID
+                                join stud in context.Students on info.StudentID equals stud.StudentID
+                                select new AccountInfo()
+                                {
+                                    AccountID = info.AccountID,
+                                    StudentID = info.StudentID,
+                                    StudentFullName = stud.FirstName + " " + stud.LastName,
+                                    AccountTotal = info.Total
+                                }).SingleOrDefault();
+                studentAccount = results;
+
+            }
+            studentAccount.TransactionList = GetInvoiceInfoByStudentID(studentID);
+            
+            return studentAccount;
         }
 
-        public InvoiceInfo GetInvoiceInfoByStudent(int studentid)
+        public List<TransactionInfo> GetInvoiceInfoByStudentID(int studentid)
         {
-            InvoiceInfo CurrentInvoice = new InvoiceInfo();
+            List<TransactionInfo> CurrentInvoice = null;
 
 
             try
@@ -90,16 +99,22 @@ namespace PianoPlus_System.BLL
                                    join tran in context.Transactions on account.AccountID equals tran.AccountID
                                    join instr in context.Instructors on tran.InstructorID equals instr.InstructorID
                                    join stud in context.Students on account.StudentID equals stud.StudentID
+                                   join course in context.Courses on tran.CourseCode equals course.CourseCode
                                    where account.StudentID == studentid
-                                   select new InvoiceInfo()
+                                   select new TransactionInfo()
                                    {
-                                       PaymentID = account.AccountID,
-                                       InstructorName = tran.Instructor.FirstName + " " + tran.Instructor.LastName,
-                                       StudentName = account.Student.FirstName + " " + account.Student.LastName,
-                                       Total = account.Total
-                                   }).SingleOrDefault();
+                                       TransactionID = tran.TransactionID,
+                                       CourseCode = tran.CourseCode,
+                                       CourseDescription = course.CourseName,
+                                       InstructorID = instr.InstructorID,
+                                       LessonTotal = tran.LessonAmount,
+                                       TransactionDate = tran.TransactionDate,
+                                       Hours = tran.Hours,
+                                       InstructFullName = instr.FirstName + " " + instr.LastName                                       
 
-                    return results;
+                                   });
+
+                    return results.ToList();
 
                 }
             }
@@ -109,60 +124,5 @@ namespace PianoPlus_System.BLL
             }
         }
 
-        //public List<InvoiceInfo> InvoiceListByStudentID(int studentID)
-        //{
-
-        //    using (var context = new PianoPlusContext())
-        //    {
-        //        var results = (from account in context.Accounts
-        //                       join tran in context.Transactions on account.AccountID equals tran.AccountID
-        //                       //join instr in context.Instructors on tran.InstructorID equals instr.InstructorID
-        //                       //join stud in context.Students on account.StudentID equals stud.StudentID
-        //                       where account.StudentID == studentID
-        //                       select new List<InvoiceInfo>()
-        //                       {
-        //                           account.Transactions
-        //                       }).SingleOrDefault();
-
-
-        //        //if (!string.IsNullOrEmpty(name))
-        //        //{
-        //        //    results = results.Where(x => x.StudentName.Contains(name));
-        //        //}
-
-
-        //        return results.ToList();
-
-
-        //    }
-        //}
-        public List<InvoiceInfo> InvoiceInClass(DateTime startTime, string courseCode, int instructorID)
-        {
-
-            using (var context = new PianoPlusContext())
-            {
-                var results = from invoices in context.Payments
-                              join studentClasses in context.StudentClasses on invoices.StudentID equals studentClasses.StudentID
-                              where studentClasses.StartTime == startTime
-                              && studentClasses.CourseCode == courseCode
-                              && studentClasses.InstructorID == instructorID
-                              orderby invoices.Student.LastName, invoices.Student.FirstName
-                              select new InvoiceInfo()
-                              {
-                                  PaymentID = invoices.PaymentID,
-                                  InstructorName = invoices.Instructor.FirstName + " " + invoices.Instructor.LastName,
-                                  StudentName = invoices.Student.FirstName + " " + invoices.Student.LastName,
-                                  Total = invoices.Total
-
-                              };
-
-
-                return results.ToList();
-
-
-            }
-        }
-
-
-        }
+    }
 }

@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeFile="InvoiceManager.aspx.cs" Inherits="StudentManager" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeFile="InvoiceManager.aspx.cs" Inherits="InvoiceManager" %>
 
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>Invoice</h2>
@@ -50,10 +49,10 @@
                                 <Columns>
                                     <asp:TemplateField>
                                         <ItemTemplate>
-                                            <asp:LinkButton Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info" OnClientClick="window.open('Invoice.aspx')"/>
+                                            <asp:LinkButton Text="Select" ID="btn_select" runat="server" CssClass="btn btn-sm btn-info" OnClick="btn_select_Click"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False" />
+                                    <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" Visible="False"/>
                                     <asp:BoundField DataField="FullName" HeaderText="Student Name" SortExpression="FullName" />
                                     <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                     <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
@@ -81,7 +80,7 @@
         </asp:ObjectDataSource>
     </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
-    <script src="Scripts/js/bootstrap-datepicker.js"></script>
+   <%-- <script src="Scripts/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.input-group.date').datepicker({
@@ -93,6 +92,6 @@
             });
 
         })
-    </script>
+    </script>--%>
 </asp:Content>
 

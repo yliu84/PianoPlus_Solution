@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace PianoPlus_Data.POCOS
 {
-    class TransactionInfo
+    public class TransactionInfo
     {
-        public int PaymentID { get; set; }
+        public int TransactionID { get; set; }
 
-        public string InstructorName { get; set; }
+        public string CourseCode { get; set; }
 
-        public string StudentName { get; set; }
+        public int InstructorID { get; set; }
+        public string InstructFullName { get; set; }
 
-        public decimal Total { get; set; }
+        public decimal Hours { get; set; }
+
+        public decimal LessonTotal { get; set; }
+        public DateTime TransactionDate { get; set; }
+
+        public string CourseDescription { get; set; }
     }
 }

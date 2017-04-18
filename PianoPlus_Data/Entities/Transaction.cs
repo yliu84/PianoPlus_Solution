@@ -7,7 +7,7 @@ using System.Data.Entity.Spatial;
 namespace PianoPlus_Data.Entities
 {
 
-    [Table("Transaction")]
+    [Table("Transactions")]
     public partial class Transaction
     {
         public int TransactionID { get; set; }
@@ -20,7 +20,7 @@ namespace PianoPlus_Data.Entities
 
         public int InstructorID { get; set; }
 
-        public double Hours { get; set; }
+        public decimal Hours { get; set; }
 
         [Column(TypeName = "money")]
         public decimal LessonAmount { get; set; }

@@ -15,11 +15,17 @@ using iTextSharp.text.html.simpleparser;
 using System.IO;
 using System.Text;
 
+using PianoPlus_Data;
+using PianoPlus_Data.POCOS;
+using PianoPlus_System.BLL;
+using PianoPlus.UI;
+
 
 public partial class Invoice : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+                
         //step 1
         //need to write to memory first due to IE wanting
         //to know the length of the pdf beforehand
@@ -54,16 +60,21 @@ public partial class Invoice : System.Web.UI.Page
 
     protected Document CreateAndSavePDF(Document doc)
     {
+        InvoiceController invoiceController = new InvoiceController();
+        StudentController studentController = new StudentController();
+
+        string studentID = Request.Cookies["studID"].Value;
+        int studIDNumber = Convert.ToInt32(studentID);
+        AccountInfo studentAccounteInfo = invoiceController.GetAccountInfoByStudentID(studIDNumber);
+        StudentInf studentInfo = studentController.GetStudentInfoByStudentID(studentAccounteInfo.StudentID);
         //Dummy data for Invoice.
         string companyName = "Piano+";
-        DataTable dt = new DataTable();
-        dt.Columns.AddRange(new DataColumn[6] {
-                            new DataColumn("PaymentID", typeof(int)),
-                            new DataColumn("CourseCode", typeof(string)),
-                            new DataColumn("Hours", typeof(double)),
-                            new DataColumn("LessonFee", typeof(decimal)),
-                            new DataColumn("PaidTime", typeof(DateTime)),
-                            new DataColumn("Total", typeof(int))});
+        List<TransactionInfo> transactionList = studentAccounteInfo.TransactionList;
+        List<string> transactionHeaders = new List<string>();
+        //transactionHeaders.Add("PaymentID");
+        transactionHeaders.Add("Course");
+        transactionHeaders.Add("Hours");
+        transactionHeaders.Add("Lesson Total");
 
         //dt.Rows.Add(101, "Sun Glasses", 200, 5, 1000); --> Add the fields from the form here
 
@@ -76,62 +87,114 @@ public partial class Invoice : System.Web.UI.Page
 
                 //Generate Invoice (Bill) Header.
                 sb.Append("<div align='center' style='background-color: #18B5F0'><b> Order Sheet</b></div>");
-                sb.Append("<div style=' font-size:10px; float:right;'>");
-                sb.Append("<span style='text-align:left; '>");                    
-                        sb.Append("<b>Company Name:</b> ");
-                        sb.Append(companyName);
-                        sb.Append("<br />");
-                        sb.Append("<b>Date: </b>");
-                        sb.Append(DateTime.Now);
-                        sb.Append("<br />");
-                        sb.Append("<b>Phone:</b> ");
-                        sb.Append("insert phone number here");
-                        sb.Append("<br />");
-                        sb.Append("<b>Address:</b> ");
-                        sb.Append("insert Address here");
-                        sb.Append("<br />");
-                        sb.Append("<b>Postal Code:</b> ");
-                        sb.Append("insert Postal here");
-                        sb.Append("<br />");
-                    sb.Append("</span>");
-                sb.Append("</div>");
-                //Generate Invoice Items Grid.
+                sb.Append("<div style='margin-left:200px; margin-right:200px;'>");
+                sb.Append("<div style='margin-left:200px; margin-right:200px;'>");
+                        sb.Append("<table style='border-style: none;'>");
+                            sb.Append("<tr>");
+                                sb.Append("<td>");
+                                sb.Append("</td>");
+                                sb.Append("<td>");
+                                sb.Append("</td>");
+                                sb.Append("<td style='text-align:left; '>");
+                                    sb.Append("<span style='text-align:left; font-size: 10px;'>");
+                                        sb.Append("<b>Company Name:</b> ");
+                                        sb.Append(companyName);
+                                        sb.Append("<br />");
+                                        sb.Append("<b>Date: </b>");
+                                        sb.Append(DateTime.Now);
+                                        sb.Append("<br />");
+                                        sb.Append("<b>Phone:</b> ");
+                                        sb.Append("insert phone number here");
+                                        sb.Append("<br />");
+                                        sb.Append("<b>Address:</b> ");
+                                        sb.Append("insert Address here");
+                                        sb.Append("<br />");
+                                        sb.Append("<b>Postal Code:</b> ");
+                                        sb.Append("insert Postal here");
+                                        sb.Append("<br />");
+                                        sb.Append("<b>GST #:</b> ");
+                                        sb.Append("insert GST number here");
+                                        sb.Append("<br />");
+                                    sb.Append("</span>");
+                                sb.Append("</td>");
+                            sb.Append("</tr>");
+                        sb.Append("</table>");
+                    sb.Append("</div>");
 
-                sb.Append("<div style='text-align:center;'> ");
+                    sb.Append("<div style='text-align:center;'> ");
+                    sb.Append("______________________________________________________________________________");
+                    sb.Append("<br />");
+                    sb.Append("<br />");
+                    sb.Append("</div>");
 
-                sb.Append("______________________________________________________________________________");
-                sb.Append("<br />");
-                sb.Append("<br />");
-                sb.Append("</div>");
-                sb.Append("<div>");
-                sb.Append("<table border = '1'>");
-                sb.Append("<tr>");
-                foreach (DataColumn column in dt.Columns)
-                {
-                    sb.Append("<th style = 'background-color: #D20B0C;color:#000000'>");
-                    sb.Append(column.ColumnName);
-                    sb.Append("</th>");
-                }
-                sb.Append("</tr>");
-                foreach (DataRow row in dt.Rows)
-                {
+                    sb.Append("<div style=' font-size:10px; float:right;'>");
+                    sb.Append("<span style='text-align:left; '>");                    
+                            sb.Append("<b>StudentID :</b> ");
+                            sb.Append(studentAccounteInfo.StudentID);
+                            sb.Append("<br />");
+                            sb.Append("<b>Student Name: </b>");
+                            sb.Append(studentAccounteInfo.StudentFullName);
+                            sb.Append("<br />");
+                            sb.Append("<b>Phone:</b> ");
+                            sb.Append(string.Format("{0:(###) ###-####}", studentInfo.Phone));
+                            sb.Append("<br />");
+                            sb.Append("<b>Address:</b> ");
+                            sb.Append(studentInfo.Address);
+                            sb.Append("<br />");
+                            sb.Append("<b>City:</b> ");
+                            sb.Append(studentInfo.City + ", " + studentInfo.Province);                            
+                            sb.Append("<br />");
+                            sb.Append("<b>Postal Code:</b> ");
+                            sb.Append(studentInfo.PostalCode);
+                            sb.Append("<br />");
+                            sb.Append("<b>Reciept Number:</b> ");
+                            sb.Append("How do we do Reciept Number");
+                            sb.Append("<br />");
+                        sb.Append("</span>");
+                    sb.Append("</div>");
+                    //Generate Invoice Items Grid.
+
+                    sb.Append("<div style='text-align:center;'> ");
+                    sb.Append("______________________________________________________________________________");
+                    sb.Append("<br />");
+                    sb.Append("<br />");
+                    sb.Append("</div>");
+                    sb.Append("<div>");
+                    sb.Append("<table border = '1'>");
                     sb.Append("<tr>");
-                    foreach (DataColumn column in dt.Columns)
+                    foreach (string column in transactionHeaders)
                     {
-                        sb.Append("<td>");
-                        sb.Append(row[column]);
-                        sb.Append("</td>");
+                        sb.Append("<th style = 'background-color: #D20B0C;color:#000000'>");
+                        sb.Append("<b>" + column + "</b>");
+                        sb.Append("</th>");
                     }
                     sb.Append("</tr>");
-                }
-                sb.Append("<tr><td align = 'right' colspan = '");
-                sb.Append(dt.Columns.Count - 1);
-                sb.Append("'>Total</td>");
-                sb.Append("<td>");
-                sb.Append(dt.Compute("sum(Total)", ""));
-                sb.Append("</td>");
-                sb.Append("</tr></table>");
+                    foreach (TransactionInfo transaction in transactionList)
+                    {
+                        sb.Append("<tr>");
+                            sb.Append("<td>");
+                                sb.Append(transaction.CourseDescription);
+                            sb.Append("</td>");
 
+                            sb.Append("<td>");
+                                sb.Append(transaction.Hours);
+                            sb.Append("</td>");
+
+                            sb.Append("<td>");
+                                sb.Append(transaction.LessonTotal);
+                            sb.Append("</td>");
+
+                        sb.Append("</tr>");
+                    }
+                    sb.Append("<tr><td align = 'right' colspan = '");
+                    sb.Append(transactionHeaders.Count - 1);
+                    sb.Append("'><b>Total</b></td>");
+                    sb.Append("<td>");
+                    sb.Append(studentAccounteInfo.AccountTotal);
+                    sb.Append("</td>");
+                    sb.Append("</tr></table>");
+
+                    sb.Append("</div>");
                 sb.Append("</div>");
                 //Export HTML String as PDF.
 

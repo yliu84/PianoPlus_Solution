@@ -8,12 +8,17 @@ namespace PianoPlus_Data.POCOS
 {
     public class InvoiceInfo
     {
-        public int PaymentID { get; set; }
+        public int TransactionID { get; set; }
 
-        public string InstructorName { get; set; }
+        public string CourseCode { get; set; }
+        public string CourseDescription { get; set; }
 
-        public string StudentName { get; set; }
+        public int InstructorID { get; set; }
 
-        public decimal Total { get; set; }
+        public int Hours { get; set; }
+
+        public decimal LessonTotal { get; set; }
+        public DateTime TransactionDate { get; set; }
+
     }
 }
