@@ -25,6 +25,15 @@ VALUES ('Test4','Student','test4@gmail.com','707080127','1987/02/20','10047 108 
 INSERT INTO Account(StudentID,Total)
 VALUES(2000,0)
 
+INSERT INTO Account(StudentID,Total)
+VALUES(2001,0)
+
+INSERT INTO Account(StudentID,Total)
+VALUES(2002,0)
+
+INSERT INTO Account(StudentID,Total)
+VALUES(2003,0)
+
 INSERT INTO Events (InstructorID, Title, Description, StartAt, EndAt, IsFullDay)
 VALUES (2000,'Appointment','I have a appointment with Tom','2017/02/20 13:00:00','2017/02/20 14:00:00', 0)
 

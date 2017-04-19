@@ -107,11 +107,11 @@
                         <div class="table-responsive">
                             <asp:GridView ID="TransactionGridView" runat="server" CssClass="table table-striped table-bordered table-hover dataTables-example" DataKeyNames="TransactionID" AllowPaging="True" AutoGenerateColumns="False">
                                 <Columns>
-                                    <asp:TemplateField>
+                                    <%--<asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:LinkButton ID="btn_pdf" runat="server" CssClass="btn btn-default" OnClick="btn_pdf_Click">PDF</asp:LinkButton>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:BoundField DataField="TransactionID" HeaderText="TransactionID" SortExpression="TransactionID" />
                                     <asp:BoundField DataField="CourseCode" HeaderText="CourseCode" SortExpression="CourseCode" Visible="false" />
                                     <asp:BoundField DataField="InstructorID" HeaderText="InstructorID" SortExpression="InstructorID" Visible="false"/>
@@ -139,18 +139,5 @@
 
     </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
-   <%-- <script src="Scripts/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.input-group.date').datepicker({
-                todayBtn: "linked",
-                keyboardNavigation: false,
-                forceParse: false,
-                calendarWeeks: true,
-                autoclose: true
-            });
-
-        })
-    </script>--%>
 </asp:Content>
 

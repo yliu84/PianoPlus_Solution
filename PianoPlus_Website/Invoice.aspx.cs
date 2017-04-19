@@ -87,7 +87,7 @@ public partial class Invoice : System.Web.UI.Page
                 StringBuilder sb = new StringBuilder();
 
                 //Generate Invoice (Bill) Header.
-                sb.Append("<div align='center' style='background-color: #18B5F0'><b> Order Sheet</b></div>");
+                sb.Append("<div align='center' style='background-color: #18B5F0'><b>Invoice </b></div>");
                 sb.Append("<div style='margin-left:200px; margin-right:200px;'>");
                 sb.Append("<div style='margin-left:200px; margin-right:200px;'>");
                         sb.Append("<table style='border-style: none;'>");
@@ -219,35 +219,3 @@ public partial class Invoice : System.Web.UI.Page
         }
     }
 }
-
-
-    //using (FileStream fs = new FileStream("TestOutput.pdf", FileMode.Create)) {
-    //    PdfWriter.GetInstance(document, fs);
-    //    using (StringReader stringReader = new StringReader(download)) {
-    //        ArrayList parsedList = HTMLWorker.ParseToList(stringReader, null);
-    //        document.Open();
-    //        foreach (object item in parsedList) {
-    //            document.Add((IElement)item);
-    //        }
-    //        document.Close();
-    //    }
-    //}
-
-
-
-                //StringReader sr = new StringReader(sb.ToString());
-
-                //ArrayList parsedList = HTMLWorker.ParseToList(sr, null);
-                //foreach (object item in parsedList)
-                //{
-                //    doc.Add((IElement)item);
-                //}
-
-
-                ////Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-                //PdfWriter writer = PdfWriter.GetInstance(doc, Response.OutputStream);
-                //Response.ContentType = "application/pdf";
-                ////Response.AddHeader("content-disposition", "attachment;filename=Invoice.pdf"); --> change to include payment id in filename
-                //Response.Cache.SetCacheability(HttpCacheability.NoCache);
-                //Response.Write(doc);
-                //HttpContext.Current.ApplicationInstance.CompleteRequest();

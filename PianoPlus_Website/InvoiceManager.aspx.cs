@@ -63,20 +63,20 @@ public partial class InvoiceManager : System.Web.UI.Page
 
         TransactionGridView.DataBind();
     }
-    protected void btn_pdf_Click(object sender, EventArgs e)
-    {
-        int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
-        int transactionId = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
-        int studentId = int.Parse(txt_studentId.Text);
-        StudentController studentController = new StudentController();
-        Student currentStudent = studentController.GetStudentByStudentID(studentId);
+    //protected void btn_pdf_Click(object sender, EventArgs e)
+    //{
+    //    int rowIndex = ((sender as LinkButton).NamingContainer as GridViewRow).RowIndex;
+    //    int transactionId = Convert.ToInt32(StudentGridView.DataKeys[rowIndex].Values[0]);
+    //    int studentId = int.Parse(txt_studentId.Text);
+    //    StudentController studentController = new StudentController();
+    //    Student currentStudent = studentController.GetStudentByStudentID(studentId);
 
-        if (currentStudent != null)
-        {
-            HttpCookie studIDCookie = new HttpCookie("studID");
-            studIDCookie.Value = currentStudent.StudentID.ToString();
-            Response.Cookies.Add(studIDCookie);
-            Response.Write("<script>window.open('Invoice.aspx')</script>");
-        }
-    }
+    //    if (currentStudent != null)
+    //    {
+    //        HttpCookie studIDCookie = new HttpCookie("studID");
+    //        studIDCookie.Value = currentStudent.StudentID.ToString();
+    //        Response.Cookies.Add(studIDCookie);
+    //        Response.Write("<script>window.open('Invoice.aspx')</script>");
+    //    }
+    //}
 }
