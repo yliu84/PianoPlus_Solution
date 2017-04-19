@@ -148,9 +148,6 @@ public partial class Invoice : System.Web.UI.Page
                             sb.Append("<b>Postal Code:</b> ");
                             sb.Append(studentInfo.PostalCode);
                             sb.Append("<br />");
-                            sb.Append("<b>Reciept Number:</b> ");
-                            sb.Append("How do we do Reciept Number");
-                            sb.Append("<br />");
                         sb.Append("</span>");
                     sb.Append("</div>");
                     //Generate Invoice Items Grid.

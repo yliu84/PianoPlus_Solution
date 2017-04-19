@@ -110,7 +110,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Label ID="Label3" runat="server" Text="Sart At" CssClass="col-lg-3 control-label"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Text="Start At" CssClass="col-lg-3 control-label"></asp:Label>
                                     <div class="input-group clockpicker col-lg-9" data-autoclose="true">
                                         <asp:TextBox ID="txt_startTime" runat="server" CssClass="form-control"></asp:TextBox>
                                         <div class="input-group-addon">
