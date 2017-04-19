@@ -293,7 +293,7 @@
                                                 <dt class="p-t-10">Email Address</dt>
                                                 <dd>
                                                     <div class="fg-line">
-                                                        <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="eg. nail@gmail.com"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="eg. nail@gmail.com" Enabled ="false"></asp:TextBox>
                                                     </div>
                                                     <asp:RequiredFieldValidator runat="server" ValidationGroup="contact" ControlToValidate="txt_email" CssClass="text-danger"
                                                         ErrorMessage="Email is Required." />

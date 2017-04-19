@@ -499,5 +499,6 @@ CREATE TABLE PasswordRequests
 
 	Active
 	CHAR(1) DEFAULT 'Y'
+	CONSTRAINT CK_PasswordRequest_Active CHECK(Active = 'Y' OR Active = 'N')
 	NOT NULL
 )
