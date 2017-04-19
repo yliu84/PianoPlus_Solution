@@ -19,6 +19,7 @@ using PianoPlus_Data;
 using PianoPlus_Data.POCOS;
 using PianoPlus_System.BLL;
 using PianoPlus.UI;
+using System.Globalization;
 
 
 public partial class Invoice : System.Web.UI.Page
@@ -185,7 +186,7 @@ public partial class Invoice : System.Web.UI.Page
                             sb.Append("</td>");
 
                             sb.Append("<td>");
-                                sb.Append(transaction.LessonTotal);
+                            sb.Append(transaction.LessonTotal.ToString("C", CultureInfo.CreateSpecificCulture("en-us")));
                             sb.Append("</td>");
 
                         sb.Append("</tr>");
@@ -194,7 +195,7 @@ public partial class Invoice : System.Web.UI.Page
                     sb.Append(transactionHeaders.Count - 1);
                     sb.Append("'><b>Total</b></td>");
                     sb.Append("<td>");
-                    sb.Append(studentAccounteInfo.AccountTotal);
+                    sb.Append(studentAccounteInfo.AccountTotal.ToString("C", CultureInfo.CreateSpecificCulture("en-us")));
                     sb.Append("</td>");
                     sb.Append("</tr></table>");
 

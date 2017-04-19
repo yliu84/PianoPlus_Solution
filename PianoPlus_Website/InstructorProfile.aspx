@@ -247,7 +247,7 @@
                                         <div class="form-group">
                                             <asp:Label ID="Label4" runat="server" Text="Email" CssClass="col-lg-3 control-label"></asp:Label>
                                             <div class="col-lg-9">
-                                                <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
+                                                <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="Email" Enabled="false"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldEmail"
                                                     runat="server"
                                                     ErrorMessage="Email is Required"

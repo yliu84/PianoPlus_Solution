@@ -56,7 +56,7 @@
                                     <asp:BoundField DataField="AccountID" HeaderText="AccountID" SortExpression="AccountID" Visible="false"/>
                                     <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" />
                                     <asp:BoundField DataField="StudentFullName" HeaderText="Student Name" SortExpression="StudentFullName" />
-                                    <asp:BoundField DataField="AccountTotal" HeaderText="Account Total" SortExpression="AccountTotal" />
+                                    <asp:BoundField DataField="AccountTotal" HeaderText="Account Total" SortExpression="AccountTotal" DataFormatString="{0:c}" HtmlEncode="False" />
                              
                                 </Columns>
                                 <EmptyDataTemplate>
@@ -118,7 +118,7 @@
                                     <asp:BoundField DataField="InstructFullName" HeaderText="Instructor" SortExpression="InstructFullName" />
                                     <asp:BoundField DataField="CourseDescription" HeaderText="Course" SortExpression="CourseDescription" />
                                     <asp:BoundField DataField="Hours" HeaderText="Hours" SortExpression="Hours" />
-                                    <asp:BoundField DataField="LessonTotal" HeaderText="Lesson Total" SortExpression="LessonTotal" />
+                                    <asp:BoundField DataField="LessonTotal" HeaderText="Lesson Total" SortExpression="LessonTotal" DataFormatString="{0:c}" />
                                     <asp:BoundField DataField="TransactionDate" HeaderText="Transaction Date" SortExpression="TransactionDate" />                                   
                                 </Columns>
                                 <EmptyDataTemplate>
