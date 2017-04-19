@@ -154,7 +154,7 @@ namespace PianoPlus_System.BLL
                              {
                                  AccountID = a.AccountID,
                                  StudentID = a.StudentID,
-                                 StudentFullName = a.Student.FirstName + a.Student.LastName,
+                                 StudentFullName = a.Student.FirstName +" "+ a.Student.LastName,
                                  AccountTotal = a.Total
                              };
 
