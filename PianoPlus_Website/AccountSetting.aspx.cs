@@ -91,7 +91,7 @@ public partial class AccountSetting : System.Web.UI.Page
             student.Phone = txt_phonenumber.Text;
             student.Email = txt_email.Text;
             student.Address = txt_address.Text;
-            student.Province = txt_province.Text;
+            student.Province = ddl_province.SelectedValue;
             student.City = txt_city.Text;
             student.PostalCode = txt_postalcode.Text;
             student.Active = find.Active;
@@ -134,7 +134,7 @@ public partial class AccountSetting : System.Web.UI.Page
                 txt_email.Text = student.Email;
                 txt_address.Text = student.Address;
                 txt_city.Text = student.City;
-                txt_province.Text = student.Province;
+                ddl_province.SelectedValue  = student.Province;
                 txt_postalcode.Text = student.PostalCode;
                 txt_birthDay.Text = student.BirthDay.ToString("yyyy-MM-dd");
 

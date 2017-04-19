@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="card" id="profile-main" style="margin-top:15px">
+            <div class="card" id="profile-main" style="margin-top: 15px">
                 <div class="pm-overview c-overflow">
 
                     <div class="pmo-pic row">
@@ -63,18 +63,18 @@
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                     <h4 class="modal-title">Upload Profile Picture</h4>
-                                 
+
                                 </div>
                                 <div class="modal-body">
-                                    
-                                        <div class="row">
-                                        <div class="col-md-12" style="padding-top:15px">
-                                            
+
+                                    <div class="row">
+                                        <div class="col-md-12" style="padding-top: 15px">
+
                                             <img src="Images/profile.png" id="img_preview" runat="server" class="col-md-12" />
                                         </div>
 
-                                        <div class="col-md-12" style="padding-top:10px;padding-bottom:10px">
-                                            
+                                        <div class="col-md-12" style="padding-top: 10px; padding-bottom: 10px">
+
                                             <%--<div class="img-preview img-preview-sm"></div>--%>
 
                                             <div class="btn-group">
@@ -94,8 +94,9 @@
                     </div>
 
                     <div class="pmo-block pmo-contact hidden-xs">
-                        <h2><asp:Label ID="lbl_name" runat="server" Text="Malinda Hollaway"></asp:Label>
-                            <small> - Student</small>
+                        <h2>
+                            <asp:Label ID="lbl_name" runat="server" Text="Malinda Hollaway"></asp:Label>
+                            <small>- Student</small>
                         </h2>
                         <h2>Contact</h2>
 
@@ -109,12 +110,12 @@
                                 <address class="m-b-0 ng-binding">
                                     <asp:Label ID="lbl_studentAddress" runat="server" Text="Label"></asp:Label><br />
                                     <asp:Label ID="lbl_studentCity" runat="server" Text="Label"></asp:Label><br />
-                                    <asp:Label ID="lbl_studentProvince" runat="server" Text="Label"></asp:Label>                  
+                                    <asp:Label ID="lbl_studentProvince" runat="server" Text="Label"></asp:Label>
                                 </address>
                             </li>
                         </ul>
                     </div>
-               
+
                 </div>
 
                 <div class="pm-body clearfix">
@@ -293,7 +294,7 @@
                                                 <dt class="p-t-10">Email Address</dt>
                                                 <dd>
                                                     <div class="fg-line">
-                                                        <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="eg. nail@gmail.com" Enabled ="false"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_email" runat="server" CssClass="form-control" placeholder="eg. nail@gmail.com" Enabled="false"></asp:TextBox>
                                                     </div>
                                                     <asp:RequiredFieldValidator runat="server" ValidationGroup="contact" ControlToValidate="txt_email" CssClass="text-danger"
                                                         ErrorMessage="Email is Required." />
@@ -313,10 +314,30 @@
                                                 <dt class="p-t-10">Province</dt>
                                                 <dd>
                                                     <div class="fg-line">
-                                                        <asp:TextBox runat="server" ID="txt_province" class="form-control" placeholder="eg. Alberta" />
+                                                        <asp:DropDownList ID="ddl_province" runat="server" Height="30px" CssClass="form-control" ForeColor="GrayText">
+                                                            <asp:ListItem Value="0">Choose a Province</asp:ListItem>
+                                                            <asp:ListItem Value="AB">Alberta</asp:ListItem>
+                                                            <asp:ListItem Value="BC">British Columbia</asp:ListItem>
+                                                            <asp:ListItem Value="MB">Manitoba</asp:ListItem>
+                                                            <asp:ListItem Value="NB">New Brunswick</asp:ListItem>
+                                                            <asp:ListItem Value="NL">Newfoundland and Labrador</asp:ListItem>
+                                                            <asp:ListItem Value="NS">Nova Scotia</asp:ListItem>
+                                                            <asp:ListItem Value="ON">Ontario</asp:ListItem>
+                                                            <asp:ListItem Value="PE">Prince Edward Island</asp:ListItem>
+                                                            <asp:ListItem Value="QC">Quebec</asp:ListItem>
+                                                            <asp:ListItem Value="SK">Saskatchewan</asp:ListItem>
+                                                            <asp:ListItem Value="NT">Northwest Territories</asp:ListItem>
+                                                            <asp:ListItem Value="NU">Nunavut</asp:ListItem>
+                                                            <asp:ListItem Value="YT">Yukon</asp:ListItem>
+                                                        </asp:DropDownList>
                                                     </div>
-                                                    <asp:RequiredFieldValidator runat="server" ValidationGroup="contact" ControlToValidate="txt_province" CssClass="text-danger"
-                                                        ErrorMessage="Province is Required." />
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldProvince"
+                                                        InitialValue="0"
+                                                        runat="server"
+                                                        ErrorMessage="Province is Required"
+                                                        Display="Dynamic"
+                                                        ForeColor="Red"
+                                                        ControlToValidate="ddl_province"></asp:RequiredFieldValidator>
                                                 </dd>
                                             </dl>
                                             <dl class="dl-horizontal">
@@ -444,17 +465,17 @@
             $("#dvPreview").html("");
             var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
             if (regex.test($(this).val().toLowerCase())) {
-                
-                    if (typeof (FileReader) != "undefined") {
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            $("#img_preview").attr("src", e.target.result);
-                        }
-                        reader.readAsDataURL($(this)[0].files[0]);
-                    } else {
-                        alert("This browser does not support FileReader.");
+
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $("#img_preview").attr("src", e.target.result);
                     }
-                
+                    reader.readAsDataURL($(this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+
             } else {
                 alert("Please upload a valid image file.");
             }
