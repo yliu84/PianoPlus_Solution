@@ -76,7 +76,7 @@
                 <p>$55</p>
             </div>
             <div class="col-md-4">
-                <p>$60</p>
+                <p>$70</p>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
         </div>
         <div class="col-md-5 place">
             <div class="col-md-4">
-                <p>$30</p>
+                <p>N/A</p>
             </div>
             <div class="col-md-4">
                 <p>$50</p>
@@ -98,7 +98,7 @@
         </div>
         <div class="col-md-5 place">
             <div class="col-md-4">
-                <p>$40</p>
+                <p>N/A</p>
             </div>
             <div class="col-md-4">
                 <p>$65</p>
@@ -108,34 +108,32 @@
             </div>
         </div>
     </div>
-    <div class="row" data-sr='wait 0.1s, then enter right and hustle 55px over 1.5s'>
-        <div class="col-md-2 date">
-            <p>Grade 7 - 8</p>
+        <div class="row" data-sr='wait 0.1s, then enter right and hustle 55px over 1.5s'>
+            <div class="col-md-2 date">
+                <p>Grade 7 - 8</p>
+            </div>
+            <div class="col-md-5 place">
+
+                <div class="col-md-4"><p>N/A</p></div>
+                <div class="col-md-4">
+                    <p>N/A</p>
+                </div>
+                <div class="col-md-4">
+                    <p>$65</p>
+                </div>
+            </div>
+            <div class="col-md-5 place">
+                <div class="col-md-4">
+                    <p>N/A</p>
+                </div>
+                <div class="col-md-4">
+                    <p>N/A</p>
+                </div>
+                <div class="col-md-4">
+                    <p>$90</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-5 place">
-            <div class="col-md-4">
-                <p>$30</p>
-            </div>
-            <div class="col-md-4">
-                <p>$50</p>
-            </div>
-            <div class="col-md-4">
-                <p>$65</p>
-            </div>
-            
-        </div>
-        <div class="col-md-5 place">
-            <div class="col-md-4">
-                <p>$40</p>
-            </div>
-            <div class="col-md-4">
-                <p>$65</p>
-            </div>
-            <div class="col-md-4">
-                <p>$90</p>
-            </div>
-        </div>
-    </div>
 
         <div class="row" data-sr='wait 0.1s, then enter right and hustle 55px over 1.5s'>
             <div class="col-md-2 date">
@@ -143,22 +141,22 @@
             </div>
             <div class="col-md-5 place">
                 <div class="col-md-4">
-                    <p>$30</p>
+                   <p>N/A</p>
                 </div>
                 <div class="col-md-4">
-                    <p>$50</p>
+                   <p>N/A</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 pu">
                     <p>$70</p>
                 </div>
 
             </div>
             <div class="col-md-5 place">
                 <div class="col-md-4">
-                    <p>$40</p>
+                   <p>N/A</p>
                 </div>
                 <div class="col-md-4">
-                    <p>$65</p>
+                   <p>N/A</p>
                 </div>
                 <div class="col-md-4">
                     <p>$100</p>
