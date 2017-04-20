@@ -17,10 +17,10 @@
             
         </div>
         <div class="col-md-5 place">
-            <h3>Bachelor 本科学位</h3>
+            <h3>Bachelor Instructor 本科导师</h3>
         </div>
         <div class="col-md-5 place">
-            <h3>Master 硕士学位</h3>
+            <h3>Master Instructor 硕士导师</h3>
         </div>
     </div>
     <div class="row" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s' style="border-bottom:1px solid gray">

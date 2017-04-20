@@ -15,8 +15,8 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h2 data-sr='wait 1.5s, then enter left and hustle 100px over 2s'>Music </h2>
-                        <h2 data-sr='wait 2.6s, then enter top and hustle 100px over 2s'>We love </h2>
+                        <h2 data-sr='wait 1.5s, then enter left and hustle 100px over 2s'>Let's </h2>
+                        <h2 data-sr='wait 2.6s, then enter top and hustle 100px over 2s'>play music </h2>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="PianoLessons.aspx" role="button" data-sr='wait 3.2s, then enter bottom and hustle 100px over 2s'>Our Lessons</a>
                         </div>
@@ -141,10 +141,10 @@
     <!--[youtube]-->
     <div class="container-fluid y-t" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
         <div class="testimonial-border-video"></div>
-        <h2>Schumann: Arabeske in C major, Op 18</h2>
+        <h2>Schumann: Fantasiestücke op. 12</h2>
         <div class="col-md-6 col-md-offset-3 ">
             <div class="videowrapper well">
-                <iframe height="300" width="500" src="https://www.youtube.com/embed/adAwsvdjbhY" allowfullscreen=""></iframe>
+                <iframe height="300" width="500" src="https://www.youtube.com/embed/NnvUcHI4BoA" allowfullscreen=""></iframe>
             </div>
         </div>
     </div>
@@ -323,7 +323,7 @@
             <div class="testimonial-border"></div>
             <p>Mobile: (778) 896 - 9098</p>
             <p>Mobile: (604) 505 - 6583</p>
-            <p>Mail: monv1108@icloud.com</p>
+            <p>Mail: pianopstudio@gmail.com</p>
         </div>
         <hr class="featurette-divider hidden-lg" />
     </div>
