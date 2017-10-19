@@ -322,8 +322,7 @@
             <h2>Contacts</h2>
             <div class="testimonial-border"></div>
             <p>Mobile: (778) 896 - 9098</p>
-            <p>Mobile: (604) 505 - 6583</p>
-            <p>Mail: pianopstudio@gmail.com</p>
+            <p>Mail: hymusic.ca@gmail.com</p>
         </div>
         <hr class="featurette-divider hidden-lg" />
     </div>
