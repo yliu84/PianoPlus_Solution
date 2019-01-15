@@ -40,7 +40,7 @@ public partial class Contact : System.Web.UI.Page
             _mailmsg.From = new MailAddress(InputEmail.Value);
 
             //Set To Email ID  
-            _mailmsg.To.Add("suifeng9960@hotmail.com");
+            _mailmsg.To.Add("info.hymedu@gmail.com");
 
             //Set Subject  
             _mailmsg.Subject = subject;
