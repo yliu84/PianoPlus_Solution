@@ -25,10 +25,15 @@
     </div>
     <div class="row" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s' style="border-bottom:1px solid gray">
         <div class="col-md-6 date">
-            <p>Private piano Lesson</p>
+            <p>Private piano Lesson <br />
+                钢琴一对一
+            </p>
+         
         </div>
         <div class="col-md-6 date">
-            <p> Group Piano Lesson</p>
+            <p> Group Piano Lesson <br />
+            钢琴小组课</p>
+         
         </div>
 
         <%--<div class="col-md-5 place">
@@ -84,11 +89,18 @@
             </div>
         </div>--%>
         <div class="col-md-12 place text-center">
-            <p>Theory</p>
-            <p>History</p>
-            <p>Harmony</p>
-            <p>Analysis</p>
-            <p>Pedagogy</p>
+            <p>Sight-reading & Ear Test <br />
+            音乐视奏&练耳</p>
+            <p>Rudiment <br />
+            基本乐理</p>
+            <p>Music History <br />
+            音乐历史</p>
+            <p>Music Harmony <br />
+            音乐和声</p>
+            <p>Counterpoint <br />
+            复调音乐</p>
+            <p>ARCT Theory <br />
+            演奏级乐理</p>
         </div>
 
     </div>

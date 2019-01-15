@@ -32,7 +32,7 @@
                         <h2>Let the  </h2>
                         <h2>Music Speak!  </h2>
                         <div>
-                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#" role="button">Instructors</a>
+                            <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="InstructorsInfo.aspx" role="button">Instructors</a>
                         </div>
                     </div>
                 </div>
@@ -177,23 +177,15 @@
 </div>
 <div id="gallery" data-sr='wait 0.1s, then enter bottom and hustle 20px over 1s'>
     <a href="#openModal1">
-        <figure class="col-md-2 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/1.jpg" alt="" />
+        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+            <img class="img gallery" src="Images/works/IMG_2847.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
             </figcaption>
         </figure>
     </a>
-    <a href="#openModal2">
-        <figure class="col-md-2 col-sm-6 col-xs-12 images-gallery image">
-            <img class="img gallery" src="Images/works/2.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
+
     <a href="#openModal3">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
             <img class="img gallery" src="Images/works/3.jpg" alt="" />
@@ -214,7 +206,7 @@
     </a>
     <a href="#openModal4">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/4.jpg" alt="" />
+            <img class="img gallery" src="Images/works/9.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -223,7 +215,7 @@
     </a>
     <a href="#openModal5">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/5.jpg" alt="" />
+            <img class="img gallery" src="Images/works/10.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -232,7 +224,7 @@
     </a>
     <a href="#openModal6">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/6.jpg" alt="" />
+            <img class="img gallery" src="Images/works/11.jpg" alt="" width="100%" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -244,7 +236,7 @@
 <div id="openModal1" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/1.jpg" alt="" />
+        <img class="img" src="images/works/IMG_2847.jpg" alt="" />
     </div>
 </div>
 
@@ -265,21 +257,21 @@
 <div id="openModal4" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/4.jpg" alt="" />
+        <img class="img" src="images/works/9.jpg" alt="" />
     </div>
 </div>
 
 <div id="openModal5" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/5.jpg" alt="" />
+        <img class="img" src="images/works/10.jpg" alt="" />
     </div>
 </div>
 
 <div id="openModal6" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/6.jpg" alt="" />
+        <img class="img" src="images/works/11.jpg" alt="" />
     </div>
 </div>
 <div id="openModal7" class="modalDialog">
@@ -299,30 +291,30 @@
             <h2>Leave Us a Message</h2>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" />
+                    <input runat="server" type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" />
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" />
+                    <input runat="server" type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" />
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
                 <div class="input-group">
-                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message" ></textarea>
+                    <textarea runat="server" name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message" ></textarea>
                     <span class="input-group-addon"><i></i></span></div>
             </div>
             <div class="form-group">
             </div>
             <div class="col-md-12 contact-send">
-                <asp:Button ID="buttonContact" runat="server" Text="Send" class="btn send hvr-shutter-out-vertical-contact-form" />
+                <asp:Button ID="buttonContact" runat="server" Text="Send" class="btn send hvr-shutter-out-vertical-contact-form" OnClick="buttonContact_Click" />
             </div>
         </div>
         <div class="col-md-4 lead" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
             <h2>Contacts</h2>
             <div class="testimonial-border"></div>
             <p>Mobile: (778) 896 - 9098</p>
-            <p>Mail: hymusic.ca@gmail.com</p>
+            <p>Mail: info.hymedu@gmail.com</p>
         </div>
         <hr class="featurette-divider hidden-lg" />
     </div>

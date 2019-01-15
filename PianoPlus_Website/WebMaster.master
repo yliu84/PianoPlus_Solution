@@ -28,8 +28,8 @@
 
     <form id="form1" runat="server">
         <div class="clearfix">
-            <div class="row text-center" style="padding:3px;background-color:black; border-bottom:1px solid purple;box-shadow:purple 0 0 10px;margin-bottom:5px;">
-                 <img alt="Brand" src="Images/logo.jpeg" width="20%" />
+            <div class="row text-center" style="padding:3px;background-color:black; border-bottom:1px solid #FFDF00;box-shadow:gold 0 0 5px;margin-bottom:5px;">
+                 <img alt="Brand" src="Images/logo5.png" width="20%" />
                 </div>
             <%--<div class="container">
                 
@@ -54,10 +54,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="nav" class="nav navbar-nav navbar-left nav-pills">
                         <li class="active hvr-hang"><a class="page-scroll" href="Default.aspx">HOME</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="InstructorsInfo.aspx">ABOUT US</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="InstructorsInfo.aspx">INSTRUCTOR</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="PianoLessons.aspx">LESSONS</a></li>                      
                         <li class="hvr-hang"><a class="page-scroll" href="BlogView.aspx">BLOG</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="#contact">CONTACT</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="About.aspx">ABOUT</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="Contact.aspx">CONTACT</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right nav-pills">
@@ -93,7 +94,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4>Copyright</h4>
-                    <h4 id="footer-color">Piano Plus Studio &copy; 2017</h4>
+                    <h4 id="footer-color">Piano Plus Studio &copy; 2017-2018</h4>
                 </div>
             </div>
         </div>
