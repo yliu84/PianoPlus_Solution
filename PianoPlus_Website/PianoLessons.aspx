@@ -88,7 +88,7 @@
                 <p>$70</p>
             </div>
         </div>--%>
-        <div class="col-md-12 place text-center">
+        <div class="col-md-12 place text-center date">
             <p>Sight-reading & Ear Test <br />
             音乐视奏&练耳</p>
             <p>Rudiment <br />

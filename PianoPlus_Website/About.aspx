@@ -6,6 +6,7 @@
             color: GrayText;
             margin-bottom: 5px;
             font-size: 16px;
+            font-family:sans-serif;
         }
     </style>
 

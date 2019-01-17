@@ -44,7 +44,7 @@
         <div class="col-md-2 right-column" data-sr='wait 0.2s, then enter left and hustle 50px over 1s'>
             <h3>Years</h3>
             <ul>
-                <li class="cat"><a href="#">2017</a></li>
+                <li class="cat"><a href="#">2019</a></li>
 
             </ul>
         </div>
