@@ -120,7 +120,7 @@
     <!--[Quotations-end]-->
 
     <!--[About Us]-->
-    <div class="container-fluid about-back">
+    <%--<div class="container-fluid about-back">
         <section id="about">
             <div class="row">
                 <div class="aboutText col-md-12 col-sm-12 about-text">
@@ -135,7 +135,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div>--%>
     <!--[About Us end]-->
 
     <!--[youtube]-->

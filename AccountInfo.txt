@@ -1,0 +1,6 @@
+Email: hymusicinfo@gmail.com
+password: hymusicpassword
+
+ES2 Instance administrator
+password: ly02195006
+

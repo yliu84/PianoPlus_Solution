@@ -345,14 +345,14 @@
             </div>
         </div>--%>
 
-        <div class="container-fluid concerts-main">
+       <%-- <div class="container-fluid concerts-main">
             <div class="row place" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s'>
                 <div class="testimonial-border"></div>
                 <p>* Minimum payment: Pay 4 lessons in advance</p>
                 <p>* Pay 12 private lessons in advance, get 2 free group/tutor lessons</p>
                 <p>* Pay 12 group/tutor lessons in advance, get 1 free private lesson</p>
             </div>
-        </div>
+        </div>--%>
 </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
 </asp:Content>
