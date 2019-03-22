@@ -178,7 +178,7 @@
 <div id="gallery" data-sr='wait 0.1s, then enter bottom and hustle 20px over 1s'>
     <a href="#openModal1">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/IMG_2847.jpg" alt="" />
+            <img class="img gallery" src="Images/works/14.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -188,7 +188,7 @@
 
     <a href="#openModal3">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/3.jpg" alt="" />
+            <img class="img gallery" src="Images/works/IMG_2847.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -236,7 +236,7 @@
 <div id="openModal1" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/IMG_2847.jpg" alt="" />
+        <img class="img" src="images/works/14.jpg" alt="" />
     </div>
 </div>
 
@@ -250,7 +250,7 @@
 <div id="openModal3" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/3.jpg" alt="" />
+        <img class="img" src="images/works/IMG_2847.jpg" alt="" />
     </div>
 </div>
 

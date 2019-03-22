@@ -22,7 +22,7 @@
         <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">
             <div class="testimonial-border"></div>
             <div class="col-md-4">
-                <img src="Images/works/1.JPG" alt="instructor pic" width="100%" style="margin-top: 25px" />
+                <img src="Images/works/13.JPG" alt="instructor pic" width="100%" style="margin-top: 25px;border-radius:6px;" />
             </div>
             <div class="col-md-8">
                 <h3><b>About HYMUSIC</b></h3>

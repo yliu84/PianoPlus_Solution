@@ -11,7 +11,7 @@
     <!--[header-background]-->
     <section id="start">
         <div class="container-fluid blog">
-            <h2 data-sr='wait 0.5s, then enter left and hustle 100px over 2s'>Piano Plus Blog</h2>
+            <h2 data-sr='wait 0.5s, then enter left and hustle 100px over 2s'>HYMUSTIC BLOG</h2>
             <p data-sr='wait 0.9s, then enter bottom and hustle 100px over 2s'>Music is our life</p>
         </div>
     </section>
