@@ -15,8 +15,8 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h2 data-sr='wait 1.5s, then enter left and hustle 100px over 2s'>Let's </h2>
-                        <h2 data-sr='wait 2.6s, then enter top and hustle 100px over 2s'>play music </h2>
+                        <h4 data-sr='wait 1.5s, then enter left and hustle 100px over 2s' style="font-size:26px">学钢琴不要取巧</h4>
+                        <h4 data-sr='wait 2.6s, then enter top and hustle 100px over 2s' style="font-size:26px">聪明只是开始，勤奋才是音乐家的朋友</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="PianoLessons.aspx" role="button" data-sr='wait 3.2s, then enter bottom and hustle 100px over 2s'>Our Lessons</a>
                         </div>
@@ -29,8 +29,8 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h2>Let the  </h2>
-                        <h2>Music Speak!  </h2>
+                        <h4 style="font-size:26px">任何事情的成功都不是一蹴而就的 </h4>
+                        <h4 style="font-size:26px">所有付出的时间和精力，都会储存为将来的能力和竞争力</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="InstructorsInfo.aspx" role="button">Instructors</a>
                         </div>
@@ -43,8 +43,9 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h2>We play</h2>
-                        <h2>every day </h2>
+                        <h4 style="font-size:26px">不要被“快乐教育”误导</h4>
+                        <h4 style="font-size:26px">以为逼孩子掌握一项特长就是扼杀孩子爱玩的天性</h4>
+                        <h4 style="font-size:26px">事实证明小时候学的特长，长大后孩子都不会后悔的</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#contact" role="button">Contact Us</a>
                         </div>
@@ -120,22 +121,40 @@
     <!--[Quotations-end]-->
 
     <!--[About Us]-->
-    <%--<div class="container-fluid about-back">
+    <div class="container-fluid about-back">
         <section id="about">
             <div class="row">
                 <div class="aboutText col-md-12 col-sm-12 about-text">
                     <div class="divider-line" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'></div>
-                    <h2 data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>About Us</h2>
-                    <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
-                        Piano Plus Studio offers piano lessons in Vancouver with our team of certified teachers. They are
-                        all unique and offer varied and accomplished piano teaching backgrounds. Piano lessons from our teachers take place either 
-                        as an in-home lesson (your home) or in our studio. Our studio offers 30 minute, 45 minute and 60 minute Piano Lessons to anyone ages 5 and older. 
-                        Each Piano Lesson is customized by a Certified Resonate Instructor to be personally suited to each individual student’s skill level and goals.
-                    </p>
+                    <h2 data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>教学成果</h2>
+                    <div class="row">
+                        <div class="col-sm-9">
+                             <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
+                            <b>Leo Gao, Naveen Yang</b><br />
+                            CMC加拿大全国音乐大赛， 代表BC省进入全国总决赛 <br />
+                            <b>Emma Miao</b><br />
+                            Little Mortzart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
+                            <b>Julie Lin</b><br />
+                            Little Mortzart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
+                            <b>Leo Tu</b><br />
+                            Little Mortzart美国国际音乐大赛二等奖， 应邀在纽约卡耐基音乐厅演出 <br />
+                            <b>Amy Zeng</b><br />
+                            Little Mortzart美国国际音乐大赛三等奖
+
+                               
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                             <img src="Images/yinfu.png" alt="yin fu" style="width:100%;height:auto;margin-top:50px" />
+
+                        </div>
+                    </div>
+                   
+                    
                 </div>
             </div>
         </section>
-    </div>--%>
+    </div>
     <!--[About Us end]-->
 
     <!--[youtube]-->
