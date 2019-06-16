@@ -21,7 +21,7 @@
         <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">
             <div class="testimonial-border"></div>
             <div class="col-md-4">
-                <img src="Images/works/1.JPG" alt="instructor pic" width="100%" style="margin-top: 25px" />
+                <img src="Images/works/13.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-8">
                 <h3><b>Name: Yiming Huan</b></h3>
@@ -127,6 +127,26 @@
                 <img src="Images/works/2.JPG" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
         </div>
+
+        <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">
+            <div class="testimonial-border"></div>
+            <div class="col-md-4">
+                <img src="Images/works/18.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+                <img src="Images/works/19.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+                <img src="Images/works/20.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+                <img src="Images/works/21.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+                <img src="Images/works/22.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+        </div>
+        <br />
     </div>
 
     <script src="Scripts/jquery-2.1.1.js"></script>

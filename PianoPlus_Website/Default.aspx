@@ -133,15 +133,17 @@
                             <b>Leo Gao, Naveen Yang</b><br />
                             CMC加拿大全国音乐大赛， 代表BC省进入全国总决赛 <br />
                             <b>Emma Miao</b><br />
-                            Little Mortzart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
+                            Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
                             <b>Julie Lin</b><br />
-                            Little Mortzart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
-                            <b>Leo Tu</b><br />
-                            Little Mortzart美国国际音乐大赛二等奖， 应邀在纽约卡耐基音乐厅演出 <br />
-                            <b>Amy Zeng</b><br />
-                            Little Mortzart美国国际音乐大赛三等奖
-
-                               
+                            Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
+                            <b>Vincent Zhang (13岁)</b><br />
+                            获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏 <br />
+                            <b>Naveen Yang (14岁)</b><br />
+                            获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏 <br />
+                            <b>Amy Zeng (14岁)</b><br />
+                            RCM皇家考级十级钢琴演奏，第一等级 <br />
+                            <b>Emma Miao (14岁)</b><br />
+                            RCM皇家考级十级钢琴演奏，第一等级                    
                             </p>
                         </div>
                         <div class="col-sm-3">
@@ -207,7 +209,7 @@
 
     <a href="#openModal3">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/IMG_2847.jpg" alt="" />
+            <img class="img gallery" src="Images/works/IMG_2453.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -225,7 +227,7 @@
     </a>
     <a href="#openModal4">
         <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/9.jpg" alt="" />
+            <img class="img gallery" src="Images/works/IMG_2454.jpg" alt="" />
             <figcaption>
                 <h2>zoom</h2>
                 <img class="img gallery-icon" src="Images/lupa.png" alt="" />
@@ -269,14 +271,14 @@
 <div id="openModal3" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/IMG_2847.jpg" alt="" />
+        <img class="img" src="images/works/IMG_2453.jpg" alt="" />
     </div>
 </div>
 
 <div id="openModal4" class="modalDialog">
     <div>
         <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/9.jpg" alt="" />
+        <img class="img" src="images/works/IMG_2454.jpg" alt="" />
     </div>
 </div>
 
