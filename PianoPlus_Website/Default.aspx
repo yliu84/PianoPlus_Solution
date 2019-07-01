@@ -15,8 +15,8 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h4 data-sr='wait 1.5s, then enter left and hustle 100px over 2s' style="font-size:26px">学钢琴不要取巧</h4>
-                        <h4 data-sr='wait 2.6s, then enter top and hustle 100px over 2s' style="font-size:26px">聪明只是开始，勤奋才是音乐家的朋友</h4>
+                        <h4 data-sr='wait 1.5s, then enter left and hustle 100px over 2s' style="font-size: 26px">学钢琴不要取巧</h4>
+                        <h4 data-sr='wait 2.6s, then enter top and hustle 100px over 2s' style="font-size: 26px">聪明只是开始，勤奋才是音乐家的朋友</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="PianoLessons.aspx" role="button" data-sr='wait 3.2s, then enter bottom and hustle 100px over 2s'>Our Lessons</a>
                         </div>
@@ -29,8 +29,8 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h4 style="font-size:26px">任何事情的成功都不是一蹴而就的 </h4>
-                        <h4 style="font-size:26px">所有付出的时间和精力，都会储存为将来的能力和竞争力</h4>
+                        <h4 style="font-size: 26px">任何事情的成功都不是一蹴而就的 </h4>
+                        <h4 style="font-size: 26px">所有付出的时间和精力，都会储存为将来的能力和竞争力</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="InstructorsInfo.aspx" role="button">Instructors</a>
                         </div>
@@ -43,9 +43,9 @@
                 </div>
                 <div class="carousel-caption">
                     <div class="col-md-12 caro">
-                        <h4 style="font-size:26px">不要被“快乐教育”误导</h4>
-                        <h4 style="font-size:26px">以为逼孩子掌握一项特长就是扼杀孩子爱玩的天性</h4>
-                        <h4 style="font-size:26px">事实证明小时候学的特长，长大后孩子都不会后悔的</h4>
+                        <h4 style="font-size: 26px">不要被“快乐教育”误导</h4>
+                        <h4 style="font-size: 26px">以为逼孩子掌握一项特长就是扼杀孩子爱玩的天性</h4>
+                        <h4 style="font-size: 26px">事实证明小时候学的特长，长大后孩子都不会后悔的</h4>
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#contact" role="button">Contact Us</a>
                         </div>
@@ -129,30 +129,42 @@
                     <h2 data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>教学成果</h2>
                     <div class="row">
                         <div class="col-sm-9">
-                             <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
-                            <b>Leo Gao, Naveen Yang</b><br />
-                            CMC加拿大全国音乐大赛， 代表BC省进入全国总决赛 <br />
-                            <b>Emma Miao</b><br />
-                            Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
-                            <b>Julie Lin</b><br />
-                            Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出 <br />
-                            <b>Vincent Zhang (13岁)</b><br />
-                            获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏 <br />
-                            <b>Naveen Yang (14岁)</b><br />
-                            获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏 <br />
-                            <b>Amy Zeng (14岁)</b><br />
-                            RCM皇家考级十级钢琴演奏，第一等级 <br />
-                            <b>Emma Miao (14岁)</b><br />
-                            RCM皇家考级十级钢琴演奏，第一等级                    
+
+                            <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
+                                <b style="font-size: large;color:#ffdc73">* 恭喜Leo Shengxiao Gao, Naveen Jiuru Yang获得CMC大赛一等奖!</b><br />
+                
+                                <b style="font-size:16px;font-weight:normal; color:#ffdc73">(Congratulations to Leo Shengxiao Gao and and Naveen Jiuru Yang for winning the CMC(Canadian Music Competition)'s first price!)</b>
+                                <br />
+                                <br />
+                                <b>Leo Gao, Naveen Yang</b><br />
+                                CMC加拿大全国音乐大赛， 代表BC省进入全国总决赛
+                                <br />
+                                <b>Emma Miao</b><br />
+                                Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出
+                                <br />
+                                <b>Julie Lin</b><br />
+                                Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出
+                                <br />
+                                <b>Vincent Zhang (13岁)</b><br />
+                                获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏
+                                <br />
+                                <b>Naveen Yang (14岁)</b><br />
+                                获邀出席第九届欧洲中国文化节， 在维也纳金色大厅演奏
+                                <br />
+                                <b>Amy Zeng (14岁)</b><br />
+                                RCM皇家考级十级钢琴演奏，第一等级
+                                <br />
+                                <b>Emma Miao (14岁)</b><br />
+                                RCM皇家考级十级钢琴演奏，第一等级                    
                             </p>
                         </div>
                         <div class="col-sm-3">
-                             <img src="Images/yinfu.png" alt="yin fu" style="width:100%;height:auto;margin-top:50px" />
+                            <img src="Images/works/IMG_2573.jpg" alt="Leo & Naveen" style="width: 100%; height: auto; margin-top: 50px; border-radius:6px;" />
 
                         </div>
                     </div>
-                   
-                    
+
+
                 </div>
             </div>
         </section>
@@ -172,176 +184,179 @@
     <!--[youtube-end]-->
 
     <!--[sociel-icons]-->
-<div class="container-fluid social">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="social-icon">
-                <ul class="social-icon">
-                    <li class="icon">
-                        <a href="#" target="_blank" id="Pinterest"></a>
-                    </li>
-                    <li class="icon">
-                        <a href="#" target="_blank" id="Facebook"></a>
-                    </li>
-                    <li class="icon">
-                        <a href="#" target="_blank" id="Twitter"></a>
-                    </li>
-                </ul>
+    <div class="container-fluid social">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="social-icon">
+                    <ul class="social-icon">
+                        <li class="icon">
+                            <a href="#" target="_blank" id="Pinterest"></a>
+                        </li>
+                        <li class="icon">
+                            <a href="#" target="_blank" id="Facebook"></a>
+                        </li>
+                        <li class="icon">
+                            <a href="#" target="_blank" id="Twitter"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--[social-icons-end]-->
+    <!--[social-icons-end]-->
 
-<!--[Gallery]-->
-<div id="works">
-</div>
-<div id="gallery" data-sr='wait 0.1s, then enter bottom and hustle 20px over 1s'>
-    <a href="#openModal1">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/14.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-
-    <a href="#openModal3">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/IMG_2453.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-    <a href="#openModal7">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/7.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-    <a href="#openModal4">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/IMG_2454.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-    <a href="#openModal5">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/10.jpg" alt="" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-    <a href="#openModal6">
-        <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
-            <img class="img gallery" src="Images/works/11.jpg" alt="" width="100%" />
-            <figcaption>
-                <h2>zoom</h2>
-                <img class="img gallery-icon" src="Images/lupa.png" alt="" />
-            </figcaption>
-        </figure>
-    </a>
-</div>
-
-<div id="openModal1" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/14.jpg" alt="" />
+    <!--[Gallery]-->
+    <div id="works">
     </div>
-</div>
+    <div id="gallery" data-sr='wait 0.1s, then enter bottom and hustle 20px over 1s'>
+        <a href="#openModal1">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/14.jpg" alt="" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
 
-<div id="openModal2" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/2.jpg" alt="" />
+        <a href="#openModal3">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/IMG_2453.jpg" alt="" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#openModal7">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/IMG_2447.jpg" alt="" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#openModal4">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/IMG_2454.jpg" alt="" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#openModal5">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/10.jpg" alt="" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
+        <a href="#openModal6">
+            <figure class="col-md-4 col-sm-6 col-xs-12 images-gallery">
+                <img class="img gallery" src="Images/works/11.jpg" alt="" width="100%" />
+                <figcaption>
+                    <h2>zoom</h2>
+                    <img class="img gallery-icon" src="Images/lupa.png" alt="" />
+                </figcaption>
+            </figure>
+        </a>
     </div>
-</div>
 
-<div id="openModal3" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/IMG_2453.jpg" alt="" />
-    </div>
-</div>
-
-<div id="openModal4" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/IMG_2454.jpg" alt="" />
-    </div>
-</div>
-
-<div id="openModal5" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/10.jpg" alt="" />
-    </div>
-</div>
-
-<div id="openModal6" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/11.jpg" alt="" />
-    </div>
-</div>
-<div id="openModal7" class="modalDialog">
-    <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <img class="img" src="images/works/7.jpg" alt="" />
-    </div>
-</div>
-<!--[Gallery-end]-->
-
-<!--[contact]-->
-<div class="container-fluid contact-background">
-    <section id="contact">
-    <div class="row contact">
-        <div class="col-md-6 col-md-offset-2 contact-header" data-sr='wait 0.2s, then enter left and hustle 50px over 1s'>
-            <div class="border-contact"></div>
-            <h2>Leave Us a Message</h2>
-            <div class="form-group">
-                <div class="input-group">
-                    <input runat="server" type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" />
-                    <span class="input-group-addon"><i></i></span></div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <input runat="server" type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" />
-                    <span class="input-group-addon"><i></i></span></div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <textarea runat="server" name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message" ></textarea>
-                    <span class="input-group-addon"><i></i></span></div>
-            </div>
-            <div class="form-group">
-            </div>
-            <div class="col-md-12 contact-send">
-                <asp:Button ID="buttonContact" runat="server" Text="Send" class="btn send hvr-shutter-out-vertical-contact-form" OnClick="buttonContact_Click" />
-            </div>
+    <div id="openModal1" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/14.jpg" alt="" />
         </div>
-        <div class="col-md-4 lead" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
-            <h2>Contacts</h2>
-            <div class="testimonial-border"></div>
-            <p>Mobile: (778) 896 - 9098</p>
-            <p>Mail: info.hymedu@gmail.com</p>
-        </div>
-        <hr class="featurette-divider hidden-lg" />
     </div>
-    </section>
-</div>
-<!--[contact-end]-->
+
+    <div id="openModal2" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/2.jpg" alt="" />
+        </div>
+    </div>
+
+    <div id="openModal3" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/IMG_2453.jpg" alt="" />
+        </div>
+    </div>
+
+    <div id="openModal4" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/IMG_2454.jpg" alt="" />
+        </div>
+    </div>
+
+    <div id="openModal5" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/10.jpg" alt="" />
+        </div>
+    </div>
+
+    <div id="openModal6" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/11.jpg" alt="" />
+        </div>
+    </div>
+    <div id="openModal7" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="img" src="images/works/IMG_2447.jpg" alt="" />
+        </div>
+    </div>
+    <!--[Gallery-end]-->
+
+    <!--[contact]-->
+    <div class="container-fluid contact-background">
+        <section id="contact">
+            <div class="row contact">
+                <div class="col-md-6 col-md-offset-2 contact-header" data-sr='wait 0.2s, then enter left and hustle 50px over 1s'>
+                    <div class="border-contact"></div>
+                    <h2>Leave Us a Message</h2>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input runat="server" type="text" class="form-control" name="InputName" id="InputName" placeholder="Name" />
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input runat="server" type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" />
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <textarea runat="server" name="InputMessage" id="InputMessage" class="form-control" rows="10" placeholder="Message"></textarea>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="col-md-12 contact-send">
+                        <asp:Button ID="buttonContact" runat="server" Text="Send" class="btn send hvr-shutter-out-vertical-contact-form" OnClick="buttonContact_Click" />
+                    </div>
+                </div>
+                <div class="col-md-4 lead" data-sr='wait 0.1s, then enter bottom and hustle 55px over 1.5s'>
+                    <h2>Contacts</h2>
+                    <div class="testimonial-border"></div>
+                    <p>Mobile: (778) 896 - 9098</p>
+                    <p>Mail: info.hymedu@gmail.com</p>
+                </div>
+                <hr class="featurette-divider hidden-lg" />
+            </div>
+        </section>
+    </div>
+    <!--[contact-end]-->
 
     <script type="text/javascript" src="Scripts/js/jquery-1.11.2.min.js"></script>
 </asp:Content>

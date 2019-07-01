@@ -139,11 +139,26 @@
             <div class="col-md-4">
                 <img src="Images/works/20.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
+            
+        </div>
+         <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">           
             <div class="col-md-4">
                 <img src="Images/works/21.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-4">
                 <img src="Images/works/22.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+                <img src="Images/works/23.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+        </div>
+        <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">           
+            <div class="col-md-4">
+                <img src="Images/works/24.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
             </div>
         </div>
         <br />
