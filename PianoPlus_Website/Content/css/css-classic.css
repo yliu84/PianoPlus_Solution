@@ -1288,13 +1288,14 @@ blockquote footer, blockquote small, blockquote .small{
 }
 
 .gallery {
-    height: 480px;
+    height: 380px;
+    width:100%;
 }
 
 
 #gallery h2 {
     position: relative;
-    top: 180px;
+    top: 210px;
     font-weight: 700;
     font-size: 14px;
     text-align: center;
@@ -1305,7 +1306,7 @@ blockquote footer, blockquote small, blockquote .small{
 
 .gallery-icon {
     position: relative;
-    top: 180px;
+    top: 210px;
     text-align: center;
 }
 

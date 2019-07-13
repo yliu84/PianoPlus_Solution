@@ -131,9 +131,9 @@
                         <div class="col-sm-9">
 
                             <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
-                                <b style="font-size: large;color:#ffdc73">* 恭喜Leo Shengxiao Gao, Naveen Jiuru Yang获得CMC大赛一等奖!</b><br />
+                                <b style="font-size: large;color:gold">* Leo Shengxiao Gao, Naveen Jiuru Yang获得CMC大赛一等奖!</b><br />
                 
-                                <b style="font-size:16px;font-weight:normal; color:#ffdc73">(Congratulations to Leo Shengxiao Gao and and Naveen Jiuru Yang for winning the CMC(Canadian Music Competition)'s first price!)</b>
+                                <b style="font-size:16px;font-weight:normal; color:gold">(Leo Shengxiao Gao and and Naveen Jiuru Yang won the CMC(Canadian Music Competition)'s first price!)</b>
                                 <br />
                                 <br />
                                 <b>Leo Gao, Naveen Yang</b><br />
