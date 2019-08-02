@@ -31,20 +31,21 @@
 
                 <p>1. Pianist and educator, sat under many famous national and international pianists: Mr. Jacques Després (French), Ms. Patricia Tao (American), Mr. Zhe Bang Xie and Ms. Mei Ge Li </p>
                 <p>2. Graduated from University of Alberta, which ranked Top 5 in Canada and Top 100 in the world. Achieved Master’s Degree in Piano Performance, with full scholarship</p>
-                <p>3. The Gold Award winner of Chinese National Piano Competition</p>
-                <p>4. The Gold Award winner of Shanghai International Music Competition</p>
-                <p>5. RCM certified top tier teacher</p>
-                <p>6. The Top 100 Excellent Guide Teacher Award from the “Concerned about the next generation committee” of the State Council</p>
-                <p>7. Taught piano in Conservatory of Music in China</p>
-                <p>8. Guest performer for Shanghai Gufan Symphony Orchestra</p>
-                <p>9. Guest performer for the Women’s Orchestra of Jiangsu province</p>
-                <p>10. A distinguished performer of the piano brand “Bentley”</p>
-                <p>11. Selected into the (Famous Artists of China) national stamp series by CHINA POST together with other respected famous musicians like Zheng Xiaoying, Gao Shaoqing and Tian Jiaxin</p>
-                <p>12. A member of the “Golden Key International Honor Society”</p>
-                <p>13. Founder of HYMUSIC education group</p>
-                <p>14. Rich experience in Piano performance. Has the honor to perform in the Golden Hall of Vienna during Spring Festival 2019</p>
-                <p>15. Students have made a lot of achievements including many First places and second places in all kinds of music competitions, many First class in RCM exams, being invited to perform in Carnegie Hall in New York, First place together with scholarship in American International Music Competition</p>
-                <p>16. Good at music education and interest education. With her guidance, students all love music, love piano, love and enjoy lives</p>
+                <p>3. Instructor of the First Prize winners of CMC</p>
+                <p>4. The Gold Award winner of Chinese National Piano Competition</p>
+                <p>5. The Gold Award winner of Shanghai International Music Competition</p>
+                <p>6. RCM certified top tier teacher</p>
+                <p>7. The Top 100 Excellent Guide Teacher Award from the “Concerned about the next generation committee” of the State Council</p>
+                <p>8. Taught piano in Conservatory of Music in China</p>
+                <p>9. Guest performer for Shanghai Gufan Symphony Orchestra</p>
+                <p>10. Guest performer for the Women’s Orchestra of Jiangsu province</p>
+                <p>11. A distinguished performer of the piano brand “Bentley”</p>
+                <p>12. Selected into the (Famous Artists of China) national stamp series by CHINA POST together with other respected famous musicians like Zheng Xiaoying, Gao Shaoqing and Tian Jiaxin</p>
+                <p>13. A member of the “Golden Key International Honor Society”</p>
+                <p>14. Founder of HYMUSIC education group</p>
+                <p>15. Rich experience in Piano performance. Has the honor to perform in the Golden Hall of Vienna during Spring Festival 2019</p>
+                <p>16. Students have made a lot of achievements including many First places and second places in all kinds of music competitions, many First class in RCM exams, being invited to perform in Carnegie Hall in New York, First place together with scholarship in American International Music Competition</p>
+                <p>17. Good at music education and interest education. With her guidance, students all love music, love piano, love and enjoy lives</p>
 
             </div>
 
@@ -79,46 +80,49 @@
                     2、	毕业于加拿大前五、世界前百的University of Alberta大学，以全额奖学金获得钢琴表演硕士学位。
                 </p>
                 <p>
-                    3、	中国红全国钢琴比赛金奖。
+                    3、 CMC加拿大全国音乐大赛冠军导师
                 </p>
                 <p>
-                    4、	上海国际青年钢琴比赛金奖。
+                    4、	中国红全国钢琴比赛金奖。
                 </p>
                 <p>
-                    5、	北美RCM考级协会认证TOP TIER顶级教师。
+                    5、	上海国际青年钢琴比赛金奖。
                 </p>
                 <p>
-                    6、	中国“关心下一代”授予TOP 100全国优秀指导教师。
+                    6、	北美RCM考级协会认证TOP TIER顶级教师。
                 </p>
                 <p>
-                    7、	任职于国内本科类音乐学院教授钢琴。
+                    7、	中国“关心下一代”授予TOP 100全国优秀指导教师。
                 </p>
                 <p>
-                    8、	上海古凡交响乐团钢琴演奏家
+                    8、	任职于国内本科类音乐学院教授钢琴。
                 </p>
                 <p>
-                    9、	江苏女子交响乐团钢琴演奏家
+                    9、	上海古凡交响乐团钢琴演奏家
                 </p>
                 <p>
-                    10、	宾利钢琴签约演奏家
+                    10、	江苏女子交响乐团钢琴演奏家
                 </p>
                 <p>
-                    11、	入选中国邮政总局发行的《中国文化名家》系列邮票，同期入选的还有郑小瑛、高韶青和田佳鑫等著名音乐家。
+                    11、	宾利钢琴签约演奏家
                 </p>
                 <p>
-                    12、	金钥匙国际荣誉协会会员
+                    12、	入选中国邮政总局发行的《中国文化名家》系列邮票，同期入选的还有郑小瑛、高韶青和田佳鑫等著名音乐家。
                 </p>
                 <p>
-                    13、	HYMUSIC教育集团创始人
+                    13、	金钥匙国际荣誉协会会员
                 </p>
                 <p>
-                    14、	钢琴演奏经历丰富，即将于2019年新春在维也纳金色大厅演奏
+                    14、	HYMUSIC教育集团创始人
                 </p>
                 <p>
-                    15、	学生们成绩斐然，在RCM考级和各种音乐比赛中纷获金奖和银奖，还应邀在纽约卡耐基音乐厅演奏。并在美国国际音乐大赛中获得一等奖及奖学金的优异成绩。
+                    15、	钢琴演奏经历丰富，即将于2019年新春在维也纳金色大厅演奏
                 </p>
                 <p>
-                    16、	长于音乐教育与素质教育的结合，在宦老师的引导下，学生们都爱上音乐爱上钢琴，热爱并享受生活。
+                    16、	学生们成绩斐然，在RCM考级和各种音乐比赛中纷获金奖和银奖，还应邀在纽约卡耐基音乐厅演奏。并在美国国际音乐大赛中获得一等奖及奖学金的优异成绩。
+                </p>
+                <p>
+                    17、	长于音乐教育与素质教育的结合，在宦老师的引导下，学生们都爱上音乐爱上钢琴，热爱并享受生活。
                 </p>
 
 

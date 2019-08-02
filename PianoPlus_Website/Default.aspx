@@ -131,9 +131,9 @@
                         <div class="col-sm-9">
 
                             <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
-                                <b style="font-size: large;color:gold">* Leo Shengxiao Gao, Naveen Jiuru Yang获得CMC大赛一等奖!</b><br />
+                                <b style="font-size: large;color:gold">* Leo Shengxiao Gao, Naveen Jiuru Yang获得2019年CMC大赛一等奖!</b><br />
                 
-                                <b style="font-size:16px;font-weight:normal; color:gold">(Leo Shengxiao Gao and and Naveen Jiuru Yang won the CMC(Canadian Music Competition)'s first price!)</b>
+                                <b style="font-size:16px;font-weight:normal; color:gold">(Leo Shengxiao Gao and and Naveen Jiuru Yang won the 2019 CMC(Canadian Music Competition)'s first prize!)</b>
                                 <br />
                                 <br />
                                 <b>Leo Gao, Naveen Yang</b><br />
@@ -155,7 +155,10 @@
                                 RCM皇家考级十级钢琴演奏，第一等级
                                 <br />
                                 <b>Emma Miao (14岁)</b><br />
-                                RCM皇家考级十级钢琴演奏，第一等级                    
+                                RCM皇家考级十级钢琴演奏，第一等级  
+                                <br />
+                                <b>Ella Cao (10岁)</b><br />
+                                RCM皇家考级七级钢琴演奏，第一等级
                             </p>
                         </div>
                         <div class="col-sm-3">
