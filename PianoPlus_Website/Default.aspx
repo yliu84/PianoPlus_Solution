@@ -155,10 +155,19 @@
                                 RCM皇家考级十级钢琴演奏，第一等级
                                 <br />
                                 <b>Emma Miao (14岁)</b><br />
-                                RCM皇家考级十级钢琴演奏，第一等级  
+                                RCM皇家考级十级钢琴演奏，第一等级                                  
+                                <br />
+                                <b>Alex Zhang (11岁)</b><br />
+                                RCM皇家考级十级钢琴演奏，通过并达ARCT分数
+                                <br />
+                                <b>ZiQing Xiong (13岁)</b><br />
+                                RCM皇家考级八级钢琴演奏，第一等级
                                 <br />
                                 <b>Ella Cao (10岁)</b><br />
                                 RCM皇家考级七级钢琴演奏，第一等级
+                                <br />
+                                <b>Jenny Yu (10岁)</b><br />
+                                RCM皇家考级六级钢琴演奏，第一等级
                             </p>
                         </div>
                         <div class="col-sm-3">
