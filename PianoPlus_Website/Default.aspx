@@ -7,6 +7,7 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
             <div class="item active">
@@ -49,6 +50,19 @@
                         <div>
                             <a class="enjoy-button hvr-shutter-out-vertical-transparent" href="#contact" role="button">Contact Us</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill_4">
+                    <div class="fill_14"></div>
+                </div>
+                <div class="carousel-caption">
+                    <div class="col-md-12 caro">
+                        <h4 style="font-size: 26px">比赛和考试都不重要</h4>
+                        <h4 style="font-size: 26px">重要的是你学习音乐的经历</h4>
+                        <h4 style="font-size: 26px">一场演奏能够成功</h4>
+                        <h4 style="font-size: 26px">关键在于能否打动人心</h4>
                     </div>
                 </div>
             </div>

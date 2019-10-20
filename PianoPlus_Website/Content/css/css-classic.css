@@ -492,6 +492,17 @@ p {
     -o-background-size: cover;
 }
 
+.fill_4 {
+    background-image: url('../../Images/works/img1.jpg');
+    width: 100%;
+    height: 750px;
+    background-position: top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .arrow-left {
     z-index: 999 !important;
     margin-top: 450px;
