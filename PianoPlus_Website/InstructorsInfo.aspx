@@ -161,6 +161,7 @@
                 <img src="Images/works/24.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-4">
+                <img src="Images/works/25.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-4">
             </div>
