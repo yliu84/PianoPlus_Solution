@@ -141,20 +141,112 @@
                 <div class="aboutText col-md-12 col-sm-12 about-text">
                     <div class="divider-line" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'></div>
                     <h2 data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>教学成果</h2>
-                    <div class="row">
+                    <div class="row honor" style="margin-top:20px;">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/NaveenYang.jpg" alt="Naveen Yang" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Naveen Yang (16岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>CMC加拿大全国音乐大赛总决赛 第一名</li>
+                                        <li>Crescendo美国国际音乐大赛  一等奖</li>
+                                        <li>ARCT钢琴演奏级</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/LeoGao.jpg" alt="Leo Gao" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Leo Gao (15岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>CMC加拿大全国音乐大赛总决赛 第一名</li>
+                                        <li>Crescendo美国国际音乐大赛  一等奖</li>
+                                        <li>ARCT钢琴演奏级</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/EmmaMiao.jpg" alt="Emma Miao" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Emma Miao (15岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>Crescendo美国国际音乐大赛  一等奖</li>
+                                        <li>加拿大青少年艺术家模范奖</li>
+                                        <li>仅用5个月时间学习并通过ARCT钢琴演奏级考试</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/RebeccaJin.jpg" alt="Rebecca Jin" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Rebecca Jin (17岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>Crescendo美国国际音乐大赛 一等奖</li>
+                                        <li>ARCT钢琴演奏级</li>
+                                        <li>应邀在纽约卡耐基音乐厅演奏</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/VincentZhang.jpg" alt="Vincent Zhang" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Vincent Zhang (15岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>ARCT钢琴演奏级</li>
+                                        <li>加拿大青少年艺术家模范奖</li>
+                                        <li>在维也纳金色大厅、纽约卡耐基音乐厅等著名场所演奏</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/JulieLin.jpg" alt="Julie Lin" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Julie Lin (14岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>ARCT钢琴演奏级</li>
+                                        <li>Crescendo美国国际音乐大赛 一等奖</li>
+                                        <li>加拿大青少年艺术家模范奖</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
+                                <img src="Images/honor/AlexZhang.jpg" alt="Alex Zhang" style="height:330px" />
+                                <div class="caption">
+                                    <h3>Julie Lin (11岁)</h3>
+                                    <ul style="list-style:none">
+                                        <li>ARCT钢琴演奏级在读</li>
+                                        <li>加拿大青少年艺术家模范奖</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%--<div class="row">
                         <div class="col-sm-9">
-
                             <p id="text-aboutus" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
                                 <b style="font-size: large;color:gold">* Leo Shengxiao Gao, Naveen Jiuru Yang获得2019年CMC大赛一等奖!</b><br />
                 
                                 <b style="font-size:16px;font-weight:normal; color:gold">(Leo Shengxiao Gao and and Naveen Jiuru Yang won the 2019 CMC(Canadian Music Competition)'s first prize!)</b>
                                 <br />
                                 <br />
-                                <b>Leo Gao, Naveen Yang</b><br />
-                                CMC加拿大全国音乐大赛， 代表BC省进入全国总决赛
+                                <b>Rebecca, Jin (17 岁)</b><br />
+                                Crescendo 美国国际音乐大赛以满分的最高成绩获得一等奖ARCT钢琴演奏级应邀在纽约卡耐基音乐厅演奏
                                 <br />
-                                <b>Emma Miao</b><br />
-                                Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出
+                                <b>Naveen Yang (16岁)</b><br />
+                                CMC加拿大全国音乐大赛总决赛第一名
                                 <br />
                                 <b>Julie Lin</b><br />
                                 Little Mozart美国国际音乐大赛一等奖， 应邀在纽约卡耐基音乐厅演出
@@ -184,11 +276,11 @@
                                 RCM皇家考级六级钢琴演奏，第一等级
                             </p>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" data-sr='wait 0.1s, then enter bottom and hustle 125px over 1.5s'>
                             <img src="Images/works/IMG_2573.jpg" alt="Leo & Naveen" style="width: 100%; height: auto; margin-top: 50px; border-radius:6px;" />
 
                         </div>
-                    </div>
+                    </div>--%>
 
 
                 </div>
@@ -385,5 +477,14 @@
     <!--[contact-end]-->
 
     <script type="text/javascript" src="Scripts/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="Content/slick/slick.min.js"></script>
+    <script>
+        $('.honor').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
+    </script>
 </asp:Content>
 
