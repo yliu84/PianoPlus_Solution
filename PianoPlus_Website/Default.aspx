@@ -145,7 +145,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/NaveenYang.jpg" alt="Naveen Yang" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Naveen Yang (16岁)</h3>
                                     <ul style="list-style:none">
                                         <li>CMC加拿大全国音乐大赛总决赛 第一名</li>
@@ -159,7 +159,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/LeoGao.jpg" alt="Leo Gao" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Leo Gao (15岁)</h3>
                                     <ul style="list-style:none">
                                         <li>CMC加拿大全国音乐大赛总决赛 第一名</li>
@@ -172,7 +172,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/EmmaMiao.jpg" alt="Emma Miao" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Emma Miao (15岁)</h3>
                                     <ul style="list-style:none">
                                         <li>Crescendo美国国际音乐大赛  一等奖</li>
@@ -185,12 +185,12 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/RebeccaJin.jpg" alt="Rebecca Jin" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Rebecca Jin (17岁)</h3>
-                                    <ul style="list-style:none">
-                                        <li>Crescendo美国国际音乐大赛 一等奖</li>
+                                    <ul style="list-style:none">                              
                                         <li>ARCT钢琴演奏级</li>
                                         <li>应邀在纽约卡耐基音乐厅演奏</li>
+                                        <li>Crescendo美国国际音乐大赛以满分的最高成绩获得一等奖</li>
                                     </ul>
                                 </div>
                             </div>
@@ -198,7 +198,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/VincentZhang.jpg" alt="Vincent Zhang" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Vincent Zhang (15岁)</h3>
                                     <ul style="list-style:none">
                                         <li>ARCT钢琴演奏级</li>
@@ -211,7 +211,7 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/JulieLin.jpg" alt="Julie Lin" style="height:330px" />
-                                <div class="caption">
+                                <div class="caption" style="min-height:185px">
                                     <h3>Julie Lin (14岁)</h3>
                                     <ul style="list-style:none">
                                         <li>ARCT钢琴演奏级</li>
@@ -224,8 +224,8 @@
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/AlexZhang.jpg" alt="Alex Zhang" style="height:330px" />
-                                <div class="caption">
-                                    <h3>Julie Lin (11岁)</h3>
+                                <div class="caption" style="min-height:185px">
+                                    <h3>Alex Zhang (11岁)</h3>
                                     <ul style="list-style:none">
                                         <li>ARCT钢琴演奏级在读</li>
                                         <li>加拿大青少年艺术家模范奖</li>
