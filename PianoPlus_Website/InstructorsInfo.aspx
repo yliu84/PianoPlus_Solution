@@ -29,107 +29,29 @@
                 <h4><b>Research Area:</b> Piano teaching and research</h4>
                 <br />
 
-                <p>1. Pianist and educator, sat under many famous national and international pianists: Mr. Jacques Després (French), Ms. Patricia Tao (American), Mr. Zhe Bang Xie and Ms. Mei Ge Li </p>
-                <p>2. Graduated from University of Alberta, which ranked Top 5 in Canada and Top 100 in the world. Achieved Master’s Degree in Piano Performance, with full scholarship</p>
-                <p>3. Instructor of the First Prize winners of CMC</p>
-                <p>4. The Gold Award winner of Chinese National Piano Competition</p>
-                <p>5. The Gold Award winner of Shanghai International Music Competition</p>
-                <p>6. RCM certified top tier teacher</p>
-                <p>7. The Top 100 Excellent Guide Teacher Award from the “Concerned about the next generation committee” of the State Council</p>
-                <p>8. Taught piano in Conservatory of Music in China</p>
-                <p>9. Guest performer for Shanghai Gufan Symphony Orchestra</p>
-                <p>10. Guest performer for the Women’s Orchestra of Jiangsu province</p>
-                <p>11. A distinguished performer of the piano brand “Bentley”</p>
-                <p>12. Selected into the (Famous Artists of China) national stamp series by CHINA POST together with other respected famous musicians like Zheng Xiaoying, Gao Shaoqing and Tian Jiaxin</p>
-                <p>13. A member of the “Golden Key International Honor Society”</p>
-                <p>14. Founder of HYMUSIC education group</p>
-                <p>15. Rich experience in Piano performance. Has the honor to perform in the Golden Hall of Vienna during Spring Festival 2019</p>
-                <p>16. Students have made a lot of achievements including many First places and second places in all kinds of music competitions, many First class in RCM exams, being invited to perform in Carnegie Hall in New York, First place together with scholarship in American International Music Competition</p>
-                <p>17. Good at music education and interest education. With her guidance, students all love music, love piano, love and enjoy lives</p>
+                <p>1. 钢琴演奏家、钢琴教育家 (Pianist & Educator)</p>
+                <p>2. 加拿大钢琴表演硕士 (Master degree in piano performance of Canada) </p>
+                <p>3. 师从Jacques Després、Patricia Tao、谢哲邦、李美格等中外钢琴大师 (Sat under many famous national and international pianists: Mr. Jacques Després (Canada), Ms. Patricia Tao (U.S.), Mr. Zhe Bang Xie and Ms. Mei Ge Li (CHN) )</p>
+                <p>4. 其独奏音乐会被收录在1927年创办的加拿大第一家以教育为主、由世界级商业与专业人士组成的CKUA电台 (Her solo piano performance concert record was collected by the famous Canadian radio Channel CKUA) </p>
+                <p>5. 施坦威精选钢琴音乐学校、HYMUSIC音乐学院创办人 (Founder of HYMUSIC Academy, the honorable Steinway select studio) </p>
+                <p>6. 维也纳金色大厅钢琴演奏家 (Performed in Musikverein Hall of Vienna) </p>
+                <p>7. 获颁奥地利维也纳市议会“杰出表演大奖” (The Outstanding Performance Award given by City Council of Vienna, Austria CMC)</p>
+                <p>8. 加拿大全国音乐大赛冠军导师 (Instructor of the 1st prize winners of CMC National Competition in Canada)</p>
+                <p>9. 北美RCM考级协会授予Top Tier 顶级教师 (RCM top tier teacher) </p>
+                <p>10. 中国关心下一代授予 Top 100 顶级教师 (The top 100 excellent Award in China) </p>
+                <p>11. 美国Crescendo国际比赛认证顶级教师 (Crescendo International Competition certified excellent teacher)</p>
+                <p>12. 珠江钢琴国际大赛评委兼唯一导师 (Adjudicator and the only instructor of Pearl River International Piano Competition) </p>
+                <p>13. 中国中央音乐学院国际青少年艺术大赛评委 (Adjudicator of Central Conservatory of Music International Youth Arts Competition) </p>
+                <p>14. 曾任职中国本科类音乐学院从事钢琴表演教学 (Taught piano performance in Conservatory of music in China) </p>
+                <p>15. 多篇钢琴教育文章在中国核心期刊发表 (Core journal publication of many essays regarding piano education)</p>
+                <p>16. 邮政总局发行《中国文化名家》 宦一铭老师系列邮票 (Famous artists of China-Ms. Yiming Huan national stamp series by China Post) </p>
+                <p>17. 金钥匙国际荣誉协会会员 (A member of the "Golden Key International Society")</p>
+                <p>18. 2019年加拿大RICHMOND市建市140周年，由温哥华市委会颁发授予“行业杰出贡献”荣誉称号 (The Outstanding Achievement Award by City Council of Vancouver, Canada in 2019)</p>
+                <p>19. 果敢2020全球线上音乐节特邀嘉宾 (Special guest performer of Guo Gan World Music Online Festival 2020)</p>
+                <p>20. 擅长音乐教育与素质教育的结合，在宦老师的引导下，学生们都爱上音乐爱上钢琴，热爱并享受生活 (Good at music education and quality-oriented education. With her guidance, students all love music, love piano, love and enjoy lives.)</p>
 
             </div>
 
-        </div>
-
-        <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin: 20px 0 60px 0">
-            <div class="testimonial-border" style="margin-top: 20px"></div>
-
-            <div class="col-md-8">
-                <%-- <h3><b>Name: Fiona Wong</b></h3>
-                <h4><b>Education Background:</b> Communications and Minor in Music</h4>
-
-                <br />
-                <p>
-                    Fiona Wong started playing piano since she was five years old, and started to take professional classical music lessons when she was twelve years old. 
-                    She has completed all levels of piano, theory, history and harmony through the Royal Conservatory School of Music. 
-                    She has performed in several Music Workshops and was awarded second place for the Vancouver Kiwanis Music Festival in 2015.</p>
-
-                <p>
-                    Fiona graduated from Simon Fraser University with a Majors in Communications and Minor in Music. 
-                    With her musical education at Simon Fraser University, she learned contemporary musical genres, including jazz, electro-acoustic music, and much more- which widen her perspective of music.
-                </p>
-
-                <p>
-                    Fiona has volunteered performing in senior homes in the lower mainland and conducting music lessons in pre-schools. 
-                    Further to her education, Fiona has been teaching music for over 7 years, and is experience with teaching classical and contemporary music styles to people of all ages.
-                </p>--%>
-                <h3><b>宦一铭</b></h3>
-
-                <p>1、	青年钢琴演奏家、钢琴教育家，师从Jacques Després（法）、Patricia Tao（美）、谢哲邦、李美格等国内外著名钢琴家。</p>
-                <p>
-                    2、	毕业于加拿大前五、世界前百的University of Alberta大学，以全额奖学金获得钢琴表演硕士学位。
-                </p>
-                <p>
-                    3、 CMC加拿大全国音乐大赛冠军导师
-                </p>
-                <p>
-                    4、	中国红全国钢琴比赛金奖。
-                </p>
-                <p>
-                    5、	上海国际青年钢琴比赛金奖。
-                </p>
-                <p>
-                    6、	北美RCM考级协会认证TOP TIER顶级教师。
-                </p>
-                <p>
-                    7、	中国“关心下一代”授予TOP 100全国优秀指导教师。
-                </p>
-                <p>
-                    8、	任职于国内本科类音乐学院教授钢琴。
-                </p>
-                <p>
-                    9、	上海古凡交响乐团钢琴演奏家
-                </p>
-                <p>
-                    10、	江苏女子交响乐团钢琴演奏家
-                </p>
-                <p>
-                    11、	宾利钢琴签约演奏家
-                </p>
-                <p>
-                    12、	入选中国邮政总局发行的《中国文化名家》系列邮票，同期入选的还有郑小瑛、高韶青和田佳鑫等著名音乐家。
-                </p>
-                <p>
-                    13、	金钥匙国际荣誉协会会员
-                </p>
-                <p>
-                    14、	HYMUSIC教育集团创始人
-                </p>
-                <p>
-                    15、	钢琴演奏经历丰富，即将于2019年新春在维也纳金色大厅演奏
-                </p>
-                <p>
-                    16、	学生们成绩斐然，在RCM考级和各种音乐比赛中纷获金奖和银奖，还应邀在纽约卡耐基音乐厅演奏。并在美国国际音乐大赛中获得一等奖及奖学金的优异成绩。
-                </p>
-                <p>
-                    17、	长于音乐教育与素质教育的结合，在宦老师的引导下，学生们都爱上音乐爱上钢琴，热爱并享受生活。
-                </p>
-
-
-            </div>
-            <div class="col-md-4">
-                <img src="Images/works/2.JPG" alt="instructor pic" width="100%" style="margin-top: 25px" />
-            </div>
         </div>
 
         <div class="row" data-sr='wait 0.1s, then enter left and hustle 55px over 1.5s' style="margin-top: 20px">
