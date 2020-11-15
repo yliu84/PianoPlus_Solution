@@ -16,6 +16,8 @@
     <link href="Content/css/scrolling-nav.css" rel="stylesheet" />
     <link href="Content/slick/slick.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="Content/slick/slick-theme.css"/>
+    <!-- Magnific Popup -->
+    <link href="Content/magnific-popup.css" rel="stylesheet" type="text/css" />
     <!-- fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light' rel='stylesheet' type='text/css'/>
@@ -57,7 +59,8 @@
                     <ul id="nav" class="nav navbar-nav navbar-left nav-pills">
                         <li class="active hvr-hang"><a class="page-scroll" href="Default.aspx">HOME</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="InstructorsInfo.aspx">INSTRUCTOR</a></li>
-                        <li class="hvr-hang"><a class="page-scroll" href="PianoLessons.aspx">LESSONS</a></li>                      
+                        <li class="hvr-hang"><a class="page-scroll" href="PianoLessons.aspx">LESSONS</a></li>
+                        <li class="hvr-hang"><a class="page-scroll" href="Gallery.aspx">GALLERY</a></li>  
                         <li class="hvr-hang"><a class="page-scroll" href="BlogView.aspx">BLOG</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="About.aspx">ABOUT</a></li>
                         <li class="hvr-hang"><a class="page-scroll" href="Contact.aspx">CONTACT</a></li>
@@ -96,7 +99,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4>Copyright</h4>
-                    <h4 id="footer-color">HYMUSIC &copy; 2017-2019</h4>
+                    <h4 id="footer-color">HYMUSIC &copy; 2017-2020</h4>
                 </div>
             </div>
         </div>
