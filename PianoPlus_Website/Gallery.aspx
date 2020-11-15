@@ -68,11 +68,11 @@
     <!--[header-background-end]-->
     <div class="my-gallery">
         <div class="container">
+
             <h2>庆典音乐会</h2>
-            <div class="row" style="margin-top: 20px">
-                
+            <div class="row" style="margin-top: 20px">       
                 <div class="testimonial-border"></div>             
-                <div class="row grid">
+                <div class="row grid-1">
                     <div class="col-lg-3 col-md-6 col-sm-12 element-item 2020">
                         <div class="our-project">
                             <div class="img">
@@ -477,7 +477,11 @@
                         </div>
                     </div>
                 </div>
+
+                <iframe style="margin: 20px auto" width="560" height="315" src="https://www.youtube.com/embed/REILmDMmjoU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+
+
             <br />
 
             <h2>2020春季抗疫献爱心音乐会</h2>
@@ -849,18 +853,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
-                        <div class="our-project">
-                            <div class="img">
-                                <a class="test-popup-link" href="Images/gallery/2019-winter/777.jpg">
-                                    <img
-                                        src="Images/gallery/2019-winter/777.jpg"
-                                        alt="portfolio-1"
-                                        class="img-fluid" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="col-lg-3 col-md-6 col-sm-12 element-item">
                         <div class="our-project">
@@ -1093,6 +1086,7 @@
                 </div>
             </div>
 
+            <br />
             <h2>2019纽约卡耐基音乐厅演奏</h2>
             <div class="row" style="margin-top: 20px">
                 <div class="testimonial-border"></div>
@@ -1292,6 +1286,590 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <br />
+            <h2>2018夏季音乐会</h2>
+            <div class="row" style="margin-top: 20px">
+                <div class="testimonial-border"></div>
+                <div class="row grid">
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/1.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/1.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/2.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/2.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/3.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/3.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/4.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/4.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/5.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/5.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/6.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/6.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/7.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/7.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/8.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/8.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/8.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/8.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/9.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/9.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/10.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/10.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/11.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/11.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/12.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/12.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/13.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/13.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/14.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/14.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/15.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/15.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/16.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/16.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/17.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/17.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/18.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/18.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/19.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/19.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/20.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/20.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/21.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/21.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/22.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/22.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/23.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/23.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/24.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/24.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/25.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/25.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/26.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/26.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/27.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/27.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/28.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/28.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/29.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/29.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/30.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/30.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/31.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/31.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/32.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/32.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/33.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/33.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/34.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/34.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/35.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/35.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/36.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/36.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/37.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/37.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/38.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/38.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/39.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/39.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/40.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/40.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/41.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/41.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/42.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/42.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/43.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/43.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/44.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/44.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/45.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/45.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/2018-summer/46.JPG">
+                                    <img
+                                        src="Images/gallery/2018-summer/46.JPG"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 

@@ -7,7 +7,7 @@
     //    e.target.classList.add('active');
 
     //    let selector = $(e.target).attr('data-filter');
-    //    $('.my-gallery .grid').isotope({
+    //    $('.my-gallery .grid-1').isotope({
     //        filter: selector
     //    });
 
@@ -15,6 +15,10 @@
     //});
 
     //$('.my-gallery .button-group #btn1').trigger('click');
+
+    //$('.my-gallery .grid-1').isotope({
+    //        filter: "*"
+    //    });
 
 
     $('.my-gallery .grid .test-popup-link').magnificPopup({
