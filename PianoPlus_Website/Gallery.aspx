@@ -1873,6 +1873,452 @@
                 </div>
             </div>
 
+            <br />
+            <h2>大师课</h2>
+            <div class="row" style="margin-top: 20px">
+                <div class="testimonial-border"></div>
+                <div class="row grid">
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/1.jpg">
+                                    <img
+                                        src="Images/gallery/master/1.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/2.jpg">
+                                    <img
+                                        src="Images/gallery/master/2.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/3.jpg">
+                                    <img
+                                        src="Images/gallery/master/3.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/4.jpg">
+                                    <img
+                                        src="Images/gallery/master/4.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/5.jpg">
+                                    <img
+                                        src="Images/gallery/master/5.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/6.jpg">
+                                    <img
+                                        src="Images/gallery/master/6.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/7.jpg">
+                                    <img
+                                        src="Images/gallery/master/7.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/8.jpg">
+                                    <img
+                                        src="Images/gallery/master/8.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/9.jpg">
+                                    <img
+                                        src="Images/gallery/master/9.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/10.jpg">
+                                    <img
+                                        src="Images/gallery/master/10.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/11.jpg">
+                                    <img
+                                        src="Images/gallery/master/11.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/12.jpeg">
+                                    <img
+                                        src="Images/gallery/master/12.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/13.jpeg">
+                                    <img
+                                        src="Images/gallery/master/13.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/14.jpeg">
+                                    <img
+                                        src="Images/gallery/master/14.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/15.jpeg">
+                                    <img
+                                        src="Images/gallery/master/15.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/16.jpg">
+                                    <img
+                                        src="Images/gallery/master/16.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/19.jpg">
+                                    <img
+                                        src="Images/gallery/master/19.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/20.jpeg">
+                                    <img
+                                        src="Images/gallery/master/20.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/21.jpeg">
+                                    <img
+                                        src="Images/gallery/master/21.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/master/22.jpeg">
+                                    <img
+                                        src="Images/gallery/master/22.jpeg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <br />
+            <h2>维也纳金色大厅演奏</h2>
+            <div class="row" style="margin-top: 20px">
+                <div class="testimonial-border"></div>
+                <div class="row grid">
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/1.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/1.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/2.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/2.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/3.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/3.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/4.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/4.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/5.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/5.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/6.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/6.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/7.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/7.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/8.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/8.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/9.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/9.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/10.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/10.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/11.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/11.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/12.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/12.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 element-item">
+                        <div class="our-project">
+                            <div class="img">
+                                <a class="test-popup-link" href="Images/gallery/weiyena/13.jpg">
+                                    <img
+                                        src="Images/gallery/weiyena/13.jpg"
+                                        alt="portfolio-1"
+                                        class="img-fluid" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="Scripts/jquery-2.1.1.js"></script>
