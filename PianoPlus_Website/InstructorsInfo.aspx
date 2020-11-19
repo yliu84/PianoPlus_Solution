@@ -94,6 +94,7 @@
                 <img src="Images/works/27.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-4">
+                <img src="Images/works/28.jpg" alt="instructor pic" width="100%" style="margin-top: 25px" />
             </div>
             <div class="col-md-4">
             </div>
