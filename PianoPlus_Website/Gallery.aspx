@@ -1162,7 +1162,7 @@
             </div>
             <br />
 
-            <h2>迁至开业</h2>
+            <h2>迁址开业</h2>
             <div class="row" style="margin-top: 20px">
                 <div class="testimonial-border"></div>
                 <div class="row grid">              
