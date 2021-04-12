@@ -85,8 +85,18 @@
             <div class="col-md-12" data-wow-delay="0.5s">
                 <div class="carousel slide" data-ride="carousel" id="quote-carousel">
                     <div class="carousel-inner text-center">
-                        <!-- Quote 1 -->
                         <div class="item active">
+                            <blockquote>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2 ">
+                                        <div class="testimonial-border"></div>
+                                        <asp:Literal Text="" runat="server" ID="content" />
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <!-- Quote 1 -->
+                        <%--<div class="item active">
                             <blockquote>
                                 <div class="row">
                                     <div class="col-sm-8 col-sm-offset-2 ">
@@ -98,8 +108,8 @@
                                     </div>
                                 </div>
                             </blockquote>
-                        </div>
-                        <!-- Quote 2 -->
+                        </div>--%>
+                        <%--<!-- Quote 2 -->
                         <div class="item">
                             <blockquote>
                                 <div class="row">
@@ -126,7 +136,7 @@
                                     </div>
                                 </div>
                             </blockquote>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
             </div>
@@ -186,11 +196,12 @@
                             <div class="thumbnail" style="background-color:rgba(255,255,255,0.2)">
                                 <img src="Images/honor/RebeccaJin.jpg" alt="Rebecca Jin" style="height:330px" />
                                 <div class="caption" style="min-height:185px">
-                                    <h3>Rebecca Jin (17岁)</h3>
+                                    <h3>Rebecca Jin (18岁)</h3>
                                     <ul style="list-style:none">                              
                                         <li>ARCT钢琴演奏级</li>
                                         <li>应邀在纽约卡耐基音乐厅演奏</li>
                                         <li>Crescendo美国国际音乐大赛以满分的最高成绩获得一等奖</li>
+                                        <li>美国伯克利，加拿大多伦多大学音乐学院双录取</li>
                                     </ul>
                                 </div>
                             </div>

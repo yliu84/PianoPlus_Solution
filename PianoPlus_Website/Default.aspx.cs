@@ -8,11 +8,24 @@ using System.Web.UI.WebControls;
 
 using System.Net.Mail;
 using System.Net;
+using PianoPlus_System.BLL;
+using PianoPlus_Data.POCOS;
 
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        var postid = 15;
+
+        BlogController controller = new BlogController();
+        BlogInfo post = new BlogInfo();
+
+        post = controller.Get_PostInfo(postid);
+
+        if(post != null)
+        {
+            content.Text = post.Content;
+        }
 
     }
 
