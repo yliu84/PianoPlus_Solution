@@ -79,6 +79,41 @@ namespace PianoPlus_System.BLL
             }
         }
 
+        public void UpdatePost(Blog blog)
+        {
+
+            using (var context = new PianoPlusContext())
+            {
+                //Find the entity
+                Blog currentBlog = context.Blogs.Find(blog.BlogID);
+
+                //Check if there is a change.
+                if (currentBlog.Content != blog.Content)
+                {
+                    currentBlog.Content = blog.Content;
+                }
+                if (currentBlog.Title != blog.Title)
+                {
+                    currentBlog.Title = blog.Title;
+                }
+                if (currentBlog.PostDate != blog.PostDate)
+                {
+                    currentBlog.PostDate = blog.PostDate;
+                }
+
+                //DO the update
+                var update = context.Entry(context.Blogs.Attach(currentBlog));
+                update.Property(x => x.Content).IsModified = true;
+                update.Property(x => x.Title).IsModified = true;
+                update.Property(x => x.PostDate).IsModified = true;
+                
+                //Save the changes in DB
+                context.SaveChanges();
+
+            }
+
+        }
+
         public void Delete_Post(Blog blog)
         {
             using(var context = new PianoPlusContext())

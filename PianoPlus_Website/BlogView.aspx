@@ -34,6 +34,7 @@
                                 <%--<div class="post-subtitle" runat="server" id="summary"><%# Eval("Content").ToString().Length>=200 ? Eval("Content").ToString().Substring(0,200)+"..." :Eval("Content").ToString()%></div>--%>
                             </asp:LinkButton>
                             <p class="post-meta">Posted by <%# Eval("InstructorName") %> on <%# Eval("PostDate") %></p>
+                            <asp:LinkButton runat="server" CssClass="btn btn-sm btn-warning" CommandArgument='<%# Eval("BlogID") %>' ID="btn_edit" CommandName="edit" Visible="false"  >Edit</asp:LinkButton>
                         </div>
                         <hr>
                     </ItemTemplate>

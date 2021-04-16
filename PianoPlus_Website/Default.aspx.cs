@@ -15,7 +15,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        var postid = 15;
+        var postid = 18;
 
         BlogController controller = new BlogController();
         BlogInfo post = new BlogInfo();

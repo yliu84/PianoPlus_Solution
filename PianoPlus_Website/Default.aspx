@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
+    <style type="text/css">
+       .carousel-content h1,
+       .carousel-content p{
+           color:#343434;
+       }
+    </style>
     <div id="start"></div>
     <header id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators" data-sr='wait 3s, then enter top and hustle 40px over 1.5s'>
@@ -88,9 +94,12 @@
                         <div class="item active">
                             <blockquote>
                                 <div class="row">
-                                    <div class="col-sm-8 col-sm-offset-2 ">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <h3 class="text-center">教学成果</h3>
                                         <div class="testimonial-border"></div>
-                                        <asp:Literal Text="" runat="server" ID="content" />
+                                        <div class="carousel-content">
+                                             <asp:Literal Text="" runat="server" ID="content" />
+                                        </div>
                                     </div>
                                 </div>
                             </blockquote>

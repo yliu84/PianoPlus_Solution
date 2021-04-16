@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMaster.master" AutoEventWireup="true" CodeFile="CreatePost.aspx.cs" ValidateRequest="false" Inherits="CreatePost" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMaster.master" AutoEventWireup="true" CodeFile="EditPost.aspx.cs" ValidateRequest="false" Inherits="EditPost" %>
 
 <%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
 
@@ -30,8 +30,8 @@
         <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
         <div class="row">
             <div class="col-lg-12">
+                <asp:TextBox ID="text_id" runat="server" Visible="false"></asp:TextBox>
                 <div class="form-group">
-                    <%--<asp:Label Text="Title" runat="server" CssClass="control-label col-lg-2" />--%>
 
                     <h4>Title:</h4>
                     <asp:TextBox ID="txt_title" runat="server" CssClass="form-control"></asp:TextBox>
@@ -44,14 +44,15 @@
 
 
                 <div class="col-md-12 contact-send contact">
-                    <asp:Button ID="btn_add" runat="server" Text="Submit" OnClick="btn_add_Click" class="btn send" />
+                    <asp:Button ID="btn_update" runat="server" Text="Update" OnClick="btn_update_Click" class="btn send" />
                 </div>
             </div>
         </div>
     </div>
 
 
-    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <%--<script src="Scripts/jquery-migration.js"></script>--%>
 <%--    <script src="Scripts/bootstrap.min.js"></script>--%>
     <script src="Scripts/summernote/summernote.min.js"></script>
 
@@ -60,7 +61,7 @@
 
             $(".summernote").summernote(
                 {
-                    height: 400
+                    height: 200
                 }
 
                 );

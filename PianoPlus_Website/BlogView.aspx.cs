@@ -52,8 +52,17 @@ public partial class BlogView : System.Web.UI.Page
 
     protected void rpt_posts_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
+        string commendName = e.CommandName.ToString();
+
         int id = int.Parse(e.CommandArgument.ToString());
         string link = "~/Article.aspx" + "?pos=" + id;
+
+        if (commendName == "edit")
+        {
+            link = "~/EditPost.aspx" + "?pos=" + id;
+        }
+        
+        
         Response.Redirect(link);
     }
 
@@ -62,6 +71,28 @@ public partial class BlogView : System.Web.UI.Page
         var cleaned = string.Empty;
         Literal lblStatus = e.Item.FindControl("lbl_content") as Literal;
         string description = lblStatus.Text;
+
+        LinkButton editBtn = new LinkButton();
+
+        editBtn = (LinkButton)e.Item.FindControl("btn_edit");
+        InstructorController instructorController = new InstructorController();
+
+        if (Session["email"] != null && Session["Name"] != null)
+        {
+            if (instructorController.GetInstructorInfo(Session["email"].ToString()) != null)
+            {
+                editBtn.Visible = true;
+            }
+            else
+            {
+                editBtn.Visible = false;
+            }
+
+        }
+        else
+        {
+            editBtn.Visible = false;
+        }
 
         try
         {
