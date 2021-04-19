@@ -6,6 +6,12 @@
        .carousel-content p{
            color:#343434;
        }
+       .carousel-inner {
+           background-image:url('Images/bg.jpg');
+           background-position:center;
+           background-repeat:no-repeat;
+           background-size:contain;
+       }
     </style>
     <div id="start"></div>
     <header id="myCarousel" class="carousel slide" data-ride="carousel">
