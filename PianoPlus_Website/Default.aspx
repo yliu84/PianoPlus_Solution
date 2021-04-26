@@ -6,11 +6,16 @@
        .carousel-content p{
            color:#343434;
        }
+       .carousel{
+           margin-top:0 !important;
+           padding:0 !important;
+       }
        .carousel-inner {
-           background-image:url('Images/bg.jpg');
+           background-image:url('Images/bg.png');
            background-position:center;
            background-repeat:no-repeat;
-           background-size:contain;
+           background-size:cover;
+           margin-top:0;
        }
     </style>
     <div id="start"></div>
